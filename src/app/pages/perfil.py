@@ -106,6 +106,10 @@ def show():
         st.warning("Nenhum usuário logado. Por favor faça login.")
         return
 
+    if st.session_state.pop("perfil_salvo_sucesso", False):
+        st.success("🎉 Perfil e preferências atualizados com sucesso!")
+        st.balloons()
+
     # Busca dados mais recentes do banco
     usuario_db = buscar_usuario_por_id(user_id)
     if usuario_db:
@@ -402,7 +406,7 @@ def show():
         # Sempre oferece os campos se selecionado ou se o usuário estiver em cursinho/médio
         concursos_foco_selecionados = []
 
-        if tem_foco_militar or "Cursinho" in nova_escolaridade:
+        if tem_foco_militar:
             st.markdown(f"""
             <div style="margin-top: 10px; font-size: 0.88rem; font-weight: 700; color: {'#fbbf24' if is_dark else '#b45309'};">
                 🎖️ Concursos Militares de Foco (selecione os seus):
@@ -417,8 +421,14 @@ def show():
                 key="perfil_sel_militares"
             )
             concursos_foco_selecionados.extend(sel_militares)
+            if "Outro Concurso Militar" in sel_militares:
+                outros = [f for f in foco_salvo if f not in CONCURSOS_MILITARES and f not in CONCURSOS_VESTIBULARES]
+                val_outro_m = outros[0] if outros else ""
+                outro_m = st.text_input("Qual outro concurso militar?", value=val_outro_m, key="perfil_outro_militar")
+                if outro_m:
+                    concursos_foco_selecionados.append(outro_m)
 
-        if tem_foco_vestibular or "Cursinho" in nova_escolaridade or "Médio" in nova_escolaridade:
+        if tem_foco_vestibular:
             st.markdown(f"""
             <div style="margin-top: 10px; font-size: 0.88rem; font-weight: 700; color: {'#60a5fa' if is_dark else '#1d4ed8'};">
                 📚 Vestibulares de Foco:
@@ -433,6 +443,12 @@ def show():
                 key="perfil_sel_vestibulares"
             )
             concursos_foco_selecionados.extend(sel_vestibulares)
+            if "Outro Vestibular" in sel_vestibulares:
+                outros = [f for f in foco_salvo if f not in CONCURSOS_MILITARES and f not in CONCURSOS_VESTIBULARES]
+                val_outro_v = outros[-1] if outros else ""
+                outro_v = st.text_input("Qual outro vestibular?", value=val_outro_v, key="perfil_outro_vestibular")
+                if outro_v:
+                    concursos_foco_selecionados.append(outro_v)
 
     # ── BOTÃO DE SALVAR ───────────────────────────────────────────────────────
     st.markdown("---")
@@ -474,8 +490,8 @@ def show():
                     # Atualiza os dados na sessão
                     usuario_atualizado = buscar_usuario_por_id(user_id)
                     st.session_state.usuario_logado = usuario_atualizado
-                    st.success("✅ Perfil atualizado com sucesso!")
-                    st.balloons()
+                    st.session_state.perfil_salvo_sucesso = True
+                    st.toast("Perfil e preferências salvos com sucesso!", icon="💾")
                     st.rerun()
                 else:
                     st.error(f"Erro ao salvar: {res.get('erro')}")
