@@ -542,13 +542,13 @@ st.markdown(f"""
         transform: translateY(-1px);
     }}
 
-    .st-key-nav_btn_perfil_topbar button {
+    .st-key-nav_btn_perfil_topbar button {{
         border-radius: 12px !important;
         font-weight: 700 !important;
         font-size: 0.82rem !important;
         border: 1.5px solid {gold_border} !important;
         padding: 0 8px !important;
-    }
+    }}
 </style>
 """, unsafe_allow_html=True)
 
