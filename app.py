@@ -4,6 +4,13 @@ Fase 1 (V1) - Plataforma Cognitiva de Resolução, Metacognição e Perfil do Es
 Layout: Header com Logo e Conta no Topo, Navegação em 3 Colunas Largas, Modo Dark/Light, Dourado Realçado.
 """
 
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
 import streamlit as st
 
 # 1. Configuração da Página
@@ -14,8 +21,11 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# 2. Inicialização do Tema
-if "tema" not in st.session_state:
+# 2. Inicialização e Persistência do Tema (Dark / Light)
+tema_url = st.query_params.get("theme")
+if tema_url in ("dark", "light"):
+    st.session_state.tema = tema_url
+elif "tema" not in st.session_state:
     st.session_state.tema = "dark"
 
 is_dark = (st.session_state.tema == "dark")
@@ -550,6 +560,18 @@ st.markdown(f"""
         padding: 0 8px !important;
     }}
 </style>
+<script>
+    try {{
+        localStorage.setItem('mathai_theme', '{st.session_state.tema}');
+        const savedTheme = localStorage.getItem('mathai_theme');
+        const urlParams = new URLSearchParams(window.location.search);
+        if (savedTheme && !urlParams.has('theme')) {{
+            urlParams.set('theme', savedTheme);
+            const newUrl = window.location.pathname + '?' + urlParams.toString();
+            window.history.replaceState(null, '', newUrl);
+        }}
+    }} catch (e) {{}}
+</script>
 """, unsafe_allow_html=True)
 
 # ── 4. Autenticação & Sessão Persistida (Lembre-me Seguro por Token de Navegador) ──
@@ -703,7 +725,9 @@ with st.container(key="mathai_header"):
         icone_tema = "☀️" if is_dark else "🌙"
         help_tema = "Modo Claro" if is_dark else "Modo Escuro"
         if st.button(icone_tema, help=help_tema, use_container_width=True, key="btn_toggle_tema"):
-            st.session_state.tema = "light" if is_dark else "dark"
+            novo_tema = "light" if is_dark else "dark"
+            st.session_state.tema = novo_tema
+            st.query_params["theme"] = novo_tema
             st.rerun()
 
     with col_space:
