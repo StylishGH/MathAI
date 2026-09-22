@@ -85,3 +85,120 @@ def e_questao_discursiva(questao: dict) -> bool:
 
     return True  # Sem alternativas e gabarito não é letra → discursiva
 
+
+def fix_latex_row_breaks(latex_str: str) -> str:
+    r"""
+    Substitui quebras de linha com barra simples (\ ) por barra dupla (\\ )
+    dentro de ambientes LaTeX como cases, pmatrix, matrix, aligned, etc.
+    Isso previne que linhas de sistemas ou matrizes fiquem coladas em uma só linha
+    quando o JSON da IA decodifica '\\' como '\'.
+    """
+    env_pattern = r'(\\begin\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\})([\s\S]*?)(\\end\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\})'
+
+    def repl_env(match):
+        start = match.group(1)
+        body = match.group(2)
+        end = match.group(3)
+        # Substitui barra invertida isolada seguida de espaço, quebra de linha ou número
+        body = re.sub(r'(?<!\\)\\(?:\s+|\n|(?=[0-9]))', r'\\\\ ', body)
+        return f"{start}{body}{end}"
+
+    return re.sub(env_pattern, repl_env, latex_str)
+
+
+def has_natural_language(text: str) -> bool:
+    """Detecta se há palavras em linguagem natural (português/inglês) no texto."""
+    cleaned = re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', ' ', text)
+    cleaned = re.sub(r'\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}', ' ', cleaned)
+    cleaned = re.sub(r'[{}\[\]()_^\d\s+\-*=<>|/\\,.;:&!~]', ' ', cleaned)
+
+    words = [w for w in cleaned.split() if len(w) > 2]
+    termos_math = {
+        'sin', 'cos', 'tan', 'cot', 'sec', 'csc', 'sen', 'tg', 'cotg',
+        'log', 'ln', 'exp', 'det', 'dim', 'ker', 'gcd', 'mdc', 'mmc',
+        'max', 'min', 'mod', 'lim', 'sup', 'inf', 'arg', 'deg'
+    }
+    palavras_reais = [w for w in words if w.lower() not in termos_math]
+    return len(palavras_reais) > 0
+
+
+def is_math_line(text: str) -> bool:
+    """Verifica se uma linha isolada é uma fórmula matemática."""
+    t = text.strip()
+    if not t:
+        return False
+    if has_natural_language(t):
+        return False
+    if any(k in t for k in [r'\begin{', r'\end{', r'\pmatrix', r'\cases', r'\matrix', r'\aligned', r'\implies', r'\frac', r'\sqrt', '^', '_', '=', '<', '>']):
+        return True
+    return False
+
+
+def formatar_transcricao_latex(transcricao: str) -> str:
+    """
+    Formata o texto de transcrição OCR para renderização impecável no Streamlit st.markdown.
+    - Corrige quebras de linha em ambientes matriciais/sistemas (ex: \\begin{cases}).
+    - Garante que blocos matemáticos estejam devidamente delimitados por $$...$$ para ativação do KaTeX.
+    - Preserva texto explicativo ou comentários em linguagem natural sem quebrar a tipografia.
+    """
+    if not transcricao or not isinstance(transcricao, str):
+        return ""
+
+    texto = fix_latex_row_breaks(transcricao.strip())
+
+    # Se já estiver completamente envolvido por $$ ou $$, ou se já tiver delimitadores
+    if texto.startswith("$$") and texto.endswith("$$"):
+        return texto
+
+    # Protege ambientes como \begin{cases}...\end{cases} substituindo por placeholders temporários
+    env_regex = r'(\\begin\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}[\s\S]*?\\end\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\})'
+    placeholders = {}
+
+    def store_env(m):
+        key = f"__MATH_ENV_{len(placeholders)}__"
+        placeholders[key] = m.group(0)
+        return key
+
+    texto_masked = re.sub(env_regex, store_env, texto)
+
+    # Processa linha a linha
+    linhas = texto_masked.splitlines()
+    novas_linhas = []
+
+    for l in linhas:
+        l_trim = l.strip()
+        if not l_trim:
+            novas_linhas.append("")
+            continue
+
+        # Se já tem $ ou $$ ou sintaxe markdown
+        if l_trim.startswith("$$") or l_trim.startswith("$") or l_trim.startswith("#") or l_trim.startswith("- ") or l_trim.startswith("* "):
+            novas_linhas.append(l)
+            continue
+
+        # Se a linha contém um placeholder de ambiente
+        contains_placeholder = any(k in l_trim for k in placeholders)
+        if contains_placeholder:
+            for k, val in placeholders.items():
+                l_trim = l_trim.replace(k, val)
+            if not has_natural_language(l_trim):
+                novas_linhas.append(f"$${l_trim}$$")
+            else:
+                novas_linhas.append(l_trim)
+            continue
+
+        # Se for uma linha puramente matemática
+        if is_math_line(l_trim):
+            novas_linhas.append(f"$${l_trim}$$")
+        else:
+            novas_linhas.append(l)
+
+    # Restaura qualquer placeholder que ainda reste
+    resultado = "\n".join(novas_linhas)
+    for k, val in placeholders.items():
+        resultado = resultado.replace(k, val)
+
+    resultado = re.sub(r'\n{3,}', '\n\n', resultado)
+    return resultado.strip()
+
+

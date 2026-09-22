@@ -8,6 +8,7 @@ import json
 import base64
 from google.genai import types
 from src.ai.client import criar_cliente_gemini, tem_chave_configurada
+from src.app.utils import formatar_transcricao_latex
 
 
 PROMPT_SISTEMA_AVALIADOR = """Você é o Avaliador Cognitivo do MathAI, uma inteligência artificial pedagógica especializada em ensino de Matemática para o Ensino Superior e Concursos Militares de Alto Nível (ESA, Espcex, ITA, IME).
@@ -17,11 +18,15 @@ Seu papel é analisar a resolução de um estudante — que pode vir como uma im
 DIRETRIZES FUNDAMENTAIS:
 1. RIGOR MATEMÁTICO: Verifique cada passagem de linha, igualdade, sinal e teorema aplicado.
 2. PEDAGOGIA SOCRÁTICA: Não apenas diga se está certo ou errado. Explique COMO o aluno pensou, qual técnica utilizou e onde a lógica falhou (se falhou).
-3. TRANSCRIÇÃO LATEX: Transcreva as fórmulas e passos identificados no rascunho usando sintaxe LaTeX padrão ($...$ ou $$...$$).
+3. TRANSCRIÇÃO LATEX:
+   - Transcreva as fórmulas e passos identificados no rascunho usando sintaxe LaTeX padrão.
+   - SEMPRE envolva expressões matemáticas em destaque com blocos $$ ... $$ e termos inline com $ ... $.
+   - Para matrizes e sistemas (\\begin{cases}, \\begin{pmatrix}, \\begin{aligned}), use quebras de linha com barras duplas (\\\\\\\\ dentro de strings JSON) para que o LaTeX quebre as linhas corretamente.
+   - Nunca deixe expressões LaTeX soltas sem os delimitadores $$...$$ ou $...$.
 4. RESPOSTA EM JSON ESTRUTURADO: Você DEVE retornar EXCLUSIVAMENTE um objeto JSON válido no seguinte formato:
 
 {
-  "transcricao_latex": "Texto com os passos e fórmulas lidas no rascunho formatadas em LaTeX",
+  "transcricao_latex": "Passos e equações lidas no rascunho devidamente delimitadas por $$...$$ ou $...$",
   "passos": [
     "Passo 1: ...",
     "Passo 2: ..."
@@ -164,12 +169,14 @@ DADOS FORNECIDOS PELO ESTUDANTE:
             texto_json = "\n".join(linhas).strip()
 
         resultado = json.loads(texto_json)
+        if "transcricao_latex" in resultado and resultado["transcricao_latex"]:
+            resultado["transcricao_latex"] = formatar_transcricao_latex(resultado["transcricao_latex"])
         resultado["modelo_utilizado"] = modelo_final_usado
         return resultado
     except Exception:
         texto_bruto = (resposta.text or "") if hasattr(resposta, "text") else ""
         return {
-            "transcricao_latex": texto_bruto,
+            "transcricao_latex": formatar_transcricao_latex(texto_bruto),
             "passos": ["Análise processada em formato de texto livre"],
             "estrategia_identificada": "Geral",
             "status_resolucao": "incompleto",

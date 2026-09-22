@@ -114,7 +114,7 @@ def registrar_tentativa(
     return tentativa_id
 
 
-def obter_historico_tentativas(limite: int = 50, aluno_id: str | None = None):
+def obter_historico_tentativas(limite: int = 50, aluno_id: int | None = None):
     """Retorna as últimas tentativas com informações da questão associada."""
     con = pegar_conexao()
     cur = con.cursor()
@@ -146,7 +146,7 @@ def obter_historico_tentativas(limite: int = 50, aluno_id: str | None = None):
     return historico
 
 
-def obter_metricas_estudante(aluno_id: str | None = None):
+def obter_metricas_estudante(aluno_id: int | None = None):
     """
     Agrega dados de tentativas para alimentar o Dashboard do Estudante:
     - Métricas gerais (total, acertos, taxa, tempo médio)

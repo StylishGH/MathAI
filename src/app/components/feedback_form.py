@@ -9,7 +9,7 @@ import base64
 from pathlib import Path
 import streamlit as st
 from src.database.attempts import registrar_tentativa, salvar_diagnostico_ia, registrar_dica_socratica
-from src.app.utils import extrair_enunciado_e_alternativas, e_questao_discursiva
+from src.app.utils import extrair_enunciado_e_alternativas, e_questao_discursiva, formatar_transcricao_latex
 
 
 def _renderizar_anexo(bytes_conteudo: bytes, mime_type: str = "image/png", nome_arquivo: str = ""):
@@ -566,9 +566,9 @@ def _renderizar_card_ia(diag: dict):
     badge_html = f'<span style="background: rgba(124, 58, 237, 0.12); border: 1px solid rgba(124, 58, 237, 0.3); padding: 3px 10px; border-radius: 9999px; font-size: 0.76rem; color: #a78bfa; margin-right: 6px; font-weight: 600;">{modelo_badge}</span>' if modelo_badge else ""
 
 
-    st.markdown(
-        f"""
-        <div style="background: {bg_status}; border: 1.5px solid {cor_status}; border-radius: 12px; padding: 16px 20px; margin: 16px 0;">
+    with st.container(border=True):
+        st.markdown(
+            f"""
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
                 <div style="display: flex; align-items: center; gap: 8px;">
                     <span style="font-size: 1.2rem;">🧠</span>
@@ -581,48 +581,43 @@ def _renderizar_card_ia(diag: dict):
                     </span>
                 </div>
             </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    # 1. Estratégia Identificada
-    estrategia = diag.get("estrategia_identificada")
-    if estrategia:
-        st.markdown(f"**🎯 Técnica / Estratégia Identificada:** `{estrategia}`")
-
-    # 2. Transcrição em LaTeX
-    transcricao = diag.get("transcricao_latex")
-    if transcricao:
-        st.markdown("**📝 Leitura da sua Resolução (OCR / LaTeX):**")
-        st.markdown(
-            f"""<div style="background: rgba(0,0,0,0.15); padding: 10px 14px; border-radius: 8px; margin-bottom: 10px;">""",
+            """,
             unsafe_allow_html=True
         )
-        st.markdown(transcricao)
-        st.markdown("</div>", unsafe_allow_html=True)
 
-    # 3. Passos Identificados
-    passos = diag.get("passos", [])
-    if passos and isinstance(passos, list):
-        st.markdown("**🔢 Passos do Raciocínio:**")
-        for p in passos:
-            st.markdown(f"- {p}")
+        # 1. Estratégia Identificada
+        estrategia = diag.get("estrategia_identificada")
+        if estrategia:
+            st.markdown(f"**🎯 Técnica / Estratégia Identificada:** `{estrategia}`")
 
-    # 4. Parecer Pedagógico
-    diagnostico_texto = diag.get("diagnostico")
-    if diagnostico_texto:
-        diag_limpo = str(diagnostico_texto).replace("Gemini Pro", "MathAI Pro").replace("Gemini 3.7 Flash", "MathAI Flash").replace("Gemini", "MathAI")
-        st.markdown(f"**💬 Parecer Pedagógico:** {diag_limpo}")
+        # 2. Transcrição em LaTeX
+        transcricao = diag.get("transcricao_latex")
+        if transcricao:
+            st.markdown("**📝 Leitura da sua Resolução (OCR / LaTeX):**")
+            transcricao_formatada = formatar_transcricao_latex(transcricao)
+            with st.container(border=True):
+                st.markdown(transcricao_formatada)
 
-    # 5. Linha do Erro (se houver)
-    linha_erro = diag.get("linha_do_erro")
-    if linha_erro:
-        st.warning(f"⚠️ **Ponto de Atenção:** {linha_erro}")
+        # 3. Passos Identificados
+        passos = diag.get("passos", [])
+        if passos and isinstance(passos, list):
+            st.markdown("**🔢 Passos do Raciocínio:**")
+            for p in passos:
+                st.markdown(f"- {p}")
 
-    # 6. Dica Socrática de Próximo Passo
-    dica = diag.get("dica_proximo_passo")
-    if dica:
-        st.info(f"💡 **Provocação para Evolução:** {dica}")
+        # 4. Parecer Pedagógico
+        diagnostico_texto = diag.get("diagnostico")
+        if diagnostico_texto:
+            diag_limpo = str(diagnostico_texto).replace("Gemini Pro", "MathAI Pro").replace("Gemini 3.7 Flash", "MathAI Flash").replace("Gemini", "MathAI")
+            st.markdown(f"**💬 Parecer Pedagógico:** {diag_limpo}")
 
-    st.markdown("</div>", unsafe_allow_html=True)
+        # 5. Linha do Erro (se houver)
+        linha_erro = diag.get("linha_do_erro")
+        if linha_erro:
+            st.warning(f"⚠️ **Ponto de Atenção:** {linha_erro}")
+
+        # 6. Dica Socrática de Próximo Passo
+        dica = diag.get("dica_proximo_passo")
+        if dica:
+            st.info(f"💡 **Provocação para Evolução:** {dica}")
 
