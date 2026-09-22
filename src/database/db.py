@@ -34,18 +34,38 @@ def _obter_credenciais_turso():
                 if "=" in line and not line.startswith("#"):
                     k, v = line.split("=", 1)
                     k, v = k.strip(), v.strip().strip("\"'")
-                    if k == "TURSO_DATABASE_URL":
+                    if k in ("TURSO_DATABASE_URL", "DATABASE_URL"):
                         url = v
-                    elif k == "TURSO_AUTH_TOKEN":
+                    elif k in ("TURSO_AUTH_TOKEN", "AUTH_TOKEN"):
                         token = v
 
     if not url or not token:
         try:
             import streamlit as st
-            if "TURSO_DATABASE_URL" in st.secrets:
-                url = st.secrets["TURSO_DATABASE_URL"]
-            if "TURSO_AUTH_TOKEN" in st.secrets:
-                token = st.secrets["TURSO_AUTH_TOKEN"]
+            # Busca direta nas chaves do st.secrets
+            for k in ("TURSO_DATABASE_URL", "turso_database_url", "DATABASE_URL", "database_url"):
+                if k in st.secrets:
+                    url = str(st.secrets[k]).strip().strip("\"'")
+                    break
+
+            for k in ("TURSO_AUTH_TOKEN", "turso_auth_token", "AUTH_TOKEN", "auth_token"):
+                if k in st.secrets:
+                    token = str(st.secrets[k]).strip().strip("\"'")
+                    break
+
+            # Se o usuário configurou dentro de uma seção [turso] no TOML:
+            if "turso" in st.secrets:
+                sec = st.secrets["turso"]
+                if not url:
+                    for k in ("TURSO_DATABASE_URL", "DATABASE_URL", "url", "database_url"):
+                        if k in sec:
+                            url = str(sec[k]).strip().strip("\"'")
+                            break
+                if not token:
+                    for k in ("TURSO_AUTH_TOKEN", "AUTH_TOKEN", "token", "auth_token"):
+                        if k in sec:
+                            token = str(sec[k]).strip().strip("\"'")
+                            break
         except Exception:
             pass
 
@@ -219,6 +239,22 @@ class TursoConnection:
             pass
 
 
+def _garantir_schema_existe(con):
+    """Garante que as tabelas básicas do schema.sql existam no SQLite local para evitar OperationalError."""
+    try:
+        cur = con.cursor()
+        cur.execute("SELECT 1 FROM questoes LIMIT 1")
+    except Exception:
+        try:
+            if SCHEMA_PATH.exists():
+                with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
+                    schema_sql = f.read()
+                con.executescript(schema_sql)
+                con.commit()
+        except Exception as e:
+            print(f"Erro ao inicializar schema de fallback: {e}")
+
+
 def pegar_conexao():
     """
     Retorna conexão com o banco de dados.
@@ -237,6 +273,7 @@ def pegar_conexao():
     con = sqlite3.connect(DB_PATH)
     con.execute("PRAGMA foreign_keys = ON;")
     con.row_factory = sqlite3.Row
+    _garantir_schema_existe(con)
     return con
 
 def init_db():
