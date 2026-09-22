@@ -74,7 +74,20 @@ def show():
         color: #0f172a !important;
         background-color: #ffffff !important;
     }
+    /* Separar as abas: Entrar no canto esquerdo, Criar Conta no canto direito */
+    div[data-baseweb="tab-list"] {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        border-bottom: 1.5px solid rgba(124, 58, 237, 0.25) !important;
+        margin-bottom: 18px !important;
+        gap: 0 !important;
+    }
     button[data-baseweb="tab"] {
+        flex: 0 1 auto !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        padding: 8px 12px !important;
         color: #64748b !important;
     }
     button[data-baseweb="tab"][aria-selected="true"] {
@@ -86,6 +99,25 @@ def show():
         background-color: #13111c !important;
         color: #f8fafc !important;
         border: 1.5px solid rgba(124, 58, 237, 0.35) !important;
+    }
+    div[data-baseweb="tab-list"] {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        border-bottom: 1.5px solid rgba(124, 58, 237, 0.25) !important;
+        margin-bottom: 18px !important;
+        gap: 0 !important;
+    }
+    button[data-baseweb="tab"] {
+        flex: 0 1 auto !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        padding: 8px 12px !important;
+        color: #94a3b8 !important;
+    }
+    button[data-baseweb="tab"][aria-selected="true"] {
+        color: #c084fc !important;
+        border-bottom-color: #a855f7 !important;
     }
     """
 
@@ -521,20 +553,23 @@ def show():
             g_cid, g_csec = obter_credenciais_google()
             if g_cid:
                 auth_url = gerar_url_auth_google(g_cid, "https://mathia.streamlit.app")
+                bg_btn = "#161329" if is_dark else "#ffffff"
+                border_btn = "rgba(124, 58, 237, 0.55)" if is_dark else "#cbd5e1"
+                text_btn = "#ffffff" if is_dark else "#1e293b"
+                shadow_btn = "0 4px 16px rgba(0,0,0,0.4)" if is_dark else "0 2px 8px rgba(0,0,0,0.06)"
                 st.markdown(f"""
                 <div style="margin-bottom: 16px;">
-                    <a href="{auth_url}" target="_self" style="text-decoration: none;">
+                    <a href="{auth_url}" target="_self" style="text-decoration: none !important; display: block; width: 100%;">
                         <div style="display: flex; align-items: center; justify-content: center; gap: 12px;
-                                    background: #ffffff; color: #1f2937; font-weight: 600; font-size: 0.95rem;
-                                    padding: 11px 18px; border-radius: 12px; border: 1.5px solid #cbd5e1;
-                                    box-shadow: 0 3px 10px rgba(0,0,0,0.06); cursor: pointer; transition: all 0.2s ease;">
-                            <svg width="20" height="20" viewBox="0 0 24 24">
+                                    background: {bg_btn}; border: 1.5px solid {border_btn}; border-radius: 12px;
+                                    padding: 12px 18px; box-shadow: {shadow_btn}; cursor: pointer; transition: all 0.2s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" style="flex-shrink: 0;">
                                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
                                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
                             </svg>
-                            <span style="color: #111827 !important; font-weight: 600 !important; font-size: 0.95rem !important;">Continuar com o Google</span>
+                            <span style="color: {text_btn} !important; font-weight: 600 !important; font-size: 0.95rem !important;">Continuar com o Google</span>
                         </div>
                     </a>
                 </div>
@@ -578,6 +613,35 @@ def show():
 
         # ── 2. ABA CADASTRO ────────────────────────────────────────────────────
         with aba[1]:
+            g_cid, g_csec = obter_credenciais_google()
+            if g_cid:
+                auth_url = gerar_url_auth_google(g_cid, "https://mathia.streamlit.app")
+                bg_btn = "#161329" if is_dark else "#ffffff"
+                border_btn = "rgba(124, 58, 237, 0.55)" if is_dark else "#cbd5e1"
+                text_btn = "#ffffff" if is_dark else "#1e293b"
+                shadow_btn = "0 4px 14px rgba(0,0,0,0.4)" if is_dark else "0 2px 8px rgba(0,0,0,0.06)"
+                st.markdown(f"""
+                <div style="margin-bottom: 16px;">
+                    <a href="{auth_url}" target="_self" style="text-decoration: none !important; display: block; width: 100%;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 12px;
+                                    background: {bg_btn}; border: 1.5px solid {border_btn}; border-radius: 12px;
+                                    padding: 12px 18px; box-shadow: {shadow_btn}; cursor: pointer; transition: all 0.2s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                            </svg>
+                            <span style="color: {text_btn} !important; font-weight: 600 !important; font-size: 0.95rem !important;">Cadastrar com o Google</span>
+                        </div>
+                    </a>
+                </div>
+                <div style="display: flex; align-items: center; text-align: center; margin: 14px 0 18px 0;">
+                    <div style="flex: 1; height: 1px; background: {'rgba(255,255,255,0.15)' if is_dark else '#e2e8f0'};"></div>
+                    <span style="padding: 0 10px; font-size: 0.76rem; color: {text_muted}; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">ou cadastro manual completo</span>
+                    <div style="flex: 1; height: 1px; background: {'rgba(255,255,255,0.15)' if is_dark else '#e2e8f0'};"></div>
+                </div>
+                """, unsafe_allow_html=True)
             st.markdown("#### Cadastro Completo & Personalizado")
             st.caption("Preencha seus dados para montarmos sua grade de estudos e liberar o acesso.")
 
