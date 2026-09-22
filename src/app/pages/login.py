@@ -5,13 +5,20 @@ Dados cadastrais completos (CPF, CEP, Endereço via ViaCEP)
 e Verificação em Duas Etapas (2FA / OTP de 6 dígitos).
 """
 
+import uuid
 import streamlit as st
+from src.auth.google_auth import (
+    obter_credenciais_google,
+    gerar_url_auth_google,
+    trocar_codigo_por_usuario_google
+)
 from src.database.users import (
     cadastrar_usuario,
     fazer_login,
     verificar_codigo_otp,
     reenviar_codigo_otp,
     buscar_endereco_por_cep,
+    buscar_usuario_por_email,
     formatar_cpf,
     validar_cpf,
     criar_sessao_lembrada,
@@ -214,6 +221,187 @@ def show():
         </div>
         """, unsafe_allow_html=True)
 
+        # ── 0. INTERCEPTOR GOOGLE OAUTH ──────────────────────────────────────
+        code = st.query_params.get("code")
+        if code:
+            g_cid, g_csec = obter_credenciais_google()
+            if g_cid and g_csec:
+                red_uri = "https://mathia.streamlit.app"
+                with st.spinner("Autenticando com o Google..."):
+                    u_google = trocar_codigo_por_usuario_google(code, g_cid, g_csec, red_uri)
+                st.query_params.clear()
+                if u_google:
+                    u_db = buscar_usuario_por_email(u_google["email"])
+                    if u_db:
+                        st.session_state.usuario_logado = u_db
+                        tok = criar_sessao_lembrada(u_db["id"])
+                        st.query_params["session"] = tok
+                        st.toast(f"Bem-vindo(a) de volta, {u_db['nome'].split()[0]}! 👋", icon="🚀")
+                        st.rerun()
+                    else:
+                        # Usuário novo! Aciona tela de onboarding para completar perfil
+                        st.session_state.google_onboarding = u_google
+                        st.rerun()
+                else:
+                    st.error("Falha ao autenticar com o Google. Tente novamente.")
+
+        # ── FLUXO ONBOARDING GOOGLE (NOVO USUÁRIO) ───────────────────────────
+        if st.session_state.get("google_onboarding"):
+            g_user = st.session_state.google_onboarding
+            g_nome = g_user.get("nome", "")
+            g_email = g_user.get("email", "")
+            g_pic = g_user.get("picture", "")
+
+            st.markdown(f"""
+            <div class="auth-card">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    {'<img src="' + g_pic + '" style="width: 64px; height: 64px; border-radius: 50%; margin-bottom: 8px; border: 2px solid #7c3aed;">' if g_pic else '<div style="font-size: 2.2rem; margin-bottom: 4px;">🎓</div>'}
+                    <h3 style="margin: 0; color: {text_main}; font-weight: 700;">Quase lá, {g_nome.split()[0]}!</h3>
+                    <p style="font-size: 0.86rem; color: {text_muted}; margin-top: 4px;">
+                        Sua conta Google foi verificada. Complete seus dados de estudante para personalizarmos seus treinos.
+                    </p>
+                </div>
+            """, unsafe_allow_html=True)
+
+            with st.form("form_google_onboarding"):
+                col_n, col_e = st.columns(2)
+                with col_n:
+                    st.text_input("Nome", value=g_nome, disabled=True)
+                with col_e:
+                    st.text_input("E-mail", value=g_email, disabled=True)
+
+                col_id, col_cpf = st.columns(2)
+                with col_id:
+                    g_idade = st.number_input("Idade *", min_value=10, max_value=90, value=18, key="g_idade")
+                with col_cpf:
+                    g_cpf = st.text_input("🪪 CPF *", placeholder="000.000.000-00", key="g_cpf")
+
+                g_celular = st.text_input("📱 Celular / WhatsApp", placeholder="(21) 99999-9999", key="g_celular")
+
+                # Endereço
+                st.markdown("---")
+                st.markdown("##### 📍 Endereço")
+                col_c1, col_c2 = st.columns([2, 1])
+                with col_c1:
+                    g_cep = st.text_input("CEP", placeholder="00000-000", key="g_cad_cep")
+                with col_c2:
+                    st.write("")
+                    st.write("")
+                    if st.form_submit_button("🔍 Buscar CEP"):
+                        if g_cep:
+                            end = buscar_endereco_por_cep(g_cep)
+                            if end:
+                                st.session_state["g_logradouro"] = end.get("logradouro", "")
+                                st.session_state["g_bairro"] = end.get("bairro", "")
+                                st.session_state["g_cidade"] = end.get("cidade", "")
+                                st.session_state["g_estado"] = end.get("estado", "")
+                                st.toast("Endereço preenchido!", icon="📍")
+                                st.rerun()
+
+                col_r, col_num = st.columns([3, 1])
+                with col_r:
+                    g_logradouro = st.text_input("Logradouro / Rua", placeholder="Rua...", key="g_logradouro")
+                with col_num:
+                    g_numero = st.text_input("Número", placeholder="123", key="g_numero")
+
+                col_b, col_cid, col_uf = st.columns([1.5, 2, 1])
+                with col_b:
+                    g_bairro = st.text_input("Bairro", placeholder="Bairro", key="g_bairro")
+                with col_cid:
+                    g_cidade = st.text_input("Cidade", placeholder="Cidade", key="g_cidade")
+                with col_uf:
+                    g_estado = st.text_input("UF", placeholder="RJ", max_chars=2, key="g_estado")
+
+                # Escolaridade & Objetivos
+                st.markdown("---")
+                st.markdown("##### 🎓 Formação & Objetivos")
+                g_escolaridade = st.selectbox("Nível de Escolaridade *", options=ESCOLARIDADE_OPCOES, index=1, key="g_esc")
+                eh_sup = g_escolaridade in ["Ensino Superior (Graduação)", "Pós-Graduação / Especialização", "Mestrado", "Doutorado"]
+                g_faculdade = None
+                g_curso = None
+                if eh_sup:
+                    col_f, col_cur = st.columns(2)
+                    with col_f:
+                        g_faculdade = st.selectbox("Instituição / Faculdade", options=FACULDADES_BRASIL, key="g_fac")
+                    with col_cur:
+                        g_curso = st.text_input("Curso de Graduação *", placeholder="Ex: Engenharia, Matemática", key="g_curso")
+
+                st.markdown("##### 🎯 Objetivos de Estudo *")
+                g_motivos = []
+                for cod, rotulo in MOTIVOS_OPCOES.items():
+                    if st.checkbox(rotulo, key=f"g_mot_{cod}"):
+                        g_motivos.append(cod)
+
+                st.markdown("##### 🎖️ Concursos de Interesse")
+                col_m, col_v = st.columns(2)
+                g_focos = []
+                with col_m:
+                    st.caption("Concursos Militares:")
+                    for conc in CONCURSOS_MILITARES:
+                        if st.checkbox(conc, key=f"g_cm_{conc}"):
+                            g_focos.append(conc)
+                with col_v:
+                    st.caption("Vestibulares / Outros:")
+                    for conc in CONCURSOS_VESTIBULARES:
+                        if st.checkbox(conc, key=f"g_cv_{conc}"):
+                            g_focos.append(conc)
+
+                btn_concluir_google = st.form_submit_button("🚀 Concluir Cadastro e Começar a Treinar", use_container_width=True, type="primary")
+
+                if btn_concluir_google:
+                    erros = []
+                    if not g_cpf.strip():
+                        erros.append("CPF é obrigatório.")
+                    elif not validar_cpf(g_cpf):
+                        erros.append("CPF inválido.")
+                    if not g_motivos:
+                        erros.append("Selecione pelo menos 1 objetivo de estudo.")
+                    if eh_sup and not (g_curso and g_curso.strip()):
+                        erros.append("Informe seu curso de graduação.")
+
+                    if erros:
+                        for e in erros:
+                            st.error(e)
+                    else:
+                        senha_segura = uuid.uuid4().hex
+                        res_cad = cadastrar_usuario(
+                            nome=g_nome,
+                            email=g_email,
+                            senha=senha_segura,
+                            cpf=g_cpf,
+                            idade=int(g_idade),
+                            celular=g_celular or None,
+                            cep=g_cep or None,
+                            logradouro=g_logradouro or None,
+                            numero=g_numero or None,
+                            bairro=g_bairro or None,
+                            cidade=g_cidade or None,
+                            estado=g_estado or None,
+                            motivos=g_motivos,
+                            escolaridade=g_escolaridade,
+                            faculdade=g_faculdade if eh_sup else None,
+                            curso=g_curso.strip() if (eh_sup and g_curso) else None,
+                            concursos_foco=g_focos,
+                            verificado=1
+                        )
+                        if res_cad["ok"]:
+                            st.session_state.usuario_logado = res_cad["usuario"]
+                            token = criar_sessao_lembrada(res_cad["usuario"]["id"])
+                            st.query_params["session"] = token
+                            st.session_state.pop("google_onboarding", None)
+                            st.success(f"Bem-vindo(a) ao MathAI, {g_nome.split()[0]}! 🎉")
+                            st.balloons()
+                            st.rerun()
+                        else:
+                            st.error(res_cad["erro"])
+
+            if st.button("⬅️ Cancelar e Voltar", use_container_width=True, key="btn_cancel_google"):
+                st.session_state.pop("google_onboarding", None)
+                st.rerun()
+
+            st.markdown("</div>", unsafe_allow_html=True)
+            return
+
         # ── FLUXO DE VERIFICAÇÃO EM 2 ETAPAS (2FA / OTP) ──────────────────────
         if st.session_state.get("verificando_email"):
             email_verif = st.session_state.verificando_email
@@ -313,6 +501,32 @@ def show():
 
         # ── 1. ABA LOGIN ───────────────────────────────────────────────────────
         with aba[0]:
+            g_cid, g_csec = obter_credenciais_google()
+            if g_cid:
+                auth_url = gerar_url_auth_google(g_cid, "https://mathia.streamlit.app")
+                st.markdown(f"""
+                <div style="margin-bottom: 16px;">
+                    <a href="{auth_url}" target="_self" style="text-decoration: none;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 12px;
+                                    background: #ffffff; color: #1f2937; font-weight: 600; font-size: 0.95rem;
+                                    padding: 11px 18px; border-radius: 12px; border: 1.5px solid #cbd5e1;
+                                    box-shadow: 0 3px 10px rgba(0,0,0,0.06); cursor: pointer; transition: all 0.2s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                            </svg>
+                            <span>Continuar com o Google</span>
+                        </div>
+                    </a>
+                </div>
+                <div style="display: flex; align-items: center; text-align: center; margin: 14px 0 18px 0;">
+                    <div style="flex: 1; height: 1px; background: {'rgba(255,255,255,0.15)' if is_dark else '#e2e8f0'};"></div>
+                    <span style="padding: 0 10px; font-size: 0.76rem; color: {text_muted}; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">ou com e-mail</span>
+                    <div style="flex: 1; height: 1px; background: {'rgba(255,255,255,0.15)' if is_dark else '#e2e8f0'};"></div>
+                </div>
+                """, unsafe_allow_html=True)
             with st.form("form_login", clear_on_submit=False):
                 st.markdown("#### Acesse sua conta")
                 email_login = st.text_input("📧 E-mail", placeholder="seu@email.com", key="login_email")

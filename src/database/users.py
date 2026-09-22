@@ -335,11 +335,12 @@ def cadastrar_usuario(
     escolaridade: str | None = None,
     faculdade: str | None = None,
     curso: str | None = None,
-    concursos_foco: list[str] | None = None
+    concursos_foco: list[str] | None = None,
+    verificado: int = 0
 ) -> dict:
     """
-    Cria um novo usuário com status pendente de verificação (verificado=0)
-    e gera o código OTP de 6 dígitos.
+    Cria um novo usuário. Se verificado=0 (padrão), status pendente de verificação (OTP).
+    Se verificado=1 (ex: Google OAuth), usuário já nasce ativado.
     """
     _garantir_tabelas_lazy()
     con = pegar_conexao()
@@ -352,7 +353,7 @@ def cadastrar_usuario(
                 nome, email, senha_hash, cpf, idade, celular, cep,
                 logradouro, numero, bairro, cidade, estado, motivos,
                 escolaridade, faculdade, curso, concursos_foco, verificado
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             nome.strip(),
             email.strip().lower(),
@@ -370,11 +371,35 @@ def cadastrar_usuario(
             escolaridade.strip() if escolaridade else None,
             faculdade.strip() if faculdade else None,
             curso.strip() if curso else None,
-            json.dumps(concursos_foco or [], ensure_ascii=False)
+            json.dumps(concursos_foco or [], ensure_ascii=False),
+            verificado
         ))
         con.commit()
         usuario_id = cur.lastrowid
         con.close()
+
+        # Usuários do Google já nascem verificados
+        if verificado == 1:
+            return {
+                "ok": True,
+                "pendente_verificacao": False,
+                "email": email.strip().lower(),
+                "usuario": {
+                    "id": usuario_id,
+                    "nome": nome.strip(),
+                    "email": email.strip().lower(),
+                    "cpf": cpf_formatado,
+                    "idade": idade,
+                    "celular": celular,
+                    "cep": cep,
+                    "escolaridade": escolaridade,
+                    "faculdade": faculdade,
+                    "curso": curso,
+                    "concursos_foco": concursos_foco or [],
+                    "motivos": motivos or [],
+                    "verificado": 1
+                }
+            }
 
         # Gera código OTP de verificação
         codigo_otp = gerar_codigo_verificacao(email)
