@@ -27,6 +27,11 @@ def obter_credenciais_google():
         except Exception:
             pass
 
+    if client_id:
+        client_id = str(client_id).strip().strip('"').strip("'")
+    if client_secret:
+        client_secret = str(client_secret).strip().strip('"').strip("'")
+
     return client_id, client_secret
 
 
