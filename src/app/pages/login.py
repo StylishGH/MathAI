@@ -571,7 +571,7 @@ def show():
                 shadow_btn = "0 4px 16px rgba(0,0,0,0.4)" if is_dark else "0 2px 8px rgba(0,0,0,0.06)"
                 st.markdown(f"""
                 <div style="margin-bottom: 16px;">
-                    <a href="{auth_url}" target="_top" style="text-decoration: none !important; display: block; width: 100%;">
+                    <a href="{auth_url}" target="_blank" style="text-decoration: none !important; display: block; width: 100%;">
                         <div style="display: flex; align-items: center; justify-content: center; gap: 12px;
                                     background: {bg_btn}; border: 1.5px solid {border_btn}; border-radius: 12px;
                                     padding: 12px 18px; box-shadow: {shadow_btn}; cursor: pointer; transition: all 0.2s ease;">
@@ -634,7 +634,7 @@ def show():
                 shadow_btn = "0 4px 14px rgba(0,0,0,0.4)" if is_dark else "0 2px 8px rgba(0,0,0,0.06)"
                 st.markdown(f"""
                 <div style="margin-bottom: 16px;">
-                    <a href="{auth_url}" target="_top" style="text-decoration: none !important; display: block; width: 100%;">
+                    <a href="{auth_url}" target="_blank" style="text-decoration: none !important; display: block; width: 100%;">
                         <div style="display: flex; align-items: center; justify-content: center; gap: 12px;
                                     background: {bg_btn}; border: 1.5px solid {border_btn}; border-radius: 12px;
                                     padding: 12px 18px; box-shadow: {shadow_btn}; cursor: pointer; transition: all 0.2s ease;">
