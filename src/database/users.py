@@ -124,25 +124,44 @@ def validar_cpf(cpf: str) -> bool:
 
 def buscar_endereco_por_cep(cep: str) -> dict | None:
     """
-    Consulta o webservice público ViaCEP para autopreencher endereço.
-    Retorna dict com logradouro, bairro, localidade (cidade), uf (estado) ou None.
+    Consulta o webservice público ViaCEP (com fallback para BrasilAPI) para autopreencher endereço.
+    Retorna dict com logradouro, bairro, cidade, estado ou None.
     """
     cep_limpo = re.sub(r"\D", "", cep or "")
     if len(cep_limpo) != 8:
         return None
+
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) MathAI/1.0"}
+
+    # 1. Tentativa principal: ViaCEP
     try:
-        resp = requests.get(f"https://viacep.com.br/ws/{cep_limpo}/json/", timeout=3.5)
+        resp = requests.get(f"https://viacep.com.br/ws/{cep_limpo}/json/", headers=headers, timeout=4.0)
         if resp.status_code == 200:
             dados = resp.json()
             if not dados.get("erro"):
                 return {
-                    "logradouro": dados.get("logradouro", ""),
-                    "bairro": dados.get("bairro", ""),
-                    "cidade": dados.get("localidade", ""),
-                    "estado": dados.get("uf", "")
+                    "logradouro": dados.get("logradouro", "") or "",
+                    "bairro": dados.get("bairro", "") or "",
+                    "cidade": dados.get("localidade", "") or "",
+                    "estado": dados.get("uf", "") or ""
                 }
     except Exception:
         pass
+
+    # 2. Fallback resiliente: BrasilAPI
+    try:
+        resp2 = requests.get(f"https://brasilapi.com.br/api/cep/v1/{cep_limpo}", headers=headers, timeout=4.0)
+        if resp2.status_code == 200:
+            dados2 = resp2.json()
+            return {
+                "logradouro": dados2.get("street", "") or "",
+                "bairro": dados2.get("neighborhood", "") or "",
+                "cidade": dados2.get("city", "") or "",
+                "estado": dados2.get("state", "") or ""
+            }
+    except Exception:
+        pass
+
     return None
 
 

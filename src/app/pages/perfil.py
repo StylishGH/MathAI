@@ -231,7 +231,7 @@ def show():
         with col_cep_in:
             novo_cep = st.text_input(
                 "CEP",
-                value=st.session_state.get("perfil_temp_cep", usuario.get("cep") or ""),
+                value=usuario.get("cep") or "",
                 placeholder="00000-000",
                 key="perfil_input_cep"
             )
@@ -242,10 +242,10 @@ def show():
                 if novo_cep:
                     endereco_viacep = buscar_endereco_por_cep(novo_cep)
                     if endereco_viacep:
-                        st.session_state.perfil_temp_logr = endereco_viacep.get("logradouro", "")
-                        st.session_state.perfil_temp_bair = endereco_viacep.get("bairro", "")
-                        st.session_state.perfil_temp_cid = endereco_viacep.get("cidade", "")
-                        st.session_state.perfil_temp_uf = endereco_viacep.get("estado", "")
+                        st.session_state["perfil_logradouro"] = endereco_viacep.get("logradouro", "")
+                        st.session_state["perfil_bairro"] = endereco_viacep.get("bairro", "")
+                        st.session_state["perfil_cidade"] = endereco_viacep.get("cidade", "")
+                        st.session_state["perfil_estado"] = endereco_viacep.get("estado", "")
                         st.toast("Endereço preenchido via ViaCEP!", icon="📍")
                         st.rerun()
                     else:
@@ -255,7 +255,7 @@ def show():
         with col_rua:
             novo_logradouro = st.text_input(
                 "Logradouro / Rua",
-                value=st.session_state.get("perfil_temp_logr", usuario.get("logradouro") or ""),
+                value=usuario.get("logradouro") or "",
                 placeholder="Rua / Avenida...",
                 key="perfil_logradouro"
             )
@@ -271,21 +271,21 @@ def show():
         with col_bair:
             novo_bairro = st.text_input(
                 "Bairro",
-                value=st.session_state.get("perfil_temp_bair", usuario.get("bairro") or ""),
+                value=usuario.get("bairro") or "",
                 placeholder="Bairro",
                 key="perfil_bairro"
             )
         with col_cidade:
             novo_cidade = st.text_input(
                 "Cidade",
-                value=st.session_state.get("perfil_temp_cid", usuario.get("cidade") or ""),
+                value=usuario.get("cidade") or "",
                 placeholder="Cidade",
                 key="perfil_cidade"
             )
         with col_estado:
             novo_estado = st.text_input(
                 "UF",
-                value=st.session_state.get("perfil_temp_uf", usuario.get("estado") or ""),
+                value=usuario.get("estado") or "",
                 placeholder="RJ",
                 max_chars=2,
                 key="perfil_estado"

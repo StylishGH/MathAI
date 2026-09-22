@@ -362,10 +362,10 @@ def show():
                     if c_cep:
                         endereco_cep = buscar_endereco_por_cep(c_cep)
                         if endereco_cep:
-                            st.session_state.cep_logradouro = endereco_cep["logradouro"]
-                            st.session_state.cep_bairro = endereco_cep["bairro"]
-                            st.session_state.cep_cidade = endereco_cep["cidade"]
-                            st.session_state.cep_estado = endereco_cep["estado"]
+                            st.session_state["cad_logradouro"] = endereco_cep.get("logradouro", "")
+                            st.session_state["cad_bairro"] = endereco_cep.get("bairro", "")
+                            st.session_state["cad_cidade"] = endereco_cep.get("cidade", "")
+                            st.session_state["cad_estado"] = endereco_cep.get("estado", "")
                             st.toast("Endereço preenchido com sucesso!", icon="📍")
                             st.rerun()
                         else:
@@ -377,7 +377,6 @@ def show():
             with col_logr:
                 c_logradouro = st.text_input(
                     "Logradouro / Rua",
-                    value=st.session_state.get("cep_logradouro", ""),
                     placeholder="Rua das Flores",
                     key="cad_logradouro"
                 )
@@ -388,21 +387,18 @@ def show():
             with col_bairro:
                 c_bairro = st.text_input(
                     "Bairro",
-                    value=st.session_state.get("cep_bairro", ""),
                     placeholder="Centro",
                     key="cad_bairro"
                 )
             with col_cid:
                 c_cidade = st.text_input(
                     "Cidade",
-                    value=st.session_state.get("cep_cidade", ""),
                     placeholder="Niterói",
                     key="cad_cidade"
                 )
             with col_uf:
                 c_estado = st.text_input(
                     "UF",
-                    value=st.session_state.get("cep_estado", ""),
                     placeholder="RJ",
                     max_chars=2,
                     key="cad_estado"
