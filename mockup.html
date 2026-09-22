@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>MathAI — Mockup Interativo</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Estilos adicionais para detalhes matemáticos */
+    .math-font { font-family: 'Cambria Math', 'Times New Roman', serif; }
+    .radar-bar { transition: width 0.8s ease-in-out; }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4 md:p-8">
+
+  <div class="max-w-5xl mx-auto space-y-6">
+
+    <!-- HEADER DO PROJETO -->
+    <header class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-2xl shadow-md">
+          📐
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-2xl font-bold tracking-tight">MathAI</h1>
+            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-600 border border-violet-500/20">V0.1 Prototype</span>
+          </div>
+          <p class="text-sm text-[var(--muted-foreground)]">A IA que aprende como você aprende Matemática para expandir seu raciocínio</p>
+        </div>
+      </div>
+
+      <!-- STATUS DO ESTUDANTE -->
+      <div class="flex items-center gap-3 bg-[var(--background)] border border-[var(--border)] px-4 py-2.5 rounded-xl text-sm">
+        <div class="text-right">
+          <div class="font-semibold">Guilherme Mendes</div>
+          <div class="text-xs text-[var(--muted-foreground)]">UFF • Matemática (Graduação)</div>
+        </div>
+        <div class="w-9 h-9 rounded-full bg-violet-600/20 text-violet-600 font-bold flex items-center justify-center">
+          GM
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVEGAÇÃO ENTRE OS MODOS -->
+    <nav class="flex flex-wrap gap-2 border-b border-[var(--border)] pb-2">
+      <button onclick="setTab('resolver')" id="tab-btn-resolver" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm transition-all bg-violet-600 text-white shadow-sm">
+        ✏️ Resolver Desafio & Tablet
+      </button>
+      <button onclick="setTab('perfil')" id="tab-btn-perfil" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--card)]">
+        👤 Meu Perfil Cognitivo
+      </button>
+      <button onclick="setTab('repertorio')" id="tab-btn-repertorio" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--card)]">
+        🚀 Expansão de Repertório
+      </button>
+      <button onclick="setTab('questoes')" id="tab-btn-questoes" class="tab-btn px-4 py-2 rounded-xl font-medium text-sm transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--card)]">
+        🗄️ Banco de Questões
+      </button>
+    </nav>
+
+    <!-- ABA 1: RESOLVER DESAFIO (TABLET + IA) -->
+    <main id="view-resolver" class="space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- COLUNA ESQUERDA: O ENUNCIADO -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-600 border border-blue-500/20">
+                Construções Geométricas • Régua e Compasso
+              </span>
+              <span class="text-xs text-[var(--muted-foreground)]">Dificuldade: 6/10</span>
+            </div>
+
+            <h2 class="text-lg font-bold">Desafio #GEO-014: Divisão de Segmento</h2>
+
+            <div class="p-4 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm space-y-2">
+              <p class="font-medium text-[var(--foreground)]">
+                Dado um segmento linear arbitrário <span class="math-font font-bold">AB</span> desenhado no plano:
+              </p>
+              <p class="text-[var(--muted-foreground)]">
+                Utilizando <strong>estritamente régua sem escala e compasso</strong>, divida geometricamente o segmento <span class="math-font font-bold">AB</span> em partes diretamente proporcionais a <span class="math-font font-bold">2</span> e <span class="math-font font-bold">3</span>.
+              </p>
+            </div>
+
+            <div class="text-xs text-[var(--muted-foreground)] space-y-1">
+              <div>🎯 <strong>Competência avaliada:</strong> Teorema de Tales e construções de paralelas.</div>
+              <div>💡 <strong>Dica socrática disponível:</strong> Nível 1 de 5 (bloqueada para estimular o esforço).</div>
+            </div>
+
+            <!-- CRONÔMETRO -->
+            <div class="pt-2 flex items-center justify-between border-t border-[var(--border)]">
+              <div class="flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-mono font-semibold text-[var(--muted-foreground)]" id="timer-display">Tempo: 03m 42s</span>
+              </div>
+              <button class="text-xs px-3 py-1 rounded-lg border border-[var(--border)] hover:bg-[var(--background)] transition">
+                Pausar
+              </button>
+            </div>
+          </div>
+
+          <!-- STATUS DO FEEDBACK -->
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 shadow-sm space-y-3">
+            <h3 class="text-sm font-semibold flex items-center gap-2">
+              <span>🧠</span> Diagnóstico Cognitivo da IA
+            </h3>
+            <div id="ai-status-box" class="p-4 rounded-xl bg-violet-500/5 border border-violet-500/20 text-xs text-[var(--muted-foreground)] space-y-2">
+              <p>Envie o print da resolução do seu tablet ao lado para a IA validar os passos da construção geométrica.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUNA DIREITA: O TABLET & UPLOAD -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-base">📱</span>
+                <h3 class="font-semibold text-sm">Resolução do Tablet / Manuscrita</h3>
+              </div>
+              <span class="text-xs text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                Tablet Sincronizado
+              </span>
+            </div>
+
+            <!-- ÁREA VISUAL DO TABLET (SIMULADA) -->
+            <div class="relative w-full aspect-[4/3] rounded-xl border-2 border-dashed border-[var(--border)] bg-[#1e1e24] p-4 flex flex-col justify-between overflow-hidden shadow-inner">
+              <!-- Grid sutil de caderno geométrico -->
+              <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+              <div class="relative z-10 flex justify-between items-start text-xs text-slate-400">
+                <span>Notability / GoodNotes • Print importado</span>
+                <span>Canvas 1920x1080</span>
+              </div>
+
+              <!-- Desenho simulado em SVG do Teorema de Tales -->
+              <div class="relative z-10 flex-1 flex items-center justify-center">
+                <svg viewBox="0 0 400 240" class="w-full h-full max-h-56 stroke-white fill-none">
+                  <!-- Segmento AB -->
+                  <line x1="60" y1="180" x2="340" y2="180" stroke="#94a3b8" stroke-width="3" />
+                  <circle cx="60" cy="180" r="4" fill="#38bdf8" />
+                  <text x="50" y="205" fill="#38bdf8" font-size="14" font-weight="bold">A</text>
+                  <circle cx="340" cy="180" r="4" fill="#38bdf8" />
+                  <text x="345" y="205" fill="#38bdf8" font-size="14" font-weight="bold">B</text>
+
+                  <!-- Ponto P de divisão (proporção 2:3 -> 2/5 do caminho = 60 + 112 = 172) -->
+                  <circle cx="172" cy="180" r="4" fill="#f43f5e" />
+                  <text x="168" y="205" fill="#f43f5e" font-size="14" font-weight="bold">P</text>
+
+                  <!-- Semirreta auxiliar com ângulo alfa -->
+                  <line x1="60" y1="180" x2="300" y2="40" stroke="#818cf8" stroke-width="2" stroke-dasharray="4" />
+
+                  <!-- Arcos de compasso (5 marcações) -->
+                  <path d="M 100 152 A 15 15 0 0 1 115 145" stroke="#a78bfa" stroke-width="2" />
+                  <path d="M 148 124 A 15 15 0 0 1 163 117" stroke="#a78bfa" stroke-width="2" />
+                  <path d="M 196 96 A 15 15 0 0 1 211 89" stroke="#a78bfa" stroke-width="2" />
+                  <path d="M 244 68 A 15 15 0 0 1 259 61" stroke="#a78bfa" stroke-width="2" />
+                  <path d="M 292 40 A 15 15 0 0 1 307 33" stroke="#a78bfa" stroke-width="2" />
+
+                  <!-- Linha final conectando A5 a B -->
+                  <line x1="300" y1="40" x2="340" y2="180" stroke="#e2e8f0" stroke-width="1.5" />
+
+                  <!-- Linha paralela passando por A2 até P -->
+                  <line x1="156" y1="124" x2="172" y2="180" stroke="#f43f5e" stroke-width="2" />
+                </svg>
+              </div>
+
+              <div class="relative z-10 flex justify-between items-end text-xs text-slate-400">
+                <span>Traço detectado: Alta precisão</span>
+                <span class="text-amber-400">Pronto para submissão</span>
+              </div>
+            </div>
+
+            <!-- BOTÕES DE AÇÃO -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+              <button class="text-xs px-3 py-2 rounded-xl border border-[var(--border)] hover:bg-[var(--background)] flex items-center gap-1.5 transition">
+                <span>📁</span> Trocar imagem / print
+              </button>
+
+              <button onclick="simularAnaliseIA()" id="btn-analisar" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-md hover:opacity-95 transition flex items-center gap-2">
+                <span>✨</span> Analisar com MathAI
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ABA 2: MEU PERFIL COGNITIVO -->
+    <section id="view-perfil" class="hidden space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- CARD 1: RADAR DE DOMÍNIO MATEMÁTICO -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm space-y-4">
+          <h3 class="font-bold text-base flex items-center gap-2">
+            <span>🎯</span> Domínio por Área
+          </h3>
+          
+          <div class="space-y-3 text-sm">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Geometria Euclidiana & Sintética</span>
+                <span class="font-bold text-violet-600">76%</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-violet-600 rounded-full radar-bar" style="width: 76%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Cálculo Diferencial e Integral 1</span>
+                <span class="font-bold text-blue-600">68%</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-blue-600 rounded-full radar-bar" style="width: 68%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Álgebra Linear & Matrizes</span>
+                <span class="font-bold text-emerald-600">84%</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-emerald-600 rounded-full radar-bar" style="width: 84%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Geometria Analítica</span>
+                <span class="font-bold text-amber-600">54%</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-amber-600 rounded-full radar-bar" style="width: 54%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: COMO EU PENSO (REPERTÓRIO DE ESTRATÉGIAS) -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm space-y-4">
+          <h3 class="font-bold text-base flex items-center gap-2">
+            <span>🧠</span> Como eu Penso (Estratégias)
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground)]">Frequência com que você escolhe cada caminho metodológico:</p>
+
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-center justify-between p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+              <span>Teorema de Ceva</span>
+              <span class="font-mono text-emerald-600 font-bold">Frequência Alta ↑↑↑</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+              <span>Construções Auxiliares</span>
+              <span class="font-mono text-emerald-600 font-bold">Frequência Alta ↑↑</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+              <span>Semelhança de Triângulos</span>
+              <span class="font-mono text-blue-600 font-bold">Frequência Média ↑</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+              <span>Trigonometria</span>
+              <span class="font-mono text-amber-600 font-bold">Frequência Baixa ↓</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+              <span>Geometria de Coordenadas</span>
+              <span class="font-mono text-rose-600 font-bold">Quase Nunca ↓↓↓</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: PADRÕES DE ERRO (ONDE O RACIOCÍNIO QUEBRA) -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm space-y-4">
+          <h3 class="font-bold text-base flex items-center gap-2">
+            <span>⚠️</span> Diagnóstico de Erros
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground)]">Origem real dos pontos perdidos nos seus exercícios:</p>
+
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Erro de Sinal (Aritmética)</span>
+                <span class="text-rose-500 font-bold">45% dos erros</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-rose-500" style="width: 45%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Manipulação Algébrica / Fatoração</span>
+                <span class="text-amber-500 font-bold">30% dos erros</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-amber-500" style="width: 30%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Erro Conceitual / Definição</span>
+                <span class="text-blue-500 font-bold">15% dos erros</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-blue-500" style="width: 15%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Interpretação do Enunciado</span>
+                <span class="text-emerald-500 font-bold">10% dos erros</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-[var(--background)] overflow-hidden border border-[var(--border)]">
+                <div class="h-full bg-emerald-500" style="width: 10%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-700 dark:text-amber-300">
+            💡 <strong>Insight da IA:</strong> Você domina o conceito de Derivada Implícita, mas erra ao isolar <span class="math-font font-bold">dy/dx</span> por distração de sinal.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABA 3: EXPANSÃO DE REPERTÓRIO -->
+    <section id="view-repertorio" class="hidden space-y-6">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-lg font-bold">🚀 Motor de Expansão de Repertório</h2>
+          <p class="text-sm text-[var(--muted-foreground)]">Desafiando a sua zona de conforto matemático através da fórmula:</p>
+          <div class="p-3 my-2 rounded-xl bg-[var(--background)] border border-[var(--border)] font-mono text-center text-xs text-violet-600">
+            Score(q) = α • P(acerto) + β • V(pedagógico) + γ • N(novidade)
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--background)] space-y-2">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 border border-amber-500/20">
+              Desafio Antivício #1
+            </span>
+            <h4 class="font-bold text-sm">Geometria Sintética sem Ceva</h4>
+            <p class="text-xs text-[var(--muted-foreground)]">
+              Você resolveu 8 das últimas 10 questões usando o Teorema de Ceva. A próxima questão exige demonstrar concorrência usando apenas áreas e semelhança.
+            </p>
+            <button class="text-xs text-violet-600 font-semibold hover:underline">Aceitar Desafio →</button>
+          </div>
+
+          <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--background)] space-y-2">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 border border-blue-500/20">
+              Desafio Antivício #2
+            </span>
+            <h4 class="font-bold text-sm">Construção por Homotetia</h4>
+            <p class="text-xs text-[var(--muted-foreground)]">
+              Em vez de usar semirretas auxiliares angulares para dividir segmentos, aprenda a construir por projeção paralela invertida nas duas extremidades.
+            </p>
+            <button class="text-xs text-violet-600 font-semibold hover:underline">Aceitar Desafio →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA 4: BANCO DE QUESTÕES -->
+    <section id="view-questoes" class="hidden space-y-6">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm space-y-4">
+        <div class="flex justify-between items-center">
+          <div>
+            <h2 class="text-lg font-bold">🗄️ Repositório de Questões Estruturado (SQL)</h2>
+            <p class="text-sm text-[var(--muted-foreground)]">Questões teóricas e práticas de vestibulares, olimpíadas e graduação</p>
+          </div>
+          <button class="text-xs px-3 py-2 rounded-xl bg-violet-600 text-white font-medium">+ Nova Questão</button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
+                <th class="py-2.5 px-3">ID</th>
+                <th class="py-2.5 px-3">Origem</th>
+                <th class="py-2.5 px-3">Disciplina</th>
+                <th class="py-2.5 px-3">Tópico</th>
+                <th class="py-2.5 px-3">Dificuldade</th>
+                <th class="py-2.5 px-3">Estratégias Esperadas</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr class="hover:bg-[var(--background)] transition">
+                <td class="py-2.5 px-3 font-mono font-bold">#GEO-014</td>
+                <td class="py-2.5 px-3">Euclides / Sintética</td>
+                <td class="py-2.5 px-3">Geometria Plana</td>
+                <td class="py-2.5 px-3">Divisão de Segmento</td>
+                <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-600">6 / 10</span></td>
+                <td class="py-2.5 px-3">Tales angular, Paralelas opostas</td>
+              </tr>
+              <tr class="hover:bg-[var(--background)] transition">
+                <td class="py-2.5 px-3 font-mono font-bold">#CALC-082</td>
+                <td class="py-2.5 px-3">UFF • Cálculo 1</td>
+                <td class="py-2.5 px-3">Cálculo Diferencial</td>
+                <td class="py-2.5 px-3">Derivação Implícita</td>
+                <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-600">7 / 10</span></td>
+                <td class="py-2.5 px-3">Regra da Cadeia, Álgebra de dy/dx</td>
+              </tr>
+              <tr class="hover:bg-[var(--background)] transition">
+                <td class="py-2.5 px-3 font-mono font-bold">#OBM-109</td>
+                <td class="py-2.5 px-3">OBMEP • Fase 2</td>
+                <td class="py-2.5 px-3">Geometria Plana</td>
+                <td class="py-2.5 px-3">Teorema de Ceva</td>
+                <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded bg-rose-500/10 text-rose-600">9 / 10</span></td>
+                <td class="py-2.5 px-3">Ceva trigonométrico, Semelhança</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SCRIPT DE NAVEGAÇÃO E SIMULAÇÃO DA IA -->
+  <script>
+    function setTab(tabName) {
+      const tabs = ['resolver', 'perfil', 'repertorio', 'questoes'];
+      tabs.forEach(t => {
+        document.getElementById(`view-${t}`).classList.add('hidden');
+        const btn = document.getElementById(`tab-btn-${t}`);
+        btn.classList.remove('bg-violet-600', 'text-white', 'shadow-sm');
+        btn.classList.add('text-[var(--muted-foreground)]');
+      });
+
+      document.getElementById(`view-${tabName}`).classList.remove('hidden');
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      activeBtn.classList.remove('text-[var(--muted-foreground)]');
+      activeBtn.classList.add('bg-violet-600', 'text-white', 'shadow-sm');
+    }
+
+    function simularAnaliseIA() {
+      const statusBox = document.getElementById('ai-status-box');
+      const btn = document.getElementById('btn-analisar');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳</span> Analisando traços...';
+
+      statusBox.innerHTML = `
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-violet-600 font-semibold">
+            <span class="animate-spin">🔄</span> Processando Visão Multimodal dos traços do tablet...
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)]">Identificando retas, arcos de compasso e proporções matemáticas...</p>
+        </div>
+      `;
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<span>✨</span> Reanalisar com MathAI';
+
+        statusBox.innerHTML = `
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 font-bold text-xs">
+                ✓ Construção Correta
+              </span>
+              <span class="text-xs text-[var(--muted-foreground)]">Confiança: 98.4%</span>
+            </div>
+
+            <div class="text-xs space-y-1.5 text-[var(--foreground)]">
+              <div>📐 <strong>Estratégia Detectada:</strong> Teorema de Tales via Semirreta Angular Auxiliar.</div>
+              <div>📏 <strong>Análise dos Passos:</strong></div>
+              <ul class="list-disc list-inside text-[var(--muted-foreground)] pl-1 space-y-0.5">
+                <li>Traçado de semirreta com ângulo agudo a partir de A: <span class="text-emerald-500 font-semibold">Válido</span></li>
+                <li>5 aberturas iguais de compasso (2 + 3 partes): <span class="text-emerald-500 font-semibold">Equidistantes</span></li>
+                <li>Ligação de A₅ a B e traçado de paralela por A₂: <span class="text-emerald-500 font-semibold">Perfeito</span></li>
+              </ul>
+            </div>
+
+            <div class="p-3 rounded-lg bg-violet-500/10 border border-violet-500/20 text-xs text-violet-800 dark:text-violet-200">
+              🚀 <strong>Desafio de Expansão (MathAI):</strong><br>
+              Você resolveu com perfeição! Agora que você dominou a semirreta angular, sabia que pode resolver com <strong>duas retas paralelas em sentidos opostos a partir de A e B</strong>? Tente fazer essa variação para economizar espaço na folha!
+            </div>
+          </div>
+        `;
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
