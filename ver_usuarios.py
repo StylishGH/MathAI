@@ -3,12 +3,13 @@ MathAI - Utilitário para Visualizar Usuários Cadastrados
 Execute no terminal: python ver_usuarios.py
 """
 
+import io
 import sys
 import sqlite3
 from pathlib import Path
 
 # Garante compatibilidade UTF-8 no Windows PowerShell / CMD
-if hasattr(sys.stdout, "reconfigure"):
+if isinstance(sys.stdout, io.TextIOWrapper):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 from src.database.db import pegar_conexao, _obter_credenciais_turso
@@ -32,11 +33,11 @@ def listar():
         print("[i] Nenhum usuario cadastrado no momento.")
         return
 
-    print("\n" + "=" * 96)
+    print("\n" + "=" * 118)
     print(f"  MATHAI - USUARIOS CADASTRADOS (TOTAL: {len(usuarios)})  [Banco: {origem}]")
-    print("=" * 96)
-    print(f"{'ID':<4} | {'NOME':<25} | {'E-MAIL':<28} | {'CELULAR':<15} | {'CIDADE/UF':<12} | {'2FA'}")
-    print("-" * 96)
+    print("=" * 118)
+    print(f"{'ID':<4} | {'NOME':<25} | {'E-MAIL':<28} | {'CELULAR':<15} | {'CIDADE/UF':<12} | {'CRIADO EM':<16} | {'2FA'}")
+    print("-" * 118)
 
     for u in usuarios:
         cid_uf = f"{u['cidade'] or '-'}/{u['estado'] or '-'}"
@@ -46,10 +47,11 @@ def listar():
         nome = (u["nome"] or "-")[:24]
         email = (u["email"] or "-")[:27]
         cel = (u["celular"] or "-")[:14]
+        criado = (u["criado_em"] or "-")[:16]
 
-        print(f"#{u['id']:<3} | {nome:<25} | {email:<28} | {cel:<15} | {cid_uf:<12} | {status_2fa}")
+        print(f"#{u['id']:<3} | {nome:<25} | {email:<28} | {cel:<15} | {cid_uf:<12} | {criado:<16} | {status_2fa}")
 
-    print("=" * 96 + "\n")
+    print("=" * 118 + "\n")
 
 if __name__ == "__main__":
     listar()
