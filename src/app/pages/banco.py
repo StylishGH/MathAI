@@ -31,16 +31,35 @@ def show():
 
     questoes = [dict(q) for q in questoes_rows]
 
+    bancas = ["Todas"] + sorted(list(set(q.get("banca", "") for q in questoes if q.get("banca"))))
+    usuario = st.session_state.get("usuario_logado") or {}
+    concursos_foco = usuario.get("concursos_foco") or []
+    if concursos_foco:
+        focos_nomes = [f.split('(')[0].strip() for f in concursos_foco]
+        cols_chips = st.columns([1.1] + [0.85] * min(len(focos_nomes), 4) + [4])
+        with cols_chips[0]:
+            st.markdown("<div style='padding-top: 6px; font-size: 0.82rem; font-weight: 700; color: #fbbf24;'>🎯 Foco Alvo:</div>", unsafe_allow_html=True)
+        for i, f_nome in enumerate(focos_nomes[:4]):
+            with cols_chips[i + 1]:
+                if st.button(f_nome, key=f"chip_foco_{f_nome}", help=f"Filtrar por {f_nome}"):
+                    for b in bancas:
+                        if f_nome.upper() in b.upper():
+                            st.session_state.banco_filtro_banca = b
+                            st.rerun()
+
     # 1. Barra de Filtros
-    col_mat, col_banca, col_ano, col_busca = st.columns([1.8, 1.3, 1.1, 2.2])
+    col_mat, col_banca, col_tipo, col_ano, col_busca = st.columns([1.6, 1.2, 1.2, 1.0, 2.0])
 
     with col_mat:
         materias = ["Todas"] + sorted(list(set(q.get("materia", "") for q in questoes if q.get("materia"))))
         sel_materia = st.selectbox("Matéria:", materias, key="banco_filtro_materia")
 
     with col_banca:
-        bancas = ["Todas"] + sorted(list(set(q.get("banca", "") for q in questoes if q.get("banca"))))
         sel_banca = st.selectbox("Banca:", bancas, key="banco_filtro_banca")
+
+    with col_tipo:
+        tipos = ["Todos", "Discursiva", "Objetiva"]
+        sel_tipo = st.selectbox("Tipo:", tipos, key="banco_filtro_tipo")
 
     with col_ano:
         anos = ["Todos"] + sorted(list(set(str(q.get("ano", "")) for q in questoes if q.get("ano"))), reverse=True)
@@ -53,10 +72,12 @@ def show():
     tem_filtro = (
         sel_materia != "Todas" or
         sel_banca != "Todas" or
+        sel_tipo != "Todos" or
         sel_ano != "Todos" or
         bool(busca_termo)
     )
     mostrar_todas = st.session_state.get("banco_mostrar_todas", False)
+
 
     # 2. Estado Inicial Vazio (quando nenhum filtro foi selecionado)
     if not tem_filtro and not mostrar_todas:
@@ -182,6 +203,8 @@ def show():
         filtradas = [q for q in filtradas if q.get("materia") == sel_materia]
     if sel_banca != "Todas":
         filtradas = [q for q in filtradas if q.get("banca") == sel_banca]
+    if sel_tipo != "Todos":
+        filtradas = [q for q in filtradas if q.get("tipo", "objetiva").lower() == sel_tipo.lower()]
     if sel_ano != "Todos":
         filtradas = [q for q in filtradas if str(q.get("ano", "")) == sel_ano]
     if busca_termo:
@@ -191,6 +214,7 @@ def show():
             or busca_termo in q.get("topico", "").lower()
             or busca_termo in str(q.get("subtopico", "")).lower()
         ]
+
 
     if not filtradas:
         st.info("🔍 Nenhuma questão encontrada com os filtros selecionados. Tente ajustar a busca.")
@@ -431,6 +455,12 @@ def show():
                             """, unsafe_allow_html=True)
                     elif revelar_direto:
                         st.markdown(f"**Gabarito Oficial:** `{gabarito_oficial}`")
+                else:
+                    st.markdown("<div style='height: 8px;'></div>", unsafe_allow_html=True)
+                    revelar_disc = st.checkbox("👁️ Revelar gabarito / resposta esperada", key=f"rev_disc_{q_id}")
+                    if revelar_disc:
+                        st.markdown(f"**Gabarito Oficial / Resposta:** `{q.get('gabarito', '')}`")
+
 
                 st.markdown("<br>", unsafe_allow_html=True)
                 col_meta1, col_meta2 = st.columns([3, 1])

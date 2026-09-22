@@ -42,12 +42,15 @@ htmlcov/
 *-checkpoint.ipynb
 
 # ------------------------------------------------------------------------------
-# Banco de Dados e Arquivos Temporários SQLite
+# Banco de Dados e Arquivos Temporários SQLite / Datasets Grandes
 # ------------------------------------------------------------------------------
 *.db-journal
 *.db-wal
 *.db-shm
- data/mathai.db
+data/mathai.db
+*.parquet
+data/*.parquet
+data/uploads/mathnet_*
 
 # ------------------------------------------------------------------------------
 # Uploads e Arquivos de Usuários

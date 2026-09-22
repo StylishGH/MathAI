@@ -47,7 +47,11 @@ def _garantir_tabelas_e_migracao():
         ("bairro", "TEXT"),
         ("cidade", "TEXT"),
         ("estado", "TEXT"),
-        ("verificado", "INTEGER NOT NULL DEFAULT 0")
+        ("verificado", "INTEGER NOT NULL DEFAULT 0"),
+        ("escolaridade", "TEXT"),
+        ("faculdade", "TEXT"),
+        ("curso", "TEXT"),
+        ("concursos_foco", "TEXT")
     ]
     for col, tipo in novas_colunas:
         try:
@@ -247,7 +251,8 @@ def verificar_codigo_otp(email: str, codigo: str) -> dict:
 
     # Busca usuário ativado
     cur.execute("""
-        SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado, motivos, verificado
+        SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado,
+               escolaridade, faculdade, curso, motivos, concursos_foco, verificado
         FROM usuarios WHERE email = ?
     """, (email.lower().strip(),))
     row = cur.fetchone()
@@ -256,6 +261,7 @@ def verificar_codigo_otp(email: str, codigo: str) -> dict:
     if row:
         u = dict(row)
         u["motivos"] = json.loads(u.get("motivos") or "[]")
+        u["concursos_foco"] = json.loads(u.get("concursos_foco") or "[]")
         return {"ok": True, "usuario": u}
 
     return {"ok": False, "erro": "Usuário não encontrado."}
@@ -285,7 +291,11 @@ def cadastrar_usuario(
     bairro: str | None = None,
     cidade: str | None = None,
     estado: str | None = None,
-    motivos: list[str] | None = None
+    motivos: list[str] | None = None,
+    escolaridade: str | None = None,
+    faculdade: str | None = None,
+    curso: str | None = None,
+    concursos_foco: list[str] | None = None
 ) -> dict:
     """
     Cria um novo usuário com status pendente de verificação (verificado=0)
@@ -299,8 +309,9 @@ def cadastrar_usuario(
         cur.execute("""
             INSERT INTO usuarios (
                 nome, email, senha_hash, cpf, idade, celular, cep,
-                logradouro, numero, bairro, cidade, estado, motivos, verificado
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
+                logradouro, numero, bairro, cidade, estado, motivos,
+                escolaridade, faculdade, curso, concursos_foco, verificado
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
         """, (
             nome.strip(),
             email.strip().lower(),
@@ -314,7 +325,11 @@ def cadastrar_usuario(
             bairro.strip() if bairro else None,
             cidade.strip() if cidade else None,
             estado.strip().upper() if estado else None,
-            json.dumps(motivos or [], ensure_ascii=False)
+            json.dumps(motivos or [], ensure_ascii=False),
+            escolaridade.strip() if escolaridade else None,
+            faculdade.strip() if faculdade else None,
+            curso.strip() if curso else None,
+            json.dumps(concursos_foco or [], ensure_ascii=False)
         ))
         con.commit()
         usuario_id = cur.lastrowid
@@ -338,6 +353,10 @@ def cadastrar_usuario(
                 "idade": idade,
                 "celular": celular,
                 "cep": cep,
+                "escolaridade": escolaridade,
+                "faculdade": faculdade,
+                "curso": curso,
+                "concursos_foco": concursos_foco or [],
                 "motivos": motivos or [],
                 "verificado": 0
             }
@@ -375,13 +394,15 @@ def fazer_login(email: str, senha: str) -> dict:
     cur = con.cursor()
     try:
         cur.execute("""
-            SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado, motivos, verificado
+            SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado,
+                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado
             FROM usuarios WHERE email = ? AND senha_hash = ?
         """, (email.strip().lower(), _hash_senha(senha)))
         row = cur.fetchone()
         if row:
             u = dict(row)
             u["motivos"] = json.loads(u.get("motivos") or "[]")
+            u["concursos_foco"] = json.loads(u.get("concursos_foco") or "[]")
 
             # Verifica se conta foi verificada (2FA / ativação)
             if u.get("verificado") == 0:
@@ -411,17 +432,106 @@ def buscar_usuario_por_email(email: str) -> dict | None:
     cur = con.cursor()
     try:
         cur.execute("""
-            SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado, motivos, verificado
+            SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado,
+                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado
             FROM usuarios WHERE email = ? AND verificado = 1
         """, (email.strip().lower(),))
         row = cur.fetchone()
         if row:
             u = dict(row)
             u["motivos"] = json.loads(u.get("motivos") or "[]")
+            u["concursos_foco"] = json.loads(u.get("concursos_foco") or "[]")
             return u
         return None
     except Exception:
         return None
+    finally:
+        con.close()
+
+
+def buscar_usuario_por_id(usuario_id: int) -> dict | None:
+    """Busca dados completos do usuário pelo ID."""
+    con = pegar_conexao()
+    cur = con.cursor()
+    try:
+        cur.execute("""
+            SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado,
+                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado
+            FROM usuarios WHERE id = ?
+        """, (usuario_id,))
+        row = cur.fetchone()
+        if row:
+            u = dict(row)
+            u["motivos"] = json.loads(u.get("motivos") or "[]")
+            u["concursos_foco"] = json.loads(u.get("concursos_foco") or "[]")
+            return u
+        return None
+    except Exception:
+        return None
+    finally:
+        con.close()
+
+
+def atualizar_perfil_usuario(
+    usuario_id: int,
+    nome: str,
+    celular: str | None = None,
+    cpf: str | None = None,
+    cep: str | None = None,
+    logradouro: str | None = None,
+    numero: str | None = None,
+    bairro: str | None = None,
+    cidade: str | None = None,
+    estado: str | None = None,
+    escolaridade: str | None = None,
+    faculdade: str | None = None,
+    curso: str | None = None,
+    motivos: list[str] | None = None,
+    concursos_foco: list[str] | None = None
+) -> dict:
+    """Atualiza os dados de perfil e acadêmicos do usuário."""
+    con = pegar_conexao()
+    cur = con.cursor()
+    cpf_formatado = formatar_cpf(cpf) if cpf else None
+    try:
+        cur.execute("""
+            UPDATE usuarios SET
+                nome = ?,
+                celular = ?,
+                cpf = ?,
+                cep = ?,
+                logradouro = ?,
+                numero = ?,
+                bairro = ?,
+                cidade = ?,
+                estado = ?,
+                escolaridade = ?,
+                faculdade = ?,
+                curso = ?,
+                motivos = ?,
+                concursos_foco = ?
+            WHERE id = ?
+        """, (
+            nome.strip(),
+            celular.strip() if celular else None,
+            cpf_formatado,
+            cep.strip() if cep else None,
+            logradouro.strip() if logradouro else None,
+            numero.strip() if numero else None,
+            bairro.strip() if bairro else None,
+            cidade.strip() if cidade else None,
+            estado.strip().upper() if estado else None,
+            escolaridade.strip() if escolaridade else None,
+            faculdade.strip() if faculdade else None,
+            curso.strip() if curso else None,
+            json.dumps(motivos or [], ensure_ascii=False),
+            json.dumps(concursos_foco or [], ensure_ascii=False),
+            usuario_id
+        ))
+        con.commit()
+        return {"ok": True}
+    except Exception as e:
+        return {"ok": False, "erro": str(e)}
     finally:
         con.close()
 
@@ -456,7 +566,8 @@ def verificar_token_sessao(token: str) -> dict | None:
 
         cur.execute("""
             SELECT u.id, u.nome, u.email, u.cpf, u.idade, u.celular, u.cep, u.logradouro,
-                   u.numero, u.bairro, u.cidade, u.estado, u.motivos, u.verificado
+                   u.numero, u.bairro, u.cidade, u.estado, u.escolaridade, u.faculdade,
+                   u.curso, u.motivos, u.concursos_foco, u.verificado
             FROM sessoes_lembradas s
             JOIN usuarios u ON u.id = s.usuario_id
             WHERE s.token = ? AND u.verificado = 1
@@ -465,12 +576,14 @@ def verificar_token_sessao(token: str) -> dict | None:
         if row:
             u = dict(row)
             u["motivos"] = json.loads(u.get("motivos") or "[]")
+            u["concursos_foco"] = json.loads(u.get("concursos_foco") or "[]")
             return u
         return None
     except Exception:
         return None
     finally:
         con.close()
+
 
 
 def encerrar_sessao_por_token(token: str):

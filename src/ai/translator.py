@@ -38,11 +38,14 @@ def traduzir_questao_matematica(
     gabarito_original: str | None = None,
     banca_original: str | None = None,
     ano_original: int | None = None,
-    categoria_sugerida: str | None = None
+    categoria_sugerida: str | None = None,
+    imagem_bytes: bytes | None = None,
+    mime_type: str = "image/png"
 ) -> dict | None:
     """
     Traduz um enunciado matemático usando o Gemini, preservando o LaTeX
     e gerando a estrutura completa pronta para inserção no banco de dados.
+    Suporta modo multimodal quando imagem_bytes é fornecido.
     """
     if not tem_chave_configurada():
         raise RuntimeError("Chave de API do Gemini não configurada! Adicione sua chave no .env ou na barra lateral.")
@@ -53,8 +56,18 @@ def traduzir_questao_matematica(
 
     hash_id = gerar_hash_texto(enunciado_original)
 
-    prompt_usuario = f"""Traduza e estruture a seguinte questão de matemática para o formato padrão do MathAI:
+    instrucao_imagem = ""
+    if imagem_bytes:
+        instrucao_imagem = """
+NOTA SOBRE A IMAGEM ANEXADA:
+A questão possui uma figura/diagrama anexada. Analise a figura e garanta que a tradução em português
+mantenha total coerência com as letras dos vértices (A, B, C...), ângulos, coordenadas cartesianas,
+medidas e anotações visuais presentes na imagem. Se o texto em inglês fizer menções como "in the figure below",
+traduza naturalmente como "na figura abaixo" ou "na figura a seguir".
+"""
 
+    prompt_usuario = f"""Traduza e estruture a seguinte questão de matemática para o formato padrão do MathAI:
+{instrucao_imagem}
 ENUNCIADO ORIGINAL:
 {enunciado_original}
 
@@ -77,6 +90,12 @@ Retorne no formato JSON:
 }}
 """
 
+    conteudos = []
+    if imagem_bytes:
+        tipo_final = mime_type if mime_type else "image/png"
+        conteudos.append(types.Part.from_bytes(data=imagem_bytes, mime_type=tipo_final))
+    conteudos.append(prompt_usuario)
+
     config = types.GenerateContentConfig(
         system_instruction=PROMPT_SISTEMA_TRADUTOR,
         response_mime_type="application/json",
@@ -85,22 +104,22 @@ Retorne no formato JSON:
 
     # Modelos recomendados em ordem de preferência
     modelos = [
-        "models/gemini-3.7-flash",
         "models/gemini-3.8-flash",
+        "models/gemini-3.7-flash",
         "models/gemini-3.6-flash",
-        "models/gemini-3.5-flash",
+        "models/gemini-3.1-flash-lite",
         "models/gemini-flash-latest"
     ]
 
     resposta = None
-    max_tentativas = 4
+    max_tentativas = 3
 
     for tentativa in range(1, max_tentativas + 1):
         for mod in modelos:
             try:
                 resposta = client.models.generate_content(
                     model=mod,
-                    contents=prompt_usuario,
+                    contents=conteudos,
                     config=config
                 )
                 if resposta and resposta.text:

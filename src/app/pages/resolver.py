@@ -228,27 +228,37 @@ def show():
         # Enunciado da Questão Atual
         render_question(q_atual, mostrar_alternativas=False)
 
-        # Seleção de Alternativa (Sem spoiler durante o simulado)
+        # Seleção de Alternativa ou Resposta Discursiva (Sem spoiler durante o simulado)
         st.markdown("---")
-        st.markdown("#### 🔘 Selecione a Alternativa:")
+        is_discursiva = e_questao_discursiva(q_atual)
 
-        enunciado_raw = q_atual.get("enunciado", "")
-        _, alternativas = extrair_enunciado_e_alternativas(enunciado_raw)
-        alt_opcoes = alternativas if alternativas else {"A": "Alternativa A", "B": "Alternativa B", "C": "Alternativa C", "D": "Alternativa D", "E": "Alternativa E"}
+        if not is_discursiva:
+            st.markdown("#### 🔘 Selecione a Alternativa:")
 
-        resp_atual = respostas.get(q_id, None)
+            enunciado_raw = q_atual.get("enunciado", "")
+            _, alternativas = extrair_enunciado_e_alternativas(enunciado_raw)
+            alt_opcoes = alternativas if alternativas else {"A": "Alternativa A", "B": "Alternativa B", "C": "Alternativa C", "D": "Alternativa D", "E": "Alternativa E"}
 
-        for letra, texto_alt in alt_opcoes.items():
-            is_sel = (resp_atual == letra)
-            icone = "🔘" if is_sel else "⚪"
-            if st.button(
-                f"{icone}  ({letra})  {texto_alt}",
-                key=f"sim_alt_{q_id}_{letra}",
-                use_container_width=True,
-                type="primary" if is_sel else "secondary"
-            ):
-                respostas[q_id] = letra
-                st.rerun()
+            resp_atual = respostas.get(q_id, None)
+
+            for letra, texto_alt in alt_opcoes.items():
+                is_sel = (resp_atual == letra)
+                icone = "🔘" if is_sel else "⚪"
+                if st.button(
+                    f"{icone}  ({letra})  {texto_alt}",
+                    key=f"sim_alt_{q_id}_{letra}",
+                    use_container_width=True,
+                    type="primary" if is_sel else "secondary"
+                ):
+                    respostas[q_id] = letra
+                    st.rerun()
+        else:
+            st.markdown("#### 📝 Questão Discursiva")
+            st.caption("Esta questão é discursiva. Insira sua resposta final ou resumo do raciocínio:")
+            resp_atual = respostas.get(q_id, "")
+            nova_resp = st.text_area("Sua resolução / resposta:", value=resp_atual, key=f"sim_disc_{q_id}", height=120)
+            if nova_resp != resp_atual:
+                respostas[q_id] = nova_resp
 
         st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
 
@@ -299,7 +309,10 @@ def show():
             st.session_state.questao_idx = 0
 
         q_idx = st.session_state.questao_idx
-        q_atual = questoes[q_idx]
+        q_atual_raw = questoes[q_idx]
+        from src.database.db import buscar_questao_por_id
+        q_db = buscar_questao_por_id(q_atual_raw.get("id"))
+        q_atual = dict(q_db) if q_db else q_atual_raw
 
         # Header da Lista
         col_ltit, col_lbtn = st.columns([3, 1], vertical_alignment="center")
@@ -370,7 +383,11 @@ def show():
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown("##### ⚡ Início Rápido Recomendado:")
+        usuario = st.session_state.get("usuario_logado") or {}
+        focos_user = usuario.get("concursos_foco") or []
+        foco_primario = focos_user[0].split("(")[0].strip() if focos_user else "ESA"
+
+        st.markdown(f"##### ⚡ Início Rápido Recomendado{' (Personalizado para seu Foco)' if focos_user else ''}:")
         c_q1, c_q2, c_q3 = st.columns(3)
 
         with c_q1:
@@ -379,24 +396,31 @@ def show():
                         border-radius: 14px; padding: 18px 16px; margin-bottom: 10px;
                         box-shadow: 0 4px 14px rgba(0,0,0,{card_shadow}); text-align: center;">
                 <div style="font-size: 2rem; margin-bottom: 6px;">⏱️</div>
-                <div style="font-weight: 800; font-size: 1.02rem; color: {text_main}; margin-bottom: 4px;">Simulado ESA 2026</div>
+                <div style="font-weight: 800; font-size: 1.02rem; color: {text_main}; margin-bottom: 4px;">Simulado {foco_primario}</div>
                 <div style="font-size: 0.8rem; color: {text_muted}; min-height: 36px; line-height: 1.3;">
-                    12 questões da prova oficial com limite de 60 minutos
+                    Questões focadas no seu concurso alvo com limite de 60 minutos
                 </div>
             </div>
             """, unsafe_allow_html=True)
-            if st.button("🚀 Iniciar Simulado ESA (60 min)", type="primary", use_container_width=True):
+            if st.button(f"🚀 Iniciar Simulado {foco_primario} (60 min)", type="primary", use_container_width=True):
                 questoes_all = [dict(q) for q in listar_questoes()]
-                esa_questoes = [q for q in questoes_all if q.get("banca") == "ESA" and str(q.get("ano")) == "2026"]
-                if not esa_questoes:
-                    esa_questoes = questoes_all[:12]
+                foco_questoes = [q for q in questoes_all if foco_primario.upper() in str(q.get("banca", "")).upper()]
+                if not foco_questoes:
+                    # Ordena priorizando os focos do aluno
+                    focos_norm = [f.split("(")[0].strip().upper() for f in focos_user]
+                    def _score_q(q):
+                        b = str(q.get("banca") or "").upper()
+                        for i, fn in enumerate(focos_norm):
+                            if fn and fn in b: return i
+                        return 999
+                    foco_questoes = sorted(questoes_all, key=_score_q)[:12]
 
                 st.session_state.modo_sessao = "simulado"
                 st.session_state.simulado_config = {
-                    "titulo": "Simulado Oficial ESA 2026",
+                    "titulo": f"Simulado Focado — {foco_primario}",
                     "tempo_limite_min": 60,
                     "tempo_inicio": time.time(),
-                    "questoes": esa_questoes,
+                    "questoes": foco_questoes,
                     "respostas": {},
                     "marcadas_revisao": set(),
                     "entregue": False,
@@ -429,15 +453,24 @@ def show():
                 <div style="font-size: 2rem; margin-bottom: 6px;">📝</div>
                 <div style="font-weight: 800; font-size: 1.02rem; color: {text_main}; margin-bottom: 4px;">Treino Livre</div>
                 <div style="font-size: 0.8rem; color: {text_muted}; min-height: 36px; line-height: 1.3;">
-                    Resolva todas as questões do acervo no seu próprio ritmo
+                    Resolva questões com as do seu foco priorizadas no início
                 </div>
             </div>
             """, unsafe_allow_html=True)
             if st.button("🎯 Iniciar Treino Livre", use_container_width=True):
                 questoes_all = [dict(q) for q in listar_questoes()]
+                if focos_user:
+                    focos_norm = [f.split("(")[0].strip().upper() for f in focos_user]
+                    def _score_q2(q):
+                        b = str(q.get("banca") or "").upper()
+                        for i, fn in enumerate(focos_norm):
+                            if fn and fn in b: return i
+                        return 999
+                    questoes_all = sorted(questoes_all, key=_score_q2)
+
                 st.session_state.modo_sessao = "lista"
                 st.session_state.lista_config = {
-                    "titulo": "Treino Livre — Todas as Questões",
+                    "titulo": f"Treino Livre — Foco {foco_primario}" if focos_user else "Treino Livre — Todas as Questões",
                     "questoes": questoes_all
                 }
                 st.session_state.questao_idx = 0
@@ -451,7 +484,7 @@ def _finalizar_simulado(sim: dict, tempo_gasto: int):
 
     questoes = sim.get("questoes", [])
     respostas = sim.get("respostas", {})
-    aluno_id = st.session_state.get("aluno_id", "default")
+    aluno_id = st.session_state.get("aluno_id", 1)
     tempo_por_q = max(1, tempo_gasto // len(questoes)) if questoes else 10
 
     for q in questoes:

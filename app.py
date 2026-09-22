@@ -219,6 +219,33 @@ if not is_dark:
     div[data-testid="stMetricValue"] {
         color: #0f172a !important;
     }
+    /* Popover e botões secundários no modo claro (elimina a pílula/fundo escuro #13111c) */
+    div[data-testid="stPopover"] > button,
+    div[data-testid="stPopover"] button,
+    button[kind="secondary"],
+    button[data-testid="baseButton-secondary"] {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        color: #334155 !important;
+        border: 1.5px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    }
+    div[data-testid="stPopover"] > button:hover,
+    div[data-testid="stPopover"] button:hover,
+    button[kind="secondary"]:hover,
+    button[data-testid="baseButton-secondary"]:hover {
+        background-color: #f8fafc !important;
+        background: #f8fafc !important;
+        color: #7c3aed !important;
+        border-color: #7c3aed !important;
+    }
+    div[data-testid="stPopoverBody"],
+    div[data-testid="stPopoverBody"] > div {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        color: #0f172a !important;
+    }
     """
 else:
     theme_css = """
@@ -514,6 +541,14 @@ st.markdown(f"""
         box-shadow: 0 0 12px rgba(245, 158, 11, 0.25) !important;
         transform: translateY(-1px);
     }}
+
+    .st-key-nav_btn_perfil_topbar button {
+        border-radius: 12px !important;
+        font-weight: 700 !important;
+        font-size: 0.82rem !important;
+        border: 1.5px solid {gold_border} !important;
+        padding: 0 8px !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -536,12 +571,12 @@ if "usuario_logado" not in st.session_state or not st.session_state.usuario_loga
 
 # ── 5. Usuário Logado & Perfil ────────────────────────────────────────────────
 usuario = st.session_state.get("usuario_logado") or {}
-aluno_id = usuario.get("email", "default")
+aluno_id = usuario.get("id")
 st.session_state.aluno_id = aluno_id
 
-nome_completo = usuario.get("nome", "Aluno")
+nome_completo = str(usuario.get("nome") or "Aluno")
 iniciais = "".join(p[0].upper() for p in nome_completo.split()[:2])
-nome_exibir = nome_completo.split()[0]
+nome_exibir = nome_completo.split()[0] if nome_completo.split() else "Aluno"
 
 motivos_map = {
     "concurso_militar": "🎖️ Concurso Militar",
@@ -552,22 +587,37 @@ motivos_map = {
     "uso_profissional": "💼 Área Técnica",
     "curiosidade": "🔍 Curiosidade & Lógica"
 }
-motivos_user = usuario.get("motivos", [])
-if "guilherme" in aluno_id.lower():
-    badge_subtitulo = "UFF • Matemática (Graduação)"
+faculdade_user = usuario.get("faculdade") or ""
+curso_user = usuario.get("curso") or ""
+escolaridade_user = usuario.get("escolaridade") or ""
+concursos_user = usuario.get("concursos_foco") or []
+motivos_user = usuario.get("motivos") or []
+
+if faculdade_user and curso_user:
+    sigla_fac = faculdade_user.split(" - ")[0] if " - " in faculdade_user else faculdade_user
+    badge_subtitulo = f"{sigla_fac} • {curso_user}"
+elif faculdade_user:
+    sigla_fac = faculdade_user.split(" - ")[0] if " - " in faculdade_user else faculdade_user
+    badge_subtitulo = f"{sigla_fac}"
+elif curso_user:
+    badge_subtitulo = f"{curso_user}"
+elif concursos_user:
+    foco_item = concursos_user[0] if isinstance(concursos_user, list) else str(concursos_user).split(",")[0]
+    badge_subtitulo = f"Foco: {foco_item.split('(')[0].strip()}"
+elif escolaridade_user:
+    badge_subtitulo = escolaridade_user.split("(")[0].strip()
 elif motivos_user:
     badge_subtitulo = motivos_map.get(motivos_user[0], "Estudante MathAI")
 else:
     badge_subtitulo = "Estudante MathAI"
 
-# ── 6. Header: Logo na Esquerda & Conta no Canto Superior Direito ─────────────
-# ── 6. Header Unificado no Topo (Logo, Navegação em 3 Módulos e Conta) ───────────
-# ── 6. Header Unificado no Topo (Logo, Navegação em 4 Módulos e Conta) ───────────
+# ── 6. Header Unificado no Topo (Logo, Navegação em 4 Módulos, Perfil e Sair) ───
 PAGES = {
     "🎯 Resolver / Simulado": "resolver",
     "📊 Perfil Cognitivo": "dashboard",
     "📚 Banco & Listas": "banco",
     "💡 Sobre Nós": "sobre",
+    "👤 Meu Perfil": "perfil",
 }
 
 # Compatibilidade retroativa de chaves
@@ -576,7 +626,7 @@ if "nav_page" not in st.session_state or st.session_state.nav_page not in PAGES:
 
 with st.container(key="mathai_header"):
     col_logo, col_res, col_dash, col_banco, col_sobre, col_tema, col_space, col_user, col_sair = st.columns(
-        [1.75, 1.0, 0.9, 1.2, 1.0, 0.5, 1.8, 1.4, 0.45],
+        [1.75, 0.95, 0.9, 1.2, 0.95, 0.45, 1.3, 1.9, 0.45],
         vertical_alignment="center"
     )
 
@@ -660,29 +710,20 @@ with st.container(key="mathai_header"):
         st.write("")
 
     with col_user:
-        st.markdown(f"""
-        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px; height: 42px; width: 100%;
-                    background: {'rgba(245, 158, 11, 0.08)' if is_dark else 'rgba(124, 58, 237, 0.06)'};
-                    border: 1px solid {'rgba(245, 158, 11, 0.35)' if is_dark else 'rgba(124, 58, 237, 0.25)'};
-                    padding: 0 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,{'0.3' if is_dark else '0.04'});
-                    box-sizing: border-box; margin: 0;">
-            <div style="text-align: right; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 1.1;">
-                <div style="font-weight: 700; font-size: 0.8rem; color: {text_main};">
-                    {nome_exibir}
-                </div>
-                <div style="font-size: 0.66rem; color: {'#fbbf24' if is_dark else '#7c3aed'}; font-weight: 600;">
-                    {badge_subtitulo.split('•')[-1].strip()}
-                </div>
-            </div>
-            <div style="width: 26px; height: 26px; min-width: 26px; border-radius: 50%;
-                        background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
-                        border: 2px solid {gold_border}; color: white; font-weight: 700;
-                        display: flex; align-items: center; justify-content: center; font-size: 0.72rem;
-                        box-shadow: 0 0 6px rgba(245, 158, 11, 0.35);">
-                {iniciais}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        is_perfil = (st.session_state.nav_page == "👤 Meu Perfil")
+        sub_badge = badge_subtitulo.split('•')[-1].strip()
+        if len(sub_badge) > 16:
+            sub_badge = sub_badge[:14] + ".."
+        btn_label = f"👤 {nome_exibir} • {sub_badge}"
+        if st.button(
+            btn_label,
+            help=f"Meu Perfil: {nome_completo}\n{badge_subtitulo}\nClique para ver e alterar seus dados",
+            use_container_width=True,
+            type="primary" if is_perfil else "secondary",
+            key="nav_btn_perfil_topbar"
+        ):
+            st.session_state.nav_page = "👤 Meu Perfil"
+            st.rerun()
 
     with col_sair:
         if st.button("🚪", help="Sair da Conta", use_container_width=True, key="btn_sair_app"):
@@ -714,3 +755,7 @@ elif pagina_ativa == "banco":
 elif pagina_ativa == "sobre":
     from src.app.pages.sobre import show as show_sobre
     show_sobre()
+elif pagina_ativa == "perfil":
+    from src.app.pages.perfil import show as show_perfil
+    show_perfil()
+

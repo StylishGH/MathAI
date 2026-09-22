@@ -15,9 +15,13 @@ def obter_chave_api() -> str | None:
     2. Nas variáveis de ambiente do sistema operacional (os.environ)
     3. Em um arquivo .env na raiz do projeto
     """
-    # 1. Verifica no Streamlit se estiver rodando
+    # 1. Verifica no Streamlit (st.secrets na nuvem ou st.session_state)
     try:
         import streamlit as st
+        if "GEMINI_API_KEY" in st.secrets:
+            chave_sec = str(st.secrets["GEMINI_API_KEY"]).strip()
+            if chave_sec:
+                return chave_sec
         chave_sessao = st.session_state.get("gemini_api_key", "").strip()
         if chave_sessao:
             return chave_sessao

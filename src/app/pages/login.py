@@ -17,10 +17,16 @@ from src.database.users import (
     criar_sessao_lembrada,
     encerrar_sessao_por_token
 )
+from src.app.pages.perfil import (
+    ESCOLARIDADE_OPCOES,
+    FACULDADES_BRASIL,
+    CONCURSOS_MILITARES,
+    CONCURSOS_VESTIBULARES
+)
 
 MOTIVOS_OPCOES = {
     "melhoria_propria":   "📈 Quero melhorar na Matemática por conta própria",
-    "concurso_militar":   "🎖️ Concurso Militar (ESA, EsPCEx, IME, ITA...)",
+    "concurso_militar":   "🎖️ Concurso Militar (ESA, EsPCEx, AFA, EFOMM, IME, ITA...)",
     "enem_vestibular":    "📚 ENEM / Vestibular",
     "professor":          "👨‍🏫 Sou professor(a) de Matemática",
     "olimpiada":          "🏆 Olimpíadas de Matemática (OBMEP, OBM...)",
@@ -324,95 +330,35 @@ def show():
 
         # ── 2. ABA CADASTRO ────────────────────────────────────────────────────
         with aba[1]:
-            with st.form("form_cadastro", clear_on_submit=False):
-                st.markdown("#### Cadastro Completo")
-                st.caption("Preencha seus dados para criar sua conta e liberar o acesso.")
+            st.markdown("#### Cadastro Completo & Personalizado")
+            st.caption("Preencha seus dados para montarmos sua grade de estudos e liberar o acesso.")
 
-                # Dados Pessoais
-                col_nome, col_idade = st.columns([2.5, 1])
-                with col_nome:
-                    c_nome = st.text_input("👤 Nome completo *", placeholder="Ex: Pedro Alvares Cabral", key="cad_nome")
-                with col_idade:
-                    c_idade = st.number_input("Idade", min_value=10, max_value=90, value=18, key="cad_idade")
+            # Dados Pessoais
+            col_nome, col_idade = st.columns([2.5, 1])
+            with col_nome:
+                c_nome = st.text_input("👤 Nome completo *", placeholder="Ex: Pedro Alvares Cabral", key="cad_nome")
+            with col_idade:
+                c_idade = st.number_input("Idade", min_value=10, max_value=90, value=18, key="cad_idade")
 
-                col_cpf, col_cel = st.columns(2)
-                with col_cpf:
-                    c_cpf = st.text_input("🪪 CPF *", placeholder="000.000.000-00", key="cad_cpf")
-                with col_cel:
-                    c_celular = st.text_input("📱 Celular / WhatsApp *", placeholder="(21) 99999-9999", key="cad_celular")
+            col_cpf, col_cel = st.columns(2)
+            with col_cpf:
+                c_cpf = st.text_input("🪪 CPF *", placeholder="000.000.000-00", key="cad_cpf")
+            with col_cel:
+                c_celular = st.text_input("📱 Celular / WhatsApp *", placeholder="(21) 99999-9999", key="cad_celular")
 
-                c_email = st.text_input("📧 E-mail *", placeholder="seu@email.com", key="cad_email")
+            c_email = st.text_input("📧 E-mail *", placeholder="seu@email.com", key="cad_email")
 
-                # Endereço e Faturamento (com busca ViaCEP)
-                st.markdown("---")
-                st.markdown("##### 📍 Endereço & Faturamento")
+            # Endereço e Localização (com busca ViaCEP)
+            st.markdown("---")
+            st.markdown("##### 📍 Endereço & Localização")
 
-                col_cep, col_btn_cep = st.columns([2, 1])
-                with col_cep:
-                    c_cep = st.text_input("CEP *", placeholder="00000-000", key="cad_cep")
-                with col_btn_cep:
-                    st.write("")
-                    st.write("")
-                    btn_buscar_cep = st.form_submit_button("🔍 Buscar CEP", use_container_width=True)
-
-                col_logr, col_num = st.columns([3, 1])
-                with col_logr:
-                    c_logradouro = st.text_input(
-                        "Logradouro / Rua",
-                        value=st.session_state.get("cep_logradouro", ""),
-                        placeholder="Rua das Flores"
-                    )
-                with col_num:
-                    c_numero = st.text_input("Número", placeholder="123")
-
-                col_bairro, col_cid, col_uf = st.columns([1.5, 2, 1])
-                with col_bairro:
-                    c_bairro = st.text_input(
-                        "Bairro",
-                        value=st.session_state.get("cep_bairro", ""),
-                        placeholder="Centro"
-                    )
-                with col_cid:
-                    c_cidade = st.text_input(
-                        "Cidade",
-                        value=st.session_state.get("cep_cidade", ""),
-                        placeholder="Niterói"
-                    )
-                with col_uf:
-                    c_estado = st.text_input(
-                        "UF",
-                        value=st.session_state.get("cep_estado", ""),
-                        placeholder="RJ",
-                        max_chars=2
-                    )
-
-                # Segurança / Senha
-                st.markdown("---")
-                st.markdown("##### 🔒 Senha de Acesso")
-                col_s1, col_s2 = st.columns(2)
-                with col_s1:
-                    c_senha = st.text_input("Senha (mínimo 6 caracteres) *", type="password", key="cad_senha")
-                with col_s2:
-                    c_senha2 = st.text_input("Confirmar Senha *", type="password", key="cad_senha2")
-
-                # Perfil Motivacional
-                st.markdown("---")
-                st.markdown("**🎯 Por que você vai estudar Matemática?** *(selecione ao menos um)*")
-                motivos_selecionados = []
-                for chave, label in MOTIVOS_OPCOES.items():
-                    if st.checkbox(label, key=f"motivo_{chave}"):
-                        motivos_selecionados.append(chave)
-
-                # Botão de Cadastro
-                st.markdown("---")
-                btn_cadastrar = st.form_submit_button(
-                    "Criar Conta e Receber Código 2FA →",
-                    use_container_width=True,
-                    type="primary"
-                )
-
-                # Ação 1: Buscar CEP
-                if btn_buscar_cep:
+            col_cep, col_btn_cep = st.columns([2, 1])
+            with col_cep:
+                c_cep = st.text_input("CEP", placeholder="00000-000", key="cad_cep")
+            with col_btn_cep:
+                st.write("")
+                st.write("")
+                if st.button("🔍 Buscar CEP", use_container_width=True, key="cad_btn_buscar_cep"):
                     if c_cep:
                         endereco_cep = buscar_endereco_por_cep(c_cep)
                         if endereco_cep:
@@ -427,54 +373,206 @@ def show():
                     else:
                         st.warning("Digite o CEP antes de buscar.")
 
-                # Ação 2: Cadastrar
-                elif btn_cadastrar:
-                    erros = []
-                    if not c_nome.strip():        erros.append("Nome completo é obrigatório.")
-                    if not c_email.strip():       erros.append("E-mail é obrigatório.")
-                    if not c_cpf.strip():         erros.append("CPF é obrigatório.")
-                    elif not validar_cpf(c_cpf):  erros.append("CPF inválido. Verifique os dígitos.")
-                    if not c_senha:               erros.append("Senha é obrigatória.")
-                    if c_senha != c_senha2:       erros.append("As senhas não coincidem.")
-                    if len(c_senha) < 6:          erros.append("Senha deve ter pelo menos 6 caracteres.")
-                    if not motivos_selecionados:  erros.append("Selecione pelo menos 1 objetivo de estudo.")
+            col_logr, col_num = st.columns([3, 1])
+            with col_logr:
+                c_logradouro = st.text_input(
+                    "Logradouro / Rua",
+                    value=st.session_state.get("cep_logradouro", ""),
+                    placeholder="Rua das Flores",
+                    key="cad_logradouro"
+                )
+            with col_num:
+                c_numero = st.text_input("Número", placeholder="123", key="cad_numero")
 
-                    if erros:
-                        for e in erros:
-                            st.error(e)
+            col_bairro, col_cid, col_uf = st.columns([1.5, 2, 1])
+            with col_bairro:
+                c_bairro = st.text_input(
+                    "Bairro",
+                    value=st.session_state.get("cep_bairro", ""),
+                    placeholder="Centro",
+                    key="cad_bairro"
+                )
+            with col_cid:
+                c_cidade = st.text_input(
+                    "Cidade",
+                    value=st.session_state.get("cep_cidade", ""),
+                    placeholder="Niterói",
+                    key="cad_cidade"
+                )
+            with col_uf:
+                c_estado = st.text_input(
+                    "UF",
+                    value=st.session_state.get("cep_estado", ""),
+                    placeholder="RJ",
+                    max_chars=2,
+                    key="cad_estado"
+                )
+
+            # ── Formação Acadêmica & Escolaridade ──
+            st.markdown("---")
+            st.markdown("##### 🎓 Formação Acadêmica & Escolaridade")
+
+            c_escolaridade = st.selectbox(
+                "Nível de Escolaridade Atual *",
+                options=ESCOLARIDADE_OPCOES,
+                index=1,  # Padrão: Ensino Médio
+                key="cad_escolaridade"
+            )
+
+            eh_ensino_superior = c_escolaridade in [
+                "Ensino Superior (Graduação)",
+                "Pós-Graduação / Especialização",
+                "Mestrado",
+                "Doutorado"
+            ]
+
+            c_faculdade = None
+            c_curso = None
+
+            if eh_ensino_superior:
+                st.markdown(f"""
+                <div style="background: {'rgba(124, 58, 237, 0.1)' if is_dark else 'rgba(124, 58, 237, 0.05)'};
+                            border: 1px dashed {'rgba(124, 58, 237, 0.35)' if is_dark else '#cbd5e1'};
+                            border-radius: 12px; padding: 12px; margin-top: 4px; margin-bottom: 8px;">
+                    <div style="font-size: 0.82rem; font-weight: 700; color: {'#c7d2fe' if is_dark else '#6d28d9'}; margin-bottom: 6px;">
+                        🏛️ Informações da Faculdade & Graduação
+                    </div>
+                """, unsafe_allow_html=True)
+
+                faculdade_sel = st.selectbox(
+                    "Instituição de Ensino Superior *",
+                    options=FACULDADES_BRASIL,
+                    key="cad_sel_faculdade"
+                )
+
+                if faculdade_sel == "Outra Faculdade / Universidade":
+                    c_faculdade_custom = st.text_input(
+                        "Digite o nome da sua Faculdade / Universidade *",
+                        placeholder="Ex: UERJ, Estácio, Mackenzie, etc.",
+                        key="cad_faculdade_custom"
+                    )
+                    c_faculdade = c_faculdade_custom.strip() if c_faculdade_custom else "Outra Faculdade"
+                else:
+                    c_faculdade = faculdade_sel
+
+                c_curso = st.text_input(
+                    "Curso / Graduação *",
+                    placeholder="Ex: Engenharia Civil, Matemática, Medicina, Direito...",
+                    key="cad_curso"
+                )
+                st.markdown("</div>", unsafe_allow_html=True)
+
+            # ── Objetivos & Concursos Foco ──
+            st.markdown("---")
+            st.markdown("##### 🎯 Objetivos de Estudo & Foco")
+            st.caption("Selecione seus objetivos para que possamos priorizar suas listas e simulados:")
+
+            motivos_selecionados = []
+            for chave, label in MOTIVOS_OPCOES.items():
+                if st.checkbox(label, key=f"cad_motivo_{chave}"):
+                    motivos_selecionados.append(chave)
+
+            tem_militar = "concurso_militar" in motivos_selecionados
+            tem_vestibular = "enem_vestibular" in motivos_selecionados
+            concursos_foco_selecionados = []
+
+            if tem_militar or "Cursinho" in c_escolaridade:
+                st.markdown(f"""
+                <div style="margin-top: 8px; font-size: 0.88rem; font-weight: 700; color: {'#fbbf24' if is_dark else '#b45309'};">
+                    🎖️ Concursos Militares de Interesse:
+                </div>
+                """, unsafe_allow_html=True)
+                sel_militares = st.multiselect(
+                    "Quais concursos você pretende prestar?",
+                    options=CONCURSOS_MILITARES,
+                    key="cad_sel_militares"
+                )
+                concursos_foco_selecionados.extend(sel_militares)
+
+            if tem_vestibular or "Cursinho" in c_escolaridade or "Médio" in c_escolaridade:
+                st.markdown(f"""
+                <div style="margin-top: 8px; font-size: 0.88rem; font-weight: 700; color: {'#60a5fa' if is_dark else '#1d4ed8'};">
+                    📚 Vestibulares de Interesse:
+                </div>
+                """, unsafe_allow_html=True)
+                sel_vestibulares = st.multiselect(
+                    "Quais vestibulares você pretende prestar?",
+                    options=CONCURSOS_VESTIBULARES,
+                    key="cad_sel_vestibulares"
+                )
+                concursos_foco_selecionados.extend(sel_vestibulares)
+
+            # Segurança / Senha
+            st.markdown("---")
+            st.markdown("##### 🔒 Senha de Acesso")
+            col_s1, col_s2 = st.columns(2)
+            with col_s1:
+                c_senha = st.text_input("Senha (mínimo 6 caracteres) *", type="password", key="cad_senha")
+            with col_s2:
+                c_senha2 = st.text_input("Confirmar Senha *", type="password", key="cad_senha2")
+
+            # Botão de Cadastro
+            st.markdown("---")
+            btn_cadastrar = st.button(
+                "Criar Conta e Receber Código 2FA →",
+                use_container_width=True,
+                type="primary",
+                key="btn_submeter_cadastro"
+            )
+
+            if btn_cadastrar:
+                erros = []
+                if not c_nome.strip():        erros.append("Nome completo é obrigatório.")
+                if not c_email.strip():       erros.append("E-mail é obrigatório.")
+                if not c_cpf.strip():         erros.append("CPF é obrigatório.")
+                elif not validar_cpf(c_cpf):  erros.append("CPF inválido. Verifique os dígitos.")
+                if not c_senha:               erros.append("Senha é obrigatória.")
+                if c_senha != c_senha2:       erros.append("As senhas não coincidem.")
+                if len(c_senha) < 6:          erros.append("Senha deve ter pelo menos 6 caracteres.")
+                if not motivos_selecionados:  erros.append("Selecione pelo menos 1 objetivo de estudo.")
+                if eh_ensino_superior and not (c_curso and c_curso.strip()):
+                    erros.append("Informe o seu curso de graduação.")
+
+                if erros:
+                    for e in erros:
+                        st.error(e)
+                else:
+                    # Auto-preenchimento de CEP se não tiver buscado antes
+                    logr = c_logradouro
+                    bair = c_bairro
+                    cid = c_cidade
+                    uf = c_estado
+                    if c_cep and not logr:
+                        end_auto = buscar_endereco_por_cep(c_cep)
+                        if end_auto:
+                            logr = end_auto.get("logradouro", "")
+                            bair = end_auto.get("bairro", "")
+                            cid = end_auto.get("cidade", "")
+                            uf = end_auto.get("estado", "")
+
+                    resultado = cadastrar_usuario(
+                        nome=c_nome,
+                        email=c_email,
+                        senha=c_senha,
+                        cpf=c_cpf,
+                        idade=int(c_idade),
+                        celular=c_celular or None,
+                        cep=c_cep or None,
+                        logradouro=logr or None,
+                        numero=c_numero or None,
+                        bairro=bair or None,
+                        cidade=cid or None,
+                        estado=uf or None,
+                        motivos=motivos_selecionados,
+                        escolaridade=c_escolaridade,
+                        faculdade=c_faculdade if eh_ensino_superior else None,
+                        curso=c_curso.strip() if (eh_ensino_superior and c_curso) else None,
+                        concursos_foco=concursos_foco_selecionados
+                    )
+                    if resultado["ok"]:
+                        st.session_state.verificando_email = resultado["email"]
+                        st.session_state.codigo_teste_otp = resultado.get("codigo_teste", "")
+                        st.toast("Código de verificação gerado!", icon="🔑")
+                        st.rerun()
                     else:
-                        # Auto-preenchimento de CEP se não tiver buscado antes
-                        logr = c_logradouro
-                        bair = c_bairro
-                        cid = c_cidade
-                        uf = c_estado
-                        if c_cep and not logr:
-                            end_auto = buscar_endereco_por_cep(c_cep)
-                            if end_auto:
-                                logr = end_auto.get("logradouro", "")
-                                bair = end_auto.get("bairro", "")
-                                cid = end_auto.get("cidade", "")
-                                uf = end_auto.get("estado", "")
-
-                        resultado = cadastrar_usuario(
-                            nome=c_nome,
-                            email=c_email,
-                            senha=c_senha,
-                            cpf=c_cpf,
-                            idade=int(c_idade),
-                            celular=c_celular or None,
-                            cep=c_cep or None,
-                            logradouro=logr or None,
-                            numero=c_numero or None,
-                            bairro=bair or None,
-                            cidade=cid or None,
-                            estado=uf or None,
-                            motivos=motivos_selecionados
-                        )
-                        if resultado["ok"]:
-                            st.session_state.verificando_email = resultado["email"]
-                            st.session_state.codigo_teste_otp = resultado.get("codigo_teste", "")
-                            st.toast("Código de verificação gerado!", icon="🔑")
-                            st.rerun()
-                        else:
-                            st.error(resultado["erro"])
+                        st.error(resultado["erro"])

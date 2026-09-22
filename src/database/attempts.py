@@ -12,7 +12,7 @@ def registrar_tentativa(
     questao_id: int,
     tempo_segundos: int,
     acertou: bool,
-    aluno_id: str = "default",
+    aluno_id: int = 1,
     estrategia_usada: str | None = None,
     tipo_erro: str = "nenhum",
     confianca_aluno: int = 3,
@@ -27,13 +27,6 @@ def registrar_tentativa(
     con = pegar_conexao()
     cur = con.cursor()
 
-    # Migração automática: adiciona aluno_id se não existir ainda (banco antigo)
-    try:
-        cur.execute("ALTER TABLE tentativas ADD COLUMN aluno_id TEXT NOT NULL DEFAULT 'default'")
-        con.commit()
-    except Exception:
-        pass  # Coluna já existe
-
     acertou_int = 1 if acertou else 0
 
     # 1. Inserir na tabela tentativas
@@ -47,7 +40,7 @@ def registrar_tentativa(
         questao_id, aluno_id, tempo_segundos, acertou_int, estrategia_usada,
         tipo_erro, confianca_aluno, anotacoes, imagem_resolucao_path
     ))
-    tentativa_id = cur.lastrowid
+    tentativa_id = int(cur.lastrowid or 0)
 
     # 2. Buscar metadados da questão para atualizar perfil
     cur.execute("SELECT materia, topico FROM questoes WHERE id = ?", (questao_id,))
@@ -55,8 +48,11 @@ def registrar_tentativa(
     if q_meta:
         materia, topico = q_meta["materia"], q_meta["topico"]
 
-        # Busca perfil atual do tópico
-        cur.execute("SELECT * FROM perfil_aluno_topico WHERE materia = ? AND topico = ?", (materia, topico))
+        # Busca perfil atual do tópico para este aluno
+        cur.execute(
+            "SELECT * FROM perfil_aluno_topico WHERE aluno_id = ? AND materia = ? AND topico = ?",
+            (aluno_id, materia, topico)
+        )
         perfil = cur.fetchone()
 
         if perfil:
@@ -74,14 +70,14 @@ def registrar_tentativa(
         else:
             cur.execute("""
                 INSERT INTO perfil_aluno_topico (
-                    materia, topico, total_tentativas, total_acertos, tempo_medio_segundos, estrategia_favorita
-                ) VALUES (?, ?, ?, ?, ?, ?)
-            """, (materia, topico, 1, acertou_int, float(tempo_segundos), estrategia_usada))
+                    aluno_id, materia, topico, total_tentativas, total_acertos, tempo_medio_segundos, estrategia_favorita
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (aluno_id, materia, topico, 1, acertou_int, float(tempo_segundos), estrategia_usada))
 
-    # 3. Atualizar Repetição Espaçada (SM-2 simplificado)
+    # 3. Atualizar Repetição Espaçada (SM-2 individual por aluno)
     cur.execute(
-        "SELECT * FROM revisao_espacada WHERE item_tipo = 'questao' AND item_id = ?",
-        (questao_id,)
+        "SELECT * FROM revisao_espacada WHERE aluno_id = ? AND item_tipo = 'questao' AND item_id = ?",
+        (aluno_id, questao_id)
     )
     rev = cur.fetchone()
 
@@ -109,9 +105,9 @@ def registrar_tentativa(
     else:
         cur.execute("""
             INSERT INTO revisao_espacada (
-                item_tipo, item_id, intervalo_dias, repeticoes, proxima_revisao
-            ) VALUES ('questao', ?, ?, ?, ?)
-        """, (questao_id, intervalo, repeticoes, proxima_data))
+                aluno_id, item_tipo, item_id, intervalo_dias, repeticoes, proxima_revisao
+            ) VALUES (?, 'questao', ?, ?, ?, ?)
+        """, (aluno_id, questao_id, intervalo, repeticoes, proxima_data))
 
     con.commit()
     con.close()
@@ -278,7 +274,7 @@ def obter_metricas_estudante(aluno_id: str | None = None):
 def salvar_diagnostico_ia(
     questao_id: int,
     diagnostico_dict: dict,
-    aluno_id: str = "default",
+    aluno_id: int = 1,
     tentativa_id: int | None = None,
     imagem_path: str | None = None,
     justificativa_texto: str | None = None
@@ -289,35 +285,6 @@ def salvar_diagnostico_ia(
     """
     con = pegar_conexao()
     cur = con.cursor()
-
-    # Garante que a tabela exista e tenha as colunas novas (migração automática)
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS diagnosticos_ia (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            tentativa_id INTEGER,
-            questao_id INTEGER NOT NULL,
-            aluno_id TEXT NOT NULL DEFAULT 'default',
-            modelo_gemini TEXT,
-            criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            imagem_path TEXT,
-            justificativa_texto TEXT,
-            transcricao_latex TEXT,
-            passos_json TEXT,
-            estrategia_identificada TEXT,
-            status_resolucao TEXT,
-            diagnostico TEXT,
-            linha_do_erro TEXT,
-            dica_proximo_passo TEXT,
-            FOREIGN KEY (questao_id) REFERENCES questoes (id) ON DELETE CASCADE,
-            FOREIGN KEY (tentativa_id) REFERENCES tentativas (id) ON DELETE SET NULL
-        )
-    """)
-    for col, coldef in [("aluno_id", "TEXT NOT NULL DEFAULT 'default'"), ("modelo_gemini", "TEXT")]:
-        try:
-            cur.execute(f"ALTER TABLE diagnosticos_ia ADD COLUMN {col} {coldef}")
-            con.commit()
-        except Exception:
-            pass  # Já existe
 
     passos_json = json.dumps(diagnostico_dict.get("passos", []), ensure_ascii=False)
 
@@ -344,7 +311,7 @@ def salvar_diagnostico_ia(
         diagnostico_dict.get("linha_do_erro"),
         diagnostico_dict.get("dica_proximo_passo")
     ))
-    diag_id = cur.lastrowid
+    diag_id = int(cur.lastrowid or 0)
     con.commit()
     con.close()
     return diag_id
@@ -355,7 +322,7 @@ def registrar_dica_socratica(
     nivel_dica: int,
     texto_dica: str,
     modelo_gemini: str = "",
-    aluno_id: str = "default"
+    aluno_id: int = 1
 ) -> None:
     """
     Registra cada pedido de dica socrática no banco.
@@ -363,21 +330,10 @@ def registrar_dica_socratica(
     """
     con = pegar_conexao()
     cur = con.cursor()
-    # Cria tabela se não existir (banco antigo)
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS log_dicas_socraticas (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            questao_id INTEGER NOT NULL,
-            aluno_id TEXT NOT NULL DEFAULT 'default',
-            nivel_dica INTEGER NOT NULL,
-            texto_dica TEXT,
-            modelo_gemini TEXT,
-            criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    """)
     cur.execute(
         "INSERT INTO log_dicas_socraticas (questao_id, aluno_id, nivel_dica, texto_dica, modelo_gemini) VALUES (?,?,?,?,?)",
         (questao_id, aluno_id, nivel_dica, texto_dica, modelo_gemini)
     )
     con.commit()
     con.close()
+

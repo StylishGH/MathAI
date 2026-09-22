@@ -64,9 +64,15 @@ def e_questao_discursiva(questao: dict) -> bool:
     """
     Detecta se a questão é discursiva (aberta / de prova).
     Uma questão é discursiva se:
-      - Não possui alternativas (A), (B), (C), (D), (E) no enunciado, OU
-      - O gabarito não é uma letra simples A-E
+      - O campo 'tipo' for explicitamente 'discursiva', OU
+      - Não possui alternativas (A), (B), (C), (D), (E) no enunciado, E o gabarito não é uma letra simples A-E
     """
+    tipo = str(questao.get("tipo", "")).strip().lower()
+    if tipo == "discursiva":
+        return True
+    if tipo == "objetiva":
+        return False
+
     enunciado_raw = questao.get("enunciado", "")
     _, alternativas = extrair_enunciado_e_alternativas(enunciado_raw)
     if alternativas:
@@ -78,3 +84,4 @@ def e_questao_discursiva(questao: dict) -> bool:
         return False
 
     return True  # Sem alternativas e gabarito não é letra → discursiva
+

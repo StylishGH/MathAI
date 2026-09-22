@@ -65,6 +65,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
     # Extrai alternativas do enunciado
     enunciado_raw = questao.get("enunciado", "")
     _, alternativas = extrair_enunciado_e_alternativas(enunciado_raw)
+    is_discursiva = e_questao_discursiva(questao)
 
     st.markdown("---")
 
@@ -72,37 +73,51 @@ def render_resolution_form(questao: dict, on_success_callback=None):
     # ESTADO 1: AINDA NÃO RESPONDEU (Alternativas Clicáveis + Campo Justificativa)
     # =========================================================================
     if not st.session_state[f"resolvido_{q_id}"]:
-        st.markdown("#### 🔘 Selecione a Alternativa:")
-        st.caption("Clique diretamente na alternativa que você considera correta:")
+        if not is_discursiva:
+            st.markdown("#### 🔘 Selecione a Alternativa:")
+            st.caption("Clique diretamente na alternativa que você considera correta:")
 
-        if alternativas:
-            for letra, texto_alt in alternativas.items():
-                is_selected = (st.session_state[f"resposta_escolhida_{q_id}"] == letra)
-                icone = "🔘" if is_selected else "⚪"
-                btn_texto = f"{icone}  ({letra})  {texto_alt}"
-                if st.button(
-                    btn_texto,
-                    key=f"btn_alt_{q_id}_{letra}",
-                    use_container_width=True,
-                    type="primary" if is_selected else "secondary"
-                ):
-                    st.session_state[f"resposta_escolhida_{q_id}"] = letra
-                    st.rerun()
-        else:
-            # Fallback caso a questão não possua alternativas no formato (A)...(E)
-            opcoes_fallback = ["A", "B", "C", "D", "E"]
-            cols = st.columns(len(opcoes_fallback))
-            for i, opt in enumerate(opcoes_fallback):
-                is_selected = (st.session_state[f"resposta_escolhida_{q_id}"] == opt)
-                with cols[i]:
+            if alternativas:
+                for letra, texto_alt in alternativas.items():
+                    is_selected = (st.session_state[f"resposta_escolhida_{q_id}"] == letra)
+                    icone = "🔘" if is_selected else "⚪"
+                    btn_texto = f"{icone}  ({letra})  {texto_alt}"
                     if st.button(
-                        f"({opt})",
-                        key=f"btn_fallback_{q_id}_{opt}",
+                        btn_texto,
+                        key=f"btn_alt_{q_id}_{letra}",
                         use_container_width=True,
                         type="primary" if is_selected else "secondary"
                     ):
-                        st.session_state[f"resposta_escolhida_{q_id}"] = opt
+                        st.session_state[f"resposta_escolhida_{q_id}"] = letra
                         st.rerun()
+            else:
+                # Fallback caso a questão não possua alternativas no formato (A)...(E)
+                opcoes_fallback = ["A", "B", "C", "D", "E"]
+                cols = st.columns(len(opcoes_fallback))
+                for i, opt in enumerate(opcoes_fallback):
+                    is_selected = (st.session_state[f"resposta_escolhida_{q_id}"] == opt)
+                    with cols[i]:
+                        if st.button(
+                            f"({opt})",
+                            key=f"btn_fallback_{q_id}_{opt}",
+                            use_container_width=True,
+                            type="primary" if is_selected else "secondary"
+                        ):
+                            st.session_state[f"resposta_escolhida_{q_id}"] = opt
+                            st.rerun()
+        else:
+            st.markdown(
+                """
+                <div style="display: flex; align-items: center; gap: 10px; margin: 6px 0 16px 0;
+                            padding: 10px 16px; border-radius: 12px;
+                            background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3);
+                            color: #10b981; font-weight: 600; font-size: 0.92rem;">
+                    <span style="font-size: 1.25rem;">📝</span>
+                    <span><b>Questão Discursiva:</b> Esta questão não possui alternativas. Desenvolva seus passos no campo de justificativa ou anexe uma foto/PDF do seu rascunho abaixo.</span>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
         # =====================================================================
         # Dicas Socráticas Progressivas (Níveis 1 a 5)
@@ -140,7 +155,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                         st.session_state[f"dica_conteudo_{q_id}"] = dica_texto
                         st.session_state[f"dica_nivel_mostrado_{q_id}"] = nivel_dica
                         # ⭐ Rastreia o pedido de dica no dataset
-                        aluno_id = st.session_state.get("aluno_id", "default")
+                        aluno_id = st.session_state.get("aluno_id", 1)
                         registrar_dica_socratica(
                             questao_id=q_id,
                             nivel_dica=nivel_dica,
@@ -237,7 +252,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                         )
                         st.session_state[f"analise_ia_{q_id}"] = diag
                         # ⭐ Auto-salva o diagnóstico no banco imediatamente
-                        aluno_id = st.session_state.get("aluno_id", "default")
+                        aluno_id = st.session_state.get("aluno_id", 1)
                         salvar_diagnostico_ia(
                             questao_id=q_id,
                             diagnostico_dict=diag,
@@ -264,23 +279,35 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                 st.button("🎯 Confirmar Resposta", use_container_width=True, type="primary",
                           key=f"btn_confirmar_{q_id}", disabled=True)
             else:
-                if st.button("🎯 Confirmar Resposta", use_container_width=True, type="primary",
+                btn_label = "📋 Enviar Resolução" if is_discursiva else "🎯 Confirmar Resposta"
+                if st.button(btn_label, use_container_width=True, type="primary",
                              key=f"btn_confirmar_{q_id}"):
                     tempo_decorrido = int(time.time() - st.session_state[f"tempo_inicio_{q_id}"])
                     st.session_state[f"tempo_total_{q_id}"] = max(tempo_decorrido, 1)
                     st.session_state[f"resolvido_{q_id}"] = True
-                    resposta_atual = st.session_state[f"resposta_escolhida_{q_id}"]
-                    st.session_state[f"acertou_{q_id}"] = (resposta_atual == gabarito_oficial)
+                    if is_discursiva:
+                        st.session_state[f"acertou_{q_id}"] = True
+                    else:
+                        resposta_atual = st.session_state[f"resposta_escolhida_{q_id}"]
+                        st.session_state[f"acertou_{q_id}"] = (resposta_atual == gabarito_oficial)
                     st.rerun()
 
         with col_info:
-            escolhida = st.session_state[f"resposta_escolhida_{q_id}"]
-            st.markdown(
-                f"<div style='padding-top: 8px; color: #888; font-size: 0.95rem;'>"
-                f"Alternativa selecionada: <b style='color: #6366f1; font-size: 1.1rem;'>({escolhida})</b>"
-                f"</div>",
-                unsafe_allow_html=True
-            )
+            if is_discursiva:
+                st.markdown(
+                    f"<div style='padding-top: 8px; color: #10b981; font-size: 0.92rem; font-weight: 600;'>"
+                    f"📝 <b>Questão Discursiva:</b> Justificativa ou anexo obrigatórios."
+                    f"</div>",
+                    unsafe_allow_html=True
+                )
+            else:
+                escolhida = st.session_state[f"resposta_escolhida_{q_id}"]
+                st.markdown(
+                    f"<div style='padding-top: 8px; color: #888; font-size: 0.95rem;'>"
+                    f"Alternativa selecionada: <b style='color: #6366f1; font-size: 1.1rem;'>({escolhida})</b>"
+                    f"</div>",
+                    unsafe_allow_html=True
+                )
 
     # =========================================================================
     # ESTADO 2: JÁ RESPONDEU (Gabarito, Destaque Visual e Diagnóstico)
@@ -292,14 +319,32 @@ def render_resolution_form(questao: dict, on_success_callback=None):
         minutos = tempo_segundos // 60
         segs = tempo_segundos % 60
         tempo_formatado = f"{minutos}m {segs:02d}s" if minutos > 0 else f"{segs}s"
+        is_dark = (st.session_state.get("tema", "dark") == "dark")
 
-        if acertou:
-            st.success(f"🎉 **Parabéns, você acertou!** (Gabarito: **{gabarito_oficial}**) • Tempo: **{tempo_formatado}**")
+        if is_discursiva:
+            st.success(f"📋 **Resolução enviada com sucesso!** • Tempo gasto: **{tempo_formatado}**")
+            gabarito_exibicao = questao.get("gabarito") or "Ver estratégias esperadas abaixo"
+            st.markdown(
+                f"""
+                <div style="background: rgba(16, 185, 129, 0.1); border: 1.5px solid #10b981; border-radius: 12px; padding: 14px 18px; margin: 12px 0;">
+                    <div style="color: #10b981; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                        🎯 Gabarito Oficial / Resposta Esperada
+                    </div>
+                    <div style="font-size: 1.1rem; font-weight: 700; color: {'#ffffff' if is_dark else '#0f172a'};">
+                        {gabarito_exibicao}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         else:
-            st.error(f"❌ **Resposta incorreta.** Você marcou **({resposta_usuario})**, mas o gabarito oficial é **({gabarito_oficial})**. • Tempo: **{tempo_formatado}**")
+            if acertou:
+                st.success(f"🎉 **Parabéns, você acertou!** (Gabarito: **{gabarito_oficial}**) • Tempo: **{tempo_formatado}**")
+            else:
+                st.error(f"❌ **Resposta incorreta.** Você marcou **({resposta_usuario})**, mas o gabarito oficial é **({gabarito_oficial})**. • Tempo: **{tempo_formatado}**")
 
-        # Exibição visual das alternativas com indicação de acerto/erro
-        if alternativas:
+        # Exibição visual das alternativas (apenas para questões objetivas)
+        if not is_discursiva and alternativas:
             st.markdown("##### Alternativas:")
             for letra, texto_alt in alternativas.items():
                 if letra == gabarito_oficial:
@@ -343,11 +388,13 @@ def render_resolution_form(questao: dict, on_success_callback=None):
             col_rev_just, col_rev_img = st.columns([1, 1] if (justificativa_salva and imagem_salva) else [1, 0.01], gap="medium")
             with col_rev_just:
                 if justificativa_salva:
+                    import html
+                    just_safe = html.escape(justificativa_salva).replace("*", "&#42;")
                     st.markdown(
                         f"""
                         <div style="background: rgba(99, 102, 241, 0.08); border-left: 3px solid #6366f1; border-radius: 6px; padding: 10px 14px; margin: 12px 0;">
                             <div style="font-size: 0.8rem; font-weight: 600; color: #818cf8; margin-bottom: 4px;">SUA JUSTIFICATIVA REGISTRADA:</div>
-                            <div style="font-style: italic; font-size: 0.95rem;">"{justificativa_salva}"</div>
+                            <div style="font-style: italic; font-size: 0.95rem; white-space: pre-wrap;">"{just_safe}"</div>
                         </div>
                         """,
                         unsafe_allow_html=True
@@ -470,7 +517,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                     questao_id=q_id,
                     tempo_segundos=tempo_segundos,
                     acertou=acertou,
-                    aluno_id=st.session_state.get("aluno_id", "default"),
+                    aluno_id=st.session_state.get("aluno_id", 1),
                     estrategia_usada=estrategia_final,
                     tipo_erro=tipo_erro_final,
                     confianca_aluno=confianca,
@@ -483,7 +530,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                     salvar_diagnostico_ia(
                         questao_id=q_id,
                         diagnostico_dict=st.session_state[f"analise_ia_{q_id}"],
-                        aluno_id=st.session_state.get("aluno_id", "default"),
+                        aluno_id=st.session_state.get("aluno_id", 1),
                         tentativa_id=tentativa_id,
                         imagem_path=caminho_imagem_salva,
                         justificativa_texto=justificativa_salva
@@ -514,8 +561,10 @@ def _renderizar_card_ia(diag: dict):
     label_status, cor_status, bg_status = status_map.get(
         status, ("⏳ Resolução Parcial / Incompleta", "#8b5cf6", "rgba(139, 92, 246, 0.1)")
     )
-    modelo_badge = diag.get("modelo_utilizado", "")
-    badge_html = f'<span style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 3px 8px; border-radius: 9999px; font-size: 0.75rem; color: #a78bfa; margin-right: 6px;">{modelo_badge}</span>' if modelo_badge else ""
+    raw_modelo = str(diag.get("modelo_utilizado", ""))
+    modelo_badge = raw_modelo.replace("Gemini Pro", "MathAI Pro").replace("Gemini 3.7 Flash", "MathAI Flash").replace("Gemini", "MathAI")
+    badge_html = f'<span style="background: rgba(124, 58, 237, 0.12); border: 1px solid rgba(124, 58, 237, 0.3); padding: 3px 10px; border-radius: 9999px; font-size: 0.76rem; color: #a78bfa; margin-right: 6px; font-weight: 600;">{modelo_badge}</span>' if modelo_badge else ""
+
 
     st.markdown(
         f"""
@@ -562,7 +611,8 @@ def _renderizar_card_ia(diag: dict):
     # 4. Parecer Pedagógico
     diagnostico_texto = diag.get("diagnostico")
     if diagnostico_texto:
-        st.markdown(f"**💬 Parecer Pedagógico:** {diagnostico_texto}")
+        diag_limpo = str(diagnostico_texto).replace("Gemini Pro", "MathAI Pro").replace("Gemini 3.7 Flash", "MathAI Flash").replace("Gemini", "MathAI")
+        st.markdown(f"**💬 Parecer Pedagógico:** {diag_limpo}")
 
     # 5. Linha do Erro (se houver)
     linha_erro = diag.get("linha_do_erro")

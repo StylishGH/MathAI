@@ -170,19 +170,35 @@ def show():
         st.markdown("### ⏰ Próximas Revisões (SM-2)")
         con = pegar_conexao()
         cur = con.cursor()
-        cur.execute("""
-            SELECT 
-                r.item_id as questao_id,
-                q.materia,
-                q.topico,
-                r.intervalo_dias,
-                r.repeticoes,
-                r.proxima_revisao
-            FROM revisao_espacada r
-            JOIN questoes q ON r.item_id = q.id
-            ORDER BY r.proxima_revisao ASC
-            LIMIT 5
-        """)
+        if aluno_id:
+            cur.execute("""
+                SELECT 
+                    r.item_id as questao_id,
+                    q.materia,
+                    q.topico,
+                    r.intervalo_dias,
+                    r.repeticoes,
+                    r.proxima_revisao
+                FROM revisao_espacada r
+                JOIN questoes q ON r.item_id = q.id
+                WHERE r.aluno_id = ?
+                ORDER BY r.proxima_revisao ASC
+                LIMIT 5
+            """, (aluno_id,))
+        else:
+            cur.execute("""
+                SELECT 
+                    r.item_id as questao_id,
+                    q.materia,
+                    q.topico,
+                    r.intervalo_dias,
+                    r.repeticoes,
+                    r.proxima_revisao
+                FROM revisao_espacada r
+                JOIN questoes q ON r.item_id = q.id
+                ORDER BY r.proxima_revisao ASC
+                LIMIT 5
+            """)
         revisoes = cur.fetchall()
         con.close()
 

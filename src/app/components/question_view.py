@@ -32,8 +32,19 @@ def render_question(questao: dict, mostrar_alternativas: bool = False):
         ano = questao.get("ano", "")
         banca_ano = f"{banca} {ano}" if banca and ano else (banca or (str(ano) if ano else ""))
 
+        tipo = str(questao.get("tipo", "")).strip().lower()
+        if not tipo:
+            from src.app.utils import e_questao_discursiva
+            tipo = "discursiva" if e_questao_discursiva(questao) else "objetiva"
+
+        if tipo == "discursiva":
+            badge_tipo = '<span style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); padding: 4px 12px; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">📝 Discursiva</span>'
+        else:
+            badge_tipo = '<span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.4); padding: 4px 12px; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">🎯 Objetiva</span>'
+
         tags_html = f"""
         <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; align-items: center;">
+            {badge_tipo}
             <span style="background: {mat_bg}; color: {mat_color}; border: 1px solid rgba(124, 58, 237, 0.35); padding: 4px 12px; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">
                 {materia}
             </span>
@@ -59,20 +70,36 @@ def render_question(questao: dict, mostrar_alternativas: bool = False):
         )
 
     # 2. Enunciado com Texto Justificado e LaTeX
+    import re
     enunciado_raw = questao.get("enunciado", "")
     # Corrige bugs de LaTeX antes de renderizar (ex: 8imes8 -> 8\times 8)
     enunciado_raw = corrigir_latex(enunciado_raw)
     corpo, alternativas = extrair_enunciado_e_alternativas(enunciado_raw)
     texto_exibir = corpo if alternativas else enunciado_raw
+    # Remove tags residuais de imagem no markdown (ex: ![](attached_image_1.png))
+    texto_exibir = re.sub(r'!\[.*?\]\(.*?\)', '', texto_exibir).strip()
 
     st.markdown(texto_exibir)
 
-    # 3. Figura associada (se houver)
-    figura_path = questao.get("figura_path")
-    if figura_path:
-        p = Path(figura_path)
+    # 3. Figura(s) associada(s) (suporta 1 ou múltiplas imagens)
+    figura_raw = questao.get("figura_path")
+    lista_figuras = []
+    if figura_raw:
+        if str(figura_raw).strip().startswith("["):
+            try:
+                import json
+                lista_figuras = json.loads(figura_raw)
+            except Exception:
+                lista_figuras = [figura_raw]
+        elif "," in str(figura_raw):
+            lista_figuras = [f.strip() for f in str(figura_raw).split(",") if f.strip()]
+        else:
+            lista_figuras = [str(figura_raw).strip()]
+
+    for fp in lista_figuras:
+        p = Path(fp)
         if not p.is_absolute():
-            p = Path(__file__).resolve().parent.parent.parent.parent / figura_path
+            p = Path(__file__).resolve().parent.parent.parent.parent / fp
 
         if p.exists():
             st.markdown("<br>", unsafe_allow_html=True)
@@ -83,14 +110,13 @@ def render_question(questao: dict, mostrar_alternativas: bool = False):
                     <div style="display: flex; justify-content: center; margin: 16px 0;">
                         <img src="data:image/svg+xml;base64,{b64_svg}" 
                              alt="Diagrama Matemático"
-                             style="max-width: 540px; width: 100%; border: 1px solid rgba(128,128,128,0.2); border-radius: 12px; padding: 12px; background: white;" />
+                             style="max-width: 540px; width: auto; border: 1px solid rgba(128,128,128,0.2); border-radius: 12px; padding: 12px; background: white;" />
                     </div>
                     """,
                     unsafe_allow_html=True
                 )
             else:
-                # Imagem PNG/JPG: centralizada com tamanho controlado (máx 480px)
-                # Não usar use_container_width=True pois estica até 100% da tela
+                # Imagem PNG/JPG: centralizada com tamanho natural e fundo branco para máxima legibilidade
                 img_bytes = p.read_bytes()
                 import base64 as _b64
                 ext = p.suffix.lower().lstrip(".")
@@ -101,9 +127,11 @@ def render_question(questao: dict, mostrar_alternativas: bool = False):
                     <div style="display: flex; justify-content: center; margin: 16px 0;">
                         <img src="data:{mime};base64,{b64_img}"
                              alt="Figura da Questão"
-                             style="max-width: 480px; width: 100%; border: 1px solid rgba(128,128,128,0.2);
-                                    border-radius: 12px; padding: 8px; background: {'#1a1726' if is_dark else 'white'};
-                                    box-shadow: 0 4px 12px rgba(0,0,0,{'0.4' if is_dark else '0.1'});" />
+                             style="min-width: 140px; max-width: 520px; width: auto; height: auto; max-height: 420px;
+                                    image-rendering: crisp-edges; image-rendering: pixelated;
+                                    border: 1px solid rgba(128,128,128,0.25);
+                                    border-radius: 12px; padding: 12px; background: #ffffff;
+                                    box-shadow: 0 4px 14px rgba(0,0,0,{'0.4' if is_dark else '0.1'});" />
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -125,3 +153,32 @@ def render_question(questao: dict, mostrar_alternativas: bool = False):
                 """,
                 unsafe_allow_html=True
             )
+
+    # 5. Botão Discreto de Reportar Problema
+    q_id = questao.get("id", 0)
+    col_vazia, col_rep = st.columns([4.2, 1.3])
+    with col_rep:
+        with st.popover("🚩 Reportar", use_container_width=True):
+            st.markdown(f"**Reportar Questão #{q_id:02d}**")
+            st.caption("Identificou algum erro no enunciado, LaTeX ou figura?")
+            motivo = st.selectbox(
+                "Tipo de problema:",
+                [
+                    "📐 Fórmula ou LaTeX quebrado",
+                    "🖼️ Figura ausente ou ilegível",
+                    "📝 Tradução confusa / termos errados",
+                    "🎯 Gabarito incorreto",
+                    "⚠️ Outro problema"
+                ],
+                key=f"rep_motivo_{q_id}"
+            )
+            detalhes = st.text_area(
+                "Descrição (opcional):",
+                placeholder="Ex: No passo final faltou um sinal de menos...",
+                key=f"rep_detalhes_{q_id}"
+            )
+            if st.button("Enviar Reporte", type="primary", use_container_width=True, key=f"btn_send_rep_{q_id}"):
+                from src.database.db import reportar_questao
+                aluno_id = st.session_state.get("aluno_id")
+                reportar_questao(questao_id=q_id, motivo=motivo, descricao=detalhes, aluno_id=aluno_id)
+                st.success("✅ Reporte enviado! Nossa equipe revisará.")
