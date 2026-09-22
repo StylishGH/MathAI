@@ -88,8 +88,17 @@ def _garantir_tabelas_e_migracao():
     con.close()
 
 
-# Executa migração ao carregar módulo
-_garantir_tabelas_e_migracao()
+# Flag para inicialização lazy (evita deadlock em Python 3.14 + Streamlit hot-reload)
+_tabelas_prontas = False
+
+
+def _garantir_tabelas_lazy():
+    """Executa a migração apenas uma vez, na primeira chamada que precisar do banco."""
+    global _tabelas_prontas
+    if _tabelas_prontas:
+        return
+    _garantir_tabelas_e_migracao()
+    _tabelas_prontas = True
 
 
 def formatar_cpf(cpf: str) -> str:
@@ -170,6 +179,7 @@ def gerar_codigo_verificacao(email: str) -> str:
     Gera um código de 6 dígitos numéricos com validade de 15 minutos.
     Invalida códigos anteriores não usados deste e-mail.
     """
+    _garantir_tabelas_lazy()
     codigo = f"{random.randint(100000, 999999)}"
     expira_em = (datetime.now() + timedelta(minutes=15)).strftime("%Y-%m-%d %H:%M:%S")
 
@@ -190,12 +200,22 @@ def gerar_codigo_verificacao(email: str) -> str:
 def enviar_email_codigo(email: str, codigo: str, nome: str = "Aluno") -> bool:
     """
     Envia o código de 6 dígitos para o e-mail cadastrado via SMTP.
-    Se SMTP não estiver configurado no ambiente, retorna False (o app exibirá em modo teste).
+    Se SMTP não estiver configurado no ambiente ou st.secrets, retorna False (o app exibirá em modo teste).
     """
-    smtp_host = os.getenv("SMTP_HOST")
-    smtp_port = os.getenv("SMTP_PORT", "587")
-    smtp_user = os.getenv("SMTP_USER")
-    smtp_pass = os.getenv("SMTP_PASS")
+    smtp_host = os.environ.get("SMTP_HOST")
+    smtp_port = os.environ.get("SMTP_PORT", "587")
+    smtp_user = os.environ.get("SMTP_USER")
+    smtp_pass = os.environ.get("SMTP_PASS")
+
+    if not (smtp_host and smtp_user and smtp_pass):
+        try:
+            import streamlit as st
+            smtp_host = st.secrets.get("SMTP_HOST") or smtp_host
+            smtp_port = str(st.secrets.get("SMTP_PORT", "587")) or smtp_port
+            smtp_user = st.secrets.get("SMTP_USER") or smtp_user
+            smtp_pass = st.secrets.get("SMTP_PASS") or smtp_pass
+        except Exception:
+            pass
 
     if not (smtp_host and smtp_user and smtp_pass):
         # Sem SMTP configurado — modo dev/simulação
@@ -243,6 +263,7 @@ def verificar_codigo_otp(email: str, codigo: str) -> dict:
     Verifica o código de 6 dígitos.
     Se válido: marca como usado, ativa o usuário (verificado=1) e retorna os dados do usuário.
     """
+    _garantir_tabelas_lazy()
     con = pegar_conexao()
     cur = con.cursor()
     agora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -320,6 +341,7 @@ def cadastrar_usuario(
     Cria um novo usuário com status pendente de verificação (verificado=0)
     e gera o código OTP de 6 dígitos.
     """
+    _garantir_tabelas_lazy()
     con = pegar_conexao()
     cur = con.cursor()
     cpf_formatado = formatar_cpf(cpf) if cpf else None
@@ -409,6 +431,7 @@ def fazer_login(email: str, senha: str) -> dict:
     Autentica o usuário. Se o usuário existir mas não tiver sido verificado (verificado=0),
     retorna pendente_verificacao=True para exibir a tela de 6 dígitos.
     """
+    _garantir_tabelas_lazy()
     con = pegar_conexao()
     cur = con.cursor()
     try:
@@ -447,6 +470,7 @@ def fazer_login(email: str, senha: str) -> dict:
 
 def buscar_usuario_por_email(email: str) -> dict | None:
     """Busca um usuário verificado pelo e-mail."""
+    _garantir_tabelas_lazy()
     con = pegar_conexao()
     cur = con.cursor()
     try:
@@ -470,6 +494,7 @@ def buscar_usuario_por_email(email: str) -> dict | None:
 
 def buscar_usuario_por_id(usuario_id: int) -> dict | None:
     """Busca dados completos do usuário pelo ID."""
+    _garantir_tabelas_lazy()
     con = pegar_conexao()
     cur = con.cursor()
     try:
@@ -557,6 +582,7 @@ def atualizar_perfil_usuario(
 
 def criar_sessao_lembrada(usuario_id: int) -> str:
     """Gera um token criptográfico seguro de sessão e salva no SQLite (validade de 30 dias)."""
+    _garantir_tabelas_lazy()
     con = pegar_conexao()
     try:
         cur = con.cursor()
@@ -576,6 +602,7 @@ def verificar_token_sessao(token: str) -> dict | None:
     """Valida um token de sessão do cliente e retorna os dados do usuário."""
     if not token or not isinstance(token, str):
         return None
+    _garantir_tabelas_lazy()
     con = pegar_conexao()
     try:
         cur = con.cursor()

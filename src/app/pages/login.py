@@ -231,15 +231,26 @@ def show():
                 </div>
             """, unsafe_allow_html=True)
 
-            if codigo_teste:
+            email_enviado_real = st.session_state.get("email_enviado_real", False)
+            if email_enviado_real:
+                st.markdown(f"""
+                <div style="background: rgba(16, 185, 129, 0.12); border: 1.5px solid #10b981; border-radius: 12px; padding: 14px 18px; margin: 16px 0; text-align: center;">
+                    <div style="font-size: 1.1rem; font-weight: 700; color: #10b981; margin-bottom: 4px;">📧 Código enviado para seu e-mail!</div>
+                    <div style="font-size: 0.82rem; color: {text_muted};">
+                        Verifique sua Caixa de Entrada e também a pasta de <b>Spam / Lixo Eletrônico</b>.<br>
+                        O código é composto por 6 dígitos numéricos.
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+            elif codigo_teste:
                 st.markdown(f"""
                 <div class="otp-display-box">
                     <div style="font-size: 0.75rem; color: #f59e0b; text-transform: uppercase; font-weight: 700; margin-bottom: 4px;">
-                        🔑 Código de Verificação (Modo de Teste)
+                        🔑 Código de Verificação (Modo de Teste / Dev)
                     </div>
                     <div class="otp-code-text">{codigo_teste}</div>
                     <div style="font-size: 0.75rem; color: {text_muted}; margin-top: 4px;">
-                        Copie os 6 dígitos acima e cole no campo abaixo
+                        Para enviar para a caixa de e-mail real, configure as credenciais SMTP no Streamlit Cloud
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
@@ -268,6 +279,7 @@ def show():
                             st.query_params["session"] = novo_token
                             st.session_state.pop("verificando_email", None)
                             st.session_state.pop("codigo_teste_otp", None)
+                            st.session_state.pop("email_enviado_real", None)
                             st.success("🎉 Conta verificada com sucesso! Bem-vindo(a) ao MathAI!")
                             st.balloons()
                             st.rerun()
@@ -278,7 +290,11 @@ def show():
             with col_btn_reenviar:
                 if st.button("🔄 Reenviar Código", use_container_width=True, key="btn_reenviar_otp"):
                     res_reenvio = reenviar_codigo_otp(email_verif)
-                    st.session_state.codigo_teste_otp = res_reenvio.get("codigo_teste", "")
+                    st.session_state.email_enviado_real = res_reenvio.get("enviado_email", False)
+                    if not res_reenvio.get("enviado_email"):
+                        st.session_state.codigo_teste_otp = res_reenvio.get("codigo_teste", "")
+                    else:
+                        st.session_state.codigo_teste_otp = ""
                     st.info("Novo código gerado!")
                     st.rerun()
 
@@ -286,6 +302,7 @@ def show():
                 if st.button("⬅️ Voltar para Login", use_container_width=True, key="btn_voltar_login"):
                     st.session_state.pop("verificando_email", None)
                     st.session_state.pop("codigo_teste_otp", None)
+                    st.session_state.pop("email_enviado_real", None)
                     st.rerun()
 
             st.markdown("</div>", unsafe_allow_html=True)
@@ -472,7 +489,7 @@ def show():
             tem_vestibular = "enem_vestibular" in motivos_selecionados
             concursos_foco_selecionados = []
 
-            if tem_militar or "Cursinho" in c_escolaridade:
+            if tem_militar:
                 st.markdown(f"""
                 <div style="margin-top: 8px; font-size: 0.88rem; font-weight: 700; color: {'#fbbf24' if is_dark else '#b45309'};">
                     🎖️ Concursos Militares de Interesse:
@@ -484,8 +501,12 @@ def show():
                     key="cad_sel_militares"
                 )
                 concursos_foco_selecionados.extend(sel_militares)
+                if "Outro Concurso Militar" in sel_militares:
+                    outro_m = st.text_input("Qual outro concurso militar?", key="cad_outro_militar")
+                    if outro_m:
+                        concursos_foco_selecionados.append(outro_m)
 
-            if tem_vestibular or "Cursinho" in c_escolaridade or "Médio" in c_escolaridade:
+            if tem_vestibular:
                 st.markdown(f"""
                 <div style="margin-top: 8px; font-size: 0.88rem; font-weight: 700; color: {'#60a5fa' if is_dark else '#1d4ed8'};">
                     📚 Vestibulares de Interesse:
@@ -497,6 +518,10 @@ def show():
                     key="cad_sel_vestibulares"
                 )
                 concursos_foco_selecionados.extend(sel_vestibulares)
+                if "Outro Vestibular" in sel_vestibulares:
+                    outro_v = st.text_input("Qual outro vestibular?", key="cad_outro_vestibular")
+                    if outro_v:
+                        concursos_foco_selecionados.append(outro_v)
 
             # Segurança / Senha
             st.markdown("---")
@@ -567,8 +592,12 @@ def show():
                     )
                     if resultado["ok"]:
                         st.session_state.verificando_email = resultado["email"]
-                        st.session_state.codigo_teste_otp = resultado.get("codigo_teste", "")
-                        st.toast("Código de verificação gerado!", icon="🔑")
+                        st.session_state.email_enviado_real = resultado.get("enviado_email", False)
+                        if not resultado.get("enviado_email"):
+                            st.session_state.codigo_teste_otp = resultado.get("codigo_teste", "")
+                        else:
+                            st.session_state.codigo_teste_otp = ""
+                        st.toast("Conta criada! Código de verificação gerado.", icon="🔑")
                         st.rerun()
                     else:
                         st.error(resultado["erro"])
