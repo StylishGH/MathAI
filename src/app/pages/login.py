@@ -312,137 +312,163 @@ def show():
                 </div>
             """, unsafe_allow_html=True)
 
-            with st.form("form_google_onboarding"):
-                col_n, col_e = st.columns(2)
-                with col_n:
-                    st.text_input("Nome", value=g_nome, disabled=True)
-                with col_e:
-                    st.text_input("E-mail", value=g_email, disabled=True)
+            col_n, col_e = st.columns(2)
+            with col_n:
+                st.text_input("Nome", value=g_nome, disabled=True)
+            with col_e:
+                st.text_input("E-mail", value=g_email, disabled=True)
 
-                col_id, col_cpf = st.columns(2)
-                with col_id:
-                    g_idade = st.number_input("Idade *", min_value=10, max_value=90, value=18, key="g_idade")
-                with col_cpf:
-                    g_cpf = st.text_input("🪪 CPF *", placeholder="000.000.000-00", key="g_cpf")
+            col_id, col_cpf = st.columns(2)
+            with col_id:
+                g_idade = st.number_input("Idade *", min_value=10, max_value=90, value=18, key="g_idade")
+            with col_cpf:
+                g_cpf = st.text_input("🪪 CPF *", placeholder="000.000.000-00", key="g_cpf")
 
-                g_celular = st.text_input("📱 Celular / WhatsApp", placeholder="(21) 99999-9999", key="g_celular")
+            g_celular = st.text_input("📱 Celular / WhatsApp", placeholder="(21) 99999-9999", key="g_celular")
 
-                # Endereço
+            # Endereço
+            st.markdown("---")
+            st.markdown("##### 📍 Endereço")
+            col_c1, col_c2 = st.columns([2, 1])
+            with col_c1:
+                g_cep = st.text_input("CEP", placeholder="00000-000", key="g_cad_cep")
+            with col_c2:
+                st.write("")
+                st.write("")
+                if st.button("🔍 Buscar CEP", key="g_btn_buscar_cep"):
+                    if g_cep:
+                        end = buscar_endereco_por_cep(g_cep)
+                        if end:
+                            st.session_state["g_logradouro"] = end.get("logradouro", "")
+                            st.session_state["g_bairro"] = end.get("bairro", "")
+                            st.session_state["g_cidade"] = end.get("cidade", "")
+                            st.session_state["g_estado"] = end.get("estado", "")
+                            st.toast("Endereço preenchido!", icon="📍")
+                            st.rerun()
+
+            col_r, col_num = st.columns([3, 1])
+            with col_r:
+                g_logradouro = st.text_input("Logradouro / Rua", placeholder="Rua...", key="g_logradouro")
+            with col_num:
+                g_numero = st.text_input("Número", placeholder="123", key="g_numero")
+
+            col_b, col_cid, col_uf = st.columns([1.5, 2, 1])
+            with col_b:
+                g_bairro = st.text_input("Bairro", placeholder="Bairro", key="g_bairro")
+            with col_cid:
+                g_cidade = st.text_input("Cidade", placeholder="Cidade", key="g_cidade")
+            with col_uf:
+                g_estado = st.text_input("UF", placeholder="RJ", max_chars=2, key="g_estado")
+
+            # Escolaridade & Objetivos
+            st.markdown("---")
+            st.markdown("##### 🎓 Formação & Objetivos")
+            g_escolaridade = st.selectbox("Nível de Escolaridade *", options=ESCOLARIDADE_OPCOES, index=1, key="g_esc")
+            eh_sup = g_escolaridade in ["Ensino Superior (Graduação)", "Pós-Graduação / Especialização", "Mestrado", "Doutorado"]
+            g_faculdade = None
+            g_curso = None
+            if eh_sup:
+                col_f, col_cur = st.columns(2)
+                with col_f:
+                    g_faculdade = st.selectbox("Instituição / Faculdade", options=FACULDADES_BRASIL, key="g_fac")
+                with col_cur:
+                    g_curso = st.text_input("Curso de Graduação *", placeholder="Ex: Engenharia, Matemática", key="g_curso")
+
+            st.markdown("##### 🎯 Objetivos de Estudo *")
+            g_motivos = []
+            for cod, rotulo in MOTIVOS_OPCOES.items():
+                if st.checkbox(rotulo, key=f"g_mot_{cod}"):
+                    g_motivos.append(cod)
+
+            tem_militar = "concurso_militar" in g_motivos
+            tem_vestibular = "enem_vestibular" in g_motivos
+            g_focos = []
+
+            if tem_militar:
                 st.markdown("---")
-                st.markdown("##### 📍 Endereço")
-                col_c1, col_c2 = st.columns([2, 1])
-                with col_c1:
-                    g_cep = st.text_input("CEP", placeholder="00000-000", key="g_cad_cep")
-                with col_c2:
-                    st.write("")
-                    st.write("")
-                    if st.form_submit_button("🔍 Buscar CEP"):
-                        if g_cep:
-                            end = buscar_endereco_por_cep(g_cep)
-                            if end:
-                                st.session_state["g_logradouro"] = end.get("logradouro", "")
-                                st.session_state["g_bairro"] = end.get("bairro", "")
-                                st.session_state["g_cidade"] = end.get("cidade", "")
-                                st.session_state["g_estado"] = end.get("estado", "")
-                                st.toast("Endereço preenchido!", icon="📍")
-                                st.rerun()
-
-                col_r, col_num = st.columns([3, 1])
-                with col_r:
-                    g_logradouro = st.text_input("Logradouro / Rua", placeholder="Rua...", key="g_logradouro")
-                with col_num:
-                    g_numero = st.text_input("Número", placeholder="123", key="g_numero")
-
-                col_b, col_cid, col_uf = st.columns([1.5, 2, 1])
-                with col_b:
-                    g_bairro = st.text_input("Bairro", placeholder="Bairro", key="g_bairro")
-                with col_cid:
-                    g_cidade = st.text_input("Cidade", placeholder="Cidade", key="g_cidade")
-                with col_uf:
-                    g_estado = st.text_input("UF", placeholder="RJ", max_chars=2, key="g_estado")
-
-                # Escolaridade & Objetivos
-                st.markdown("---")
-                st.markdown("##### 🎓 Formação & Objetivos")
-                g_escolaridade = st.selectbox("Nível de Escolaridade *", options=ESCOLARIDADE_OPCOES, index=1, key="g_esc")
-                eh_sup = g_escolaridade in ["Ensino Superior (Graduação)", "Pós-Graduação / Especialização", "Mestrado", "Doutorado"]
-                g_faculdade = None
-                g_curso = None
-                if eh_sup:
-                    col_f, col_cur = st.columns(2)
-                    with col_f:
-                        g_faculdade = st.selectbox("Instituição / Faculdade", options=FACULDADES_BRASIL, key="g_fac")
-                    with col_cur:
-                        g_curso = st.text_input("Curso de Graduação *", placeholder="Ex: Engenharia, Matemática", key="g_curso")
-
-                st.markdown("##### 🎯 Objetivos de Estudo *")
-                g_motivos = []
-                for cod, rotulo in MOTIVOS_OPCOES.items():
-                    if st.checkbox(rotulo, key=f"g_mot_{cod}"):
-                        g_motivos.append(cod)
-
-                st.markdown("##### 🎖️ Concursos de Interesse")
-                col_m, col_v = st.columns(2)
-                g_focos = []
-                with col_m:
-                    st.caption("Concursos Militares:")
-                    for conc in CONCURSOS_MILITARES:
+                st.markdown("##### 🎖️ Concursos Militares de Interesse")
+                col_m1, col_m2 = st.columns(2)
+                metade_m = (len(CONCURSOS_MILITARES) + 1) // 2
+                with col_m1:
+                    for conc in CONCURSOS_MILITARES[:metade_m]:
                         if st.checkbox(conc, key=f"g_cm_{conc}"):
                             g_focos.append(conc)
-                with col_v:
-                    st.caption("Vestibulares / Outros:")
-                    for conc in CONCURSOS_VESTIBULARES:
+                with col_m2:
+                    for conc in CONCURSOS_MILITARES[metade_m:]:
+                        if st.checkbox(conc, key=f"g_cm_{conc}"):
+                            g_focos.append(conc)
+                if "Outro Concurso Militar" in g_focos:
+                    outro_m = st.text_input("Qual outro concurso militar você pretende prestar?", key="g_outro_militar", placeholder="Ex: CIAAR, Quadro Complementar...")
+                    if outro_m and outro_m.strip():
+                        g_focos.append(outro_m.strip())
+
+            if tem_vestibular:
+                st.markdown("---")
+                st.markdown("##### 📚 Vestibulares de Interesse")
+                col_v1, col_v2 = st.columns(2)
+                metade_v = (len(CONCURSOS_VESTIBULARES) + 1) // 2
+                with col_v1:
+                    for conc in CONCURSOS_VESTIBULARES[:metade_v]:
                         if st.checkbox(conc, key=f"g_cv_{conc}"):
                             g_focos.append(conc)
+                with col_v2:
+                    for conc in CONCURSOS_VESTIBULARES[metade_v:]:
+                        if st.checkbox(conc, key=f"g_cv_{conc}"):
+                            g_focos.append(conc)
+                if "Outro Vestibular" in g_focos:
+                    outro_v = st.text_input("Qual outro vestibular você pretende prestar?", key="g_outro_vestibular", placeholder="Ex: UFMG, PUC...")
+                    if outro_v and outro_v.strip():
+                        g_focos.append(outro_v.strip())
 
-                btn_concluir_google = st.form_submit_button("🚀 Concluir Cadastro e Começar a Treinar", use_container_width=True, type="primary")
+            st.markdown("---")
+            btn_concluir_google = st.button("🚀 Concluir Cadastro e Começar a Treinar", use_container_width=True, type="primary", key="btn_concluir_google")
 
-                if btn_concluir_google:
-                    erros = []
-                    if not g_cpf.strip():
-                        erros.append("CPF é obrigatório.")
-                    elif not validar_cpf(g_cpf):
-                        erros.append("CPF inválido.")
-                    if not g_motivos:
-                        erros.append("Selecione pelo menos 1 objetivo de estudo.")
-                    if eh_sup and not (g_curso and g_curso.strip()):
-                        erros.append("Informe seu curso de graduação.")
+            if btn_concluir_google:
+                erros = []
+                if not g_cpf.strip():
+                    erros.append("CPF é obrigatório.")
+                elif not validar_cpf(g_cpf):
+                    erros.append("CPF inválido.")
+                if not g_motivos:
+                    erros.append("Selecione pelo menos 1 objetivo de estudo.")
+                if eh_sup and not (g_curso and g_curso.strip()):
+                    erros.append("Informe seu curso de graduação.")
 
-                    if erros:
-                        for e in erros:
-                            st.error(e)
+                if erros:
+                    for e in erros:
+                        st.error(e)
+                else:
+                    senha_segura = uuid.uuid4().hex
+                    res_cad = cadastrar_usuario(
+                        nome=g_nome,
+                        email=g_email,
+                        senha=senha_segura,
+                        cpf=g_cpf,
+                        idade=int(g_idade),
+                        celular=g_celular or None,
+                        cep=g_cep or None,
+                        logradouro=g_logradouro or None,
+                        numero=g_numero or None,
+                        bairro=g_bairro or None,
+                        cidade=g_cidade or None,
+                        estado=g_estado or None,
+                        motivos=g_motivos,
+                        escolaridade=g_escolaridade,
+                        faculdade=g_faculdade if eh_sup else None,
+                        curso=g_curso.strip() if (eh_sup and g_curso) else None,
+                        concursos_foco=g_focos,
+                        verificado=1
+                    )
+                    if res_cad["ok"]:
+                        st.session_state.usuario_logado = res_cad["usuario"]
+                        token = criar_sessao_lembrada(res_cad["usuario"]["id"])
+                        st.query_params["session"] = token
+                        st.session_state.pop("google_onboarding", None)
+                        st.success(f"Bem-vindo(a) ao MathAI, {g_nome.split()[0]}! 🎉")
+                        st.balloons()
+                        st.rerun()
                     else:
-                        senha_segura = uuid.uuid4().hex
-                        res_cad = cadastrar_usuario(
-                            nome=g_nome,
-                            email=g_email,
-                            senha=senha_segura,
-                            cpf=g_cpf,
-                            idade=int(g_idade),
-                            celular=g_celular or None,
-                            cep=g_cep or None,
-                            logradouro=g_logradouro or None,
-                            numero=g_numero or None,
-                            bairro=g_bairro or None,
-                            cidade=g_cidade or None,
-                            estado=g_estado or None,
-                            motivos=g_motivos,
-                            escolaridade=g_escolaridade,
-                            faculdade=g_faculdade if eh_sup else None,
-                            curso=g_curso.strip() if (eh_sup and g_curso) else None,
-                            concursos_foco=g_focos,
-                            verificado=1
-                        )
-                        if res_cad["ok"]:
-                            st.session_state.usuario_logado = res_cad["usuario"]
-                            token = criar_sessao_lembrada(res_cad["usuario"]["id"])
-                            st.query_params["session"] = token
-                            st.session_state.pop("google_onboarding", None)
-                            st.success(f"Bem-vindo(a) ao MathAI, {g_nome.split()[0]}! 🎉")
-                            st.balloons()
-                            st.rerun()
-                        else:
-                            st.error(res_cad["erro"])
+                        st.error(res_cad["erro"])
 
             if st.button("⬅️ Cancelar e Voltar", use_container_width=True, key="btn_cancel_google"):
                 st.session_state.pop("google_onboarding", None)
@@ -797,38 +823,40 @@ def show():
             concursos_foco_selecionados = []
 
             if tem_militar:
-                st.markdown(f"""
-                <div style="margin-top: 8px; font-size: 0.88rem; font-weight: 700; color: {'#fbbf24' if is_dark else '#b45309'};">
-                    🎖️ Concursos Militares de Interesse:
-                </div>
-                """, unsafe_allow_html=True)
-                sel_militares = st.multiselect(
-                    "Quais concursos você pretende prestar?",
-                    options=CONCURSOS_MILITARES,
-                    key="cad_sel_militares"
-                )
-                concursos_foco_selecionados.extend(sel_militares)
-                if "Outro Concurso Militar" in sel_militares:
-                    outro_m = st.text_input("Qual outro concurso militar?", key="cad_outro_militar")
-                    if outro_m:
-                        concursos_foco_selecionados.append(outro_m)
+                st.markdown("---")
+                st.markdown("##### 🎖️ Concursos Militares de Interesse")
+                col_m1, col_m2 = st.columns(2)
+                metade_m = (len(CONCURSOS_MILITARES) + 1) // 2
+                with col_m1:
+                    for conc in CONCURSOS_MILITARES[:metade_m]:
+                        if st.checkbox(conc, key=f"cad_cm_{conc}"):
+                            concursos_foco_selecionados.append(conc)
+                with col_m2:
+                    for conc in CONCURSOS_MILITARES[metade_m:]:
+                        if st.checkbox(conc, key=f"cad_cm_{conc}"):
+                            concursos_foco_selecionados.append(conc)
+                if "Outro Concurso Militar" in concursos_foco_selecionados:
+                    outro_m = st.text_input("Qual outro concurso militar você pretende prestar?", key="cad_outro_militar", placeholder="Ex: CIAAR, Quadro Complementar...")
+                    if outro_m and outro_m.strip():
+                        concursos_foco_selecionados.append(outro_m.strip())
 
             if tem_vestibular:
-                st.markdown(f"""
-                <div style="margin-top: 8px; font-size: 0.88rem; font-weight: 700; color: {'#60a5fa' if is_dark else '#1d4ed8'};">
-                    📚 Vestibulares de Interesse:
-                </div>
-                """, unsafe_allow_html=True)
-                sel_vestibulares = st.multiselect(
-                    "Quais vestibulares você pretende prestar?",
-                    options=CONCURSOS_VESTIBULARES,
-                    key="cad_sel_vestibulares"
-                )
-                concursos_foco_selecionados.extend(sel_vestibulares)
-                if "Outro Vestibular" in sel_vestibulares:
-                    outro_v = st.text_input("Qual outro vestibular?", key="cad_outro_vestibular")
-                    if outro_v:
-                        concursos_foco_selecionados.append(outro_v)
+                st.markdown("---")
+                st.markdown("##### 📚 Vestibulares de Interesse")
+                col_v1, col_v2 = st.columns(2)
+                metade_v = (len(CONCURSOS_VESTIBULARES) + 1) // 2
+                with col_v1:
+                    for conc in CONCURSOS_VESTIBULARES[:metade_v]:
+                        if st.checkbox(conc, key=f"cad_cv_{conc}"):
+                            concursos_foco_selecionados.append(conc)
+                with col_v2:
+                    for conc in CONCURSOS_VESTIBULARES[metade_v:]:
+                        if st.checkbox(conc, key=f"cad_cv_{conc}"):
+                            concursos_foco_selecionados.append(conc)
+                if "Outro Vestibular" in concursos_foco_selecionados:
+                    outro_v = st.text_input("Qual outro vestibular você pretende prestar?", key="cad_outro_vestibular", placeholder="Ex: UFMG, PUC...")
+                    if outro_v and outro_v.strip():
+                        concursos_foco_selecionados.append(outro_v.strip())
 
             # Segurança / Senha
             st.markdown("---")
