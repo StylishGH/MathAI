@@ -105,26 +105,38 @@ def _from_hrana_val(val_dict: dict) -> Any:
         return val_dict.get("value", "")
 
 
-class TursoRow(dict):
-    """Emula sqlite3.Row para compatibilidade total com o código do MathAI."""
+class TursoRow:
+    """Emula sqlite3.Row para compatibilidade total com o código do MathAI e pandas."""
     def __init__(self, cols: List[str], values: List[Any]):
-        super().__init__(zip(cols, values))
         self._cols = list(cols)
         self._values = list(values)
+        self._map = dict(zip(cols, values))
 
     def __getitem__(self, item):
         if isinstance(item, int):
             return self._values[item]
-        return super().__getitem__(item)
+        return self._map[item]
+
+    def get(self, key: str, default: Any = None) -> Any:
+        return self._map.get(key, default)
 
     def keys(self) -> List[str]:
         return list(self._cols)
+
+    def values(self) -> List[Any]:
+        return list(self._values)
+
+    def items(self) -> List[Tuple[str, Any]]:
+        return list(zip(self._cols, self._values))
+
+    def __iter__(self):
+        return iter(self._values)
 
     def __len__(self):
         return len(self._values)
 
     def __repr__(self):
-        return f"TursoRow({dict(self)})"
+        return f"TursoRow({self._map})"
 
 
 class TursoCursor:
@@ -202,6 +214,17 @@ class TursoCursor:
         row = self._rows[self._idx]
         self._idx += 1
         return row
+
+    def fetchmany(self, size: int = 1) -> List[TursoRow]:
+        res = self._rows[self._idx:self._idx + size]
+        self._idx += len(res)
+        return res
+
+    def close(self):
+        pass
+
+    def __iter__(self):
+        return iter(self._rows)
 
 
 class TursoConnection:
