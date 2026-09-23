@@ -468,6 +468,16 @@ def show():
 
     # ── BOTÃO DE SALVAR ───────────────────────────────────────────────────────
     st.markdown("---")
+    st.markdown("---")
+    st.markdown("#### 🔒 Privacidade e Consentimento de Dados")
+    st.markdown("<div style='font-size: 0.9em; color: #64748b; margin-bottom: 10px;'>Visando o futuro da plataforma, o MathAI separa estritamente o que são <b>dados observados</b> (suas resoluções, respostas e tempo) de <b>dados derivados</b> (diagnóstico da IA e estimativa de dificuldade). Precisamos do seu consentimento para armazenar e utilizar seus dados observados (de forma anônima) no treinamento das futuras IAs do projeto.</div>", unsafe_allow_html=True)
+    consentimento_atual = bool(usuario.get('consentimento_dados', 0))
+    novo_consentimento = st.checkbox(
+        "Autorizo o armazenamento e o uso anônimo das minhas resoluções para desenvolvimento e treinamento do MathAI.", 
+        value=consentimento_atual, 
+        key="check_consentimento"
+    )
+
     c_save_esq, c_save_btn, c_save_dir = st.columns([1, 2, 1])
 
     with c_save_btn:

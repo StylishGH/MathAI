@@ -566,6 +566,19 @@ st.markdown(f"""
         border: 1.5px solid {gold_border} !important;
         padding: 0 8px !important;
     }}
+
+    /* Correção do texto escuro invisível no Multiselect e Selectbox */
+    div[data-baseweb="select"] ul, 
+    ul[role="listbox"],
+    li[role="option"] {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+    }
+    li[role="option"]:hover,
+    li[role="option"][aria-selected="true"] {
+        background-color: #334155 !important;
+        color: #f59e0b !important;
+    }
 </style>
 <script>
     try {{
