@@ -3,6 +3,7 @@ Página do Dashboard Cognitivo e Métricas de Desempenho do Estudante.
 Apresenta gráficos interativos via Plotly e histórico de tentativas.
 """
 
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -258,4 +259,24 @@ def show():
                 for idx_img, t_img in enumerate(tentativas_com_imagem[:6]):
                     with cols_img[idx_img % 3]:
                         st.caption(f"Questão #{t_img['topico']} • {t_img['data_hora']}")
-                        st.image(t_img["imagem_resolucao_path"], use_container_width=True)
+                        img_path = str(t_img["imagem_resolucao_path"])
+                        try:
+                            if img_path.lower().endswith(".pdf"):
+                                if os.path.exists(img_path):
+                                    with open(img_path, "rb") as f:
+                                        st.download_button(
+                                            label="📄 Baixar Resolução (PDF)",
+                                            data=f,
+                                            file_name=os.path.basename(img_path),
+                                            mime="application/pdf",
+                                            key=f"dl_pdf_{idx_img}"
+                                        )
+                                else:
+                                    st.warning(f"PDF não encontrado no servidor.")
+                            else:
+                                if os.path.exists(img_path):
+                                    st.image(img_path, use_container_width=True)
+                                else:
+                                    st.warning(f"Imagem não encontrada.")
+                        except Exception as e:
+                            st.warning(f"Não foi possível carregar o anexo: {e}")
