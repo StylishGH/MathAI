@@ -267,12 +267,12 @@ def show():
         col_s1, col_s2, col_s3 = st.columns([2.5, 1.5, 1.5])
 
         with col_s1:
-            nome_default_sim = f"Simulado {sel_banca if sel_banca != 'Todas' else 'Personalizado'} ({qtd_selecionadas} Questões)"
+            nome_default_sim = f"Simulado {sel_bancas[0] if len(sel_bancas) == 1 else 'Personalizado'} ({qtd_selecionadas} Questões)"
             titulo_simulado = st.text_input("Nome do Simulado:", value=nome_default_sim, key="input_nome_simulado")
 
         with col_s2:
             # Sugestão de 5 min por questão ou 60 min para ESA (limitado entre 5 e 360 minutos)
-            if sel_banca == "ESA" and qtd_selecionadas == 12:
+            if "ESA" in sel_bancas and len(sel_bancas) == 1 and qtd_selecionadas == 12:
                 tempo_sugerido = 60
             else:
                 tempo_sugerido = min(360, max(10, qtd_selecionadas * 5))
