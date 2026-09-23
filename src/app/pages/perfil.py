@@ -198,11 +198,13 @@ def show():
 
         col_id_cel1, col_id_cel2 = st.columns([1, 1.8])
         with col_id_cel1:
+            idade_val = int(usuario.get("idade") or 18)
+            idade_val = max(10, min(100, idade_val))
             nova_idade = st.number_input(
                 "Idade",
                 min_value=10,
                 max_value=100,
-                value=int(usuario.get("idade") or 18),
+                value=idade_val,
                 key="perfil_idade"
             )
         with col_id_cel2:

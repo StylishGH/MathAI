@@ -102,13 +102,13 @@ Retorne no formato JSON:
         temperature=0.2  # Baixa temperatura para manter a fidelidade matemática
     )
 
-    # Modelos recomendados em ordem de preferência
+    # Modelos recomendados em ordem de preferência (ativos na API)
     modelos = [
-        "models/gemini-3.8-flash",
-        "models/gemini-3.7-flash",
         "models/gemini-3.6-flash",
-        "models/gemini-3.1-flash-lite",
-        "models/gemini-flash-latest"
+        "models/gemini-3.7-flash",
+        "models/gemini-3.8-flash",
+        "models/gemini-3.5-flash",
+        "models/gemini-3.1-flash-lite"
     ]
 
     resposta = None

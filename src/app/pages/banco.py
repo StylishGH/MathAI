@@ -262,8 +262,18 @@ def show():
             titulo_simulado = st.text_input("Nome do Simulado:", value=nome_default_sim, key="input_nome_simulado")
 
         with col_s2:
-            # Sugestão de 5 min por questão ou 60 min para ESA
-            tempo_sugerido = 60 if (sel_banca == "ESA" and qtd_selecionadas == 12) else max(10, qtd_selecionadas * 5)
+            # Sugestão de 5 min por questão ou 60 min para ESA (limitado entre 5 e 360 minutos)
+            if sel_banca == "ESA" and qtd_selecionadas == 12:
+                tempo_sugerido = 60
+            else:
+                tempo_sugerido = min(360, max(10, qtd_selecionadas * 5))
+
+            if "input_tempo_simulado" in st.session_state:
+                if st.session_state.input_tempo_simulado > 360:
+                    st.session_state.input_tempo_simulado = 360
+                elif st.session_state.input_tempo_simulado < 5:
+                    st.session_state.input_tempo_simulado = 5
+
             tempo_limite_min = st.number_input(
                 "Tempo Limite (minutos):",
                 min_value=5,
@@ -348,8 +358,25 @@ def show():
                 st.session_state.banco_selecionadas[q["id"]] = False
             st.rerun()
 
+    # Paginação
+    QUESTOES_POR_PAGINA = 20
+    if "banco_pagina" not in st.session_state:
+        st.session_state.banco_pagina = 1
+
+    total_paginas = max(1, (len(filtradas) - 1) // QUESTOES_POR_PAGINA + 1)
+    
+    if "banco_ultimo_filtro_pag" not in st.session_state or st.session_state.banco_ultimo_filtro_pag != filtro_key_hash:
+        st.session_state.banco_pagina = 1
+        st.session_state.banco_ultimo_filtro_pag = filtro_key_hash
+
+    pagina_atual = st.session_state.banco_pagina
+    idx_inicio = (pagina_atual - 1) * QUESTOES_POR_PAGINA
+    idx_fim = idx_inicio + QUESTOES_POR_PAGINA
+    questoes_pagina = filtradas[idx_inicio:idx_fim]
+
     # 7. Listagem das Questões Filtradas com Checkboxes e Expansores
-    for idx, q in enumerate(filtradas):
+    for idx_na_pagina, q in enumerate(questoes_pagina):
+        idx_real = idx_inicio + idx_na_pagina
         q_id = q["id"]
         materia = q.get("materia", "")
         topico = q.get("topico", "")
@@ -374,8 +401,8 @@ def show():
                 st.rerun()
 
         with col_card:
-            titulo_expander = f"#{q_id:02d} • {materia} — {topico} {f'({banca_ano})' if banca_ano else ''}"
-            with st.expander(titulo_expander, expanded=(idx == 0 and len(filtradas) <= 3)):
+            titulo_expander = f"#{q_id:02d} • {materia} ➔ {topico} {f'({banca_ano})' if banca_ano else ''}"
+            with st.expander(titulo_expander, expanded=(idx_real == 0 and len(filtradas) <= 3)):
                 render_question(q, mostrar_alternativas=False)
 
                 # Alternativas interativas: o gabarito só aparece quando o aluno marcar ou pedir para revelar
@@ -498,3 +525,18 @@ def show():
                         st.session_state.questao_idx = 0
                         st.session_state.nav_page = "🎯 Resolver / Simulado"
                         st.rerun()
+
+    # Controles de Paginação
+    if total_paginas > 1:
+        st.markdown("<br>", unsafe_allow_html=True)
+        col_p1, col_p2, col_p3 = st.columns([1, 2, 1])
+        with col_p1:
+            if st.button("⬅️ Página Anterior", disabled=(pagina_atual == 1), use_container_width=True):
+                st.session_state.banco_pagina -= 1
+                st.rerun()
+        with col_p2:
+            st.markdown(f"<div style='text-align: center; padding-top: 8px;'>Página <b>{pagina_atual}</b> de <b>{total_paginas}</b></div>", unsafe_allow_html=True)
+        with col_p3:
+            if st.button("Próxima Página ➡️", disabled=(pagina_atual == total_paginas), use_container_width=True):
+                st.session_state.banco_pagina += 1
+                st.rerun()

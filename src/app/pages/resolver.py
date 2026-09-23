@@ -326,9 +326,23 @@ def show():
                 st.rerun()
 
         # Grade de Questões da Lista
-        cols_jumper = st.columns(total_q)
-        for i, q in enumerate(questoes):
-            with cols_jumper[i]:
+        MAX_JUMPER = 20
+        metade = MAX_JUMPER // 2
+        inicio = max(0, min(q_idx - metade, total_q - MAX_JUMPER))
+        fim = min(total_q, inicio + MAX_JUMPER)
+        questoes_visiveis = list(enumerate(questoes))[inicio:fim]
+
+        if total_q > MAX_JUMPER:
+            st.markdown(
+                f"<div style='font-size:0.78rem; color:{text_muted}; margin-bottom:4px;'>"
+                f"Mostrando navegação <b>{inicio+1}</b>—<b>{fim}</b> de <b>{total_q}</b> "
+                f"</div>",
+                unsafe_allow_html=True
+            )
+
+        cols_jumper = st.columns(len(questoes_visiveis))
+        for col_idx, (i, q) in enumerate(questoes_visiveis):
+            with cols_jumper[col_idx]:
                 tipo_btn = "primary" if (i == q_idx) else "secondary"
                 if st.button(f"#{i+1}", key=f"jmp_lista_{i}", use_container_width=True, type=tipo_btn):
                     st.session_state.questao_idx = i
