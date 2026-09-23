@@ -1,8 +1,8 @@
-"
+"""
 MathAI - Página de Perfil do Usuário
 Visualização e edição completa de perfil, dados acadêmicos,
 faculdade, curso, objetivos e concursos/vestibulares foco.
-"
+"""
 
 import streamlit as st
 from src.database.users import (
@@ -48,7 +48,6 @@ FACULDADES_BRASIL = [
     "UERJ - Universidade do Estado do Rio de Janeiro",
     "CEFET/RJ - Centro Federal de Educ. Tecnológica",
     "IF - Instituto Federal de Educação, Ciência e Tecnologia",
-    "CEDERJ - Consórcio Cederj",
     "Outra Faculdade / Universidade"
 ]
 
@@ -67,17 +66,6 @@ CONCURSOS_MILITARES = [
     "Outro Concurso Militar"
 ]
 
-
-MATERIAS_SUPERIOR = [
-    "Cálculo 1",
-    "Cálculo 2",
-    "Cálculo 3",
-    "Álgebra Linear",
-    "Geometria Analítica",
-    "Matemática Discreta",
-    "Física 1"
-]
-
 CONCURSOS_VESTIBULARES = [
     "ENEM",
     "FUVEST (USP)",
@@ -94,7 +82,6 @@ MOTIVOS_OPCOES = {
     "melhoria_propria": "📈 Quero melhorar na Matemática por conta própria",
     "concurso_militar": "🎖️ Concurso Militar (ESA, EsPCEx, AFA, EFOMM, IME, ITA...)",
     "enem_vestibular": "📚 ENEM / Vestibular",
-    "ensino_superior": "🎓 Provas de Faculdade (Cálculo 3, Álgebra Linear, EPs...)",
     "professor": "👨‍🏫 Sou professor(a) de Matemática",
     "olimpiada": "🏆 Olimpíadas de Matemática (OBMEP, OBM...)",
     "uso_profissional": "💼 Uso profissional / área técnica",
@@ -133,11 +120,11 @@ def show():
 
     # Cabeçalho com Card de Resumo do Usuário
     nome_completo = usuario.get("nome") or "Aluno"
-    email_usuario = usuario.get("email") or 
-    iniciais = .join(p[0].upper() for p in nome_completo.split()[:2])
-    faculdade_atual = usuario.get("faculdade") or 
-    curso_atual = usuario.get("curso") or 
-    escolaridade_atual = usuario.get("escolaridade") or 
+    email_usuario = usuario.get("email") or ""
+    iniciais = "".join(p[0].upper() for p in nome_completo.split()[:2])
+    faculdade_atual = usuario.get("faculdade") or ""
+    curso_atual = usuario.get("curso") or ""
+    escolaridade_atual = usuario.get("escolaridade") or ""
     concursos_foco_atual = usuario.get("concursos_foco") or []
 
     # Subtítulo inteligente
@@ -152,7 +139,7 @@ def show():
     else:
         tag_subtitulo = "Estudante MathAI"
 
-    st.markdown(f"
+    st.markdown(f"""
     <div style="background: {bg_card}; border: 1.5px solid {border_card}; border-radius: 18px;
                 padding: 22px 26px; box-shadow: {shadow_card}; margin-bottom: 24px;
                 display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
@@ -186,7 +173,7 @@ def show():
             </span>
         </div>
     </div>
-    ", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
     # ── FORMULÁRIO DE EDIÇÃO ──────────────────────────────────────────────────
     st.markdown("### ⚙️ Configurações & Personalização do Perfil")
@@ -196,15 +183,15 @@ def show():
 
     # ── COLUNA ESQUERDA: DADOS PESSOAIS & ENDEREÇO ────────────────────────────
     with col_esq:
-        st.markdown(f"
+        st.markdown(f"""
         <div style="font-size: 1.08rem; font-weight: 700; color: {text_main}; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span>👤</span> Dados Pessoais & Contato
         </div>
-        ", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
         novo_nome = st.text_input(
             "Nome Completo *",
-            value=usuario.get("nome") or ,
+            value=usuario.get("nome") or "",
             placeholder="Seu nome completo",
             key="perfil_nome"
         )
@@ -223,7 +210,7 @@ def show():
         with col_id_cel2:
             novo_celular = st.text_input(
                 "📱 Celular / WhatsApp",
-                value=usuario.get("celular") or ,
+                value=usuario.get("celular") or "",
                 placeholder="(21) 99999-9999",
                 key="perfil_celular"
             )
@@ -232,39 +219,39 @@ def show():
         with col_cpf1:
             novo_cpf = st.text_input(
                 "🪪 CPF",
-                value=usuario.get("cpf") or ,
+                value=usuario.get("cpf") or "",
                 placeholder="000.000.000-00",
                 key="perfil_cpf"
             )
         with col_cpf2:
-            st.text_input("📧 E-mail (login)", value=usuario.get("email") or , disabled=True, key="perfil_email_disabled")
+            st.text_input("📧 E-mail (login)", value=usuario.get("email") or "", disabled=True, key="perfil_email_disabled")
 
         st.markdown("---")
-        st.markdown(f"
+        st.markdown(f"""
         <div style="font-size: 1.08rem; font-weight: 700; color: {text_main}; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span>📍</span> Localização & Endereço
         </div>
-        ", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
         col_cep_in, col_cep_btn = st.columns([2, 1])
         with col_cep_in:
             novo_cep = st.text_input(
                 "CEP",
-                value=usuario.get("cep") or ,
+                value=usuario.get("cep") or "",
                 placeholder="00000-000",
                 key="perfil_input_cep"
             )
         with col_cep_btn:
-            st.write()
-            st.write()
+            st.write("")
+            st.write("")
             if st.button("🔍 Buscar CEP", use_container_width=True, key="btn_perfil_buscar_cep"):
                 if novo_cep:
                     endereco_viacep = buscar_endereco_por_cep(novo_cep)
                     if endereco_viacep:
-                        st.session_state["perfil_logradouro"] = endereco_viacep.get("logradouro")
-                        st.session_state["perfil_bairro"] = endereco_viacep.get("bairro")
-                        st.session_state["perfil_cidade"] = endereco_viacep.get("cidade")
-                        st.session_state["perfil_estado"] = endereco_viacep.get("estado")
+                        st.session_state["perfil_logradouro"] = endereco_viacep.get("logradouro", "")
+                        st.session_state["perfil_bairro"] = endereco_viacep.get("bairro", "")
+                        st.session_state["perfil_cidade"] = endereco_viacep.get("cidade", "")
+                        st.session_state["perfil_estado"] = endereco_viacep.get("estado", "")
                         st.toast("Endereço preenchido via ViaCEP!", icon="📍")
                         st.rerun()
                     else:
@@ -274,14 +261,14 @@ def show():
         with col_rua:
             novo_logradouro = st.text_input(
                 "Logradouro / Rua",
-                value=usuario.get("logradouro") or ,
+                value=usuario.get("logradouro") or "",
                 placeholder="Rua / Avenida...",
                 key="perfil_logradouro"
             )
         with col_num:
             novo_numero = st.text_input(
                 "Número",
-                value=usuario.get("numero") or ,
+                value=usuario.get("numero") or "",
                 placeholder="Ex: 100",
                 key="perfil_numero"
             )
@@ -290,21 +277,21 @@ def show():
         with col_bair:
             novo_bairro = st.text_input(
                 "Bairro",
-                value=usuario.get("bairro") or ,
+                value=usuario.get("bairro") or "",
                 placeholder="Bairro",
                 key="perfil_bairro"
             )
         with col_cidade:
             novo_cidade = st.text_input(
                 "Cidade",
-                value=usuario.get("cidade") or ,
+                value=usuario.get("cidade") or "",
                 placeholder="Cidade",
                 key="perfil_cidade"
             )
         with col_estado:
             novo_estado = st.text_input(
                 "UF",
-                value=usuario.get("estado") or ,
+                value=usuario.get("estado") or "",
                 placeholder="RJ",
                 max_chars=2,
                 key="perfil_estado"
@@ -312,13 +299,13 @@ def show():
 
     # ── COLUNA DIREITA: ESCOLARIDADE, FACULDADE, CURSO & CONCURSOS FOCO ──────
     with col_dir:
-        st.markdown(f"
+        st.markdown(f"""
         <div style="font-size: 1.08rem; font-weight: 700; color: {text_main}; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span>🎓</span> Formação Acadêmica & Escolaridade
         </div>
-        ", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
-        escolaridade_salva = usuario.get("escolaridade") or 
+        escolaridade_salva = usuario.get("escolaridade") or ""
         indice_esc = 0
         if escolaridade_salva in ESCOLARIDADE_OPCOES:
             indice_esc = ESCOLARIDADE_OPCOES.index(escolaridade_salva)
@@ -343,16 +330,16 @@ def show():
         novo_curso = None
 
         if eh_ensino_superior:
-            st.markdown(f"
+            st.markdown(f"""
             <div style="background: {'rgba(124, 58, 237, 0.1)' if is_dark else 'rgba(124, 58, 237, 0.05)'};
                         border: 1px dashed {'rgba(124, 58, 237, 0.35)' if is_dark else '#cbd5e1'};
                         border-radius: 12px; padding: 14px; margin-top: 6px; margin-bottom: 10px;">
                 <div style="font-size: 0.84rem; font-weight: 700; color: {'#c7d2fe' if is_dark else '#6d28d9'}; margin-bottom: 8px;">
                     🏛️ Dados Universitários / Pós-Graduação
                 </div>
-            ", unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
-            faculdade_salva = usuario.get("faculdade") or 
+            faculdade_salva = usuario.get("faculdade") or ""
             faculdade_eh_outra = False
             indice_fac = 0
 
@@ -376,7 +363,7 @@ def show():
             )
 
             if faculdade_sel == "Outra Faculdade / Universidade" or faculdade_eh_outra:
-                valor_outra = faculdade_salva if (faculdade_salva and faculdade_salva not in FACULDADES_BRASIL) else 
+                valor_outra = faculdade_salva if (faculdade_salva and faculdade_salva not in FACULDADES_BRASIL) else ""
                 faculdade_custom = st.text_input(
                     "Nome da sua Faculdade / Universidade",
                     value=valor_outra,
@@ -389,7 +376,7 @@ def show():
 
             novo_curso = st.text_input(
                 "Curso / Graduação / Área de Estudo *",
-                value=usuario.get("curso") or ,
+                value=usuario.get("curso") or "",
                 placeholder="Ex: Matemática, Engenharia Elétrica, Medicina, Economia...",
                 key="perfil_curso"
             )
@@ -397,11 +384,11 @@ def show():
             st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("---")
-        st.markdown(f"
+        st.markdown(f"""
         <div style="font-size: 1.08rem; font-weight: 700; color: {text_main}; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <span>🎯</span> Motivações & Concursos Foco (Personalização)
         </div>
-        ", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
         st.caption("Selecione seus objetivos para que a plataforma priorize listas e simulados direcionados:")
 
@@ -416,18 +403,17 @@ def show():
         # Segmentação Específica: Concursos Militares e Vestibulares
         tem_foco_militar = "concurso_militar" in novos_motivos
         tem_foco_vestibular = "enem_vestibular" in novos_motivos
-        tem_foco_superior = "ensino_superior" in novos_motivos
         foco_salvo = usuario.get("concursos_foco") or []
 
         # Sempre oferece os campos se selecionado ou se o usuário estiver em cursinho/médio
         concursos_foco_selecionados = []
 
         if tem_foco_militar:
-            st.markdown(f"
+            st.markdown(f"""
             <div style="margin-top: 10px; font-size: 0.88rem; font-weight: 700; color: {'#fbbf24' if is_dark else '#b45309'};">
                 🎖️ Concursos Militares de Foco (selecione os seus):
             </div>
-            ", unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
             militares_defaults = [c for c in CONCURSOS_MILITARES if any(f.lower() in c.lower() for f in foco_salvo)]
             sel_militares = st.multiselect(
@@ -439,17 +425,17 @@ def show():
             concursos_foco_selecionados.extend(sel_militares)
             if "Outro Concurso Militar" in sel_militares:
                 outros = [f for f in foco_salvo if f not in CONCURSOS_MILITARES and f not in CONCURSOS_VESTIBULARES]
-                val_outro_m = outros[0] if outros else 
+                val_outro_m = outros[0] if outros else ""
                 outro_m = st.text_input("Qual outro concurso militar?", value=val_outro_m, key="perfil_outro_militar")
                 if outro_m:
                     concursos_foco_selecionados.append(outro_m)
 
         if tem_foco_vestibular:
-            st.markdown(f"
+            st.markdown(f"""
             <div style="margin-top: 10px; font-size: 0.88rem; font-weight: 700; color: {'#60a5fa' if is_dark else '#1d4ed8'};">
                 📚 Vestibulares de Foco:
             </div>
-            ", unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
             vestibulares_defaults = [v for v in CONCURSOS_VESTIBULARES if any(f.lower() in v.lower() for f in foco_salvo)]
             sel_vestibulares = st.multiselect(
@@ -461,7 +447,7 @@ def show():
             concursos_foco_selecionados.extend(sel_vestibulares)
             if "Outro Vestibular" in sel_vestibulares:
                 outros = [f for f in foco_salvo if f not in CONCURSOS_MILITARES and f not in CONCURSOS_VESTIBULARES]
-                val_outro_v = outros[-1] if outros else 
+                val_outro_v = outros[-1] if outros else ""
                 outro_v = st.text_input("Qual outro vestibular?", value=val_outro_v, key="perfil_outro_vestibular")
                 if outro_v:
                     concursos_foco_selecionados.append(outro_v)
