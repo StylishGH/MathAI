@@ -155,7 +155,9 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                         st.session_state[f"dica_conteudo_{q_id}"] = dica_texto
                         st.session_state[f"dica_nivel_mostrado_{q_id}"] = nivel_dica
                         # ⭐ Rastreia o pedido de dica no dataset
-                        aluno_id = st.session_state.get("aluno_id", 1)
+                        aluno_id = st.session_state.get("aluno_id")
+                        if aluno_id is None:
+                            raise RuntimeError("Aluno não autenticado.")
                         registrar_dica_socratica(
                             questao_id=q_id,
                             nivel_dica=nivel_dica,
@@ -251,16 +253,6 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                             justificativa_texto=txt_just
                         )
                         st.session_state[f"analise_ia_{q_id}"] = diag
-                        # ⭐ Auto-salva o diagnóstico no banco imediatamente
-                        aluno_id = st.session_state.get("aluno_id", 1)
-                        salvar_diagnostico_ia(
-                            questao_id=q_id,
-                            diagnostico_dict=diag,
-                            aluno_id=aluno_id,
-                            imagem_path=st.session_state.get(f"nome_resolucao_{q_id}"),
-                            justificativa_texto=txt_just
-                        )
-                        st.rerun()
 
         # Exibição do Card Diagnóstico da IA se já tiver sido gerado
         if f"analise_ia_{q_id}" in st.session_state:
@@ -494,6 +486,9 @@ def render_resolution_form(questao: dict, on_success_callback=None):
         col_save, col_reset = st.columns([3, 1])
         with col_save:
             if st.button("💾 Salvar Tentativa e Atualizar Perfil", type="primary", use_container_width=True, key=f"btn_save_{q_id}"):
+                aluno_id = st.session_state.get("aluno_id")
+                if aluno_id is None:
+                    raise RuntimeError("Aluno não autenticado.")
                 # Junta justificativa inicial com anotações de reflexão
                 texto_anotacoes_final = ""
                 if justificativa_salva:
@@ -517,7 +512,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                     questao_id=q_id,
                     tempo_segundos=tempo_segundos,
                     acertou=acertou,
-                    aluno_id=st.session_state.get("aluno_id", 1),
+                    aluno_id=aluno_id,
                     estrategia_usada=estrategia_final,
                     tipo_erro=tipo_erro_final,
                     confianca_aluno=confianca,
@@ -530,7 +525,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                     salvar_diagnostico_ia(
                         questao_id=q_id,
                         diagnostico_dict=st.session_state[f"analise_ia_{q_id}"],
-                        aluno_id=st.session_state.get("aluno_id", 1),
+                        aluno_id=aluno_id,
                         tentativa_id=tentativa_id,
                         imagem_path=caminho_imagem_salva,
                         justificativa_texto=justificativa_salva

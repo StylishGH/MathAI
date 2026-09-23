@@ -12,7 +12,7 @@ def registrar_tentativa(
     questao_id: int,
     tempo_segundos: int,
     acertou: bool,
-    aluno_id: int = 1,
+    aluno_id: int,
     estrategia_usada: str | None = None,
     tipo_erro: str = "nenhum",
     confianca_aluno: int = 3,
@@ -274,7 +274,7 @@ def obter_metricas_estudante(aluno_id: int | None = None):
 def salvar_diagnostico_ia(
     questao_id: int,
     diagnostico_dict: dict,
-    aluno_id: int = 1,
+    aluno_id: int,
     tentativa_id: int | None = None,
     imagem_path: str | None = None,
     justificativa_texto: str | None = None
@@ -319,10 +319,10 @@ def salvar_diagnostico_ia(
 
 def registrar_dica_socratica(
     questao_id: int,
+    aluno_id: int,
     nivel_dica: int,
     texto_dica: str,
-    modelo_gemini: str = "",
-    aluno_id: int = 1
+    modelo_gemini: str = ""
 ) -> None:
     """
     Registra cada pedido de dica socrática no banco.

@@ -498,7 +498,9 @@ def _finalizar_simulado(sim: dict, tempo_gasto: int):
 
     questoes = sim.get("questoes", [])
     respostas = sim.get("respostas", {})
-    aluno_id = st.session_state.get("aluno_id", 1)
+    aluno_id = st.session_state.get("aluno_id")
+    if aluno_id is None:
+        raise RuntimeError("Aluno não autenticado.")
     tempo_por_q = max(1, tempo_gasto // len(questoes)) if questoes else 10
 
     for q in questoes:
