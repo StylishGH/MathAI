@@ -72,17 +72,24 @@ if not is_dark:
         color: #0f172a !important;
         border: 1.5px solid #cbd5e1 !important;
     }
-    div[data-baseweb="popover"], div[role="listbox"], ul[role="listbox"] {
+    div[data-baseweb="popover"] > div {
         background-color: #ffffff !important;
-        color: #0f172a !important;
         border: 1px solid #e2e8f0 !important;
     }
-    li[role="option"] {
+    div[data-baseweb="popover"], div[role="listbox"], ul[role="listbox"] {
         color: #0f172a !important;
-        background-color: #ffffff !important;
     }
-    li[role="option"]:hover, li[role="option"][aria-selected="true"] {
+    li[role="option"], div[role="option"] {
+        color: #0f172a !important;
+        background-color: transparent !important;
+    }
+    li[role="option"] span, div[role="option"] span, li[role="option"] div, div[role="option"] div {
+        color: #0f172a !important;
+    }
+    li[role="option"]:hover, li[role="option"][aria-selected="true"], div[role="option"]:hover {
         background-color: #f1f5f9 !important;
+    }
+    li[role="option"]:hover span, li[role="option"][aria-selected="true"] span, li[role="option"]:hover div, div[role="option"]:hover div {
         color: #7c3aed !important;
     }
     /* Expander no modo claro */
