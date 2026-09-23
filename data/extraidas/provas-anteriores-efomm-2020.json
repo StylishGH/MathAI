@@ -1,0 +1,206 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Sejam os números reais a e b tais que\n€ãx+b—2 \n7\n11 m------------- —— •\n*->0 \nx \n12\nO valor do produto a.b é",
+    "alternativas": {
+      "alternativa_a": "52",
+      "alternativa_b": "56",
+      "alternativa_c": "63",
+      "alternativa_d": "70",
+      "alternativa_e": "84"
+    },
+    "texto_bruto": "Sejam os números reais a e b tais que\n€ãx+b—2 \n7\n11 m------------- —— •\n*->0 \nx \n12\nO valor do produto a.b é\n(A) 52\n(B) 56\n(C) 63\n(D) 70\n(E) 84"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Seja piN-HN uma função tal que\n/ {m. n ) - n . f [m)+m . f (n)\npara todos os naturais m e n. Se y(20) = 3» \n/(1 4 ) = 1,25 e /(3 5 ) = 4> entã0> 0 valor de \n/(8 ) é",
+    "alternativas": {
+      "alternativa_a": "1",
+      "alternativa_b": "2",
+      "alternativa_c": "3",
+      "alternativa_d": "4",
+      "alternativa_e": "5"
+    },
+    "texto_bruto": "Seja piN-HN uma função tal que\n/ {m. n ) - n . f [m)+m . f (n)\npara todos os naturais m e n. Se y(20) = 3» \n/(1 4 ) = 1,25 e /(3 5 ) = 4> entã0> 0 valor de \n/(8 ) é\n(A) 1\n(B) 2\n(C) 3\n(D) 4\n(E) 5"
+  },
+  {
+    "numero": 3,
+    "enunciado": "A inequação |x|+|2x — 8|<|x + 8| d satisfeita por um \nnúmero de valores inteiros de x igual a",
+    "alternativas": {
+      "alternativa_a": "5",
+      "alternativa_b": "6",
+      "alternativa_c": "7",
+      "alternativa_d": "8",
+      "alternativa_e": "9"
+    },
+    "texto_bruto": "A inequação |x|+|2x — 8|<|x + 8| d satisfeita por um \nnúmero de valores inteiros de x igual a\n(A) 5\n(B) 6\n(C) 7\n(D) 8\n(E) 9"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Assinale a alternativa que apresenta o termo\n. \n. \n' \n- '8\nindependente de x na expansão binomial\n2 i",
+    "alternativas": {
+      "alternativa_a": "1",
+      "alternativa_b": "8",
+      "alternativa_c": "28",
+      "alternativa_d": "56",
+      "alternativa_e": "70\n1/18"
+    },
+    "texto_bruto": "Assinale a alternativa que apresenta o termo\n. \n. \n' \n- '8\nindependente de x na expansão binomial\n2 i\n(A) 1\n(B) 8\n(C) 28\n(D) 56\n(E) 70\n1/18"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Quantos são os anagramas da palavra MERCANTE \nque possuem a letra M na Ia posição (no caso, a \nposição de origem), ou a letra E na 2a posição, ou a \nletra R na 3a posição?\n13 Posição\n33 Posição\nMERCANTE\n\\\n23 Posição",
+    "alternativas": {},
+    "texto_bruto": "Quantos são os anagramas da palavra MERCANTE \nque possuem a letra M na Ia posição (no caso, a \nposição de origem), ou a letra E na 2a posição, ou a \nletra R na 3a posição?\n13 Posição\n33 Posição\nMERCANTE\n\\\n23 Posição\n(A) 60\n(B) 120\n(C ) 10920\n(D ) 12600\n(E) 15120"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Seja a esfera de raio R inscrita na pirâmide \nquadrangular regular de aresta base 2 cm e aresta \nlateral ^ g cm. Sabendo-se que a esfera tangencia\ntodas as faces da pirâmide, o valor de R, em cm, é",
+    "alternativas": {
+      "alternativa_a": "1",
+      "alternativa_b": "2",
+      "alternativa_c": "4",
+      "alternativa_d": "5",
+      "alternativa_e": "7"
+    },
+    "texto_bruto": "Seja a esfera de raio R inscrita na pirâmide \nquadrangular regular de aresta base 2 cm e aresta \nlateral ^ g cm. Sabendo-se que a esfera tangencia\ntodas as faces da pirâmide, o valor de R, em cm, é\n(A) V37+1\n6\n(B) V 39-1\n38\n(C) 6V38 + 12\n17\n(D) V 37-1\n6\n(E) 6 V38-12\n17\n2/18\n\n\nT Questão\nSejam as funções reais f Q g definidas por\nfU]=x4-10x3+32x2-38x+15 e\ng(x)=—x3+8x2 —18x + 16 '\nO menor valor de \\f(x )—g(x)\\ no intervalo [j .3] é\n(A) 1\n(B) 2\n(C) 4\n(D) 5\n(E) 7"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Uma paite do gráfico da função j- está representado\nna figura abaixo. Assinale a alternativa que pode \nrepresentar f ( x ) •\nf[ x ) —2 sen[2x) + \\\n3/18",
+    "alternativas": {},
+    "texto_bruto": "Uma paite do gráfico da função j- está representado\nna figura abaixo. Assinale a alternativa que pode \nrepresentar f ( x ) •\nf[ x ) —2 sen[2x) + \\\n3/18"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Sejam a circunferência Ci, com centro em A e raio 1, \ne a circunferência C2 que passa por A, com centro em \nB e raio 2. Sabendo-se que D é o ponto médio do \nsegmento AB, E é um dos pontos de interseção entre \nCi e C2, e F é a interseção da reta ED com a \ncircunferência C2, o valor da área do triângulo AEF, \nem unidades de área, é",
+    "alternativas": {
+      "alternativa_a": "2+ 2 H\n8",
+      "alternativa_b": "1 + J Ü\n4",
+      "alternativa_c": "3Vl5\n8",
+      "alternativa_d": "Vl5\n4",
+      "alternativa_e": "5Vl5\n8"
+    },
+    "texto_bruto": "Sejam a circunferência Ci, com centro em A e raio 1, \ne a circunferência C2 que passa por A, com centro em \nB e raio 2. Sabendo-se que D é o ponto médio do \nsegmento AB, E é um dos pontos de interseção entre \nCi e C2, e F é a interseção da reta ED com a \ncircunferência C2, o valor da área do triângulo AEF, \nem unidades de área, é\n(A) 2+ 2 H\n8\n(B) 1 + J Ü\n4\n(C) 3Vl5\n8\n(D) Vl5\n4\n(E) 5Vl5\n8"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Seja \na \nfunção \n/ • [ / -+oo)->lR > \ndefinida \npor \nf (v) = x-3 —3x2+1 ' ^ menor valor de t, para que a \nfunção seja injetiva, é",
+    "alternativas": {
+      "alternativa_a": "-1",
+      "alternativa_b": "0",
+      "alternativa_c": "1",
+      "alternativa_d": "2",
+      "alternativa_e": "3"
+    },
+    "texto_bruto": "Seja \na \nfunção \n/ • [ / -+oo)->lR > \ndefinida \npor \nf (v) = x-3 —3x2+1 ' ^ menor valor de t, para que a \nfunção seja injetiva, é\n(A) -1\n(B) 0\n(C) 1\n(D) 2\n(E) 3"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Sejam 0 plano a -6X—4 y —4z+9=0> os Pontos \nA~[— 1;3;2) e B=(m; n;p) ■ Sabendo-se que o \nponto B é simétrico ao ponto A, em relação ao plano \na , o valor da soma m+n+p é",
+    "alternativas": {
+      "alternativa_a": "-2",
+      "alternativa_b": "0",
+      "alternativa_c": "I\n4",
+      "alternativa_d": "Z\n4",
+      "alternativa_e": "3\n4/18"
+    },
+    "texto_bruto": "Sejam 0 plano a -6X—4 y —4z+9=0> os Pontos \nA~[— 1;3;2) e B=(m; n;p) ■ Sabendo-se que o \nponto B é simétrico ao ponto A, em relação ao plano \na , o valor da soma m+n+p é\n(A) -2\n(B) 0\n(C) I\n4\n(D) Z\n4\n(E)3\n4/18"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Considere a inequação\n|x7—x4+x—111x2 — 4x+3|(x2— 7x—54)<0 '\nSeja I o conjunto dos números inteiros que satisfaz a \ndesigualdade e n a quantidade de elementos de I. Com \nrelação a n, podemos afirmar que",
+    "alternativas": {
+      "alternativa_a": "n é um número primo.",
+      "alternativa_b": "n é divisível por 7.",
+      "alternativa_c": "n não divide 53904.",
+      "alternativa_d": "n é um quadrado perfeito.",
+      "alternativa_e": "n é divisível por 6."
+    },
+    "texto_bruto": "Considere a inequação\n|x7—x4+x—111x2 — 4x+3|(x2— 7x—54)<0 '\nSeja I o conjunto dos números inteiros que satisfaz a \ndesigualdade e n a quantidade de elementos de I. Com \nrelação a n, podemos afirmar que\n(A) n é um número primo.\n(B) n é divisível por 7.\n(C) n não divide 53904.\n(D) n é um quadrado perfeito.\n(E) n é divisível por 6."
+  },
+  {
+    "numero": 13,
+    "enunciado": "Seja o somatório abaixo, onde i é a unidade \nimaginária.\nSobre o valor de S, é correto afirmar que",
+    "alternativas": {},
+    "texto_bruto": "Seja o somatório abaixo, onde i é a unidade \nimaginária.\nSobre o valor de S, é correto afirmar que"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Seja ABC um triângulo inscrito em uma circunferên­\ncia de centro O. Sejam O' e E o incentro do triângulo \nABC e o ponto médio do arco BC que não contém o \nponto A, respectivamente. Assinale a opção que apre­\nsenta a relação entre os segmentos EB, EO' e EC.",
+    "alternativas": {
+      "alternativa_a": "S = l - i\nw S=1-1",
+      "alternativa_b": "S — l+i",
+      "alternativa_e": "s = /3\n5/18",
+      "alternativa_c": "S = 1",
+      "alternativa_d": "S = i"
+    },
+    "texto_bruto": "Seja ABC um triângulo inscrito em uma circunferên­\ncia de centro O. Sejam O' e E o incentro do triângulo \nABC e o ponto médio do arco BC que não contém o \nponto A, respectivamente. Assinale a opção que apre­\nsenta a relação entre os segmentos EB, EO' e EC.\n(A) E B=EO ' — EC\n(B) E B<EO :- E C \n(c ) E B>EO ’>E C \n(°) E B—E O ’>EC\n(E) EB<EO'<EC\n2020\n(A) S = l - i\nw S=1-1\n(B) S — l+i\n(C) S = 1\n(D) S = i\n(E) s = /3\n5/18"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Considere um recipiente cúbico W de aresta 2. Supo­\nnha que possamos colocar 8 esferas de raio R e uma \nde raio 2R dentro de W dispostas do seguinte modo: a \nesfera de raio 2R tem seu centro coincidindo com o \ncentro de W e cada uma das demais esferas são tan­\ngentes a três faces e à esfera maior. Assinale a opção \nque apresenta o intervalo ao qual R pertença.\nDados: \n43 = 1.7 « V3=2.2",
+    "alternativas": {
+      "alternativa_a": "í <r<L\n6 \n4",
+      "alternativa_b": "i <R<2\n3 \n5",
+      "alternativa_c": "3 <R<i\n7 \n2",
+      "alternativa_d": "—<R<—\n3 \n5",
+      "alternativa_e": "1 < jr< A \n5 \n10"
+    },
+    "texto_bruto": "Considere um recipiente cúbico W de aresta 2. Supo­\nnha que possamos colocar 8 esferas de raio R e uma \nde raio 2R dentro de W dispostas do seguinte modo: a \nesfera de raio 2R tem seu centro coincidindo com o \ncentro de W e cada uma das demais esferas são tan­\ngentes a três faces e à esfera maior. Assinale a opção \nque apresenta o intervalo ao qual R pertença.\nDados: \n43 = 1.7 « V3=2.2\n(A) í <r<L\n6 \n4\n(B) i <R<2\n3 \n5\n(C) 3 <R<i\n7 \n2\n(D) —<R<—\n3 \n5\n(E) 1 < jr< A \n5 \n10"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Considere a soma\n.\n1\n1\n1\n \n1\nS — ----------1-----------------------+\n----------------------------h - ^ + r -------------------~-------------------—-------------------- + \n5\n15 5-9-13 9-13-17 \n(4n+l)(4n+5)(4n+9)\nou seja, a soma continua para n, crescendo indefinida­\nmente. Assinale a opção que apresenta o valor de S.",
+    "alternativas": {
+      "alternativa_a": "s = i \n2",
+      "alternativa_b": "S = 1",
+      "alternativa_c": "s = J -\n20",
+      "alternativa_d": "s = —\n40",
+      "alternativa_e": "s= -L\n50\n6/18"
+    },
+    "texto_bruto": "Considere a soma\n.\n1\n1\n1\n \n1\nS — ----------1-----------------------+\n----------------------------h - ^ + r -------------------~-------------------—-------------------- + \n5\n15 5-9-13 9-13-17 \n(4n+l)(4n+5)(4n+9)\nou seja, a soma continua para n, crescendo indefinida­\nmente. Assinale a opção que apresenta o valor de S.\n(A) s = i \n2\n(B) S = 1\n(C) s = J -\n20\n(D) s = —\n40\n(E) s= -L\n50\n6/18"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Sejam jj, ^ e g, \nvetores do ^ 3. Sabe-se que \na +v+w=Õ> |v|=^> |m|= | e |w| =2 ■ Assinale a \nopção que apresenta o valor de ü-v+v-w+ü-w ■",
+    "alternativas": {
+      "alternativa_a": "I \n7",
+      "alternativa_b": "Ü\n4",
+      "alternativa_c": "=1 \n16",
+      "alternativa_d": "§.\n8",
+      "alternativa_e": "i \n7"
+    },
+    "texto_bruto": "Sejam jj, ^ e g, \nvetores do ^ 3. Sabe-se que \na +v+w=Õ> |v|=^> |m|= | e |w| =2 ■ Assinale a \nopção que apresenta o valor de ü-v+v-w+ü-w ■\n(A) I \n7\n(B) Ü\n4\n(C) =1 \n16\n(D) §.\n8\n(E) i \n7"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Seja / uma função real definida por\ncom\nlim\nx -*-2\n/(* )=\nx2; sex<—2 \nax+b; se — 2<x<2 \n2x - 6 ; se2 <x\na beIR • Sabendo que os limites lim \nf[ x ) e \n’ \n*->+2\nf{x) existem, assinale a opção que apresenta\n|a+è| •",
+    "alternativas": {
+      "alternativa_a": "I \n6",
+      "alternativa_b": "i \n5",
+      "alternativa_c": "I \n4",
+      "alternativa_d": "I\n3",
+      "alternativa_e": "I \n2\n7/18"
+    },
+    "texto_bruto": "Seja / uma função real definida por\ncom\nlim\nx -*-2\n/(* )=\nx2; sex<—2 \nax+b; se — 2<x<2 \n2x - 6 ; se2 <x\na beIR • Sabendo que os limites lim \nf[ x ) e \n’ \n*->+2\nf{x) existem, assinale a opção que apresenta\n|a+è| •\n(A) I \n6\n(B) i \n5\n(C) I \n4\n(D) I\n3\n(E) I \n2\n7/18"
+  },
+  {
+    "numero": 19,
+    "enunciado": "A trombeta de Gabriel é um sólido matemático\nformado pela rotação da curva v - 1 em torno do\n‘ \nx\neixo x.\nO volume desse sólido no intervalo i <x < 10 ®",
+    "alternativas": {},
+    "texto_bruto": "A trombeta de Gabriel é um sólido matemático\nformado pela rotação da curva v - 1 em torno do\n‘ \nx\neixo x.\nO volume desse sólido no intervalo i <x < 10 ®\n(A) v = ln (10)\n(B) V ^ I L\n10\n(C) V=^ L\n5\n(D) V=\nln (10)\n(E ) \nV = 8 jz"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Seja a matriz A\n1\n1\n1\n1\n1\n1\n2\n3\n4\n5\n1\n4\n9\n16\n25\n1\n8\n27\n64\n125\n1\n16\n81\n256\n625\nQual é o valor do determinante da matriz A?",
+    "alternativas": {
+      "alternativa_a": "96",
+      "alternativa_b": "98",
+      "alternativa_c": "100",
+      "alternativa_d": "144",
+      "alternativa_e": "288\n8/18"
+    },
+    "texto_bruto": "Seja a matriz A\n1\n1\n1\n1\n1\n1\n2\n3\n4\n5\n1\n4\n9\n16\n25\n1\n8\n27\n64\n125\n1\n16\n81\n256\n625\nQual é o valor do determinante da matriz A?\n(A) 96\n(B) 98\n(C) 100\n(D) 144\n(E) 288\n8/18"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "numero": 6,
+    "enunciado": "A área entre o gráfico de y = ||3x + 2|-3| e a reta y = 3, em unidades de área, vale:",
+    "latex": "y = ||3x + 2|-3|, y = 3",
+    "alternativa_a": "6",
+    "alternativa_b": "3",
+    "alternativa_c": "1,5",
+    "alternativa_d": "2",
+    "alternativa_e": "0,5",
+    "gabarito": "A"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Se theta é o menor ângulo formado pelas retas tangentes à circunferência x^2 + y^2 = 9 nos pontos P(-3/2, 3\\sqrt{3}/2) e Q(-3/2, -3\\sqrt{3}/2) então o valor de theta, em radianos, é:",
+    "latex": "x^2 + y^2 = 9, P\\left(-\\frac{3}{2}, \\frac{3\\sqrt{3}}{2}\\right), Q\\left(-\\frac{3}{2}, -\\frac{3\\sqrt{3}}{2}\\right)",
+    "alternativa_a": "\\frac{\\pi}{12}",
+    "alternativa_b": "\\frac{\\pi}{6}",
+    "alternativa_c": "\\frac{\\pi}{4}",
+    "alternativa_d": "\\frac{5\\pi}{12}",
+    "alternativa_e": "\\frac{7\\pi}{12}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 8,
+    "enunciado": "O lucro obtido pela venda de cada peça de roupa é x - 10, sendo x o preço da venda e 10 o preço do custo. A quantidade vendida por mês é igual a 70 - x. O lucro mensal máximo obtido com a venda do produto é:",
+    "latex": "L(x) = (x - 10)(70 - x)",
+    "alternativa_a": "1200 reais.",
+    "alternativa_b": "1000 reais.",
+    "alternativa_c": "900 reais.",
+    "alternativa_d": "800 reais.",
+    "alternativa_e": "600 reais.",
+    "gabarito": "A"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Os números que exprimem o cateto, a hipotenusa e a área de um triângulo retângulo isósceles estão em progressão aritmética, nessa ordem. O cateto do triângulo, em unidades de comprimento, vale:",
+    "latex": "(c, h, A)",
+    "alternativa_a": "\\frac{2 - \\sqrt{2}}{2}",
+    "alternativa_b": "\\frac{2 - \\sqrt{2}}{2} \\text{ (duplicada no OCR)}",
+    "alternativa_c": "\\frac{4 - \\sqrt{2}}{2}",
+    "alternativa_d": "\\frac{4 - \\sqrt{2}}{4}",
+    "alternativa_e": "\\frac{4 - \\sqrt{2}}{1}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Se f_0(x) = \\frac{x}{x+1} e f_{n}(x) = f_0(f_{n-1}(x)) para n = 0, 1, 2, ... então f_n(x) vale:",
+    "latex": "f_0(x) = \\frac{x}{x+1}, f_{n}(x) = f_0(f_{n-1}(x))",
+    "alternativa_a": "\\frac{x}{nx+1}",
+    "alternativa_b": "\\frac{(n+1)x}{x+1}",
+    "alternativa_c": "\\frac{nx}{x+1}",
+    "alternativa_d": "\\frac{(n+1)x}{x+n}",
+    "alternativa_e": "\\frac{x}{x+nx}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 11,
+    "enunciado": "O gráfico da função f(x) = arctg(sen(x)\\cos(x)) intercepta o eixo x nos pontos de coordenadas:",
+    "latex": "f(x) = \\text{arctg}(\\text{sen}(x)\\cos(x))",
+    "alternativa_a": "\\left(-\\frac{\\pi}{7}, 0\\right) \\text{ e } \\left(\\frac{\\pi}{5}, 0\\right)",
+    "alternativa_b": "\\left(-\\frac{\\pi}{7}, 0\\right) \\text{ e } \\left(-\\frac{\\pi}{5}, 0\\right)",
+    "alternativa_c": "\\left(-\\frac{\\pi}{7}, 0\\right) \\text{ e } \\left(-\\frac{\\pi}{5}, 0\\right)",
+    "alternativa_d": "\\left(0, -\\frac{\\pi}{7}\\right) \\text{ e } \\left(0, \\frac{\\pi}{5}\\right)",
+    "alternativa_e": "\\left(0, -\\frac{\\pi}{7}\\right) \\text{ e } \\left(0, -\\frac{\\pi}{5}\\right)",
+    "gabarito": "A"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Considere-se o conjunto universo U, formado por uma turma de cálculo da Escola de Formação de Oficiais da Marinha Mercante (EFOMM) e composta por alunos e alunas. São dados os subconjuntos de U: A: Conjunto formado pelos alunos; e B: Conjunto formado por todos os alunos e alunas aprovados. Pode-se concluir que (A - B) \\cup (C_U B) é a quantidade de:",
+    "latex": "(A - B) \\cup (C_U B)",
+    "alternativa_a": "alunos aprovados.",
+    "alternativa_b": "alunos reprovados.",
+    "alternativa_c": "todos os alunos e alunas aprovados.",
+    "alternativa_d": "alunas aprovadas.",
+    "alternativa_e": "alunas reprovadas.",
+    "gabarito": "A"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Considere a matriz A, então o valor de f no ponto de abscissa 1, onde f(x) = \\det(A):",
+    "latex": "A = \\begin{pmatrix} x+1 & x+2 & x+3 \\\\ 1 & 4 & 1 \\\\ 0 & 2 & 1 \\end{pmatrix}, f(x) = \\det(A)",
+    "alternativa_a": "a",
+    "alternativa_b": "b",
+    "alternativa_c": "c",
+    "alternativa_d": "d",
+    "alternativa_e": "e",
+    "gabarito": "A"
+  }
+]

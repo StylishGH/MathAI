@@ -1,0 +1,212 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Sejam os números reais a e b tais que o limite quando x tende a zero de ax + b - 2 sobre x é igual a 1 sobre 12. O valor do produto a vezes b é",
+    "latex": "\\\\lim_{x \\\\to 0} \\\\frac{ax + b - 2}{x} = \\\\frac{1}{12}",
+    "alternativa_a": "52",
+    "alternativa_b": "56",
+    "alternativa_c": "63",
+    "alternativa_d": "70",
+    "alternativa_e": "84",
+    "gabarito": "C"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Seja f uma função tal que f(m \\\\cdot n) = n \\\\cdot f(m) + m \\\\cdot f(n) para todos os naturais m e n. Se f(20) = 3, f(14) = 1,25 e f(35) = 4, então o valor de f(8) é",
+    "latex": "f(m \\\\cdot n) = n \\\\cdot f(m) + m \\\\cdot f(n)",
+    "alternativa_a": "1",
+    "alternativa_b": "2",
+    "alternativa_c": "3",
+    "alternativa_d": "4",
+    "alternativa_e": "5",
+    "gabarito": "B"
+  },
+  {
+    "numero": 3,
+    "enunciado": "A inequação módulo de x mais módulo de 2x menos 8 menor que módulo de x mais 8 é satisfeita por um número de valores inteiros de x igual a",
+    "latex": "|x| + |2x - 8| < |x + 8|",
+    "alternativa_a": "5",
+    "alternativa_b": "6",
+    "alternativa_c": "7",
+    "alternativa_d": "8",
+    "alternativa_e": "9",
+    "gabarito": "C"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Assinale a alternativa que apresenta o termo independente de x na expansão binomial.",
+    "latex": "\\\\left(x^2 + \\\\frac{1}{x}\\\\right)^8",
+    "alternativa_a": "1",
+    "alternativa_b": "8",
+    "alternativa_c": "28",
+    "alternativa_d": "56",
+    "alternativa_e": "70",
+    "gabarito": "C"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Quantos são os anagramas da palavra MERCANTE que possuem a letra M na primeira posição, ou a letra E na segunda posição, ou a letra R na terceira posição?",
+    "latex": "MERCANTE",
+    "alternativa_a": "7200",
+    "alternativa_b": "8100",
+    "alternativa_c": "9500",
+    "alternativa_d": "10800",
+    "alternativa_e": "12600",
+    "gabarito": "D"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Seja a esfera de raio R inscrita na pirâmide quadrangular regular de aresta base 2 cm e aresta lateral \\\\sqrt{6} cm. Sabendo-se que a esfera tangencia todas as faces da pirâmide, o valor de R, em cm, é",
+    "latex": "V = \\\\frac{1}{3} A_b h",
+    "alternativa_a": "1",
+    "alternativa_b": "2",
+    "alternativa_c": "4",
+    "alternativa_d": "5",
+    "alternativa_e": "7",
+    "gabarito": "A"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Uma parte do gráfico da função f está representado na figura abaixo. Assinale a alternativa que pode representar f(x).",
+    "latex": "f(x) = 2 \\\\sen(2x) + 1",
+    "alternativa_a": "f(x) = 2 \\\\sen(2x) + 1",
+    "alternativa_b": "f(x) = 2 \\\\cos(2x) + 1",
+    "alternativa_c": "f(x) = \\\\sen(2x) - 1",
+    "alternativa_d": "f(x) = \\\\cos(2x) - 1",
+    "alternativa_e": "f(x) = 2 \\\\sen(x) + 1",
+    "gabarito": "A"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Sejam a circunferência C1, com centro em A e raio 1, e a circunferência C2 que passa por A, com centro em B e raio 2. Sabendo-se que D é o ponto médio do segmento AB, E é um dos pontos de interseção entre C1 e C2, e F é a interseção da reta ED com a circunferência C2, o valor da área do triângulo AEF, em unidades de área, é",
+    "latex": "A_{AEF} = \\\\frac{\\\\text{base} \\\\times \\\\text{altura}}{2}",
+    "alternativa_a": "\\\\frac{2 + 2\\\\sqrt{15}}{8}",
+    "alternativa_b": "\\\\frac{1 + \\\\sqrt{15}}{4}",
+    "alternativa_c": "\\\\frac{3\\\\sqrt{15}}{8}",
+    "alternativa_d": "\\\\frac{\\\\sqrt{15}}{4}",
+    "alternativa_e": "\\\\frac{5\\\\sqrt{15}}{8}",
+    "gabarito": "E"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Seja a função f: [t, +\\\\infty) \\\\to \\\\mathbb{R} definida por f(x) = x^3 - 3x^2 + 1. O menor valor de t, para que a função seja injetiva, é",
+    "latex": "f(x) = x^3 - 3x^2 + 1",
+    "alternativa_a": "-1",
+    "alternativa_b": "0",
+    "alternativa_c": "1",
+    "alternativa_d": "2",
+    "alternativa_e": "3",
+    "gabarito": "D"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Sejam o plano \\\\alpha: -6x - 4y - 4z + 9 = 0, os pontos A = (-1; 3; 2) e B = (m; n; p). Sabendo-se que o ponto B é simétrico ao ponto A em relação ao plano \\\\alpha, o valor da soma m + n + p é",
+    "latex": "-6x - 4y - 4z + 9 = 0",
+    "alternativa_a": "-2",
+    "alternativa_b": "0",
+    "alternativa_c": "\\\\frac{1}{4}",
+    "alternativa_d": "\\\\frac{2}{4}",
+    "alternativa_e": "\\\\frac{3}{4}",
+    "gabarito": "E"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Considere a inequação. Seja I o conjunto dos números inteiros que satisfaz a desigualdade e n a quantidade de elementos de I. Com relação a n, podemos afirmar que",
+    "latex": "\\\\frac{|x^7 - x^4 + x - 1||x^2 - 4x + 3|}{x^2 - 7x - 54} < 0",
+    "alternativa_a": "n é um número primo.",
+    "alternativa_b": "n é divisível por 7.",
+    "alternativa_c": "n não divide 53904.",
+    "alternativa_d": "n é um quadrado perfeito.",
+    "alternativa_e": "n é divisível por 6.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Seja o somatório abaixo, onde i é a unidade imaginária. Sobre o valor de S, é correto afirmar que",
+    "latex": "S = \\\\sum_{k=1}^{n} ...",
+    "alternativa_a": "S = 1 - i",
+    "alternativa_b": "S = 1 + i",
+    "alternativa_c": "S = 1",
+    "alternativa_d": "S = i",
+    "alternativa_e": "S = \\\\sqrt{3}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Seja ABC um triângulo inscrito em uma circunferência de centro O. Sejam O' e E o incentro do triângulo ABC e o ponto médio do arco BC que não contém o ponto A, respectivamente. Assinale a opção que apresenta a relação entre os segmentos EB, EO' e EC.",
+    "latex": "EB = EO' = EC",
+    "alternativa_a": "O segmento EB é maior que EO'.",
+    "alternativa_b": "A soma de EB com EC é igual a EO'.",
+    "alternativa_c": "(EB)^2 = EO' \\\\cdot EC",
+    "alternativa_d": "EB = EO' = EC",
+    "alternativa_e": "Nenhuma das anteriores.",
+    "gabarito": "D"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Considere um recipiente cúbico W de aresta 2. Suponha que possamos colocar 8 esferas de raio R e uma de raio 2R dentro de W dispostas do seguinte modo: a esfera de raio 2R tem seu centro coincidindo com o centro de W e cada uma das demais esferas são tangentes a três faces e à esfera maior. Assinale a opção que apresenta o intervalo ao qual R pertença. Dados: \\\\sqrt[3]{3} = 1.4, \\\\sqrt{3} = 1.7",
+    "latex": "\\\\frac{1}{6} < R < \\\\frac{1}{4}",
+    "alternativa_a": "\\\\frac{1}{6} < R < \\\\frac{1}{4}",
+    "alternativa_b": "\\\\frac{1}{3} < R < \\\\frac{2}{5}",
+    "alternativa_c": "\\\\frac{3}{7} < R < \\\\frac{1}{2}",
+    "alternativa_d": "\\\\frac{2}{3} < R < \\\\frac{4}{5}",
+    "alternativa_e": "\\\\frac{1}{5} < R < \\\\frac{7}{10}",
+    "alternativa_gabarito": "A",
+    "gabarito": "A"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Considere a soma, ou seja, a soma continua para n crescendo indefinidamente. Assinale a opção que apresenta o valor de S.",
+    "latex": "S = \\\\frac{1}{1 \\\\cdot 5 \\\\cdot 9} + \\\\frac{1}{5 \\\\cdot 9 \\\\cdot 13} + \\\\frac{1}{9 \\\\cdot 13 \\\\cdot 17} + ... + \\\\frac{1}{(4n+1)(4n+5)(4n+9)}",
+    "alternativa_a": "S = \\\\frac{1}{2}",
+    "alternativa_b": "S = 1",
+    "alternativa_c": "S = \\\\frac{1}{20}",
+    "alternativa_d": "S = \\\\frac{1}{40}",
+    "alternativa_e": "S = \\\\frac{1}{50}",
+    "gabarito": "D"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Sejam u, v e w vetores do R3. Sabe-se que u + v + w = 0, |u| = 3, |v| = 4 e |w| = 2. Assinale a opção que apresenta o valor de u.v + v.w + u.w.",
+    "latex": "\\\\vec{u} + \\\\vec{v} + \\\\vec{w} = \\\\vec{0}, |\\\\vec{u}| = 3, |\\\\vec{v}| = 4, |\\\\vec{w}| = 2",
+    "alternativa_a": "-21/2",
+    "alternativa_b": "-21/4",
+    "alternativa_c": "-21/16",
+    "alternativa_d": "-21/8",
+    "alternativa_e": "-21/7",
+    "gabarito": "D"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Seja f uma função real definida por f(x) = x^2 se x < -2, ax + b se -2 <= x < 2, 2x - 6 se 2 <= x, com a, b em R. Sabendo que os limites lim_{x -> -2} f(x) e lim_{x -> 2} f(x) existem, assinale a opção que apresenta |a + b|.",
+    "latex": "f(x) = \\\\begin{cases} x^2 & \\\\text{se } x < -2 \\\\\\\\ ax + b & \\\\text{se } -2 \\\\le x < 2 \\\\\\\\ 2x - 6 & \\\\text{se } 2 \\\\le x \\\\end{cases}",
+    "alternativa_a": "1/6",
+    "alternativa_b": "1/5",
+    "alternativa_c": "1/4",
+    "alternativa_d": "1/3",
+    "alternativa_e": "1/2",
+    "gabarito": "D"
+  },
+  {
+    "numero": 19,
+    "enunciado": "A trombeta de Gabriel é um sólido matemático formado pela rotação da curva y = 1/x em torno do eixo x. O volume desse sólido no intervalo 1 <= x < +inf é",
+    "latex": "y = \\\\frac{1}{x}",
+    "alternativa_a": "pi",
+    "alternativa_b": "2pi",
+    "alternativa_c": "3pi",
+    "alternativa_d": "4pi",
+    "alternativa_e": "infinito",
+    "gabarito": "A"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Seja a matriz A de ordem 5x5 dada por A_{ij} = j^{i-1} para i, j em {1, 2, 3, 4, 5}. Qual é o valor do determinante da matriz A?",
+    "latex": "A = \\\\begin{pmatrix} 1 & 1 & 1 & 1 & 1 \\\\\\\\ 1 & 2 & 3 & 4 & 5 \\\\\\\\ 1 & 4 & 9 & 16 & 25 \\\\\\\\ 1 & 8 & 27 & 64 & 125 \\\\\\\\ 1 & 16 & 81 & 256 & 625 \\\\end{pmatrix}",
+    "alternativa_a": "96",
+    "alternativa_b": "98",
+    "alternativa_c": "100",
+    "alternativa_d": "144",
+    "alternativa_e": "288",
+    "gabarito": "E"
+  }
+]

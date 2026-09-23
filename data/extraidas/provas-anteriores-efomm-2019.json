@@ -1,0 +1,122 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Determine o valor do seguinte limite:\nlim\nx-*l\n( a ) \n1.\n( b ) +co.\n( c ) -oo.\n( d ) 0,5.\n( e ) zero.",
+    "alternativas": {},
+    "texto_bruto": "Determine o valor do seguinte limite:\nlim\nx-*l\n( a ) \n1.\n( b ) +co.\n( c ) -oo.\n( d ) 0,5.\n( e ) zero."
+  },
+  {
+    "numero": 2,
+    "enunciado": "Considere a função real f{ x ) = 1 + cos(2 aIx). \nCalcule a derivada de f{x ) em relação àx. Ou\n• \ndfix)\nseja:\ndx\ndfix) _ sen{ 2 yfx )\ndx\nfx\ndfix) _ -COS(2 fx)\ndx\n2fx\nãfix) _\n- s e n ( 2 x\n0 ' 5 )\ndx\nyfx\nd fix) _\nc o s ( 2 a: 0 ' 5 )\ndx \nfx\n( e ) \n^ = 1 — 2 yfx sen(2y/x )",
+    "alternativas": {},
+    "texto_bruto": "Considere a função real f{ x ) = 1 + cos(2 aIx). \nCalcule a derivada de f{x ) em relação àx. Ou\n• \ndfix)\nseja:\ndx\ndfix) _ sen{ 2 yfx )\ndx\nfx\ndfix) _ -COS(2 fx)\ndx\n2fx\nãfix) _\n- s e n ( 2 x\n0 ' 5 )\ndx\nyfx\nd fix) _\nc o s ( 2 a: 0 ' 5 )\ndx \nfx\n( e ) \n^ = 1 — 2 yfx sen(2y/x )"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Examine a função real f{x) = 2x — 3x2 quanto \nà existência de valores e pontos de máximos e \nmínimos. Analise o problema e assinale a \nalternativa CORRETA.\n( a ) A função atinge o valor máximo de 2/3, no \nponto x = 1/3.\n( b ) A função atinge o valor mínimo de 1/3, no \nponto x = 1/3.\n( c ) A função atinge o valor máximo de 1/3, no \nponto x = 2/3.\n( d ) A função atinge o valor mínimo de 2/3, no \nponto x = 1/3.\n( e ) \nA função atinge o valor máximo de 1/3, no \nponto x = 1/3.\n1",
+    "alternativas": {},
+    "texto_bruto": "Examine a função real f{x) = 2x — 3x2 quanto \nà existência de valores e pontos de máximos e \nmínimos. Analise o problema e assinale a \nalternativa CORRETA.\n( a ) A função atinge o valor máximo de 2/3, no \nponto x = 1/3.\n( b ) A função atinge o valor mínimo de 1/3, no \nponto x = 1/3.\n( c ) A função atinge o valor máximo de 1/3, no \nponto x = 2/3.\n( d ) A função atinge o valor mínimo de 2/3, no \nponto x = 1/3.\n( e ) \nA função atinge o valor máximo de 1/3, no \nponto x = 1/3.\n1"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Sejam as funções / e g definidas em 9? por \nf(x) = x2 + a ■ x e g (x) = - (x2 +)3 ■ x), em \nque a e /? são números reais. Considere que \nessas funções são tais que\n/\ng\nValor\nmínimo\nPonto de \nmínimo\nValor\nmáximo\nPonto de \nmáximo\n-1\n<0\n9/4\n>0\nEntão,/composta com g, ( / o g) (2) = 0 é igual \na\n(a) 0\n(b) 2\n(c) 4\n(d) 6\n(e) 8",
+    "alternativas": {},
+    "texto_bruto": "Sejam as funções / e g definidas em 9? por \nf(x) = x2 + a ■ x e g (x) = - (x2 +)3 ■ x), em \nque a e /? são números reais. Considere que \nessas funções são tais que\n/\ng\nValor\nmínimo\nPonto de \nmínimo\nValor\nmáximo\nPonto de \nmáximo\n-1\n<0\n9/4\n>0\nEntão,/composta com g, ( / o g) (2) = 0 é igual \na\n(a) 0\n(b) 2\n(c) 4\n(d) 6\n(e) 8"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Seja /(k) = k“ + 3k + 2 e seja W o conjunto de \ninteiros (0, 1, 2,..., 25}. O número de elementos \nde W, tais que /(W) deixa resto zero, quando \ndividido por 6, é:\n(a) 25\n( b ) 22\n(c) 21\n(d) 18\n(e) 17",
+    "alternativas": {},
+    "texto_bruto": "Seja /(k) = k“ + 3k + 2 e seja W o conjunto de \ninteiros (0, 1, 2,..., 25}. O número de elementos \nde W, tais que /(W) deixa resto zero, quando \ndividido por 6, é:\n(a) 25\n( b ) 22\n(c) 21\n(d) 18\n(e) 17"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Considere a função real f{x) — 1 + 4x 4- 2x2. \nDetermine o ponto x* que define o valor mínimo \nglobal dessa função.\n(a)\nX* - -2\n(b)\nX* = -1\n(c)\nX* = -1/2\n(d)\nX* = zero\n( e )\nX* = 1\n2",
+    "alternativas": {},
+    "texto_bruto": "Considere a função real f{x) — 1 + 4x 4- 2x2. \nDetermine o ponto x* que define o valor mínimo \nglobal dessa função.\n(a)\nX* - -2\n(b)\nX* = -1\n(c)\nX* = -1/2\n(d)\nX* = zero\n( e )\nX* = 1\n2"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Considere uma uma contendo cinco bolas \nbrancas, duas pretas e três verdes. Suponha que \ntrês bolas sejam retiradas da uma, de forma \naleatória \ne \nsem \nreposição. \nEm \nvalores \naproximados, qual é a probabilidade de que as \ntrês bolas retiradas tenham a mesma cor?\n( a ) \n7,44%\n( b ) 8,33%\n( c ) 9,17%\n(d ) \n15,95%\n( e ) 27,51%",
+    "alternativas": {},
+    "texto_bruto": "Considere uma uma contendo cinco bolas \nbrancas, duas pretas e três verdes. Suponha que \ntrês bolas sejam retiradas da uma, de forma \naleatória \ne \nsem \nreposição. \nEm \nvalores \naproximados, qual é a probabilidade de que as \ntrês bolas retiradas tenham a mesma cor?\n( a ) \n7,44%\n( b ) 8,33%\n( c ) 9,17%\n(d ) \n15,95%\n( e ) 27,51%"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Um \natirador, \nem \num \núnico \ntiro, \ntem\nprobabilidade de 80% de acertar um específico \ntipo de alvo. Num exercício ele dá seis tiros \nseguidos \nnesse \nmesmo \ntipo \nde \nalvo.\nConsiderando-se que os tiros são independentes, \nem cálculo aproximado, qual é a probabilidade \nde o atirador errar o alvo exatamente duas vezes?\n(a ) \n4,12%\n(b ) \n18,67%\n(c ) 24,58%\n(d ) 27,29%\n(e ) 40,25%",
+    "alternativas": {},
+    "texto_bruto": "Um \natirador, \nem \num \núnico \ntiro, \ntem\nprobabilidade de 80% de acertar um específico \ntipo de alvo. Num exercício ele dá seis tiros \nseguidos \nnesse \nmesmo \ntipo \nde \nalvo.\nConsiderando-se que os tiros são independentes, \nem cálculo aproximado, qual é a probabilidade \nde o atirador errar o alvo exatamente duas vezes?\n(a ) \n4,12%\n(b ) \n18,67%\n(c ) 24,58%\n(d ) 27,29%\n(e ) 40,25%"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Considere a função real /(x ) = cos(x) — \nsen(x). Determine o valor da integral de f(x) \nno intervalo [0, n\\. Ou seja, / /(x) dx.\n(a )\nTí\n(b )\n-2\n(c )\n-1\n(d )\nzero\n(e )\n2\n3\nPS-EFOM M 2019",
+    "alternativas": {},
+    "texto_bruto": "Considere a função real /(x ) = cos(x) — \nsen(x). Determine o valor da integral de f(x) \nno intervalo [0, n\\. Ou seja, / /(x) dx.\n(a )\nTí\n(b )\n-2\n(c )\n-1\n(d )\nzero\n(e )\n2\n3\nPS-EFOM M 2019"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Assinale a solução correta do seguinte problema \nde integração:\nf 2V2 - 3x dx.\n(a) - |( 2 - 3 x)3/2 + C \n(onde C éuma constante)\n(b) - { ( 2 - 3 x)2/3 + C \n(onde C é uma constante)\n(c) { ( 2 - 3 x)3' 2 + C\n(onde C é uma constante)\n(d) - { ( 2 + 3x)2/3 + C\n*\n(onde C é uma constante)\n(e) 4( 2- 3 x)3/2 + C\n(onde C é uma constante)",
+    "alternativas": {},
+    "texto_bruto": "Assinale a solução correta do seguinte problema \nde integração:\nf 2V2 - 3x dx.\n(a) - |( 2 - 3 x)3/2 + C \n(onde C éuma constante)\n(b) - { ( 2 - 3 x)2/3 + C \n(onde C é uma constante)\n(c) { ( 2 - 3 x)3' 2 + C\n(onde C é uma constante)\n(d) - { ( 2 + 3x)2/3 + C\n*\n(onde C é uma constante)\n(e) 4( 2- 3 x)3/2 + C\n(onde C é uma constante)"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Considere a função real f(x) = sen(2x2) + \ncos(2 Vx). Calcule a derivada de /(x ) em\nrelação a x, ou seja: \n. Assinale a resposta\nCORRETA.\n(a ) \nfflí> = 4*cos(2*2) - 2 £ ^\ndx \n4x\n( b ) \n®\n = 4X003(2^)\n(c) \ní ^ = 2x2sen(2x2) - 2 Í ^ S\ndx \nVx\n(d) \n= sen(4x2) - ^\n3\n( e ) \n= cos(2x2) — sen[2 Vx)",
+    "alternativas": {},
+    "texto_bruto": "Considere a função real f(x) = sen(2x2) + \ncos(2 Vx). Calcule a derivada de /(x ) em\nrelação a x, ou seja: \n. Assinale a resposta\nCORRETA.\n(a ) \nfflí> = 4*cos(2*2) - 2 £ ^\ndx \n4x\n( b ) \n®\n = 4X003(2^)\n(c) \ní ^ = 2x2sen(2x2) - 2 Í ^ S\ndx \nVx\n(d) \n= sen(4x2) - ^\n3\n( e ) \n= cos(2x2) — sen[2 Vx)"
+  },
+  {
+    "numero": 12,
+    "enunciado": "De \nquantas \nmaneiras \ndiferentes \npodemos \nescolher seis pessoas, incluindo pelo menos duas \nmulheres, de um grupo composto de sete homens \ne quatro mulheres?\n(a )\n210\n(b )\n250\n(c )\n371\n(d )\n462\n( e )\n756\n4",
+    "alternativas": {},
+    "texto_bruto": "De \nquantas \nmaneiras \ndiferentes \npodemos \nescolher seis pessoas, incluindo pelo menos duas \nmulheres, de um grupo composto de sete homens \ne quatro mulheres?\n(a )\n210\n(b )\n250\n(c )\n371\n(d )\n462\n( e )\n756\n4"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Considere uma loja que vende cinco tipos de \nrefrigerantes. De quantas formas diferentes \npodemos comprar três refrigerantes desta loja?\n( a ) Dez.\n( b ) Quinze.\n( c ) Vinte.\n( d ) Trinta e cinco.\n( e ) Sessenta.",
+    "alternativas": {},
+    "texto_bruto": "Considere uma loja que vende cinco tipos de \nrefrigerantes. De quantas formas diferentes \npodemos comprar três refrigerantes desta loja?\n( a ) Dez.\n( b ) Quinze.\n( c ) Vinte.\n( d ) Trinta e cinco.\n( e ) Sessenta."
+  },
+  {
+    "numero": 14,
+    "enunciado": "Sendo Z o conjunto dos números inteiros e Q o \ndos números racionais, qual dos números \nseguintes \nnão \npertence \nao \nconjunto \n( Z u Q ) - ( Z n Q)?\n(a) 2,0123\n(b) 5/3\n( c ) \n0\n(d) -0,888...\n(e) -2/3",
+    "alternativas": {},
+    "texto_bruto": "Sendo Z o conjunto dos números inteiros e Q o \ndos números racionais, qual dos números \nseguintes \nnão \npertence \nao \nconjunto \n( Z u Q ) - ( Z n Q)?\n(a) 2,0123\n(b) 5/3\n( c ) \n0\n(d) -0,888...\n(e) -2/3"
+  },
+  {
+    "numero": 15,
+    "enunciado": ".V + y \nx — y\nDada a função f(x, y) = --------------— , o valor de\nx - y \nx + y\nf (a + b, a — b) é:\n(a)\na2 - b 2\nab\n(b)\na2 - b 2\n2 ab\n(c)\n1\n(d)\na2 +b2\nab\n(e)\na2 +b2\n2 ab\n5",
+    "alternativas": {},
+    "texto_bruto": ".V + y \nx — y\nDada a função f(x, y) = --------------— , o valor de\nx - y \nx + y\nf (a + b, a — b) é:\n(a)\na2 - b 2\nab\n(b)\na2 - b 2\n2 ab\n(c)\n1\n(d)\na2 +b2\nab\n(e)\na2 +b2\n2 ab\n5"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Duas caixas cúbicas e retangulares perfeitas, têm \nseis faces de quadrados perfeitos. As faces da \nprimeira caixa tem 3 m2 de área, e cada face da \nsegunda caixa tem 9 m2 de área. A razão entre o \nvolume da primeira caixa e o volume da segunda\nte:\n(a) 31/2 \n( b ) 3 '1/2\n, x \n-3-3/2",
+    "alternativas": {},
+    "texto_bruto": "Duas caixas cúbicas e retangulares perfeitas, têm \nseis faces de quadrados perfeitos. As faces da \nprimeira caixa tem 3 m2 de área, e cada face da \nsegunda caixa tem 9 m2 de área. A razão entre o \nvolume da primeira caixa e o volume da segunda\nte:\n(a) 31/2 \n( b ) 3 '1/2\n, x \n-3-3/2"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Calcule a área S do triângulo de vértices A (5, \n7); B (2, 3); C (9, 2). Considerando o plano \ncartesiano, temos:\n(a) 7,8\n(b) 15\n(c) 19\n(d) 30\n( e ) 60,5",
+    "alternativas": {},
+    "texto_bruto": "Calcule a área S do triângulo de vértices A (5, \n7); B (2, 3); C (9, 2). Considerando o plano \ncartesiano, temos:\n(a) 7,8\n(b) 15\n(c) 19\n(d) 30\n( e ) 60,5"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Foram construídos círculos concêntricos de raios \n5 cm e 13 cm. Em seguida, foi construído um \nseguimento de reta com maior comprimento \npossível, contido intemamente na região interna \nao círculo maior e externa ao menor. O valor do \nseguimento é\n( a ) 8,5 cm\n(b) 11,75 cm\n(c) 19,25 cm \n( d ) 24 cm\n( e ) 27 cm\n6",
+    "alternativas": {},
+    "texto_bruto": "Foram construídos círculos concêntricos de raios \n5 cm e 13 cm. Em seguida, foi construído um \nseguimento de reta com maior comprimento \npossível, contido intemamente na região interna \nao círculo maior e externa ao menor. O valor do \nseguimento é\n( a ) 8,5 cm\n(b) 11,75 cm\n(c) 19,25 cm \n( d ) 24 cm\n( e ) 27 cm\n6"
+  },
+  {
+    "numero": 19,
+    "enunciado": "A equação (x2 / 144) + (y2 / 225) = 1 representa \numa\n( a ) elipse com focos em (0, 9) e (0, - 9).\n( b ) circunferência de raio igual 9.\n( c ) parábola.\n( d ) hipérbole.\n( e ) \nelipse com centro em [12, 15].",
+    "alternativas": {},
+    "texto_bruto": "A equação (x2 / 144) + (y2 / 225) = 1 representa \numa\n( a ) elipse com focos em (0, 9) e (0, - 9).\n( b ) circunferência de raio igual 9.\n( c ) parábola.\n( d ) hipérbole.\n( e ) \nelipse com centro em [12, 15]."
+  },
+  {
+    "numero": 20,
+    "enunciado": "Numa equação, encontramos o valor de 884. \nPara chegar a esse resultado, somamos os \nquadrados de dois números pares, consecutivos e \npositivos. Determine o quociente da divisão do \nmaior pelo menor.\n( a ) 0,87\n(b ) 0,95\n( c ) \n1,03\n(d ) \n1,07\n(e) 1,10\n7\n\n\nDesenvolva as Questões de 21 a 40 com base nos \ndados abaixo.\n7i = 3,14;\nAceleração da gravidade =10 m/s2.\nPressão atmosférica no nível do mar = 1,01 x 105 Pa \n1 cal = 4,2 J.\nCalor específico da água = 1 cal/g.K.\nCalor específico do gelo = 0,5 cal/g.K.\nCalor latente de fusão do gelo = 80 cal/g.\nConstante dos gases ideais = 8,31 J/mol.K.\nConstante de Coulomb = 9,0 x 109 N m2/C2.",
+    "alternativas": {},
+    "texto_bruto": "Numa equação, encontramos o valor de 884. \nPara chegar a esse resultado, somamos os \nquadrados de dois números pares, consecutivos e \npositivos. Determine o quociente da divisão do \nmaior pelo menor.\n( a ) 0,87\n(b ) 0,95\n( c ) \n1,03\n(d ) \n1,07\n(e) 1,10\n7\n\n\nDesenvolva as Questões de 21 a 40 com base nos \ndados abaixo.\n7i = 3,14;\nAceleração da gravidade =10 m/s2.\nPressão atmosférica no nível do mar = 1,01 x 105 Pa \n1 cal = 4,2 J.\nCalor específico da água = 1 cal/g.K.\nCalor específico do gelo = 0,5 cal/g.K.\nCalor latente de fusão do gelo = 80 cal/g.\nConstante dos gases ideais = 8,31 J/mol.K.\nConstante de Coulomb = 9,0 x 109 N m2/C2."
+  }
+]

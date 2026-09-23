@@ -1,0 +1,223 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Determine o valor do seguinte limite:",
+    "latex": "\\\\lim_{x \\\\to \\\\infty}",
+    "alternativa_a": "1",
+    "alternativa_b": "++\\\\infty",
+    "alternativa_c": "-\\\\infty",
+    "alternativa_d": "0,5",
+    "alternativa_e": "zero",
+    "gabarito": "A"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Considere a função real f(x) = 1 + \\\\cos(2\\\\sqrt{x}). Calcule a derivada de f(x) em relação a x. Ou seja:",
+    "latex": "\\\\frac{df(x)}{dx}",
+    "alternativa_a": "\\\\frac{df(x)}{dx} = \\\\frac{-\\\\text{sen}(2\\\\sqrt{x})}{\\\\sqrt{x}}",
+    "alternativa_b": "\\\\frac{df(x)}{dx} = \\\\frac{-\\\\cos(2\\\\sqrt{x})}{2\\\\sqrt{x}}",
+    "alternativa_c": "\\\\frac{df(x)}{dx} = \\\\frac{-\\\\text{sen}(2x^{0,5})}{\\\\sqrt{x}}",
+    "alternativa_d": "\\\\frac{df(x)}{dx} = \\\\frac{\\\\cos(2x^{0,5})}{\\\\sqrt{x}}",
+    "alternativa_e": "\\\\frac{df(x)}{dx} = 1 - 2\\\\sqrt{x} \\\\text{sen}(2\\\\sqrt{x})",
+    "gabarito": "A"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Examine a função real f(x) = 2x - 3x^2 quanto à existência de valores e pontos de máximos e mínimos. Analise o problema e assinale a alternativa CORRETA.",
+    "latex": "f(x) = 2x - 3x^2",
+    "alternativa_a": "A função atinge o valor máximo de 1/3, no ponto x = 1/3.",
+    "alternativa_b": "A função atinge o valor mínimo de 1/3, no ponto x = 1/3.",
+    "alternativa_c": "A função atinge o valor máximo de 1/3, no ponto x = 2/3.",
+    "alternativa_d": "A função atinge o valor mínimo de 2/3, no ponto x = 1/3.",
+    "alternativa_e": "A função atinge o valor máximo de 1/3, no ponto x = 1/3.",
+    "alternativa_gabarito": "E",
+    "gabarito": "E"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Sejam as funções f e g definidas em R por f(x) = x^2 + \\\\alpha \\\\cdot x e g(x) = -(x^2 + \\\\beta \\\\cdot x), em que \\\\alpha e \\\\beta são números reais. Considere que essas funções possuem valores e pontos de máximo e mínimo dados por dados tabulares e que (f \\\\circ g)(2) = 0.",
+    "latex": "(f \\\\circ g)(2) = 0",
+    "alternativa_a": "0",
+    "alternativa_b": "2",
+    "alternativa_c": "4",
+    "alternativa_d": "6",
+    "alternativa_e": "8",
+    "gabarito": "C"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Seja f(k) = k^2 + 3k + 2 e seja W o conjunto de inteiros {0, 1, 2, ..., 25}. O número de elementos de W, tais que f(w) deixa resto zero, quando dividido por 6, é:",
+    "latex": "f(k) = k^2 + 3k + 2",
+    "alternativa_a": "25",
+    "alternativa_b": "22",
+    "alternativa_c": "21",
+    "alternativa_d": "18",
+    "alternativa_e": "17",
+    "gabarito": "B"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Considere a função real. Determine o ponto x que define o valor mínimo global dessa função.",
+    "latex": "f(x) = 1 + 4x + 2x^2",
+    "alternativa_a": "x* = -2",
+    "alternativa_b": "x* = -1",
+    "alternativa_c": "x* = -1/2",
+    "alternativa_d": "x* = 0",
+    "alternativa_e": "x* = 1/2",
+    "gabarito": "C"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Considere uma urna contendo cinco bolas brancas, duas pretas e três verdes. Suponha que três bolas sejam retiradas da urna, de forma aleatória e sem reposição. Em valores aproximados, qual é a probabilidade de que as três bolas retiradas tenham a mesma cor?",
+    "latex": "",
+    "alternativa_a": "7,44%",
+    "alternativa_b": "8,33%",
+    "alternativa_c": "9,17%",
+    "alternativa_d": "15,95%",
+    "alternativa_e": "27,51%",
+    "gabarito": "B"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Um atirador, em um único tiro, tem probabilidade de 80% de acertar um específico tipo de alvo. Num exercício ele dá seis tiros seguidos nesse mesmo tipo de alvo. Considerando-se que os tiros são independentes, em cálculo aproximado, qual é a probabilidade de o atirador errar o alvo exatamente duas vezes?",
+    "latex": "",
+    "alternativa_a": "4,12%",
+    "alternativa_b": "18,67%",
+    "alternativa_c": "24,58%",
+    "alternativa_d": "27,29%",
+    "alternativa_e": "40,25%",
+    "gabarito": "C"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Considere a função real. Determine o valor da integral de f(x) no intervalo de zero a pi.",
+    "latex": "f(x) = \\\\cos(x) - \\\\sen(x)",
+    "alternativa_a": "\\\\pi",
+    "alternativa_b": "-2",
+    "alternativa_c": "-1",
+    "alternativa_d": "0",
+    "alternativa_e": "2",
+    "gabarito": "B"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Assinale a solução correta do seguinte problema de integração:",
+    "latex": "\\\\int \\\\sqrt{2 - 3x} dx",
+    "alternativa_a": "-\\\\frac{2}{9}(2 - 3x)^{3/2} + C (onde C é uma constante)",
+    "alternativa_b": "-\\\\frac{2}{3}(2 - 3x)^{2/3} + C (onde C é uma constante)",
+    "alternativa_c": "\\\\frac{2}{9}(2 - 3x)^{3/2} + C (onde C é uma constante)",
+    "alternativa_d": "-\\\\frac{2}{3}(2 + 3x)^{2/3} + C (onde C é uma constante)",
+    "alternativa_e": "\\\\frac{3}{2}(2 - 3x)^{3/2} + C (onde C é uma constante)",
+    "gabarito": "A"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Considere a função real f(x) = sen(2x^2) + cos(2\\\\sqrt{x}). Calcule a derivada de f(x) em relação a x.",
+    "latex": "f'(x) = 4x \\\\cos(2x^2) - \\\\frac{\\\\sen(2\\\\sqrt{x})}{\\\\sqrt{x}}",
+    "alternativa_a": "f'(x) = 4x \\\\cos(2x^2) - \\\\frac{\\\\sen(2\\\\sqrt{x})}{\\\\sqrt{x}}",
+    "alternativa_b": "f'(x) = 4x \\\\cos(2x^2)",
+    "alternativa_c": "f'(x) = 2x^2 \\\\sen(2x^2) - \\\\frac{\\\\cos(2\\\\sqrt{x})}{\\\\sqrt{x}}",
+    "alternativa_d": "f'(x) = \\\\sen(4x^2) - \\\\frac{1}{\\\\sqrt{x}}",
+    "alternativa_e": "f'(x) = \\\\cos(2x^2) - \\\\sen(2\\\\sqrt{x})",
+    "gabarito": "A"
+  },
+  {
+    "numero": 12,
+    "enunciado": "De quantas maneiras diferentes podemos escolher seis pessoas, incluindo pelo menos duas mulheres, de um grupo composto de sete homens e quatro mulheres?",
+    "latex": "",
+    "alternativa_a": "210",
+    "alternativa_b": "250",
+    "alternativa_c": "371",
+    "alternativa_d": "462",
+    "alternativa_e": "756",
+    "gabarito": "C"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Considere uma loja que vende cinco tipos de refrigerantes. De quantas formas diferentes podemos comprar três refrigerantes desta loja?",
+    "latex": "",
+    "alternativa_a": "Dez.",
+    "alternativa_b": "Quinze.",
+    "alternativa_c": "Vinte.",
+    "alternativa_d": "Trinta e cinco.",
+    "alternativa_e": "Sessenta.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Sendo Z o conjunto dos números inteiros e Q o dos números racionais, qual dos números seguintes não pertence ao conjunto (Z \\\\cup Q) - (Z \\\\cap Q)?",
+    "latex": "",
+    "alternativa_a": "2,0123",
+    "alternativa_b": "5/3",
+    "alternativa_c": "0",
+    "alternativa_d": "-0,888...",
+    "alternativa_e": "-2/3",
+    "gabarito": "C"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Dada a função f(x, y) = \\\\frac{x + y}{x - y} - \\\\frac{x - y}{x + y}, o valor de f(a + b, a - b) é:",
+    "latex": "f(x, y) = \\\\frac{x + y}{x - y} - \\\\frac{x - y}{x + y}",
+    "alternativa_a": "\\\\frac{a^2 - b^2}{ab}",
+    "alternativa_b": "\\\\frac{a^2 - b^2}{2ab}",
+    "alternativa_c": "1",
+    "alternativa_d": "\\\\frac{a^2 + b^2}{ab}",
+    "alternativa_e": "\\\\frac{a^2 + b^2}{2ab}",
+    "gabarito": "B"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Duas caixas cúbicas e retangulares perfeitas têm seis faces de quadrados perfeitos. As faces da primeira caixa têm 3 m2 de área, e cada face da segunda caixa tem 9 m2 de área. A razão entre o volume da primeira caixa e o volume da segunda é:",
+    "latex": "\\\\frac{V_1}{V_2}",
+    "alternativa_a": "3^{1/2}",
+    "alternativa_b": "3^{-1/2}",
+    "alternativa_c": "3^{-3/2}",
+    "alternativa_d": "3^{3/2}",
+    "alternativa_e": "3",
+    "gabarito": "C"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Calcule a área S do triângulo de vértices A(5, 7), B(2, 3), C(9, 2) no plano cartesiano.",
+    "latex": "S",
+    "alternativa_a": "7,8",
+    "alternativa_b": "15",
+    "alternativa_c": "19",
+    "alternativa_d": "30",
+    "alternativa_e": "60,5",
+    "gabarito": "B"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Foram construídos círculos concêntricos de raios 5 cm e 13 cm. Em seguida, foi construído um segmento de reta com o maior comprimento possível, contido internamente na região interna ao círculo maior e externa ao menor. O valor do segmento é:",
+    "latex": "",
+    "alternativa_a": "8,5 cm",
+    "alternativa_b": "11,75 cm",
+    "alternativa_c": "19,25 cm",
+    "alternativa_d": "24 cm",
+    "alternativa_e": "27 cm",
+    "gabarito": "D"
+  },
+  {
+    "numero": 19,
+    "enunciado": "A equação abaixo representa uma:",
+    "latex": "\\\\frac{x^2}{144} + \\\\frac{y^2}{225} = 1",
+    "alternativa_a": "elipse com focos em (0, 9) e (0, -9).",
+    "alternativa_b": "circunferência de raio igual a 9.",
+    "alternativa_c": "parábola.",
+    "alternativa_d": "hipérbole.",
+    "alternativa_e": "elipse com centro em (12, 15).",
+    "gabarito": "A"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Numa equação, encontramos o valor de 884. Para chegar a esse resultado, somamos os quadrados de dois números pares, consecutivos e positivos. Determine o quociente da divisão do maior pelo menor.",
+    "latex": "",
+    "alternativa_a": "0,87",
+    "alternativa_b": "0,95",
+    "alternativa_c": "1,03",
+    "alternativa_d": "1,07",
+    "alternativa_e": "1,10",
+    "gabarito": "E"
+  }
+]

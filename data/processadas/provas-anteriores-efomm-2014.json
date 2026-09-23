@@ -1,0 +1,167 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "A área lateral de um tronco de pirâmide triangular regular cujas bases tem áreas de 25 √3 cm² e 4 √3 cm² e altura 4 cm é, em cm²,",
+    "latex": "B_1 = 25\\sqrt{3}, \\quad B_2 = 4\\sqrt{3}, \\quad h = 4",
+    "alternativa_a": "3\\sqrt{19}",
+    "alternativa_b": "3\\sqrt{25}",
+    "alternativa_c": "\\frac{19}{15}",
+    "alternativa_d": "\\frac{19}{21}",
+    "alternativa_e": "\\frac{15}{25}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 2,
+    "enunciado": "A diferença entre o comprimento x e a largura y de um retângulo é de 2 cm. Se a sua área é menor ou igual a 35 cm², então o valor de x, em cm, será:",
+    "latex": "x - y = 2, \\quad x \\cdot y \\le 35",
+    "alternativa_a": "0 < x < 7",
+    "alternativa_b": "0 < x < 5",
+    "alternativa_c": "2 \\le x < 5",
+    "alternativa_d": "2 \\le x < 7",
+    "alternativa_e": "2 < x < 7",
+    "gabarito": "D"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Uma pesquisa indica a taxa de crescimento populacional de uma cidade através da função P(x) = 117 + \frac{x}{200}, por pessoas anualmente há x anos. Passados 10 anos, o crescimento é dado pela integral definida de 0 a 10 de P(x) dx. Pode-se afirmar que esse crescimento será de",
+    "latex": "P(x) = 117 + \\frac{x}{200}, \\quad \\int_{0}^{10} \\left(117 + \\frac{x}{200}\\right) dx",
+    "alternativa_a": "10130 pessoas.",
+    "alternativa_b": "11170 pessoas.",
+    "alternativa_c": "11200 pessoas.",
+    "alternativa_d": "11310 pessoas.",
+    "alternativa_e": "12171 pessoas.",
+    "gabarito": "A"
+  },
+  {
+    "numero": 4,
+    "enunciado": "O valor da soma de a e b, para que a divisão de f(x) = x^3 + ax + b por g(x) = x^2 + x - 6 seja exata, é",
+    "latex": "f(x) = x^3 + ax + b, \\quad g(x) = x^2 + x - 6",
+    "alternativa_a": "-1.",
+    "alternativa_b": "0.",
+    "alternativa_c": "1.",
+    "alternativa_d": "2.",
+    "alternativa_e": "3.",
+    "gabarito": "A"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Seja x em [0, 2\\pi] tal que \\sin x \\cdot \\cos x = \\frac{1}{5}. Então, o produto P e a soma S de todos os possíveis valores de \\operatorname{tg} x são, aproximadamente,",
+    "latex": "\\sin x \\cdot \\cos x = \\frac{1}{5}, \\quad x \\in [0, 2\\pi]",
+    "alternativa_a": "P = 1 e S = 0.",
+    "alternativa_b": "P = 1 e S = 5.",
+    "alternativa_c": "P = -1 e S = 0.",
+    "alternativa_d": "P = -1 e S = 5.",
+    "alternativa_e": "P = 1 e S = -5.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Suponha um lote com dez peças, sendo duas defeituosas. Testam-se as peças, uma a uma, até que sejam encontradas as duas defeituosas. A probabilidade de que a última peça defeituosa seja encontrada no terceiro teste é igual a",
+    "latex": "",
+    "alternativa_a": "1/45",
+    "alternativa_b": "2/45",
+    "alternativa_c": "1/15",
+    "alternativa_d": "4/45",
+    "alternativa_e": "1/9",
+    "gabarito": "C"
+  },
+  {
+    "numero": 7,
+    "enunciado": "O limite da soma da expressão é igual a",
+    "latex": "\\frac{3}{4} + \\frac{3}{4} \\cdot \\frac{1}{4} + \\frac{3}{4} \\cdot \\left(\\frac{1}{4}\\right)^2 + \\frac{3}{4} \\cdot \\left(\\frac{1}{4}\\right)^3 + \\dots",
+    "alternativa_a": "1/7",
+    "alternativa_b": "2/7",
+    "alternativa_c": "3/7",
+    "alternativa_d": "4/7",
+    "alternativa_e": "5/7",
+    "gabarito": "C"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Os valores de x pertencentes a IR, para os quais a função real dada por f(x) = \\sqrt{4x^2 - 6x} - \\frac{1}{\\sqrt{...}} está definida, formam o conjunto",
+    "latex": "f(x) = \\sqrt{4x^2 - 6x - \\dots}",
+    "alternativa_a": "[-1/2, 3/2]",
+    "alternativa_b": "[-9/2, -5/2] \\cup [-7/2, -3/2]",
+    "alternativa_c": "[-5/2, -1/2] \\cup [-7/2, -11/2]",
+    "alternativa_d": "[0, 5/2] \\cup [7/2, 0]",
+    "alternativa_e": "[-9/2, -1/2] \\cup [-3/2, -11/2]",
+    "gabarito": "A"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Os múltiplos de 5 são inscritos na disposição abaixo, distribuídos em cinco colunas. Caso esse padrão seja mantido indefinidamente, com certeza o número 745 pertencerá a",
+    "latex": "",
+    "alternativa_a": "primeira coluna.",
+    "alternativa_b": "segunda coluna.",
+    "alternativa_c": "terceira coluna.",
+    "alternativa_d": "quarta coluna.",
+    "alternativa_e": "quinta coluna.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Se g(x) = \\frac{x-9}{11} e f(g(x)) = g\\left(\\frac{x+9}{1}\\right) são funções reais, então f(16) vale",
+    "latex": "g(x) = \\frac{x-9}{11}",
+    "alternativa_a": "1",
+    "alternativa_b": "3",
+    "alternativa_c": "5",
+    "alternativa_d": "7",
+    "alternativa_e": "9",
+    "gabarito": "B"
+  },
+  {
+    "numero": 16,
+    "enunciado": "O valor do limite é",
+    "latex": "\\lim_{t \\to 3} \\frac{t^3 - 27}{t - 3}",
+    "alternativa_a": "0.",
+    "alternativa_b": "\\frac{1}{10}",
+    "alternativa_c": "\\frac{25}{3}",
+    "alternativa_d": "\\frac{25\\sqrt{3}}{3}",
+    "alternativa_e": "\\infty.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Considere um triângulo retângulo de catetos 9 cm e 12 cm. A bissetriz interna relativa à hipotenusa desse triângulo mede:",
+    "latex": "",
+    "alternativa_a": "\\frac{36\\sqrt{2}}{7}",
+    "alternativa_b": "\\frac{25\\sqrt{2}}{7}",
+    "alternativa_c": "\\frac{15\\sqrt{2}}{4}",
+    "alternativa_d": "\\frac{7\\sqrt{2}}{5}",
+    "alternativa_e": "\\frac{3\\sqrt{2}}{5}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Seja ax + by + cz + d = 0 a equação do plano que passa pelos pontos (4, -2, 2) e (1, 1, 5) e é perpendicular ao plano 3x - 2y + 5z - 1 = 0. A razão b/d é",
+    "latex": "ax + by + cz + d = 0",
+    "alternativa_a": "-\\frac{5}{4}",
+    "alternativa_b": "\\frac{4}{7}",
+    "alternativa_c": "8",
+    "alternativa_d": "-\\frac{1}{2}",
+    "alternativa_e": "\\frac{2}{5}",
+    "gabarito": "D"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Denotaremos por n(x) o número de elementos de um conjunto finito x. Sejam A, B, C conjuntos tais que n(A \\cup B) = 14, n(A \\cup C) = 14, n(B \\cup C) = 15, n(A \\cup B \\cup C) = 17 e n(A \\cap B \\cap C) = 3. Então, n(A) + n(B) + n(C) é igual a",
+    "latex": "",
+    "alternativa_a": "18.",
+    "alternativa_b": "20.",
+    "alternativa_c": "25.",
+    "alternativa_d": "29.",
+    "alternativa_e": "32.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Sabendo-se que a raiz quadrada do número complexo -16 + 30i é (a + bi) ou (c + di), pode-se afirmar que o valor de a + d é:",
+    "latex": "\\sqrt{-16 + 30i} = a + bi",
+    "alternativa_a": "+2.",
+    "alternativa_b": "+1.",
+    "alternativa_c": "0.",
+    "alternativa_d": "-1.",
+    "alternativa_e": "-2.",
+    "gabarito": "D"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "A área lateral de um tronco de pirâmide triangular \nregular cujas bases tem áreas \n2\n3\n25\ncm e \n2\n3\n4\ncm e altura 4cm é, em \n2\ncm , \n \n \n \n \n(  a  ) \n3\n19\n. \n(  b  ) \n3\n25\n. \n(  c  ) \n19\n15\n. \n(  d  ) \n19\n21\n. \n(  e  ) \n15\n25\n.",
+    "alternativas": {},
+    "texto_bruto": "A área lateral de um tronco de pirâmide triangular \nregular cujas bases tem áreas \n2\n3\n25\ncm e \n2\n3\n4\ncm e altura 4cm é, em \n2\ncm , \n \n \n \n \n(  a  ) \n3\n19\n. \n(  b  ) \n3\n25\n. \n(  c  ) \n19\n15\n. \n(  d  ) \n19\n21\n. \n(  e  ) \n15\n25\n."
+  },
+  {
+    "numero": 2,
+    "enunciado": "A diferença entre o comprimento x e a largura y \nde um retângulo é de 2cm. Se a sua área é menor \nou igual a 35cm2, então o valor de x, em cm, será: \n \n(  a  ) \n7\n0\n\nx\n \n(  b  ) \n5\n0\n\nx\n \n(  c  ) \n5\n2\n\nx\n \n(  d  ) \n7\n2\n\nx\n \n(  e  ) \n7\n2\n\nx",
+    "alternativas": {},
+    "texto_bruto": "A diferença entre o comprimento x e a largura y \nde um retângulo é de 2cm. Se a sua área é menor \nou igual a 35cm2, então o valor de x, em cm, será: \n \n(  a  ) \n7\n0\n\nx\n \n(  b  ) \n5\n0\n\nx\n \n(  c  ) \n5\n2\n\nx\n \n(  d  ) \n7\n2\n\nx\n \n(  e  ) \n7\n2\n\nx"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Uma pesquisa indica a taxa de crescimento \npopulacional de uma cidade através da função \nx\nx\nP\n200\n117\n)\n(\n\n\n, por pessoas anualmente há x \nanos. Passados 10 anos, o crescimento é dado pela \nintegral \n\n10\n0\n)\n200\n117\n(\ndx\nx\n . Pode-se afirmar que \nesse crescimento será de \n(  a  ) 10130 pessoas. \n(  b  ) 11170 pessoas. \n(  c  ) 11200 pessoas. \n(  d  ) 11310 pessoas. \n(  e  ) 12171 pessoas. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              2 / 17",
+    "alternativas": {},
+    "texto_bruto": "Uma pesquisa indica a taxa de crescimento \npopulacional de uma cidade através da função \nx\nx\nP\n200\n117\n)\n(\n\n\n, por pessoas anualmente há x \nanos. Passados 10 anos, o crescimento é dado pela \nintegral \n\n10\n0\n)\n200\n117\n(\ndx\nx\n . Pode-se afirmar que \nesse crescimento será de \n(  a  ) 10130 pessoas. \n(  b  ) 11170 pessoas. \n(  c  ) 11200 pessoas. \n(  d  ) 11310 pessoas. \n(  e  ) 12171 pessoas. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              2 / 17"
+  },
+  {
+    "numero": 4,
+    "enunciado": "O valor da soma de a e b, para que a divisão de \nb\nax\nx\nx\nf\n\n\n\n3\n)\n(\n por \n6\n2\n2\n)\n(\n2\n\n\n\nx\nx\nx\ng\n \nseja exata, é \n \n(  a  ) -1. \n(  b  ) 0. \n(  c  ) 1. \n(  d  ) 2. \n(  e  ) 3.",
+    "alternativas": {},
+    "texto_bruto": "O valor da soma de a e b, para que a divisão de \nb\nax\nx\nx\nf\n\n\n\n3\n)\n(\n por \n6\n2\n2\n)\n(\n2\n\n\n\nx\nx\nx\ng\n \nseja exata, é \n \n(  a  ) -1. \n(  b  ) 0. \n(  c  ) 1. \n(  d  ) 2. \n(  e  ) 3."
+  },
+  {
+    "numero": 5,
+    "enunciado": "Seja \n]\n2,0\n[\n\n\nx\n tal que \n5\n1\ncos\n.\n\nx\nsenx\n. Então, \no produto P e a soma S de todos os possíveis \nvalores de tgx são, aproximadamente, \n \n(  a  ) P = 1 e S = 0. \n(  b  ) P = 1 e S = 5. \n(  c  ) P = -1 e S = 0. \n(  d  ) P = -1 e S = 5. \n(  e  ) P = 1 e S = - 5.",
+    "alternativas": {},
+    "texto_bruto": "Seja \n]\n2,0\n[\n\n\nx\n tal que \n5\n1\ncos\n.\n\nx\nsenx\n. Então, \no produto P e a soma S de todos os possíveis \nvalores de tgx são, aproximadamente, \n \n(  a  ) P = 1 e S = 0. \n(  b  ) P = 1 e S = 5. \n(  c  ) P = -1 e S = 0. \n(  d  ) P = -1 e S = 5. \n(  e  ) P = 1 e S = - 5."
+  },
+  {
+    "numero": 6,
+    "enunciado": "Suponha um lote com dez peças, sendo duas \ndefeituosas. Testam-se as peças, uma a uma, até \nque sejam encontradas as duas defeituosas. A \nprobabilidade de que a última peça defeituosa seja \nencontrada no terceiro teste é igual a \n \n(  a  ) 1/45. \n(  b  ) 2/45. \n(  c  ) 1/15. \n(  d  ) 4/45. \n(  e  ) 1/9. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              3 / 17",
+    "alternativas": {},
+    "texto_bruto": "Suponha um lote com dez peças, sendo duas \ndefeituosas. Testam-se as peças, uma a uma, até \nque sejam encontradas as duas defeituosas. A \nprobabilidade de que a última peça defeituosa seja \nencontrada no terceiro teste é igual a \n \n(  a  ) 1/45. \n(  b  ) 2/45. \n(  c  ) 1/15. \n(  d  ) 4/45. \n(  e  ) 1/9. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              3 / 17"
+  },
+  {
+    "numero": 7,
+    "enunciado": "O \nlimite \nda \nsoma \nda \nexpressão \n\n\n\n\n4\n1\n.\n4\n3\n.\n4\n3\n.\n4\n3\n.\n4\n3\n.\n4\n3\n4\n1\n.\n4\n3\n.\n4\n3\n.\n4\n3\n4\n1\n.\n4\n3\né igual \na  \n   \n(  a  ) \n7\n1 . \n(  b  ) \n7\n2 . \n(  c  ) \n7\n3 . \n(  d  ) \n7\n4 . \n(  e  ) \n7\n5 .",
+    "alternativas": {},
+    "texto_bruto": "O \nlimite \nda \nsoma \nda \nexpressão \n\n\n\n\n4\n1\n.\n4\n3\n.\n4\n3\n.\n4\n3\n.\n4\n3\n.\n4\n3\n4\n1\n.\n4\n3\n.\n4\n3\n.\n4\n3\n4\n1\n.\n4\n3\né igual \na  \n   \n(  a  ) \n7\n1 . \n(  b  ) \n7\n2 . \n(  c  ) \n7\n3 . \n(  d  ) \n7\n4 . \n(  e  ) \n7\n5 ."
+  },
+  {
+    "numero": 8,
+    "enunciado": "Os valores de \nIR\nx \n, para os quais a função real \ndada por \n6\n1\n2\n4\n)\n(\n\n\n\n\nx\nx\nf\nestá definida, \nformam o conjunto \n \n \n(  a  ) \n\n\n\n\n2\n3\n,\n2\n1\n. \n(  b  ) \n\n\n\n\n\n\n\n\n\n\n\n\n2\n7\n,\n2\n3\n2\n5\n,\n2\n9\n. \n(  c  ) \n\n\n\n\n\n\n\n\n\n\n\n\n2\n11\n,\n2\n7\n2\n1\n,\n2\n5\n. \n(  d  ) \n\n\n\n\n\n\n\n\n\n\n\n2\n7\n,0\n0,\n2\n5\n. \n(  e  ) \n\n\n\n\n\n\n\n\n\n\n\n2\n11\n,\n2\n3\n2\n1\n,\n2\n9\n. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              4 / 17",
+    "alternativas": {},
+    "texto_bruto": "Os valores de \nIR\nx \n, para os quais a função real \ndada por \n6\n1\n2\n4\n)\n(\n\n\n\n\nx\nx\nf\nestá definida, \nformam o conjunto \n \n \n(  a  ) \n\n\n\n\n2\n3\n,\n2\n1\n. \n(  b  ) \n\n\n\n\n\n\n\n\n\n\n\n\n2\n7\n,\n2\n3\n2\n5\n,\n2\n9\n. \n(  c  ) \n\n\n\n\n\n\n\n\n\n\n\n\n2\n11\n,\n2\n7\n2\n1\n,\n2\n5\n. \n(  d  ) \n\n\n\n\n\n\n\n\n\n\n\n2\n7\n,0\n0,\n2\n5\n. \n(  e  ) \n\n\n\n\n\n\n\n\n\n\n\n2\n11\n,\n2\n3\n2\n1\n,\n2\n9\n. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              4 / 17"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Os múltiplos de 5 são inscritos na disposição \nabaixo: \n \nCOLUNA 1 COLUNA 2 COLUNA 3 COLUNA 4 COLUNA 5\n5 \n10 \n15 \n20 \n25 \n30 \n35 \n40 \n45 \n50 \n55 \n60 \n65 \n70 \n75 \n80 \n85 \n90 \n95 \n100 \n... \n... \n... \n... \n... \n... \n... \n... \n... \n... \n \nCaso esse padrão seja mantido indefinidamente, \ncom certeza o número 745 pertencerá a  \n \n(  a  ) primeira coluna. \n(  b  ) segunda coluna. \n(  c  ) terceira coluna. \n(  d  ) quarta coluna. \n(  e  ) quinta coluna.",
+    "alternativas": {},
+    "texto_bruto": "Os múltiplos de 5 são inscritos na disposição \nabaixo: \n \nCOLUNA 1 COLUNA 2 COLUNA 3 COLUNA 4 COLUNA 5\n5 \n10 \n15 \n20 \n25 \n30 \n35 \n40 \n45 \n50 \n55 \n60 \n65 \n70 \n75 \n80 \n85 \n90 \n95 \n100 \n... \n... \n... \n... \n... \n... \n... \n... \n... \n... \n \nCaso esse padrão seja mantido indefinidamente, \ncom certeza o número 745 pertencerá a  \n \n(  a  ) primeira coluna. \n(  b  ) segunda coluna. \n(  c  ) terceira coluna. \n(  d  ) quarta coluna. \n(  e  ) quinta coluna."
+  },
+  {
+    "numero": 10,
+    "enunciado": "Se \n11\n9\n)\n(\n\nx\nx\ng\ne \n\n\n\n\n\n\n\n\n1\n9\n))\n(\n(\nx\ng\nx\ng\nf\n são \nfunções reais, então \n)\n16\n(\nf\nvale \n \n(  a  ) 1 \n(  b  ) 3 \n(  c  ) 5 \n(  d  ) 7 \n(  e  ) 9",
+    "alternativas": {},
+    "texto_bruto": "Se \n11\n9\n)\n(\n\nx\nx\ng\ne \n\n\n\n\n\n\n\n\n1\n9\n))\n(\n(\nx\ng\nx\ng\nf\n são \nfunções reais, então \n)\n16\n(\nf\nvale \n \n(  a  ) 1 \n(  b  ) 3 \n(  c  ) 5 \n(  d  ) 7 \n(  e  ) 9"
+  },
+  {
+    "numero": 11,
+    "enunciado": "O determinante da matriz A = (aij), de ordem 2, \nonde: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\ni\nj\ni\ntg\nj\ni\nj\ni\naij\n,\n,\n2\ncos\n\n\né igual a \n \n(  a  )   + 1/3. \n(  b  )  – 1/3. \n(  c  )      – 3. \n(  d  )     + 3. \n(  e  )      – 1. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              5 / 17",
+    "alternativas": {},
+    "texto_bruto": "O determinante da matriz A = (aij), de ordem 2, \nonde: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\ni\nj\ni\ntg\nj\ni\nj\ni\naij\n,\n,\n2\ncos\n\n\né igual a \n \n(  a  )   + 1/3. \n(  b  )  – 1/3. \n(  c  )      – 3. \n(  d  )     + 3. \n(  e  )      – 1. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              5 / 17"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Sabendo que a velocidade de uma partícula é \ndada pela equação \n2\n.5\n.3\n2\n)\n(\nt\nt\nt\nv\n\n\n\n, pode-\nse afirmar que, no instante t=5, sua aceleração \né \n \n(  a  ) 28 m/s² \n(  b  ) 30 m/s² \n(  c  ) 36 m/s² \n(  d  ) 47 m/s² \n(  e  ) 53 m/s²",
+    "alternativas": {},
+    "texto_bruto": "Sabendo que a velocidade de uma partícula é \ndada pela equação \n2\n.5\n.3\n2\n)\n(\nt\nt\nt\nv\n\n\n\n, pode-\nse afirmar que, no instante t=5, sua aceleração \né \n \n(  a  ) 28 m/s² \n(  b  ) 30 m/s² \n(  c  ) 36 m/s² \n(  d  ) 47 m/s² \n(  e  ) 53 m/s²"
+  },
+  {
+    "numero": 13,
+    "enunciado": "O valor da expressão \n\n3\n/\n4\n4\n2\n4\n/\n3\n27\n.\n81\n16\n\n\né \n \n(  a  ) \n3\n1 2.\n)1\n(\n\n\n \n(  b  ) \n3\n2 2.\n)1\n(\n \n(  c  ) \n4\n3 3.\n)1\n(\n\n\n \n(  d  ) \n4\n4 2.\n)1\n(\n\n\n \n(  e  ) \n2\n5 3.\n)1\n(",
+    "alternativas": {},
+    "texto_bruto": "O valor da expressão \n\n3\n/\n4\n4\n2\n4\n/\n3\n27\n.\n81\n16\n\n\né \n \n(  a  ) \n3\n1 2.\n)1\n(\n\n\n \n(  b  ) \n3\n2 2.\n)1\n(\n \n(  c  ) \n4\n3 3.\n)1\n(\n\n\n \n(  d  ) \n4\n4 2.\n)1\n(\n\n\n \n(  e  ) \n2\n5 3.\n)1\n("
+  },
+  {
+    "numero": 14,
+    "enunciado": "O \nvalor \nde \nx \npara \nresolver \na \nequação \nx\nx\nx\n9.2\n6\n4\n\n\n é \n \n(  a  ) 0 \n(  b  ) 1 \n(  c  ) 2 \n(  d  ) 3 \n(  e  ) 4",
+    "alternativas": {},
+    "texto_bruto": "O \nvalor \nde \nx \npara \nresolver \na \nequação \nx\nx\nx\n9.2\n6\n4\n\n\n é \n \n(  a  ) 0 \n(  b  ) 1 \n(  c  ) 2 \n(  d  ) 3 \n(  e  ) 4"
+  },
+  {
+    "numero": 15,
+    "enunciado": ": \n \n \nA única alternativa INCORRETA é  \n \n( a ) \n4\n)\n2\n5\n3\n(\nlim\n2\n2\n\n\n\n\nx\nx\nx\n \n( b ) \n7\n4\n3\n4\n3\n2\nlim\n2\n1\n\n\n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n \n( c ) \n4\n2\n3\n2\n2\nlim\n2\n2\n1\n\n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n \n( d ) \n2\n2\n4\nlim\n3\n2\n2\n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n \n( e ) \n2\n3\n4\n2\n3\n2\nlim 3\n2\n2\n3\n2\n\n\n\n\n\n\n\n\nx\nx\nx\nx\nx\nx\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              6 / 17",
+    "alternativas": {},
+    "texto_bruto": ": \n \n \nA única alternativa INCORRETA é  \n \n( a ) \n4\n)\n2\n5\n3\n(\nlim\n2\n2\n\n\n\n\nx\nx\nx\n \n( b ) \n7\n4\n3\n4\n3\n2\nlim\n2\n1\n\n\n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n \n( c ) \n4\n2\n3\n2\n2\nlim\n2\n2\n1\n\n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n \n( d ) \n2\n2\n4\nlim\n3\n2\n2\n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n \n( e ) \n2\n3\n4\n2\n3\n2\nlim 3\n2\n2\n3\n2\n\n\n\n\n\n\n\n\nx\nx\nx\nx\nx\nx\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              6 / 17"
+  },
+  {
+    "numero": 16,
+    "enunciado": ": \nO valor de \nt\nt\nt\n3\n3\n0\n5\n5\nlim\n\n\n\né \n \n(  a  )       0. \n(  b  )    10\n1 . \n(  c  ) \n3\n2\n5\n1\n. \n(  d  ) \n3 25\n3\n1\n. \n(  e  )    .",
+    "alternativas": {},
+    "texto_bruto": ": \nO valor de \nt\nt\nt\n3\n3\n0\n5\n5\nlim\n\n\n\né \n \n(  a  )       0. \n(  b  )    10\n1 . \n(  c  ) \n3\n2\n5\n1\n. \n(  d  ) \n3 25\n3\n1\n. \n(  e  )    ."
+  },
+  {
+    "numero": 17,
+    "enunciado": ": \n \nConsidere um triângulo retângulo de catetos 9cm \ne 12cm. A bissetriz interna relativa à hipotenusa \ndesse triângulo mede: \n \n(  a  ) \n2\n7\n36\n. \n(  b  ) \n2\n7\n25\n. \n(  c  ) \n2\n15\n4\n. \n(  d  ) \n2\n5\n7\n. \n(  e  ) \n2\n5\n3\n.",
+    "alternativas": {},
+    "texto_bruto": ": \n \nConsidere um triângulo retângulo de catetos 9cm \ne 12cm. A bissetriz interna relativa à hipotenusa \ndesse triângulo mede: \n \n(  a  ) \n2\n7\n36\n. \n(  b  ) \n2\n7\n25\n. \n(  c  ) \n2\n15\n4\n. \n(  d  ) \n2\n5\n7\n. \n(  e  ) \n2\n5\n3\n."
+  },
+  {
+    "numero": 18,
+    "enunciado": ": \n \nSeja \n0\n\n\n\n\nd\ncz\nby\nax\n a equação do plano \nque passa pelos pontos (4, - 2, 2) e (1, 1, 5) e é \nperpendicular ao plano 3x – 2y  +  5z – 1 = 0.           \nA razão b\nd é \n \n(  a  ) \n4\n5\n\n.  \n(  b  )    7\n4 . \n(  c  )     8.  \n(  d  ) \n2\n1\n\n. \n(  e  )    5\n2 . \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              7 / 17",
+    "alternativas": {},
+    "texto_bruto": ": \n \nSeja \n0\n\n\n\n\nd\ncz\nby\nax\n a equação do plano \nque passa pelos pontos (4, - 2, 2) e (1, 1, 5) e é \nperpendicular ao plano 3x – 2y  +  5z – 1 = 0.           \nA razão b\nd é \n \n(  a  ) \n4\n5\n\n.  \n(  b  )    7\n4 . \n(  c  )     8.  \n(  d  ) \n2\n1\n\n. \n(  e  )    5\n2 . \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n              7 / 17"
+  },
+  {
+    "numero": 19,
+    "enunciado": ": \n \nDenotaremos por n(x) o número de elementos de um \nconjunto finito x. Sejam A, B, C conjuntos tais que \n14\n)\n(\n\nAUB\nn\n, \n14\n)\n(\n\nAUC\nn\n e \n15\n)\n(\n\nBUC\nn\n, \n17\n)\n(\n\nAUBUC\nn\ne \n3\n)\n(\n\n\n\nC\nB\nA\nn\n. \nEntão, \n)\n(\n)\n(\n)\n(\nC\nn\nB\nn\nA\nn\n\n\né igual a \n( a ) \n18. \n( b ) \n20. \n( c ) \n25. \n( d ) \n29. \n( e ) \n32.",
+    "alternativas": {},
+    "texto_bruto": ": \n \nDenotaremos por n(x) o número de elementos de um \nconjunto finito x. Sejam A, B, C conjuntos tais que \n14\n)\n(\n\nAUB\nn\n, \n14\n)\n(\n\nAUC\nn\n e \n15\n)\n(\n\nBUC\nn\n, \n17\n)\n(\n\nAUBUC\nn\ne \n3\n)\n(\n\n\n\nC\nB\nA\nn\n. \nEntão, \n)\n(\n)\n(\n)\n(\nC\nn\nB\nn\nA\nn\n\n\né igual a \n( a ) \n18. \n( b ) \n20. \n( c ) \n25. \n( d ) \n29. \n( e ) \n32."
+  },
+  {
+    "numero": 20,
+    "enunciado": ": \n \nSabendo-se que a raiz quadrada do número \ncomplexo -16 + 30i é (a + bi) ou (c + di), pode-se \nafirmar que o valor de a + d  é: \n( a ) \n + 2. \n( b ) \n + 1. \n( c ) \n    0. \n( d ) \n – 1. \n( e ) \n – 2.",
+    "alternativas": {},
+    "texto_bruto": ": \n \nSabendo-se que a raiz quadrada do número \ncomplexo -16 + 30i é (a + bi) ou (c + di), pode-se \nafirmar que o valor de a + d  é: \n( a ) \n + 2. \n( b ) \n + 1. \n( c ) \n    0. \n( d ) \n – 1. \n( e ) \n – 2."
+  }
+]

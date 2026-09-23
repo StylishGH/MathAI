@@ -1,0 +1,112 @@
+[
+  {
+    "numero": 11,
+    "enunciado": "Se sec x + tg x = 2/3, o valor de sen x + cos x vale:",
+    "latex": "\\sec x + \\operatorname{tg} x = \\frac{2}{3}",
+    "alternativa_a": "-\\frac{7}{13}",
+    "alternativa_b": "\\frac{5}{13}",
+    "alternativa_c": "\\frac{12}{13}",
+    "alternativa_d": "\\frac{15}{13}",
+    "alternativa_e": "\\frac{17}{13}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Dois observadores que estão em posições coincidentes com os pontos A e B, afastados 3km entre si, medem simultaneamente o ângulo de elevação de um balão, a partir do chão, como sendo 30º e 75º, respectivamente. Se o balão está diretamente acima de um ponto no segmento de reta entre A e B, então a altura do balão, a partir do chão, em km, é:",
+    "latex": "",
+    "alternativa_a": "\\sqrt{3} - 1",
+    "alternativa_b": "\\frac{\\sqrt{5}}{2}",
+    "alternativa_c": "\\frac{5}{2}",
+    "alternativa_d": "\\frac{3}{2}",
+    "alternativa_e": "\\frac{\\sqrt{3}}{2}",
+    "gabarito": "D"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Um muro será construído para isolar a área de uma escola que está situada a 2km de distância da estação do metrô. Esse muro será erguido ao longo de todos os pontos P, tais que a razão entre a distância de P à estação do metrô e a distância de P à escola é constante e igual a 2. Em razão disso, dois postes, com uma câmera cada, serão fixados nos pontos do muro que estão sobre a reta que passa pela escola e é perpendicular à reta que passa pelo metrô e pela escola. Então, a distância entre os postes, em km, será:",
+    "latex": "",
+    "alternativa_a": "2",
+    "alternativa_b": "2\\sqrt{2}",
+    "alternativa_c": "3\\sqrt{2}",
+    "alternativa_d": "4",
+    "alternativa_e": "5\\sqrt{2}",
+    "gabarito": "D"
+  },
+  {
+    "numero": 14,
+    "enunciado": "A empresa Alfa Tecidos dispõe de 5 teares que funcionam 6 horas por dia, simultaneamente. Essa empresa fabrica 1800m de tecido, com 1,20m de largura em 4 dias. Considerando que um dos teares parou de funcionar, em quantos dias, aproximadamente, a tecelagem fabricará 2000m do mesmo tecido, com largura de 0,80m, e com cada uma de suas máquinas funcionando 8 horas por dia?",
+    "latex": "",
+    "alternativa_a": "2 dias.",
+    "alternativa_b": "3 dias.",
+    "alternativa_c": "4 dias.",
+    "alternativa_d": "5 dias.",
+    "alternativa_e": "6 dias.",
+    "gabarito": "B"
+  },
+  {
+    "numero": 15,
+    "enunciado": "O código Morse, desenvolvido por Samuel Morse, em 1835, é um sistema de representação que utiliza letras, números e sinais de pontuação através de um sinal codificado intermitentemente por pulsos elétricos, perturbações sonoras, sinais visuais ou sinais de rádio. Sabendo-se que um código semelhante ao código Morse trabalha com duas letras pré-estabelecidas, ponto e traço, e codifica com palavras de 1 a 4 letras, o número de palavras criadas é:",
+    "latex": "",
+    "alternativa_a": "10.",
+    "alternativa_b": "15.",
+    "alternativa_c": "20.",
+    "alternativa_d": "25.",
+    "alternativa_e": "30.",
+    "gabarito": "E"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Um cone foi formado a partir de uma chapa de aço, no formato de um setor de 12 cm de raio e ângulo central de 120 graus. Então, a altura do cone é:",
+    "latex": "g = 12, \\alpha = 120^\\circ",
+    "alternativa_a": "2 \\sqrt{2}",
+    "alternativa_b": "2 \\sqrt{4}",
+    "alternativa_c": "2 \\sqrt{6}",
+    "alternativa_d": "2 \\sqrt{8}",
+    "alternativa_e": "2 \\sqrt{12}",
+    "gabarito": "C"
+  },
+  {
+    "numero": 17,
+    "enunciado": "A matriz A = (a_{ij})_{3x3} define em R^3 os vetores v_i = a_{i1}i + a_{i2}j + a_{i3}k, com 1 \\le i \\le 3. Se u e v são dois vetores em R^3 satisfazendo as condições dadas, então o produto vetorial u \\times v é dado por:",
+    "latex": "A = \\begin{pmatrix} 0 & 1 & 1 \\\\ 1 & -1 & 1 \\\\ 2 & -1 & 1 \\end{pmatrix}",
+    "alternativa_a": "(i - 2j + k) \\times (2i - 2j + 3k)",
+    "alternativa_b": "(-i + 2j - k) \\times (2i - 3j + k)",
+    "alternativa_c": "(i - 2j - k) \\times (2i - 3j - k)",
+    "alternativa_d": "(i + 2j - 2k) \\times (2i + 2j - k)",
+    "alternativa_e": "(-i - 2j + k) \\times (2i - 3j - k)",
+    "gabarito": "E"
+  },
+  {
+    "numero": 18,
+    "enunciado": "O gráfico de f(x) = (x - 3)^2 e^x, x \\in R tem uma assíntota horizontal r. Se o gráfico de f intercepta r no ponto P = (a, b), então o valor da expressão dada é igual a:",
+    "latex": "f(x) = (x - 3)^2 e^x",
+    "alternativa_a": "-3",
+    "alternativa_b": "-2",
+    "alternativa_c": "3",
+    "alternativa_d": "2",
+    "alternativa_e": "\\frac{1}{2}",
+    "gabarito": "C"
+  },
+  {
+    "numero": 19,
+    "enunciado": "O valor da integral dada é:",
+    "latex": "\\int \\sin(x) \\cos(x) dx",
+    "alternativa_a": "-\\cos(x) + C",
+    "alternativa_b": "-\\frac{1}{4}\\cos^2(x) + C",
+    "alternativa_c": "-\\frac{1}{2}\\cos(x) + C",
+    "alternativa_d": "\\frac{1}{4}\\cos(x) + C",
+    "alternativa_e": "\\frac{1}{2}\\cos^2(x) + C",
+    "gabarito": "B"
+  },
+  {
+    "numero": 20,
+    "enunciado": "O litro da gasolina comum sofreu, há alguns dias, um aumento de 7,7% e passou a custar 2,799 reais. Já o litro do álcool sofreu um aumento de 15,8%, passando a custar 2,199 reais. Sabendo que o preço do combustível é sempre cotado em milésimos de real, pode-se afirmar, aproximadamente, que a diferença de se abastecer um carro com 10 litros de gasolina e 5 litros de álcool, antes e depois do aumento, é de:",
+    "latex": "Preço_{gasolina} = 2,799, Preço_{alcool} = 2,199",
+    "alternativa_a": "R$ 2,00",
+    "alternativa_b": "R$ 2,50",
+    "alternativa_c": "R$ 3,00",
+    "alternativa_d": "R$ 3,50",
+    "alternativa_e": "R$ 4,00",
+    "gabarito": "A"
+  }
+]

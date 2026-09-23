@@ -1,0 +1,167 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Um programa de auditório tem um jogo chamado Porta Premiada, que funciona da seguinte maneira: 1- há três portas: uma tem prêmios e duas estão vazias; 2- o apresentador pede ao convidado que escolha uma das portas; 3- após a escolha, o apresentador abre uma das duas portas não escolhidas. Como ele sabe qual é a premiada, abre uma vazia; 4- depois de aberta uma das portas, ele pergunta ao convidado se deseja trocar de porta; 5- finalmente, abre a porta do convidado para verificar se ganhou ou perdeu. Analisando o jogo de forma puramente probabilística, verifique qual(is) das estratégias abaixo tem a maior probabilidade de vencer o jogo. I- Após escolher a porta, não trocá-la até o final do jogo. II- Todas as probabilidades são iguais; não há estratégia melhor que a outra, ou seja, tanto faz trocar ou não a porta. III- A melhor estratégia é sempre trocar a porta. Sobre as estratégias I, II e III apresentadas, é correto afirmar que",
+    "latex": "",
+    "alternativa_a": "somente a alternativa I está correta.",
+    "alternativa_b": "somente a alternativa II está correta.",
+    "alternativa_c": "somente a alternativa III está correta.",
+    "alternativa_d": "nenhuma alternativa está correta.",
+    "alternativa_e": "todas as alternativas apresentam circunstâncias com a mesma probabilidade de vencer.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Um decorador contemporâneo vai usar quatro objetos perfilados lado a lado como decoração de um ambiente. Ele dispõe de 4 copos transparentes azuis, 4 copos transparentes vermelhos, duas bolas amarelas e 3 bolas verdes. Cada objeto da decoração pode ser um copo vazio ou com uma bola dentro. Considerando que a cor altera a opção do objeto, quantas maneiras distintas há de perfilar esses quatro objetos, levando-se em conta que a posição em que ele se encontra altera a decoração?",
+    "latex": "",
+    "alternativa_a": "1296",
+    "alternativa_b": "1248",
+    "alternativa_c": "1152",
+    "alternativa_d": "1136",
+    "alternativa_e": "1008",
+    "gabarito": "C"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Um garoto dispõe de um único exemplar de cada poliedro de Platão existente. Para brincar, ele numerou cada vértice, face e aresta de cada poliedro sem repetir nenhum número. Em seguida, anotou esses números no próprio poliedro. Se ele sortear um dos números usados, aleatoriamente, qual será a probabilidade de o número sorteado representar um vértice?",
+    "latex": "",
+    "alternativa_a": "\\\\frac{5}{9}",
+    "alternativa_b": "\\\\frac{5}{14}",
+    "alternativa_c": "\\\\frac{1}{3}",
+    "alternativa_d": "\\\\frac{1}{19}",
+    "alternativa_e": "\\\\frac{1}{10}",
+    "gabarito": "B"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Um atleta de tiro ao prato tem probabilidade de 0,9 de acertar o prato a cada novo lançamento. Analisando esse jogador antes do início da competição, após quantos lançamentos de pratos, a probabilidade de ele não ter acertado todos os tiros se tornará maior que a probabilidade de acertar todos?",
+    "latex": "",
+    "alternativa_a": "9",
+    "alternativa_b": "8",
+    "alternativa_c": "7",
+    "alternativa_d": "6",
+    "alternativa_e": "5",
+    "gabarito": "C"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Qual é a área de uma circunferência inscrita em um triângulo equilátero, sabendo-se que esse triângulo está inscrito em uma circunferência de comprimento igual a 10 \\\\pi cm?",
+    "latex": "C = 10\\\\pi",
+    "alternativa_a": "\\\\frac{75\\\\pi}{4}",
+    "alternativa_b": "\\\\frac{25\\\\pi}{4}",
+    "alternativa_c": "\\\\frac{5\\\\pi}{2}",
+    "alternativa_d": "\\\\frac{25\\\\pi}{16}",
+    "alternativa_e": "\\\\frac{5\\\\pi}{4}",
+    "gabarito": "B"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Seja C = {a_1, a_2, a_3, ..., a_n} o conjunto das n raízes da equação dada. Determine o valor da soma das potências.",
+    "latex": "a_1^3 + a_2^3 + a_3^3 + \\\\dots + a_n^3",
+    "alternativa_a": "-5",
+    "alternativa_b": "7",
+    "alternativa_c": "25",
+    "alternativa_d": "36",
+    "alternativa_e": "37",
+    "gabarito": "C"
+  },
+  {
+    "numero": 7,
+    "enunciado": "A área de uma figura plana é dada pelo cálculo da integral definida, onde g(x) é a função que limita a figura superiormente, h(x) limita a figura inferiormente e os valores a e b representam o início e o fim da figura em relação ao eixo x do plano cartesiano. Com isso, determine a área hachurada abaixo, definida superiormente por uma parábola e inferiormente por uma reta.",
+    "latex": "A = \\\\int_{a}^{b} [g(x) - h(x)] dx",
+    "alternativa_a": "42/7",
+    "alternativa_b": "49/13",
+    "alternativa_c": "16/27",
+    "alternativa_d": "21",
+    "alternativa_e": "46/7",
+    "gabarito": "D"
+  },
+  {
+    "numero": 8,
+    "enunciado": "No Baile dos FERAS, os organizadores notaram que a razão entre o número de homens e o número de mulheres presentes, no início do evento, era de 7/10. Durante o show, nenhum homem ou nenhuma mulher saiu ou entrou. Ao final do show, os organizadores observaram no local o aumento de 255 homens e a redução de 150 mulheres, de modo que a razão entre o número de homens e o número de mulheres presentes depois disso passou a ser 9/5. Qual é o número total de pessoas que estiveram presentes em algum momento no show?",
+    "latex": "\\\\frac{H}{M} = \\\\frac{7}{10}, \\\\quad \\\\frac{H + 255}{M - 150} = \\\\frac{9}{5}",
+    "alternativa_a": "3954",
+    "alternativa_b": "3570",
+    "alternativa_c": "3315",
+    "alternativa_d": "1950",
+    "alternativa_e": "1365",
+    "gabarito": "C"
+  },
+  {
+    "numero": 9,
+    "enunciado": "A projeção ortogonal de A sobre a reta BC, sabendo-se que A = (3,7), B = (1,1) e C = (9,6), terá as coordenadas da projeção:",
+    "latex": "A = (3,7), \\\\quad B = (1,1), \\\\quad C = (9,6)",
+    "alternativa_a": "x = 468/85; y = 321/89",
+    "alternativa_b": "x = 478/87; y = 319/87",
+    "alternativa_c": "x = 487/84; y = 321/87",
+    "alternativa_d": "x = 457/89; y = 319/89",
+    "alternativa_e": "x = 472/89; y = 295/89",
+    "gabarito": "E"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Para descrever um código que permite transformar uma palavra P de três letras em um vetor w, inicialmente escolhe-se uma matriz 3x3. Por exemplo, a nossa matriz código será A. A partir da correspondência alfabética, a palavra P é transformada em vetor v. Em seguida, o código da palavra P é obtido pela operação w = Av. Usando o processo acima para decodificar w = (64, 107, 29), teremos:",
+    "latex": "w = A v, \\\\quad w = (64, 107, 29)",
+    "alternativa_a": "x = 18, y = 14, z = 11 / SOL",
+    "alternativa_b": "x = 12, y = 5, z = 11 / MEL",
+    "alternativa_c": "x = 12, y = 1, z = 20 / MAU",
+    "alternativa_d": "x = 11, y = 20, z = 1 / LUA",
+    "alternativa_e": "x = 20, y = 21, z = 1 / UVA",
+    "gabarito": "A"
+  },
+  {
+    "numero": 16,
+    "enunciado": "A equação da reta tangente ao gráfico da função f(x) no ponto dado será",
+    "latex": "f(x) = \\\\frac{1}{x}",
+    "alternativa_a": "25y + x - 10 = 0.",
+    "alternativa_b": "10y - x + 7 = 0.",
+    "alternativa_c": "7y + 2x - 2 = 0.",
+    "alternativa_d": "10y + x - 10 = 0.",
+    "alternativa_e": "5y + x - 10 = 0.",
+    "gabarito": "E"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Seja f : \\\\mathbb{R} \\\\to \\\\mathbb{R} uma função tal que f(1) = 2 e satisfazendo a condição dada. Então, o valor correspondente será",
+    "latex": "f(x+y) = f(x) \\\\cdot f(y)",
+    "alternativa_a": "5",
+    "alternativa_b": "4",
+    "alternativa_c": "3",
+    "alternativa_d": "2",
+    "alternativa_e": "1",
+    "gabarito": "B"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Em uma festa, sabe-se que cada pessoa tem três amigos, mas que não há três pessoas que sejam amigas duas a duas. Qual é, então, a menor quantidade possível de pessoas na festa?",
+    "latex": "",
+    "alternativa_a": "9.",
+    "alternativa_b": "8.",
+    "alternativa_c": "7.",
+    "alternativa_d": "6.",
+    "alternativa_e": "4.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Os valores de A, sabendo-se que a função abaixo é contínua para todos os valores de x, serão",
+    "latex": "f(x) = \\\\begin{cases} A^2x, & x \\\\ge 2 \\\\\\\\ (A-2)x, & x < 2 \\\\end{cases}",
+    "alternativa_a": "1 ou 2",
+    "alternativa_b": "1 ou -2",
+    "alternativa_c": "2 ou 4",
+    "alternativa_d": "\\\\frac{3}{2} ou -\\\\frac{4}{3}",
+    "alternativa_e": "-1 ou -\\\\frac{1}{3}",
+    "gabarito": "B"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Num triângulo ABC, as bissetrizes dos ângulos externos dos vértices B e C formam um ângulo de medida 50°. Calcule o ângulo interno do vértice A.",
+    "latex": "",
+    "alternativa_a": "110°",
+    "alternativa_b": "90°",
+    "alternativa_c": "80°",
+    "alternativa_d": "50°",
+    "alternativa_e": "20°",
+    "gabarito": "C"
+  }
+]

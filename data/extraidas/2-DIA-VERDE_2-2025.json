@@ -1,0 +1,236 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Determine o volume do paralelepípedo com base\nquadrada, dadas as seguintes condições:\nUma pirâmide com base quadrada está\ncompletamente contida no paralelepípedo,\ncoincidindo sua base com a base inferior do\nparalelepípedo. A projeção do vértice da pirâmide\ncoincide com os centros dos quadrados das bases\ndo paralelepípedo. O volume da pirâmide é de\n5 m\n3.\nUm cone está contido no paralelepípedo, com\nvértice comum a pirâmide, e sua base está inscrita\nna base superior do paralelepípedo. O volume do\ncone é 4 m\n3.",
+    "alternativas": {
+      "alternativa_a": "(5+ 48\nπ )m\n3",
+      "alternativa_b": "(15+ 3\nπ)m\n3",
+      "alternativa_c": "(5+ 49\n3π )m\n3",
+      "alternativa_d": "(15+ 48\nπ )m\n3",
+      "alternativa_e": "(15+ 49\n3π )m\n3"
+    },
+    "texto_bruto": "Determine o volume do paralelepípedo com base\nquadrada, dadas as seguintes condições:\nUma pirâmide com base quadrada está\ncompletamente contida no paralelepípedo,\ncoincidindo sua base com a base inferior do\nparalelepípedo. A projeção do vértice da pirâmide\ncoincide com os centros dos quadrados das bases\ndo paralelepípedo. O volume da pirâmide é de\n5 m\n3.\nUm cone está contido no paralelepípedo, com\nvértice comum a pirâmide, e sua base está inscrita\nna base superior do paralelepípedo. O volume do\ncone é 4 m\n3.\n(A) (5+ 48\nπ )m\n3\n(B) (15+ 3\nπ)m\n3\n(C) (5+ 49\n3π )m\n3\n(D) (15+ 48\nπ )m\n3\n(E)   (15+ 49\n3π )m\n3"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Seja Z o número de soluções inteiras não negativas da\ninequação x1+ x2+x3+x4<6.\nDetermine o termo que contém x\n4 no desenvolvimento\nde (x\n2+Z )\n12 .",
+    "alternativas": {
+      "alternativa_a": "16 (64\n8x\n4 )",
+      "alternativa_b": "16 (126\n10 x\n4)",
+      "alternativa_c": "66 (126\n8x\n4)",
+      "alternativa_d": "66 (126\n10 x\n4)",
+      "alternativa_e": "96 (144\n8x\n4)\n           \n                   1/28"
+    },
+    "texto_bruto": "Seja Z o número de soluções inteiras não negativas da\ninequação x1+ x2+x3+x4<6.\nDetermine o termo que contém x\n4 no desenvolvimento\nde (x\n2+Z )\n12 .\n(A) 16 (64\n8x\n4 )\n(B) 16 (126\n10 x\n4)\n(C) 66 (126\n8x\n4)\n(D) 66 (126\n10 x\n4)\n(E) 96 (144\n8x\n4)\n           \n                   1/28"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Seja T o triângulo ABC com lados de tamanho 10, 5 e\n5√3, \ncom a relação entre seus ângulos\nB ^AC >B ^C A> A ^BC. Dada a circunferência C\ninscrita no triângulo ABC interceptando-o nos pontos\nP∈BC, Q ∈AC e R∈AB. \nQual é o perímetro do quadrilátero convexo PBRQ?",
+    "alternativas": {
+      "alternativa_a": "5\n2\n(5−√2+√3+√6)",
+      "alternativa_b": "5\n3\n(1−√2+√3−√6)",
+      "alternativa_c": "1\n2\n(5+√2−√3+√6)",
+      "alternativa_d": "5\n2\n(5−√2+√3−√6)",
+      "alternativa_e": "1\n3\n(1−√2+√3+√6)"
+    },
+    "texto_bruto": "Seja T o triângulo ABC com lados de tamanho 10, 5 e\n5√3, \ncom a relação entre seus ângulos\nB ^AC >B ^C A> A ^BC. Dada a circunferência C\ninscrita no triângulo ABC interceptando-o nos pontos\nP∈BC, Q ∈AC e R∈AB. \nQual é o perímetro do quadrilátero convexo PBRQ?\n(A) 5\n2\n(5−√2+√3+√6)\n(B) 5\n3\n(1−√2+√3−√6)\n(C) 1\n2\n(5+√2−√3+√6)\n(D) 5\n2\n(5−√2+√3−√6)\n(E) 1\n3\n(1−√2+√3+√6)"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Sejam os conjuntos naturais:\n•\nA={né primo;2≤n≤36};\n•\nB={n é múltiplode3;10≤n≤36 };\n•\nC=A×B. \nQuantos elementos possui o conjunto\n D={(a,b)∈C ; a+bé par}?",
+    "alternativas": {
+      "alternativa_a": "20",
+      "alternativa_b": "40",
+      "alternativa_c": "44",
+      "alternativa_d": "45",
+      "alternativa_e": "55\n           \n                   2/28"
+    },
+    "texto_bruto": "Sejam os conjuntos naturais:\n•\nA={né primo;2≤n≤36};\n•\nB={n é múltiplode3;10≤n≤36 };\n•\nC=A×B. \nQuantos elementos possui o conjunto\n D={(a,b)∈C ; a+bé par}?\n(A) 20\n(B) 40\n(C) 44\n(D) 45\n(E) 55\n           \n                   2/28"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Analise as afirmativas a seguir sobre operações de\nconjuntos.\nI – ( A−B) ×C=( A×C )−(B×C).\nII – A⊂D e B⊂E → A×B⊂D× E. \nIII – Se A,B⊂C; A∩B≠∅e A∪B=C →B=∁A\nC .\nIV – ( A−B) ∪(B−A )=( A−C )∪(C−A)↔B=C .\n(Considere A⊂B tal que todo elemento de A é\nelemento de B. Além disso, ∁A\nC é o complementar do\nconjunto A em relação ao conjunto C.)\nAssinale a opção correta.",
+    "alternativas": {
+      "alternativa_a": "Apenas as afirmativas I, II e IV são verdadeiras.",
+      "alternativa_b": "Apenas as afirmativas I e III são verdadeiras.",
+      "alternativa_c": "Apenas as afirmativas II e IV são verdadeiras.",
+      "alternativa_d": "Apenas as afirmativas I, II e III são verdadeiras.",
+      "alternativa_e": "Apenas a afirmativa IV é verdadeira."
+    },
+    "texto_bruto": "Analise as afirmativas a seguir sobre operações de\nconjuntos.\nI – ( A−B) ×C=( A×C )−(B×C).\nII – A⊂D e B⊂E → A×B⊂D× E. \nIII – Se A,B⊂C; A∩B≠∅e A∪B=C →B=∁A\nC .\nIV – ( A−B) ∪(B−A )=( A−C )∪(C−A)↔B=C .\n(Considere A⊂B tal que todo elemento de A é\nelemento de B. Além disso, ∁A\nC é o complementar do\nconjunto A em relação ao conjunto C.)\nAssinale a opção correta.\n(A) Apenas as afirmativas I, II e IV são verdadeiras.\n(B) Apenas as afirmativas I e III são verdadeiras.\n(C) Apenas as afirmativas II e IV são verdadeiras.\n(D) Apenas as afirmativas I, II e III são verdadeiras.\n(E) Apenas a afirmativa IV é verdadeira."
+  },
+  {
+    "numero": 6,
+    "enunciado": "Quais as relações entre a,b,c ∈R+\n*, com  a,b,c ≠1,\na≠c eb≠1/c para que a equação abaixo seja\nválida\nlog a(bc )\nβ. logb(\na\nc)\nα\n.logcb=αβ [ A −B+C−D ], \nem que\n\nA=logc (a). log a(b ).logb (a )\n\nB=loga (b). logb(c).logc (a)\n\nC=log a(c ) .logc ( a).logb (a )\n\nD=loga (c ).logb (c ).logc (a ), tal que α ,β ∈R\n*.",
+    "alternativas": {
+      "alternativa_a": "a+b=c",
+      "alternativa_b": "a−b=0",
+      "alternativa_c": "a+b+c=1",
+      "alternativa_d": "c −2b=0",
+      "alternativa_e": "2a+3c=1\n           \n                   3/28"
+    },
+    "texto_bruto": "Quais as relações entre a,b,c ∈R+\n*, com  a,b,c ≠1,\na≠c eb≠1/c para que a equação abaixo seja\nválida\nlog a(bc )\nβ. logb(\na\nc)\nα\n.logcb=αβ [ A −B+C−D ], \nem que\n\nA=logc (a). log a(b ).logb (a )\n\nB=loga (b). logb(c).logc (a)\n\nC=log a(c ) .logc ( a).logb (a )\n\nD=loga (c ).logb (c ).logc (a ), tal que α ,β ∈R\n*.\n(A)\na+b=c\n(B)\na−b=0\n(C)\na+b+c=1\n(D)\nc −2b=0\n(E)    2a+3c=1\n           \n                   3/28"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Observe as três progressões aritméticas com os\nprimeiros termos 5, 8 e 10, construídas a partir da\nletra E da sigla da Escola de Formação de Oficiais da\nMarinha Mercante (EFOMM).\nQuando as letras da sigla se esgotam, a sequência\nretorna à primeira letra. Continuando esse padrão,\ndetermine a posição do número 2025 na sequência.",
+    "alternativas": {},
+    "texto_bruto": "Observe as três progressões aritméticas com os\nprimeiros termos 5, 8 e 10, construídas a partir da\nletra E da sigla da Escola de Formação de Oficiais da\nMarinha Mercante (EFOMM).\nQuando as letras da sigla se esgotam, a sequência\nretorna à primeira letra. Continuando esse padrão,\ndetermine a posição do número 2025 na sequência.\n(A)\n \n(B)\n(C)\n \n(D)\n                \n(E)"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Um casal pretende tomar uma quantia de\nR$ 200.000,00 com o banco, em cem prestações no\nSistema de Amortização Constante, para compra de\nsua casa própria. Considerando uma taxa de juros\ncomposta de 2% ao mês, qual é o valor da 41ª\nprestação?",
+    "alternativas": {
+      "alternativa_a": "R$ 6.000,00",
+      "alternativa_b": "R$ 5.100,00",
+      "alternativa_c": "R$ 4.400,00",
+      "alternativa_d": "R$ 3.900,00",
+      "alternativa_e": "R$ 3.600,00\n           \n                   4/28"
+    },
+    "texto_bruto": "Um casal pretende tomar uma quantia de\nR$ 200.000,00 com o banco, em cem prestações no\nSistema de Amortização Constante, para compra de\nsua casa própria. Considerando uma taxa de juros\ncomposta de 2% ao mês, qual é o valor da 41ª\nprestação?\n(A) R$ 6.000,00\n(B) R$ 5.100,00\n(C) R$ 4.400,00\n(D) R$ 3.900,00\n(E) R$ 3.600,00\n           \n                   4/28"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Quantas raízes reais e complexas possui o polinômio\nabaixo?\n(x+ 3−√17\n2\n) x\n2 ( x+1)(x+2) (x+3 )\n2(x+ 3+√17\n2\n)−5=0",
+    "alternativas": {
+      "alternativa_a": "Zero real e 8 complexas.",
+      "alternativa_b": "2 reais e 6 complexas.",
+      "alternativa_c": "4 reais e 4 complexas.",
+      "alternativa_d": "6 reais e 2 complexas.",
+      "alternativa_e": "8 reais e zero complexa."
+    },
+    "texto_bruto": "Quantas raízes reais e complexas possui o polinômio\nabaixo?\n(x+ 3−√17\n2\n) x\n2 ( x+1)(x+2) (x+3 )\n2(x+ 3+√17\n2\n)−5=0\n(A) Zero real e 8 complexas.\n(B) 2 reais e 6 complexas.\n(C) 4 reais e 4 complexas.\n(D) 6 reais e 2 complexas.\n(E) 8 reais e zero complexa."
+  },
+  {
+    "numero": 10,
+    "enunciado": "Sobre funções, analise as alternativas abaixo:\nI.\nA função tan( x ) , x∈[0, π\n2) é sobrejetora em R+ e\na função sen (x ), com x∈R, é injetora. \nII.\nAs imagens das famílias de funções\nf (x )=a|x|+b, com a e b∈R, não contêm números\nnegativos. \nIII.\n A função exponencial de base a, definida por\nf : R→R+\n*, é denotada por f (x )=a\nx, onde a é um\nnúmero real positivo e diferente de 1. Suponha que as\nfunções g (x )=b.a\nx e G ( x )=B. A\nx, com as constantes\nb, B ∈R+\n*, satisfaçam g(x1) = G(x1) e g(x2) = G(x2)\npara x1≠x2. Nesse caso, temos que a=A e b=B.\nIV.\nFunções quadráticas e racionais são definidas em\ntodo conjunto real.\nV.\nSe a função f é não injetora e não sobrejetora e a\nfunção g é não injetora, então função composta go f é\nnão sobrejetora.\nAssinale a opção correta.",
+    "alternativas": {
+      "alternativa_a": "Apenas as afirmativas II, III, IV e V são\nverdadeiras.",
+      "alternativa_b": "Apenas as afirmativas IV e V são verdadeiras.",
+      "alternativa_c": "Apenas a afirmativa III é verdadeira.",
+      "alternativa_d": "Apenas as afirmativas I, II e V são verdadeiras.",
+      "alternativa_e": "Apenas as afirmativas I, III, e V são verdadeiras.\n           \n                   5/28"
+    },
+    "texto_bruto": "Sobre funções, analise as alternativas abaixo:\nI.\nA função tan( x ) , x∈[0, π\n2) é sobrejetora em R+ e\na função sen (x ), com x∈R, é injetora. \nII.\nAs imagens das famílias de funções\nf (x )=a|x|+b, com a e b∈R, não contêm números\nnegativos. \nIII.\n A função exponencial de base a, definida por\nf : R→R+\n*, é denotada por f (x )=a\nx, onde a é um\nnúmero real positivo e diferente de 1. Suponha que as\nfunções g (x )=b.a\nx e G ( x )=B. A\nx, com as constantes\nb, B ∈R+\n*, satisfaçam g(x1) = G(x1) e g(x2) = G(x2)\npara x1≠x2. Nesse caso, temos que a=A e b=B.\nIV.\nFunções quadráticas e racionais são definidas em\ntodo conjunto real.\nV.\nSe a função f é não injetora e não sobrejetora e a\nfunção g é não injetora, então função composta go f é\nnão sobrejetora.\nAssinale a opção correta.\n(A) Apenas as afirmativas II, III, IV e V são\nverdadeiras.\n(B) Apenas as afirmativas IV e V são verdadeiras.\n(C) Apenas a afirmativa III é verdadeira.\n(D) Apenas as afirmativas I, II e V são verdadeiras.\n(E) Apenas as afirmativas I, III, e V são verdadeiras.\n           \n                   5/28"
+  },
+  {
+    "numero": 11,
+    "enunciado": "No antigo reino de Algebrália havia um lendário\nartesão chamado Eudóxio, famoso por suas\nimpressionantes criações geométricas. O rei de\nAlgebrália desafiou Eudóxio a criar uma ponte\nsuspensa, seguindo a curva da função f (x )=x\n3/2  entre\nos pontos (1,1) e (4,8). Para calcular a quantidade de\nmaterial necessário, Eudóxio precisa determinar o\ncomprimento exato dessa curva. Ajude Eudóxio,\ncalculando o comprimento de arco da função f(x)\nentre os pontos fornecidos.",
+    "alternativas": {
+      "alternativa_a": "1\n27(8√10−13√13\n2\n)",
+      "alternativa_b": "1\n9(80√10−13√13\n2\n)",
+      "alternativa_c": "1\n27\n(80√10−√13)",
+      "alternativa_d": "1\n9\n(80√10−13√13)",
+      "alternativa_e": "1\n27\n(80√10−13√13)"
+    },
+    "texto_bruto": "No antigo reino de Algebrália havia um lendário\nartesão chamado Eudóxio, famoso por suas\nimpressionantes criações geométricas. O rei de\nAlgebrália desafiou Eudóxio a criar uma ponte\nsuspensa, seguindo a curva da função f (x )=x\n3/2  entre\nos pontos (1,1) e (4,8). Para calcular a quantidade de\nmaterial necessário, Eudóxio precisa determinar o\ncomprimento exato dessa curva. Ajude Eudóxio,\ncalculando o comprimento de arco da função f(x)\nentre os pontos fornecidos.\n(A) 1\n27(8√10−13√13\n2\n)\n(B) 1\n9(80√10−13√13\n2\n)\n(C) 1\n27\n(80√10−√13)\n(D) 1\n9\n(80√10−13√13)\n(E) 1\n27\n(80√10−13√13)"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Calcule o volume do sólido reto com altura h=12 em\nque sua base é definida, no primeiro quadrante, abaixo\ndos gráficos das funções g e h e acima do gráfico da\nfunção f, onde\nf (x )=x\n2−8 x+17;\ng (x )=x\n2−4 x+9; e\nh ( x )=x\n2−12x+41.",
+    "alternativas": {
+      "alternativa_a": "360 u.v.",
+      "alternativa_b": "192 u.v.",
+      "alternativa_c": "144 u.v.",
+      "alternativa_d": "72 u.v.",
+      "alternativa_e": "64 u.v.\n           \n                   6/28"
+    },
+    "texto_bruto": "Calcule o volume do sólido reto com altura h=12 em\nque sua base é definida, no primeiro quadrante, abaixo\ndos gráficos das funções g e h e acima do gráfico da\nfunção f, onde\nf (x )=x\n2−8 x+17;\ng (x )=x\n2−4 x+9; e\nh ( x )=x\n2−12x+41.\n(A) 360 u.v.\n(B) 192 u.v.\n(C) 144 u.v.\n(D) 72 u.v.\n(E) 64 u.v.\n           \n                   6/28"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Sejam α ,λ∈R, I n×n a matriz identidade de ordem n e\nJn× n a matriz com todas entradas iguais a 1, com\nordem n.\nQual o resultado do produto das matrizes\nBn×n xn×1, tal que vale a igualdade\nAn× n+Bn× n = α I n× n  + Jn× n\ncom as seguintes propriedades:\n\nP1: An×n xn× 1=λ xn×1\n\nP2:∑\ni=1\nn\nxi1=0; xn×1=[\nx11\nx21\n⋮\nxn1]\n.",
+    "alternativas": {
+      "alternativa_a": "(α +1−λ) xn×1",
+      "alternativa_b": "(α +λ) xn×1",
+      "alternativa_c": "(α −λ) xn×1",
+      "alternativa_d": "α xn× 1",
+      "alternativa_e": "λ xn×1"
+    },
+    "texto_bruto": "Sejam α ,λ∈R, I n×n a matriz identidade de ordem n e\nJn× n a matriz com todas entradas iguais a 1, com\nordem n.\nQual o resultado do produto das matrizes\nBn×n xn×1, tal que vale a igualdade\nAn× n+Bn× n = α I n× n  + Jn× n\ncom as seguintes propriedades:\n\nP1: An×n xn× 1=λ xn×1\n\nP2:∑\ni=1\nn\nxi1=0; xn×1=[\nx11\nx21\n⋮\nxn1]\n.\n(A) (α +1−λ) xn×1\n(B) (α +λ) xn×1\n(C) (α −λ) xn×1\n(D) α xn× 1\n(E) λ xn×1"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Seja X uma variável aleatória que representa altura,\nem centímetros, de alunos de um curso de estatística.\nEm uma amostra de oito alunos, observaram-se as\nalturas 160; 162; 179; 169; 162; 162; 175; 167.\nUtilizando a amostra observada, qual a média, a\nvariância, a mediana e a moda da variável aleatória X,\nrespectivamente?",
+    "alternativas": {
+      "alternativa_a": "162; 48; 167; 162",
+      "alternativa_b": "167; 56; 167; 160",
+      "alternativa_c": "162; 42; 164,5; 162",
+      "alternativa_d": "167; 56; 164; 162",
+      "alternativa_e": "167; 48; 164,5; 162\n           \n                   7/28"
+    },
+    "texto_bruto": "Seja X uma variável aleatória que representa altura,\nem centímetros, de alunos de um curso de estatística.\nEm uma amostra de oito alunos, observaram-se as\nalturas 160; 162; 179; 169; 162; 162; 175; 167.\nUtilizando a amostra observada, qual a média, a\nvariância, a mediana e a moda da variável aleatória X,\nrespectivamente?\n(A) 162; 48; 167; 162\n(B) 167; 56; 167; 160\n(C) 162; 42; 164,5; 162\n(D) 167; 56; 164; 162\n(E)  167; 48; 164,5; 162\n           \n                   7/28"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Seja S a soma de todos t ∈[0,2 π ] que satisfazem a\nigualdade\n2sec\n2 (x )cot\n2 (t )−2cot\n2(t )= A.B , onde\n•\nA=[tan\n2 (x )+cos (2x ) tan\n2(x )]\n•\nB=[2cos\n2(x )+tan\n2(x )−cos(2 x )],\n  tal que x∈(0, π\n2). \nSeja V E=S\n3 o volume da esfera E inscrita num\ncilindro C.\nSeja K o sólido formado por dois cones inscritos em\nC, tal que cada uma das bases coincide com as bases\ninferior e superior de C e vértices comum no centro\nde E.\nO sólido AC, chamado de Anticlépsidra, é a região\ninterna de C e externa de K.\nSeja V AC o volume da Anticlépsidra e Ac a área total\ndo cilindro C. \nQual é o valor de \n4 Ac\nV AC\n ?",
+    "alternativas": {
+      "alternativa_a": "18",
+      "alternativa_b": "18π\n2",
+      "alternativa_c": "18π",
+      "alternativa_d": "9 π\n2",
+      "alternativa_e": "9"
+    },
+    "texto_bruto": "Seja S a soma de todos t ∈[0,2 π ] que satisfazem a\nigualdade\n2sec\n2 (x )cot\n2 (t )−2cot\n2(t )= A.B , onde\n•\nA=[tan\n2 (x )+cos (2x ) tan\n2(x )]\n•\nB=[2cos\n2(x )+tan\n2(x )−cos(2 x )],\n  tal que x∈(0, π\n2). \nSeja V E=S\n3 o volume da esfera E inscrita num\ncilindro C.\nSeja K o sólido formado por dois cones inscritos em\nC, tal que cada uma das bases coincide com as bases\ninferior e superior de C e vértices comum no centro\nde E.\nO sólido AC, chamado de Anticlépsidra, é a região\ninterna de C e externa de K.\nSeja V AC o volume da Anticlépsidra e Ac a área total\ndo cilindro C. \nQual é o valor de \n4 Ac\nV AC\n ?\n(A) 18\n(B) 18π\n2\n(C) 18π\n(D) 9 π\n2\n(E) 9"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Um reservatório cônico está sendo cheio a uma vazão\nde 2m\n3/s. O reservatório possui 9 metros de altura e\nsua base possui 6 metros de diâmetro. O quão rápido\no nível da água está subindo quando a água estiver a 6\nmetros do topo?",
+    "alternativas": {
+      "alternativa_a": "3\n8π m/s",
+      "alternativa_b": "1\n2π m/ s",
+      "alternativa_c": "4\nπ m/s",
+      "alternativa_d": "9\n8π m/s",
+      "alternativa_e": "2\nπ m/s\n           \n                   8/28"
+    },
+    "texto_bruto": "Um reservatório cônico está sendo cheio a uma vazão\nde 2m\n3/s. O reservatório possui 9 metros de altura e\nsua base possui 6 metros de diâmetro. O quão rápido\no nível da água está subindo quando a água estiver a 6\nmetros do topo?\n(A) 3\n8π m/s\n(B) 1\n2π m/ s\n(C) 4\nπ m/s\n(D) 9\n8π m/s\n(E) 2\nπ m/s\n           \n                   8/28"
+  },
+  {
+    "numero": 17,
+    "enunciado": "A empresa de tecnologia Alfa-Ômega vai lançar um\nnovo produto em formato de paralelepípedo, com base\nquadrada. Com o objetivo de maximizar o Lucro, as\nseguintes informações são fornecidas:\nO Preço Unitário, Pu, do novo produto é\nR$ 5.000,00.\nO Custo de Produção (C p) corresponde ao valor\ngasto para se produzir um paralelepípedo com\nvolume de 1.024 cm³. O custo da base e da tampa é\nde R$ 4,00/c m\n2 e o custo das laterais é de\nR$ 2,00/cm\n2. \nO Custo Variável Cv é estimado pela função\nCv (q)=q\n3−125\n2 q\n2+(C p+4714)q−245623\n2\n,onde q\né o número de peças produzidas. \nO Custo Total (Ct) é composto pelo Custo\nVariável (Cv) e um Custo Fixo (Cf ) de\nR$\n \n15.000,00,\n \nconforme\n \na\n \nfórmula:\nCt (q)=Cv (q )+Cf.\nA Receita é calculada por R (q )=q. Pu e o Lucro\npor L (q)=R (q)−Ct (q).\nConsiderando a maximização do Lucro, a partir da\nminimização de C p, analise as afirmativas.\nI – Para que C p seja mínimo, as dimensões do novo\nproduto devem ser 4cm x 4cm x 64cm.\nII – Para maximizar o Lucro, considerando ReCt, a\nprodução deve ser de 5 unidades.\nIII – O Lucro máximo é de R$ 99.999,00.\nIV – O valor da Receita que maximiza o Lucro é de\nR$ 125.000,00.\nAssinale a opção correta.",
+    "alternativas": {
+      "alternativa_a": "Apenas as afirmativas I, II e IV são verdadeiras.",
+      "alternativa_b": "Apenas as afirmativas II e III são verdadeiras.",
+      "alternativa_c": "Apenas a afirmativa III é verdadeira.",
+      "alternativa_d": "Apenas as afirmativas II, III e IV são verdadeiras.",
+      "alternativa_e": "Apenas as afirmativas III e IV são verdadeiras.\n           \n                   9/28"
+    },
+    "texto_bruto": "A empresa de tecnologia Alfa-Ômega vai lançar um\nnovo produto em formato de paralelepípedo, com base\nquadrada. Com o objetivo de maximizar o Lucro, as\nseguintes informações são fornecidas:\nO Preço Unitário, Pu, do novo produto é\nR$ 5.000,00.\nO Custo de Produção (C p) corresponde ao valor\ngasto para se produzir um paralelepípedo com\nvolume de 1.024 cm³. O custo da base e da tampa é\nde R$ 4,00/c m\n2 e o custo das laterais é de\nR$ 2,00/cm\n2. \nO Custo Variável Cv é estimado pela função\nCv (q)=q\n3−125\n2 q\n2+(C p+4714)q−245623\n2\n,onde q\né o número de peças produzidas. \nO Custo Total (Ct) é composto pelo Custo\nVariável (Cv) e um Custo Fixo (Cf ) de\nR$\n \n15.000,00,\n \nconforme\n \na\n \nfórmula:\nCt (q)=Cv (q )+Cf.\nA Receita é calculada por R (q )=q. Pu e o Lucro\npor L (q)=R (q)−Ct (q).\nConsiderando a maximização do Lucro, a partir da\nminimização de C p, analise as afirmativas.\nI – Para que C p seja mínimo, as dimensões do novo\nproduto devem ser 4cm x 4cm x 64cm.\nII – Para maximizar o Lucro, considerando ReCt, a\nprodução deve ser de 5 unidades.\nIII – O Lucro máximo é de R$ 99.999,00.\nIV – O valor da Receita que maximiza o Lucro é de\nR$ 125.000,00.\nAssinale a opção correta.\n(A)Apenas as afirmativas I, II e IV são verdadeiras.\n(B) Apenas as afirmativas II e III são verdadeiras.\n(C) Apenas a afirmativa III é verdadeira.\n(D)Apenas as afirmativas II, III e IV são verdadeiras.\n(E) Apenas as afirmativas III e IV são verdadeiras.\n           \n                   9/28"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Sejam A1, A2, A3, A4 os quatro primeiros termos de\numa progressão geométrica, respectivamente. Sejam\na1,a2,a3,a4 os quatro primeiros termos de uma\nprogressão aritmética, respectivamente, tais que:\nA1=a4 – a3\na1=A1– 5\na2=A1+1\n a4+4 (a3 – a2)=A2+1\nSejam An o n-ésimo termo da p.g. e an o n-ésimo\ntermo da p.a. \nLogo, \nA10 A999\n5\n(a50 −1) A1000\n5\n é igual a:",
+    "alternativas": {
+      "alternativa_a": "A3\na7",
+      "alternativa_b": "a11",
+      "alternativa_c": "A3\na5",
+      "alternativa_d": "a9",
+      "alternativa_e": "A9"
+    },
+    "texto_bruto": "Sejam A1, A2, A3, A4 os quatro primeiros termos de\numa progressão geométrica, respectivamente. Sejam\na1,a2,a3,a4 os quatro primeiros termos de uma\nprogressão aritmética, respectivamente, tais que:\nA1=a4 – a3\na1=A1– 5\na2=A1+1\n a4+4 (a3 – a2)=A2+1\nSejam An o n-ésimo termo da p.g. e an o n-ésimo\ntermo da p.a. \nLogo, \nA10 A999\n5\n(a50 −1) A1000\n5\n é igual a: \n(A)\nA3\na7\n(B)\na11\n(C)\nA3\na5\n(D)\na9\n(E)\nA9"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Dadas as funções f e g definidas abaixo:\n•\nf : R→R ,f (x)=x\n2+5, com o gráfico de frestrito \nao conjunto B×C tal que B={x ∈R;|x|≥3 } e\nC={ y ∈R;|y|≤30};\n•\ng: R →R,g (x )=x\n2, com o gráfico de g restrito ao \nconjunto B× D tal que B={x ∈R;|x|≥3 } e\nD={ y∈R;|y|≤25 }.\nCalcule a área entre elas.",
+    "alternativas": {
+      "alternativa_a": "18 u.a.",
+      "alternativa_b": "20 u.a.",
+      "alternativa_c": "24 u.a.",
+      "alternativa_d": "28 u.a.",
+      "alternativa_e": "36 u.a.\n           \n                   10/28"
+    },
+    "texto_bruto": "Dadas as funções f e g definidas abaixo:\n•\nf : R→R ,f (x)=x\n2+5, com o gráfico de frestrito \nao conjunto B×C tal que B={x ∈R;|x|≥3 } e\nC={ y ∈R;|y|≤30};\n•\ng: R →R,g (x )=x\n2, com o gráfico de g restrito ao \nconjunto B× D tal que B={x ∈R;|x|≥3 } e\nD={ y∈R;|y|≤25 }.\nCalcule a área entre elas.\n(A) 18 u.a.\n(B) 20 u.a.\n(C) 24 u.a.\n(D) 28 u.a. \n(E) 36 u.a.\n           \n                   10/28"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Considere a hipérbole 9 y\n2−16 x\n2−144=0 e tome o\nponto A seu vértice no eixo y positivo e o ponto E\nseu vértice no eixo y negativo. \nTome B e D, respectivamente, como os pontos com o\nmaior e menor valor da coordenada y no lugar\ngeométrico\nx\n2+ y\n2−10 x+9=0.\nTome C e F, respectivamente, como os pontos com o\nmaior e menor valor da coordenada x no lugar\ngeométrico\n64 x\n2+121 y\n2−320 x−1536=0.\nQual a área do polígono convexo ABCDEF?",
+    "alternativas": {
+      "alternativa_a": "64 u.a.",
+      "alternativa_b": "1\n3\n(4√5−√3) u.a.",
+      "alternativa_c": "75\n2 √5 u.a.",
+      "alternativa_d": "52 u.a.",
+      "alternativa_e": "128\n3 u.a.\n           \n                   11/28"
+    },
+    "texto_bruto": "Considere a hipérbole 9 y\n2−16 x\n2−144=0 e tome o\nponto A seu vértice no eixo y positivo e o ponto E\nseu vértice no eixo y negativo. \nTome B e D, respectivamente, como os pontos com o\nmaior e menor valor da coordenada y no lugar\ngeométrico\nx\n2+ y\n2−10 x+9=0.\nTome C e F, respectivamente, como os pontos com o\nmaior e menor valor da coordenada x no lugar\ngeométrico\n64 x\n2+121 y\n2−320 x−1536=0.\nQual a área do polígono convexo ABCDEF?\n(A) 64 u.a.\n(B) 1\n3\n(4√5−√3) u.a.\n(C) 75\n2 √5 u.a.\n(D) 52 u.a.\n(E) 128\n3 u.a.\n           \n                   11/28"
+  }
+]

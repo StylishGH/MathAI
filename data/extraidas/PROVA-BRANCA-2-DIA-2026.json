@@ -1,0 +1,236 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Durante wna aula de Matemática, o professor propôs \num desafio aos alunos: construir uma matriz quadrada \nA de ordem 4 a partir de diferentes progressões \nnuméricas, com o objetivo de compreender melhor os \nconceitos de determinante e invertibilidade de \nmat1izes. \nAlém disso, o professor ressaltou a importância de \nferramentas matemáticas como o Teorema de Laplace, \nque permite o cálculo do detenninante de matrizes de \nordem superior a 2 por meio da expansão por \ncofatores. Essa técnica é especialmente útil quando \noutras abordagens ( como transfonnações elementares) \nse tornam trabalhosas ou inviáveis. O teorema pennite \nescolher uma linha ou coluna estratégica para facilitar \nos cálculos, tomando-o uma ferramenta poderosa no \nestudo da Álgebra Linear. \nPara o exercício, os alunos devem montar a matriz A, \nobedecendo às seguintes regras: \n• A 1 ª linha da matriz deve ser uma progressão \naritmética (PA) de razão 5, cujo primeiro \ntenno é 2. \n• A 2ª linha deve ser formada por uma \nprogressão geométrica (PG) de razão 3, cujo \nprimeiro termo é 1. \n• A 3ª linha deve seguir uma progressão \naritmética (PA) de razão 7, com termo inicial \nigual a4. \n• A 4ª linha deve conter uma progressão \ngeométrica (PG) de razão 2, iniciando com o \ntermo 3. \nCom base nas informações acima, monte todos os \nelementos da matriz A, utilizando as propriedades das \nprogressões indicadas. Usando o Teorema de Laplace, \nou outro método de sua preferência, calcule o \ndeterminante com valor absoluto da matriz A.",
+    "alternativas": {
+      "alternativa_a": "O",
+      "alternativa_b": "72",
+      "alternativa_c": "1176",
+      "alternativa_d": "3240",
+      "alternativa_e": "4176 \n1/26 \n\n\ns\n,:,,\"' \n,.,o \nlJ \n1..º \n•,"
+    },
+    "texto_bruto": "Durante wna aula de Matemática, o professor propôs \num desafio aos alunos: construir uma matriz quadrada \nA de ordem 4 a partir de diferentes progressões \nnuméricas, com o objetivo de compreender melhor os \nconceitos de determinante e invertibilidade de \nmat1izes. \nAlém disso, o professor ressaltou a importância de \nferramentas matemáticas como o Teorema de Laplace, \nque permite o cálculo do detenninante de matrizes de \nordem superior a 2 por meio da expansão por \ncofatores. Essa técnica é especialmente útil quando \noutras abordagens ( como transfonnações elementares) \nse tornam trabalhosas ou inviáveis. O teorema pennite \nescolher uma linha ou coluna estratégica para facilitar \nos cálculos, tomando-o uma ferramenta poderosa no \nestudo da Álgebra Linear. \nPara o exercício, os alunos devem montar a matriz A, \nobedecendo às seguintes regras: \n• A 1 ª linha da matriz deve ser uma progressão \naritmética (PA) de razão 5, cujo primeiro \ntenno é 2. \n• A 2ª linha deve ser formada por uma \nprogressão geométrica (PG) de razão 3, cujo \nprimeiro termo é 1. \n• A 3ª linha deve seguir uma progressão \naritmética (PA) de razão 7, com termo inicial \nigual a4. \n• A 4ª linha deve conter uma progressão \ngeométrica (PG) de razão 2, iniciando com o \ntermo 3. \nCom base nas informações acima, monte todos os \nelementos da matriz A, utilizando as propriedades das \nprogressões indicadas. Usando o Teorema de Laplace, \nou outro método de sua preferência, calcule o \ndeterminante com valor absoluto da matriz A. \n(A) O \n(B) 72 \n(C) 1176 \n(D) 3240 \n(E) 4176 \n1/26 \n\n\ns\n,:,,\"' \n,.,o \nlJ \n1..º \n•,"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Durante uma aula de Navegação na EFOMM, o \nprofessor \napresenta \naos \nalunos \num \ndesafio \nmatemático baseado em precisão de medições com \ninstrumentos náuticos. Um aluno usa um divisor \npara medir um segmento de 9 milhas náuticas \nrepresentado em uma carta náutica. Ele decide fazer \num exercício de precisão: \nDivide esse segmento em 3 partes iguais e remove a \nparte central; \nCom os dois segmentos restantes, repete o mesmo \nprocesso, retirando nova.mente suas partes centrais; e \nEsse processo se repete indefinidamente com os \nnovos segmentos restantes. \nCom base nesse processo, qual será a soma total das \ndistâncias retiradas após infinitas repetições?",
+    "alternativas": {
+      "alternativa_a": "2 milhas náuticas.",
+      "alternativa_b": "3 milhas náuticas.",
+      "alternativa_c": "6 milhas náuticas.",
+      "alternativa_d": "8 milhas náuticas.",
+      "alternativa_e": "9 milhas náuticas."
+    },
+    "texto_bruto": "Durante uma aula de Navegação na EFOMM, o \nprofessor \napresenta \naos \nalunos \num \ndesafio \nmatemático baseado em precisão de medições com \ninstrumentos náuticos. Um aluno usa um divisor \npara medir um segmento de 9 milhas náuticas \nrepresentado em uma carta náutica. Ele decide fazer \num exercício de precisão: \nDivide esse segmento em 3 partes iguais e remove a \nparte central; \nCom os dois segmentos restantes, repete o mesmo \nprocesso, retirando nova.mente suas partes centrais; e \nEsse processo se repete indefinidamente com os \nnovos segmentos restantes. \nCom base nesse processo, qual será a soma total das \ndistâncias retiradas após infinitas repetições? \n(A) 2 milhas náuticas. \n(B) 3 milhas náuticas. \n(C) 6 milhas náuticas. \n(D) 8 milhas náuticas. \n(E) 9 milhas náuticas."
+  },
+  {
+    "numero": 3,
+    "enunciado": "A Escola de F onnação de Oficiais da Marinha \nMercante (EFOMM) decidiu modernizar sua frota \nde navios de inst:mção e colocou à venda o Navio \nSirius, cujo valor à vista é de R$ 150.000.000,00. \nUma empresa de transporte marítimo, a \"Rotas \nNavegáveis\", tem a opção de dar wna entrada de R$ \n65.000.000,00 e parcelar o restante em sete \nprestações dispostas em uma progressão geométrica. \nAo fechar o negócio, a empresa foi informada de \nque a terceira parcela seria de R$ 9.600.000,00 e a \nquinta parcela seria de R$ 1.536.000,00. \nQuanto a empresa \"Rotas Navegáveis\" terá de \ndesembolsar no total para adquirir o Navio Sirius?",
+    "alternativas": {
+      "alternativa_a": "R$ 121.350.160,00",
+      "alternativa_b": "R$ 124.890.160,00",
+      "alternativa_c": "R$ 130.344.160,00",
+      "alternativa_d": "R$ 132.789.160,00",
+      "alternativa_e": "R$ 164.836.160,00 \n2/26 \nPS-HO~f.M 2026"
+    },
+    "texto_bruto": "A Escola de F onnação de Oficiais da Marinha \nMercante (EFOMM) decidiu modernizar sua frota \nde navios de inst:mção e colocou à venda o Navio \nSirius, cujo valor à vista é de R$ 150.000.000,00. \nUma empresa de transporte marítimo, a \"Rotas \nNavegáveis\", tem a opção de dar wna entrada de R$ \n65.000.000,00 e parcelar o restante em sete \nprestações dispostas em uma progressão geométrica. \nAo fechar o negócio, a empresa foi informada de \nque a terceira parcela seria de R$ 9.600.000,00 e a \nquinta parcela seria de R$ 1.536.000,00. \nQuanto a empresa \"Rotas Navegáveis\" terá de \ndesembolsar no total para adquirir o Navio Sirius? \n(A) R$ 121.350.160,00 \n(B) R$ 124.890.160,00 \n(C) R$ 130.344.160,00 \n(D)R$ 132.789.160,00 \n(E) R$ 164.836.160,00 \n2/26 \nPS-HO~f.M 2026"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Durante uma missão de patrulhamento marítimo, \ndois navios da Marinha do Brasil -\no Navio Garnier \nSampaio e o Navio Bocaina -\nestão navegando em \nrotas \ndefinidas \nno \nespaço \ntridimensional, \nconsiderando latitude, longitude e altitude ( devido a \nsensores atmosféricos a bordo). \nA trajetória do Navio Garnier Sampaio está descrita \npor uma reta r, dada na fonna vetorial: \nr: X= (l,2,-l)+t(2,-l,4), tER \nO Navio Bocaina, por outro lado, reportou sua \nposição atual como sendo o ponto: P=(5,3,2) \nCom base nas inf onnações acima, responda: \nQual é a distância entre o Navio Bocaina (ponto P) \ne a rota do Navio Garnier Sampaio (reta r)?",
+    "alternativas": {
+      "alternativa_a": "15/26 \n26",
+      "alternativa_b": "11 ✓-21 \n21",
+      "alternativa_c": "13 ✓21 \n21",
+      "alternativa_d": "✓ 3885 \n21 \n1-",
+      "alternativa_e": "5, 5 \n5"
+    },
+    "texto_bruto": "Durante uma missão de patrulhamento marítimo, \ndois navios da Marinha do Brasil -\no Navio Garnier \nSampaio e o Navio Bocaina -\nestão navegando em \nrotas \ndefinidas \nno \nespaço \ntridimensional, \nconsiderando latitude, longitude e altitude ( devido a \nsensores atmosféricos a bordo). \nA trajetória do Navio Garnier Sampaio está descrita \npor uma reta r, dada na fonna vetorial: \nr: X= (l,2,-l)+t(2,-l,4), tER \nO Navio Bocaina, por outro lado, reportou sua \nposição atual como sendo o ponto: P=(5,3,2) \nCom base nas inf onnações acima, responda: \nQual é a distância entre o Navio Bocaina (ponto P) \ne a rota do Navio Garnier Sampaio (reta r)? \n(A) 15/26 \n26 \n(B) 11 ✓-21 \n21 \n(C) 13 ✓21 \n21 \n(D) ✓ 3885 \n21 \n1-\n(E) 5, 5 \n5"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Em uma iniciativa da Marinha Mercante Brasileira \npara aprimorar a qualificação de seus tripulantes, \numa pesquisa foi conduzida para investigar a \nquantidade de horas semanais que um grupo de nove \nfuncionários dedicou a atividades de treinamento \nprofissional em uma empresa de navegação parceira. \nOs dados registrados foram os seguintes: \n5,6,7,9, 10, 1~ 12, 12, 14, 15 \nCom base nesses dados, o cálculo do desvio padrão \ne do desvio médio populacionais das horas de \ntr~inamento será de aproximadamente:",
+    "alternativas": {
+      "alternativa_a": "desvio padrão: 10; desvio médio: 2,6.",
+      "alternativa_b": "desvio padrão: 3,16; desvio médio: 2,6.",
+      "alternativa_c": "desvio padrão: 3,16; desvio médio: 10.",
+      "alternativa_d": "desvio padrão: 2,6; desvio médio: 3,16.",
+      "alternativa_e": "desvio padrão: 2,6; desvio médio: 1 O. \n3/26"
+    },
+    "texto_bruto": "Em uma iniciativa da Marinha Mercante Brasileira \npara aprimorar a qualificação de seus tripulantes, \numa pesquisa foi conduzida para investigar a \nquantidade de horas semanais que um grupo de nove \nfuncionários dedicou a atividades de treinamento \nprofissional em uma empresa de navegação parceira. \nOs dados registrados foram os seguintes: \n5,6,7,9, 10, 1~ 12, 12, 14, 15 \nCom base nesses dados, o cálculo do desvio padrão \ne do desvio médio populacionais das horas de \ntr~inamento será de aproximadamente: \n(A) desvio padrão: 10; desvio médio: 2,6. \n(B) desvio padrão: 3,16; desvio médio: 2,6. \n(C) desvio padrão: 3,16; desvio médio: 10. \n(D) desvio padrão: 2,6; desvio médio: 3,16. \n(E) desvio padrão: 2,6; desvio médio: 1 O. \n3/26"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Em uma missão de logística transatlântica, a equipe \nde engenharia do cargueiro Atlàntis VI, da Marinha \nMercante Brasileira, foi encarregada de simular o \ndesempenho do navio em diferentes condições \nclimáticas e de carga. O objetivo era prever o \ncomportamento do sistema de propulsão do navio ao \natravessar \numa região \nturbulenta do \noceano \nAtlântico, conhecida por seus redemoinhos e \ncorrentes contrárias. \nDurante os testes, os engenheiros perceberam que a \nforça de propulsão líquida, ou seja, a força efetiva \nque impulsiona o navio para frente, descontadas as \nforças de resistência da água, variava com o tempo \nde forma não linear. Eles modelaram essa variação \nutilizando uma função matemática que relacionava o \ntempo x, a carga embarcada e à resistência \nhidrodinâmica do casco. Após vários ajustes, \nchegaram à seguinte expressão: \nEssa expressão representa a variação da força de \npropulsão líquida em função do tempo x, medida em \nunidades padronizadas ao longo da travessia. \nSabendo que o termo independente de x ( aquele que \nrepresenta um valor constante da força, sem \ndepender diretamente do tempo) é essencial para \navaliar a estabilidade média do navio durante a \ntravessia, os engenheiros solicitaram seu cálculo. \nCom base nesse modelo, qual é o valor do termo \nindependente de x na expansão da expressão acima?",
+    "alternativas": {
+      "alternativa_a": "156381",
+      "alternativa_b": "132300",
+      "alternativa_c": "-124416",
+      "alternativa_d": "-145152",
+      "alternativa_e": "-967680 \n4/26 \nPS-EFOM1v1 2026"
+    },
+    "texto_bruto": "Em uma missão de logística transatlântica, a equipe \nde engenharia do cargueiro Atlàntis VI, da Marinha \nMercante Brasileira, foi encarregada de simular o \ndesempenho do navio em diferentes condições \nclimáticas e de carga. O objetivo era prever o \ncomportamento do sistema de propulsão do navio ao \natravessar \numa região \nturbulenta do \noceano \nAtlântico, conhecida por seus redemoinhos e \ncorrentes contrárias. \nDurante os testes, os engenheiros perceberam que a \nforça de propulsão líquida, ou seja, a força efetiva \nque impulsiona o navio para frente, descontadas as \nforças de resistência da água, variava com o tempo \nde forma não linear. Eles modelaram essa variação \nutilizando uma função matemática que relacionava o \ntempo x, a carga embarcada e à resistência \nhidrodinâmica do casco. Após vários ajustes, \nchegaram à seguinte expressão: \nEssa expressão representa a variação da força de \npropulsão líquida em função do tempo x, medida em \nunidades padronizadas ao longo da travessia. \nSabendo que o termo independente de x ( aquele que \nrepresenta um valor constante da força, sem \ndepender diretamente do tempo) é essencial para \navaliar a estabilidade média do navio durante a \ntravessia, os engenheiros solicitaram seu cálculo. \nCom base nesse modelo, qual é o valor do termo \nindependente de x na expansão da expressão acima? \n(A) 156381 \n(B) 132300 \n(C) -124416 \n(D)-145152 \n(E)-967680 \n4/26 \nPS-EFOM1v1 2026"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Em um estudo recente do Centro de Instrução \nAlmirante Graça Aranha (CIAGA) sobre os hábitos \nde leitura dos alunos do primeiro e segundo ano da \nEFOMM (Escola de Formação de Oficiais da \nMarinha Mercante), foram avaliados os tempos \nmédios diários que eles dedicam à leitura em suas \ndisciplinas. Os dados coletados em uma amostra \ndesses alunos revelaram que a média dos tempos de \nleitura diária é de 36 minutos, enquanto a maior \nparte deles dedica exatamente 30 minutos diários à \nleitura, o que representa a moda dos dados. \nO CIAGA considera que o conhecimento da \nmediana é crucial para entender a distribuição dos \ntempos de leitura, pois ela indica o valor central que \ndivide o grupo ao meio, auxiliando na otimização \ndos planos de estudo. Com base nessas inf onnações, \nestime o valor aproximado da mediana desse \nconjunto de dados de tempos de leitura, utilizando a \nrelação empírica entre média, moda e mediana.",
+    "alternativas": {
+      "alternativa_a": "31 minutos.",
+      "alternativa_b": "32 minutos.",
+      "alternativa_c": "33 minutos.",
+      "alternativa_d": "34 minutos.",
+      "alternativa_e": "35 minutos."
+    },
+    "texto_bruto": "Em um estudo recente do Centro de Instrução \nAlmirante Graça Aranha (CIAGA) sobre os hábitos \nde leitura dos alunos do primeiro e segundo ano da \nEFOMM (Escola de Formação de Oficiais da \nMarinha Mercante), foram avaliados os tempos \nmédios diários que eles dedicam à leitura em suas \ndisciplinas. Os dados coletados em uma amostra \ndesses alunos revelaram que a média dos tempos de \nleitura diária é de 36 minutos, enquanto a maior \nparte deles dedica exatamente 30 minutos diários à \nleitura, o que representa a moda dos dados. \nO CIAGA considera que o conhecimento da \nmediana é crucial para entender a distribuição dos \ntempos de leitura, pois ela indica o valor central que \ndivide o grupo ao meio, auxiliando na otimização \ndos planos de estudo. Com base nessas inf onnações, \nestime o valor aproximado da mediana desse \nconjunto de dados de tempos de leitura, utilizando a \nrelação empírica entre média, moda e mediana. \n(A) 31 minutos. \n(B) 32 minutos. \n(C) 33 minutos. \n(D) 34 minutos. \n(E) 35 minutos."
+  },
+  {
+    "numero": 8,
+    "enunciado": "Um balde em forma de tronco de cone, com altura \nde 1 m, raio do fundo de 0,3 m e raio do topo de \n0,6 m, está sendo preenchido com água a uma taxa \nconstante de 5 m3 /min. A água mantém a forma do \ntronco de cone enquanto enche o balde. A que taxa, \naproximadamente, a altura da água está aumentando \nno instante em que ela atinge 0,5 m de altura?",
+    "alternativas": {
+      "alternativa_a": "50/7t m/min",
+      "alternativa_b": "27,5htmlrnin",
+      "alternativa_c": "25/rt m/min",
+      "alternativa_d": "12,5/rtm/min",
+      "alternativa_e": "10/rt m/min \n5/26 \nPS-EFO.MM 2026 \n\n\n✓ \n~ \no \n~ \n~ \nf"
+    },
+    "texto_bruto": "Um balde em forma de tronco de cone, com altura \nde 1 m, raio do fundo de 0,3 m e raio do topo de \n0,6 m, está sendo preenchido com água a uma taxa \nconstante de 5 m3 /min. A água mantém a forma do \ntronco de cone enquanto enche o balde. A que taxa, \naproximadamente, a altura da água está aumentando \nno instante em que ela atinge 0,5 m de altura? \n(A) 50/7t m/min \n(B) 27,5htmlrnin \n(C) 25/rt m/min \n(D) 12,5/rtm/min \n(E) 10/rt m/min \n5/26 \nPS-EFO.MM 2026 \n\n\n✓ \n~ \no \n~ \n~ \nf"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Considere que você está participando de um desafio \nde lógica proposto pela EFOMM (Escola de \nFormação de Oficiais da Marinha Mercante), uma \ninstituição de ensino superior militar do Brasil, \nresponsável pela fonnação de Oficiais da Marinha \nMercante. Para testar suas habilidades de raciocínio \nlógico e numérico, foi criada a sequência S(n), \ndefinida pelas seguintes etapas: \n• Liste todos os números PARES de 2 até n. \n• Elimine todos os múltiplos de 6 (exceto o 6), \ndepois os múltiplos de 8 ( exceto o 8), e os \nmúltiplos de 1 O ( exceto o 1 O). \n• Atribua a cada número sobrevivente, na ordem \ncrescente, uma letra da sigla EFOMM, repetindo-\n-a ciclicamente. \nPor exemplo: \n• S(l)= 2-+ E \n• S(2)= 4-+ F \n• S(3)= 6-+ O \n• S(4)= 8-+ M \n• S(5)= 10-+ M \n• S(6)= 14-+ E \nQual é a letra, destacada nas opções abaixo, que está \nassociada ao número 2026 dentro da sequência de \nsobreviventes?",
+    "alternativas": {
+      "alternativa_a": "@)F OMM",
+      "alternativa_b": "E@oMM",
+      "alternativa_c": "EF~M",
+      "alternativa_d": "EFO~",
+      "alternativa_e": "EFOM~ \n6/26 \n\n\nI \n/ \nProcesso Seletivo EFOMM 2026 - Exao1c de Conhccio1cntos .......................................................... • ...... .."
+    },
+    "texto_bruto": "Considere que você está participando de um desafio \nde lógica proposto pela EFOMM (Escola de \nFormação de Oficiais da Marinha Mercante), uma \ninstituição de ensino superior militar do Brasil, \nresponsável pela fonnação de Oficiais da Marinha \nMercante. Para testar suas habilidades de raciocínio \nlógico e numérico, foi criada a sequência S(n), \ndefinida pelas seguintes etapas: \n• Liste todos os números PARES de 2 até n. \n• Elimine todos os múltiplos de 6 (exceto o 6), \ndepois os múltiplos de 8 ( exceto o 8), e os \nmúltiplos de 1 O ( exceto o 1 O). \n• Atribua a cada número sobrevivente, na ordem \ncrescente, uma letra da sigla EFOMM, repetindo-\n-a ciclicamente. \nPor exemplo: \n• S(l)= 2-+ E \n• S(2)= 4-+ F \n• S(3)= 6-+ O \n• S(4)= 8-+ M \n• S(5)= 10-+ M \n• S(6)= 14-+ E \nQual é a letra, destacada nas opções abaixo, que está \nassociada ao número 2026 dentro da sequência de \nsobreviventes? \n(A)@)F OMM \n(B)E@oMM \n(C)EF~M \n(D)EFO~ \n(E)EFOM~ \n6/26 \n\n\nI \n/ \nProcesso Seletivo EFOMM 2026 - Exao1c de Conhccio1cntos .......................................................... • ...... .."
+  },
+  {
+    "numero": 10,
+    "enunciado": "Um terreno triangular equilátero possui, em seu \ninterior, \numa árvore \nplantada. \nAs \ndistâncias \nperpendiculares dessa árvore até cada um dos três \nlados do terreno medem 3m, 4m e 5m. Qual a área \ndo terreno em metros quadrados?",
+    "alternativas": {
+      "alternativa_a": "48 ✓3m\n2",
+      "alternativa_b": "36{3m2",
+      "alternativa_c": "24./3m2",
+      "alternativa_d": "24{2m2",
+      "alternativa_e": "12✓2m"
+    },
+    "texto_bruto": "Um terreno triangular equilátero possui, em seu \ninterior, \numa árvore \nplantada. \nAs \ndistâncias \nperpendiculares dessa árvore até cada um dos três \nlados do terreno medem 3m, 4m e 5m. Qual a área \ndo terreno em metros quadrados? \n(A) 48 ✓3m\n2 \n(B) 36{3m2 \n(C) 24./3m2 \n(D) 24{2m2 \n(E) 12✓2m"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Um navio está localizado no ponto ( 2, ½) de um \nmapa cartesiano, com coordenadas em quilômetros. \nNesse mapa, as rotas marítimas estão representadas \npela curva definida pela equação l-l+4x-8=0, \nconsiderando todos os pontos reais que satisfazem \nessa equação. Qual é a distância mínima, em \nquilômetros, entre o navio e essa rota marítima?",
+    "alternativas": {
+      "alternativa_a": "0km",
+      "alternativa_b": "1km",
+      "alternativa_c": "1.5km",
+      "alternativa_d": "2km",
+      "alternativa_e": "2.5km \n7/26 \nPS-EFO?vfM 2026 \n\n\n~\n,.,,e \n~ \ne,; \n\"'º \n• \n................................ \n4,: \nProcesso Seletivo EFOMM 2026 - Exame de Conhec1meotos ...... \" .... \"\" .. \"\"\"\" \n........ ."
+    },
+    "texto_bruto": "Um navio está localizado no ponto ( 2, ½) de um \nmapa cartesiano, com coordenadas em quilômetros. \nNesse mapa, as rotas marítimas estão representadas \npela curva definida pela equação l-l+4x-8=0, \nconsiderando todos os pontos reais que satisfazem \nessa equação. Qual é a distância mínima, em \nquilômetros, entre o navio e essa rota marítima? \n(A) 0km \n(B) 1km \n(C) 1.5km \n(D) 2km \n(E) 2.5km \n7/26 \nPS-EFO?vfM 2026 \n\n\n~\n,.,,e \n~ \ne,; \n\"'º \n• \n................................ \n4,: \nProcesso Seletivo EFOMM 2026 - Exame de Conhec1meotos ...... \" .... \"\" .. \"\"\"\" \n........ ."
+  },
+  {
+    "numero": 12,
+    "enunciado": "Um engenheiro projetou um componente metálico \nna fonna de um sólido de revolução gerado pela \nrotação, em tomo do eixo x, da região delimitada \npela curva \ny=sec(x) , pela reta horizontal \ny=4 \nSrr \nx=-\n12 \ne pelas retas verticais \n7T \nx=-3 \ne \nCom base nessa construção, detennine o volume do \nsólido gerado.",
+    "alternativas": {
+      "alternativa_a": "4 7T 2 \nV=--+2rr \n3",
+      "alternativa_b": "4rr 2 \nV=--2rr \n3",
+      "alternativa_c": "3rr 2 \nV=--2rr \n4",
+      "alternativa_d": "2rr 2 \nV=-+2rr \n3",
+      "alternativa_e": "2 7r2 \nV=--2rr \n3"
+    },
+    "texto_bruto": "Um engenheiro projetou um componente metálico \nna fonna de um sólido de revolução gerado pela \nrotação, em tomo do eixo x, da região delimitada \npela curva \ny=sec(x) , pela reta horizontal \ny=4 \nSrr \nx=-\n12 \ne pelas retas verticais \n7T \nx=-3 \ne \nCom base nessa construção, detennine o volume do \nsólido gerado. \n(A) \n4 7T 2 \nV=--+2rr \n3 \n(B) \n4rr 2 \nV=--2rr \n3 \n(C) \n3rr 2 \nV=--2rr \n4 \n(D) \n2rr 2 \nV=-+2rr \n3 \n(E) \n2 7r2 \nV=--2rr \n3"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Imagine que você está imerso em um desafio de \nlógica inspirado pela grandeza do maior campeão do \nBrasil: o Palmeiras. Com seus impressionantes 12 \ntítulos brasileiros, o clube paulista é uma força \nincontestável na história do nosso futebol e também \nwn dos melhores times da América do Sul. De fato, \nentre 2015 e 2025, ninguém triunfou mais nesse \nperíodo do que essa \"Nova Academia\", empilhando \ntítulos com uma consistência notável. \nSua tarefa é descobrir quantos anagramas diferentes \npodem ser formados a partir das letras da palavra \n\"PALMEIRAS\", mas com wna condição especial e \nrigorosa: \nnenhuma \nconsoante \npode \naparecer \nconsecutivamente. \nQual das alternativas abaixo representa o número \ncorreto de anagramas que atendem a essa condição?",
+    "alternativas": {
+      "alternativa_a": "720",
+      "alternativa_b": "960",
+      "alternativa_c": "1440",
+      "alternativa_d": "2880",
+      "alternativa_e": "5760 \n8/26 \nPS-EFOl\\Hvl '.!026"
+    },
+    "texto_bruto": "Imagine que você está imerso em um desafio de \nlógica inspirado pela grandeza do maior campeão do \nBrasil: o Palmeiras. Com seus impressionantes 12 \ntítulos brasileiros, o clube paulista é uma força \nincontestável na história do nosso futebol e também \nwn dos melhores times da América do Sul. De fato, \nentre 2015 e 2025, ninguém triunfou mais nesse \nperíodo do que essa \"Nova Academia\", empilhando \ntítulos com uma consistência notável. \nSua tarefa é descobrir quantos anagramas diferentes \npodem ser formados a partir das letras da palavra \n\"PALMEIRAS\", mas com wna condição especial e \nrigorosa: \nnenhuma \nconsoante \npode \naparecer \nconsecutivamente. \nQual das alternativas abaixo representa o número \ncorreto de anagramas que atendem a essa condição? \n(A)720 \n(B) 960 \n(C) 1440 \n(D) 2880 \n(E) 5760 \n8/26 \nPS-EFOl\\Hvl '.!026"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Uma empresa de telecomunicações pretende instalar \num cabo entre wna estação E, loca1izada na margem \noeste de um rio reto que possui 2 km de largura, e \num ponto de destino D, situado na margem leste, 8 \nkm rio abaixo em relação ao ponto da margem \ndiretamente oposta a E. A instalação do cabo pode \nser feita de duas maneiras: sob a água, atravessando \no rio em linha reta até um ponto F, que pode ser \nescolhido livremente na margem leste, e, a partir \ndesse ponto, por terra até o destino D, seguindo pela \nmargem do rio. Sabe-se que o custo de instalação do \ncabo subaquático é 60% superior ao custo por \nquilômetro em terra firme. A empresa deseja \nescolher o ponto F de fonna a minimizar o custo \ntotal da instalação. Nessas condições, a que distância \naproximadamente, medida ao longo da margem \nleste, o ponto F deve ser posicionado em relação ao \nponto de destino D, para que o custo total seja o \nmenor possível? (Suponha as margens do rio \nretilíneas e paralelas).",
+    "alternativas": {
+      "alternativa_a": "6,4 km",
+      "alternativa_b": "5,2 km",
+      "alternativa_c": "4,8 km",
+      "alternativa_d": "2,8 km",
+      "alternativa_e": "1,6 km"
+    },
+    "texto_bruto": "Uma empresa de telecomunicações pretende instalar \num cabo entre wna estação E, loca1izada na margem \noeste de um rio reto que possui 2 km de largura, e \num ponto de destino D, situado na margem leste, 8 \nkm rio abaixo em relação ao ponto da margem \ndiretamente oposta a E. A instalação do cabo pode \nser feita de duas maneiras: sob a água, atravessando \no rio em linha reta até um ponto F, que pode ser \nescolhido livremente na margem leste, e, a partir \ndesse ponto, por terra até o destino D, seguindo pela \nmargem do rio. Sabe-se que o custo de instalação do \ncabo subaquático é 60% superior ao custo por \nquilômetro em terra firme. A empresa deseja \nescolher o ponto F de fonna a minimizar o custo \ntotal da instalação. Nessas condições, a que distância \naproximadamente, medida ao longo da margem \nleste, o ponto F deve ser posicionado em relação ao \nponto de destino D, para que o custo total seja o \nmenor possível? (Suponha as margens do rio \nretilíneas e paralelas). \n(A) 6,4 km \n(B) 5,2 km \n(C) 4,8 km \n(D) 2,8 km \n(E) 1,6 km"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Sejam v e t números complexos, em que lvl=2 e seu \n0=75º, enquanto t tem coordenadas no Plano de \nArgan-Gauss \n(-4,0). \nSabe-se \nque \no \nnúmero \ncomplexo z satisfaz a equação z-v=t . \nCom base nessas informações, calcule \nz5 \ne \nassinale a alternativa correta.",
+    "alternativas": {
+      "alternativa_a": "8( ✓6+ ✓2)+8i(-✓6+✓2)",
+      "alternativa_b": "8(- ✓6+ ✓2)+8 i(- ✓6- ✓2)",
+      "alternativa_c": "8(- ✓6+ ✓2)+8i(✓6+✓2)",
+      "alternativa_d": "8( ✓6- ✓2)+8i(- ✓6- ✓2)",
+      "alternativa_e": "8(- ✓6- ✓2)+8i( ✓6- ✓2) \n9/26 \nPS-E.FOI\\ fl\\ 1 :o::o \n\n\n'\n.,.o \nl'' \n\"' \n,º \n~"
+    },
+    "texto_bruto": "Sejam v e t números complexos, em que lvl=2 e seu \n0=75º, enquanto t tem coordenadas no Plano de \nArgan-Gauss \n(-4,0). \nSabe-se \nque \no \nnúmero \ncomplexo z satisfaz a equação z-v=t . \nCom base nessas informações, calcule \nz5 \ne \nassinale a alternativa correta. \n(A) \n8( ✓6+ ✓2)+8i(-✓6+✓2) \n(B) \n8(- ✓6+ ✓2)+8 i(- ✓6- ✓2) \n(C) \n8(- ✓6+ ✓2)+8i(✓6+✓2) \n(D) \n8( ✓6- ✓2)+8i(- ✓6- ✓2) \n(E) \n8(- ✓6- ✓2)+8i( ✓6- ✓2) \n9/26 \nPS-E.FOI\\ fl\\ 1 :o::o \n\n\n'\n.,.o \nl'' \n\"' \n,º \n~"
+  },
+  {
+    "numero": 16,
+    "enunciado": "No processo de construção de embarcações, os \nestaleiros frequentemente projetam reservatórios \ncom diferentes geometrias, buscando otimizar o \nespaço interno da embarcação e garantir estabilidade \ne eficiência. \nEm um determinado projeto, foi especificado um \nreservatório no formato de prisma triangular reto, \nque será instalado no porão de wna embarcação de \nmédio porte. As dimensões desse reservatório foram \ndefinidas a partir de cálculos técnicos, sendo que a \naltura do prisma é igual a \nx1 x2 \n, e o triângulo que \nfonna sua base possui base igual a \nx3x4 e altura \nXsXG \n• \nSabendo-se que \nXpX 2,x3,x4,x5 e x6E IR , tais \nque \n2x'=4 ; 3x'= 5; 4x'=6 ; Sx'=7 ; 6x'=8 e \n7~=9 , calcule o volwne desse reservatório, em \nmetros cúbicos.",
+    "alternativas": {
+      "alternativa_a": "2 m3",
+      "alternativa_b": "3 m3",
+      "alternativa_c": "4 m3",
+      "alternativa_d": "8 m3",
+      "alternativa_e": "9 m3"
+    },
+    "texto_bruto": "No processo de construção de embarcações, os \nestaleiros frequentemente projetam reservatórios \ncom diferentes geometrias, buscando otimizar o \nespaço interno da embarcação e garantir estabilidade \ne eficiência. \nEm um determinado projeto, foi especificado um \nreservatório no formato de prisma triangular reto, \nque será instalado no porão de wna embarcação de \nmédio porte. As dimensões desse reservatório foram \ndefinidas a partir de cálculos técnicos, sendo que a \naltura do prisma é igual a \nx1 x2 \n, e o triângulo que \nfonna sua base possui base igual a \nx3x4 e altura \nXsXG \n• \nSabendo-se que \nXpX 2,x3,x4,x5 e x6E IR , tais \nque \n2x'=4 ; 3x'= 5; 4x'=6 ; Sx'=7 ; 6x'=8 e \n7~=9 , calcule o volwne desse reservatório, em \nmetros cúbicos. \n(A) 2 m3 \n(B) 3 m3 \n(C) 4 m3 \n(D) 8 m3 \n(E) 9 m3"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Uma escola com 120 alunos realizou uma pesquisa \nque informou sobre a prática de três esportes: \nFutebol, Basquete e Vôlei. Verificou-se que 65 \nalunos praticam Futebol, 50 praticam Basquete, 40 \npraticam Vôlei, 20 praticam Futebol e Basquete, 25 \npraticam Futebol e Vôlei, 15 praticam Basquete e \nVôlei, 10 praticam os três esportes e 15 alunos não \npraticam nenhwn esporte. Seja A a probabilidade de \num aluno escolhido ao acaso praticar exatamente um \ndos esportes e B a probabilidade de um aluno \nescolhido ao acaso praticar pelo menos dois \n• \n2 \nesportes, o resultado da expressão: ( ~ \n)+3B \né \n3 \naproximadamente:",
+    "alternativas": {
+      "alternativa_a": "1,05",
+      "alternativa_b": "1,10",
+      "alternativa_c": "1,15",
+      "alternativa_d": "1,20",
+      "alternativa_e": "1,25 \n10/26 \nPS-EFOl\\ li\\ 1 '.!026"
+    },
+    "texto_bruto": "Uma escola com 120 alunos realizou uma pesquisa \nque informou sobre a prática de três esportes: \nFutebol, Basquete e Vôlei. Verificou-se que 65 \nalunos praticam Futebol, 50 praticam Basquete, 40 \npraticam Vôlei, 20 praticam Futebol e Basquete, 25 \npraticam Futebol e Vôlei, 15 praticam Basquete e \nVôlei, 10 praticam os três esportes e 15 alunos não \npraticam nenhwn esporte. Seja A a probabilidade de \num aluno escolhido ao acaso praticar exatamente um \ndos esportes e B a probabilidade de um aluno \nescolhido ao acaso praticar pelo menos dois \n• \n2 \nesportes, o resultado da expressão: ( ~ \n)+3B \né \n3 \naproximadamente: \n(A) 1,05 \n(B) 1,10 \n(C) 1,15 \n(D) 1,20 \n(E) 1,25 \n10/26 \nPS-EFOl\\ li\\ 1 '.!026"
+  },
+  {
+    "numero": 18,
+    "enunciado": "A soma dos quadrados das funções circulares seno, \n2n \ncosseno e tangente do arco 5 , sabendo-se que o \nlado do pentágono regular estrelado, inscrito em um \ncírculo de raio unitário, é ½ ✓10+2\\/S , vale:",
+    "alternativas": {},
+    "texto_bruto": "A soma dos quadrados das funções circulares seno, \n2n \ncosseno e tangente do arco 5 , sabendo-se que o \nlado do pentágono regular estrelado, inscrito em um \ncírculo de raio unitário, é ½ ✓10+2\\/S , vale: \n(A) 2( 3 + ½Js ) \n(B) 3(2 + ✓5 ) \n(C) 2( 3 + ✓5 ) \nCD) 3 + .Js \n(E) 2 + ✓5"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Considerando que os vértices opostos de um \nparalelogramo são A=(0,b) e B=(4,-l), e qUe um \noutro vértice é C=(6,a), o valor de (a+ b), sabendo-\nse que a reta que contém a diagonal que passa pelos \npontos C e D tem equação ~=2 é· \ny \n' •",
+    "alternativas": {
+      "alternativa_a": "2",
+      "alternativa_b": "3",
+      "alternativa_c": "4",
+      "alternativa_d": "5",
+      "alternativa_e": "6"
+    },
+    "texto_bruto": "Considerando que os vértices opostos de um \nparalelogramo são A=(0,b) e B=(4,-l), e qUe um \noutro vértice é C=(6,a), o valor de (a+ b), sabendo-\nse que a reta que contém a diagonal que passa pelos \npontos C e D tem equação ~=2 é· \ny \n' • \n(A) 2 \n(B) 3 \n(C) 4 \n(D) 5 \n(E) 6"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Uma escola está organizando um Conselho Escolar \ncom os seguintes critérios: \n3 professores, 2 \nestudantes \ne \n1 responsável. \nPara tal, \nestão \ndisponíveis: \n6 professores ( P 1 \na \nP 6 ), 5 \nestudantes ( E 1 a E 5 ) e 3 responsáveis ( R1 a \nR3 ). Entretanto, existem duas restrições: \n- Se o professor P 1 for escolhido, o estudante E 1 \nnão pode ser selecionado; \n- O responsável \nR3 \nsó pode participar se o \nprofessor P 6 também for escolhido. \nA quantidade de fonnas diferentes como esse \nconselho pode ser formado, respeitando as condições \nacima, é:",
+    "alternativas": {
+      "alternativa_a": "0,79 s",
+      "alternativa_b": "0,84 s",
+      "alternativa_c": "0,93 s",
+      "alternativa_d": "1,15 s",
+      "alternativa_e": "1,26 s \n12/26 \n~ \nPS-Efm.lM :0'.!6"
+    },
+    "texto_bruto": "Uma escola está organizando um Conselho Escolar \ncom os seguintes critérios: \n3 professores, 2 \nestudantes \ne \n1 responsável. \nPara tal, \nestão \ndisponíveis: \n6 professores ( P 1 \na \nP 6 ), 5 \nestudantes ( E 1 a E 5 ) e 3 responsáveis ( R1 a \nR3 ). Entretanto, existem duas restrições: \n- Se o professor P 1 for escolhido, o estudante E 1 \nnão pode ser selecionado; \n- O responsável \nR3 \nsó pode participar se o \nprofessor P 6 também for escolhido. \nA quantidade de fonnas diferentes como esse \nconselho pode ser formado, respeitando as condições \nacima, é: \n(A) 404 \n(B) 420 \n(C) 440 \n(D)460 \n(E) 480 \n11/26 \n\n\n~ \n~e, \n'-!,0 \nl \n'•, \n~ \nUtilize o valor g = 10 m/s2 para a aceleração da \ngravidade, a menos que seja determinado o \ncontrário em alguma questão \n21n Questão \nA Figura 1 mostra um instante qualquer do \nmovimento de 2 (dois) blocos idênticos com massas \niguais e formato cúbico. Eles se ajustam sem folga \nna guia e podem se mover em linha reta sem atrito. \nFigura 1 \nOs blocos são conectados por uma barra rígida com \nlm de comprimento e massa desprezível. As \nconexões no topo de cada bloco são articuladas, o \nque permite a rotação da barra durante o movimento. \nO sistema é inicialmente colocado em repouso na \nconfiguração ilustrada em vista superior na Figura 2. \ny \nLX \nFigura 2 \nO bloco da direita é lançado na direção y com \nvelocidade inicial de 2 m/s, movimentando o outro \nbloco ao longo da direção x. \n. \nEscrevendo as equações da conservação de energia \nmecânica e do vínculo geométrico do problema, é \npossível fazer uma analogia entre o movimento _dos \nblocos e outro tipo de movimento bem conhecido. \nAssinale a alternativa que mais se aproxima do \ntempo necessário para que o bloco da esquerda \nchegue à extremidade direita. \n(A) 0,79 s \n(B) 0,84 s \n(C) 0,93 s \n(D) 1,15 s \n(E) 1,26 s \n12/26 \n~ \nPS-Efm.lM :0'.!6"
+  }
+]

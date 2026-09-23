@@ -1,0 +1,122 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "A solução do sistema: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n6\n4\n7\nxyzw\nyzw\nxzw\nxyw\nxyz\nzw\nyw\nyz\nxw\nxz\nxy\nw\nz\ny\nx\n \npode ser representada pelas raízes do polinômio: \n \n( a ) \n7\n4\n²\n6\n³\n\n\n\nx\nx\nx\n \n( b ) \n7\n4\n²\n6\n³\n\n\n\nx\nx\nx\n \n( c ) \n2\n12\n²\n8\n³\n14\n2\n4\n\n\n\n\nx\nx\nx\nx\n \n( d ) \nx\nx\nx\nx\n\n\n\n²\n6\n³\n4\n7\n4\n \n( e ) \nx\nx\nx\nx\n6\n²\n4\n³\n7\n4\n\n\n",
+    "alternativas": {},
+    "texto_bruto": "A solução do sistema: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n6\n4\n7\nxyzw\nyzw\nxzw\nxyw\nxyz\nzw\nyw\nyz\nxw\nxz\nxy\nw\nz\ny\nx\n \npode ser representada pelas raízes do polinômio: \n \n( a ) \n7\n4\n²\n6\n³\n\n\n\nx\nx\nx\n \n( b ) \n7\n4\n²\n6\n³\n\n\n\nx\nx\nx\n \n( c ) \n2\n12\n²\n8\n³\n14\n2\n4\n\n\n\n\nx\nx\nx\nx\n \n( d ) \nx\nx\nx\nx\n\n\n\n²\n6\n³\n4\n7\n4\n \n( e ) \nx\nx\nx\nx\n6\n²\n4\n³\n7\n4\n\n\n"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Determine a imagem da função f , definida por \n\n2\n2\n\n\n\n\nx\nx\nx\nf\n, \npara \ntodo \nR\nx \n, \nconjunto dos números reais. \n \n( a ) \nR\nf\n\n)\nIm(\n \n( b ) \n\n\n0\n/\n)\nIm(\n\n\n\ny\nR\ny\nf\n \n( c ) \n\n\n4\n0\n/\n)\nIm(\n\n\n\n\ny\nR\ny\nf\n \n( d ) \n\n\n4\n/\n)\nIm(\n\n\n\ny\nR\ny\nf\n \n( e ) \n\n\n0\n/\n)\nIm(\n\n\n\ny\nR\ny\nf",
+    "alternativas": {},
+    "texto_bruto": "Determine a imagem da função f , definida por \n\n2\n2\n\n\n\n\nx\nx\nx\nf\n, \npara \ntodo \nR\nx \n, \nconjunto dos números reais. \n \n( a ) \nR\nf\n\n)\nIm(\n \n( b ) \n\n\n0\n/\n)\nIm(\n\n\n\ny\nR\ny\nf\n \n( c ) \n\n\n4\n0\n/\n)\nIm(\n\n\n\n\ny\nR\ny\nf\n \n( d ) \n\n\n4\n/\n)\nIm(\n\n\n\ny\nR\ny\nf\n \n( e ) \n\n\n0\n/\n)\nIm(\n\n\n\ny\nR\ny\nf"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Um dado cúbico, não viciado, com faces \nnumeradas de 1 a 6, é lançado três vezes. Em cada \nlançamento, anota-se o número obtido na face \nsuperior do dado, formando-se uma sequência (a, \nb, c). Qual é a probabilidade de que b seja \nsucessor de a e que c seja sucessor de b OU que a, \nb e c sejam primos? \n \n( a ) \n216\n4\n \n( b ) \n216\n27 \n( c ) \n216\n108 \n( d ) \n216\n31 \n( e ) \n216\n10 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              2 / 18",
+    "alternativas": {},
+    "texto_bruto": "Um dado cúbico, não viciado, com faces \nnumeradas de 1 a 6, é lançado três vezes. Em cada \nlançamento, anota-se o número obtido na face \nsuperior do dado, formando-se uma sequência (a, \nb, c). Qual é a probabilidade de que b seja \nsucessor de a e que c seja sucessor de b OU que a, \nb e c sejam primos? \n \n( a ) \n216\n4\n \n( b ) \n216\n27 \n( c ) \n216\n108 \n( d ) \n216\n31 \n( e ) \n216\n10 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              2 / 18"
+  },
+  {
+    "numero": 4,
+    "enunciado": "O valor de \nt\nt\nt\n\n\n\n4\n2\nlim\n0\n é: \n \n( a ) \n 1 \n( b ) \n4\n1 \n( c ) \n3\n1 \n( d ) \n2\n1 \n( e ) \n 2",
+    "alternativas": {},
+    "texto_bruto": "O valor de \nt\nt\nt\n\n\n\n4\n2\nlim\n0\n é: \n \n( a ) \n 1 \n( b ) \n4\n1 \n( c ) \n3\n1 \n( d ) \n2\n1 \n( e ) \n 2"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Seja uma esfera de raio R e um cubo de aresta A, \nambos com a mesma área de superfície. A razão \nentre o volume do cubo e o volume da esfera é \nigual a \n \n( a ) \n\n1\n. \n( b ) \n12\n. \n( c ) \n3\n2. \n( d ) \n3\n. \n( e ) \n6\n.",
+    "alternativas": {},
+    "texto_bruto": "Seja uma esfera de raio R e um cubo de aresta A, \nambos com a mesma área de superfície. A razão \nentre o volume do cubo e o volume da esfera é \nigual a \n \n( a ) \n\n1\n. \n( b ) \n12\n. \n( c ) \n3\n2. \n( d ) \n3\n. \n( e ) \n6\n."
+  },
+  {
+    "numero": 6,
+    "enunciado": "Determine o perímetro do triângulo ABD, em cm, \nrepresentado na figura abaixo: \n \n( a ) \n5\n3\n5\n\n \n( b ) \n\n\n1\n3\n2\n2\n5\n\n\n \n( c ) \n5\n4\n20 \n \n( d ) \n45 \n( e ) \n50 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n10cm \n30º \nx \n  y \nx \nC \nB \nA \nD \n\n\n              3 / 18",
+    "alternativas": {},
+    "texto_bruto": "Determine o perímetro do triângulo ABD, em cm, \nrepresentado na figura abaixo: \n \n( a ) \n5\n3\n5\n\n \n( b ) \n\n\n1\n3\n2\n2\n5\n\n\n \n( c ) \n5\n4\n20 \n \n( d ) \n45 \n( e ) \n50 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n10cm \n30º \nx \n  y \nx \nC \nB \nA \nD \n\n\n              3 / 18"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Um garrafão contém 3 litros de vinho. Retira-se \num litro de vinho do garrafão e acrescenta-se um \nlitro de água, obtendo-se uma mistura homogênea. \nRetira-se, a seguir, um litro da mistura e \nacrescenta-se um litro de água, e assim por diante. \nA quantidade de vinho, em litros, que resta no \ngarrafão, \napós \n5 \ndessas \noperações, \né \naproximadamente igual a \n \n( a ) \n0,396 \n( b ) \n0,521 \n( c ) \n0,676 \n( d ) \n0,693 \n( e ) \n0,724",
+    "alternativas": {},
+    "texto_bruto": "Um garrafão contém 3 litros de vinho. Retira-se \num litro de vinho do garrafão e acrescenta-se um \nlitro de água, obtendo-se uma mistura homogênea. \nRetira-se, a seguir, um litro da mistura e \nacrescenta-se um litro de água, e assim por diante. \nA quantidade de vinho, em litros, que resta no \ngarrafão, \napós \n5 \ndessas \noperações, \né \naproximadamente igual a \n \n( a ) \n0,396 \n( b ) \n0,521 \n( c ) \n0,676 \n( d ) \n0,693 \n( e ) \n0,724"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Sabendo que 2\n5 é uma raiz do polinômio \n\n10\n9\n²\n3\n³\n2\n\n\n\n\nx\nx\nx\nx\nP\n, a soma das outras \nraízes é igual a: \n \n( a ) \n-2 \n( b ) \n0 \n( c ) \n10 \n( d ) \n1 \n( e ) \n-1",
+    "alternativas": {},
+    "texto_bruto": "Sabendo que 2\n5 é uma raiz do polinômio \n\n10\n9\n²\n3\n³\n2\n\n\n\n\nx\nx\nx\nx\nP\n, a soma das outras \nraízes é igual a: \n \n( a ) \n-2 \n( b ) \n0 \n( c ) \n10 \n( d ) \n1 \n( e ) \n-1"
+  },
+  {
+    "numero": 9,
+    "enunciado": "O número complexo, \n\n\n\n\nsen\ni\nz\nz\n.\ncos\n.\n\n\n, \nsendo i a unidade imaginária e \n\n\n2\n0\n\n\n, que \nsatisfaz a inequação \n3\n2\nz\ni\n\n\n e que possui o \nmenor argumento , é \n \n( a ) \n5\n2 5\n3\n3\nz\ni\n\n\n \n( b ) \n5\n2 5\n3\n3\nz\ni\n\n\n \n( c ) \n2 5\n5\n3\n3\nz\ni\n\n\n \n( d ) \n2 5\n5\n3\n3\nz\ni\n\n\n \n( e ) \n2 5\n5\nz\ni\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              4 / 18",
+    "alternativas": {},
+    "texto_bruto": "O número complexo, \n\n\n\n\nsen\ni\nz\nz\n.\ncos\n.\n\n\n, \nsendo i a unidade imaginária e \n\n\n2\n0\n\n\n, que \nsatisfaz a inequação \n3\n2\nz\ni\n\n\n e que possui o \nmenor argumento , é \n \n( a ) \n5\n2 5\n3\n3\nz\ni\n\n\n \n( b ) \n5\n2 5\n3\n3\nz\ni\n\n\n \n( c ) \n2 5\n5\n3\n3\nz\ni\n\n\n \n( d ) \n2 5\n5\n3\n3\nz\ni\n\n\n \n( e ) \n2 5\n5\nz\ni\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              4 / 18"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Quanto à posição relativa, podemos classificar as \ncircunferências \n\n\n\n\n9\n3\n2\n2\n2\n\n\n\n\ny\nx\n \ne \n0\n15\n8\n²\n²\n\n\n\n\nx\ny\nx\ncomo \n \n( a ) \nsecantes. \n( b ) \ntangentes internas. \n( c ) \ntangentes externas. \n( d ) \nexternas. \n( e ) \ninternas.",
+    "alternativas": {},
+    "texto_bruto": "Quanto à posição relativa, podemos classificar as \ncircunferências \n\n\n\n\n9\n3\n2\n2\n2\n\n\n\n\ny\nx\n \ne \n0\n15\n8\n²\n²\n\n\n\n\nx\ny\nx\ncomo \n \n( a ) \nsecantes. \n( b ) \ntangentes internas. \n( c ) \ntangentes externas. \n( d ) \nexternas. \n( e ) \ninternas."
+  },
+  {
+    "numero": 11,
+    "enunciado": "Seja um quadrado de lado 2. Unindo os pontos \nmédios de cada lado, temos um segundo \nquadrado. Unindo os pontos médios do segundo \nquadrado, temos um terceiro quadrado, e assim \nsucessivamente.  O produto das áreas dos dez \nprimeiros quadrados é \n \n( a ) \n9\n2\n2\n\n \n( b ) \n25\n2\n2\n\n \n( c ) \n45\n2\n2\n\n \n( d ) \n45\n2\n \n( e ) \n25\n2",
+    "alternativas": {},
+    "texto_bruto": "Seja um quadrado de lado 2. Unindo os pontos \nmédios de cada lado, temos um segundo \nquadrado. Unindo os pontos médios do segundo \nquadrado, temos um terceiro quadrado, e assim \nsucessivamente.  O produto das áreas dos dez \nprimeiros quadrados é \n \n( a ) \n9\n2\n2\n\n \n( b ) \n25\n2\n2\n\n \n( c ) \n45\n2\n2\n\n \n( d ) \n45\n2\n \n( e ) \n25\n2"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Seja o número complexo \ni\nz\n3\n1\n\n\n, onde i \né a unidade imaginária. O valor de \n8z é: \n \n( a ) \n\n\n\n\n\n\n\n\n3\n4\n3\n4\ncos\n256\n\n\nisen\nz\n \n( b ) \n\n\n\n\n\n\n\n\n3\n3\ncos\n256\n\n\nisen\nz\n \n( c ) \n\n\n\n\n\n\n\n\n3\n5\n3\n5\ncos\n256\n\n\nisen\nz\n \n( d ) \n\n\n\n\n\n\n\n\n3\n2\n3\n2\ncos\n256\n\n\nisen\nz\n \n( e ) \n\n\n\n\n2\n2\ncos\n256\nisen\nz\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              5 / 18",
+    "alternativas": {},
+    "texto_bruto": "Seja o número complexo \ni\nz\n3\n1\n\n\n, onde i \né a unidade imaginária. O valor de \n8z é: \n \n( a ) \n\n\n\n\n\n\n\n\n3\n4\n3\n4\ncos\n256\n\n\nisen\nz\n \n( b ) \n\n\n\n\n\n\n\n\n3\n3\ncos\n256\n\n\nisen\nz\n \n( c ) \n\n\n\n\n\n\n\n\n3\n5\n3\n5\ncos\n256\n\n\nisen\nz\n \n( d ) \n\n\n\n\n\n\n\n\n3\n2\n3\n2\ncos\n256\n\n\nisen\nz\n \n( e ) \n\n\n\n\n2\n2\ncos\n256\nisen\nz\n\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              5 / 18"
+  },
+  {
+    "numero": 13,
+    "enunciado": "A \nquantidade \nde \nanagramas \nda \npalavra \nMERCANTE que não possui vogais juntas é \n \n( a ) 40320. \n( b ) 38160. \n( c ) 37920. \n( d ) 7200. \n( e ) 3600.",
+    "alternativas": {},
+    "texto_bruto": "A \nquantidade \nde \nanagramas \nda \npalavra \nMERCANTE que não possui vogais juntas é \n \n( a ) 40320. \n( b ) 38160. \n( c ) 37920. \n( d ) 7200. \n( e ) 3600."
+  },
+  {
+    "numero": 14,
+    "enunciado": "Seja o polinômio \n180\n96\n147\n32\n26\n)\n(\n2\n3\n4\n6\n\n\n\n\n\n\nx\nx\nx\nx\nx\nx\np\n. \nA respeito das raízes da equação \n0\n)\n(\n\nx\np\n, \npodemos afirmar que  \n \n( a ) \ntodas as raízes são reais. \n( b ) \nsomente duas raízes são reais, sendo elas \ndistintas. \n( c ) \nsomente duas raízes são reais, sendo elas \niguais. \n( d ) \nsomente quatro raízes são reais, sendo \ntodas elas distintas. \n( e ) \nnenhuma raiz é real. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              6 / 18",
+    "alternativas": {},
+    "texto_bruto": "Seja o polinômio \n180\n96\n147\n32\n26\n)\n(\n2\n3\n4\n6\n\n\n\n\n\n\nx\nx\nx\nx\nx\nx\np\n. \nA respeito das raízes da equação \n0\n)\n(\n\nx\np\n, \npodemos afirmar que  \n \n( a ) \ntodas as raízes são reais. \n( b ) \nsomente duas raízes são reais, sendo elas \ndistintas. \n( c ) \nsomente duas raízes são reais, sendo elas \niguais. \n( d ) \nsomente quatro raízes são reais, sendo \ntodas elas distintas. \n( e ) \nnenhuma raiz é real. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              6 / 18"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Um aluno precisa construir o gráfico da função real f , \ndefinida por  \n( )\n2\n2\nx\nx\ne\ne\nf x\n\n\n\n. Ele percebeu que a \nfunção possui a seguinte característica:  \n(\n)\n(\n)\n( )\n2\n2\n2\n2\nx\nx\nx\nx\ne\ne\ne\ne\nf\nx\nf x\n\n\n\n\n\n\n\n\n\n.  \nAssinale a alternativa que representa o gráfico dessa \nfunção.  \n \n(a) \n \n \n \n \n \n \n \n(b) \n \n \n \n \n \n \n \n(c) \n \n \n \n \n \n \n(d)  \n \n \n \n \n \n \n(e) \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              7 / 18",
+    "alternativas": {},
+    "texto_bruto": "Um aluno precisa construir o gráfico da função real f , \ndefinida por  \n( )\n2\n2\nx\nx\ne\ne\nf x\n\n\n\n. Ele percebeu que a \nfunção possui a seguinte característica:  \n(\n)\n(\n)\n( )\n2\n2\n2\n2\nx\nx\nx\nx\ne\ne\ne\ne\nf\nx\nf x\n\n\n\n\n\n\n\n\n\n.  \nAssinale a alternativa que representa o gráfico dessa \nfunção.  \n \n(a) \n \n \n \n \n \n \n \n(b) \n \n \n \n \n \n \n \n(c) \n \n \n \n \n \n \n(d)  \n \n \n \n \n \n \n(e) \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              7 / 18"
+  },
+  {
+    "numero": 16,
+    "enunciado": "De acordo com conceitos administrativos, o lucro \nde \numa \nempresa \né \ndado \npela \nexpressão \nmatemática L = R – C, onde L é o lucro, C o custo \nda produção e R a receita do produto. Uma \nindústria produziu x peças e verificou que o custo \nde \nprodução \nera \ndado \npela \nfunção                    \nC(x) = x² – 500x + 100 e a receita representada \npor R(x) = 2000x – x². Com base nessas \ninformações, determine o número de peças a \nserem produzidas para que o lucro seja máximo. \n \n( a ) \n625 \n( b ) \n781150 \n( c ) \n1000 \n( d ) \n250 \n( e ) \n375",
+    "alternativas": {},
+    "texto_bruto": "De acordo com conceitos administrativos, o lucro \nde \numa \nempresa \né \ndado \npela \nexpressão \nmatemática L = R – C, onde L é o lucro, C o custo \nda produção e R a receita do produto. Uma \nindústria produziu x peças e verificou que o custo \nde \nprodução \nera \ndado \npela \nfunção                    \nC(x) = x² – 500x + 100 e a receita representada \npor R(x) = 2000x – x². Com base nessas \ninformações, determine o número de peças a \nserem produzidas para que o lucro seja máximo. \n \n( a ) \n625 \n( b ) \n781150 \n( c ) \n1000 \n( d ) \n250 \n( e ) \n375"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Dado os pontos \n\n5,2\n\nA\n, 1,1\nB\n e \n\n1\n,1 \n\nC\n, o \nvalor da altura do triângulo ABC em relação a \nbase AC é igual a: \n \n( a ) \n37 \n( b ) \n5 \n( c ) \n8 \n( d ) \n37\n37\n14\n \n( e ) \n7",
+    "alternativas": {},
+    "texto_bruto": "Dado os pontos \n\n5,2\n\nA\n, 1,1\nB\n e \n\n1\n,1 \n\nC\n, o \nvalor da altura do triângulo ABC em relação a \nbase AC é igual a: \n \n( a ) \n37 \n( b ) \n5 \n( c ) \n8 \n( d ) \n37\n37\n14\n \n( e ) \n7"
+  },
+  {
+    "numero": 18,
+    "enunciado": "O valor da integral \n\n\n\n\n\n\n\n\n\ndx\nx\nx\ntg\n2\n3\n2\nsec\n2\n2\n, sendo c uma \nconstante, é: \n \n( a ) \n\n\n\n\nc\nx\ntg\nx\n\n\n2\n2\nsec\n2\n2\n \n( b ) \n\n\n\n\n)\n2\n(\n2\n2\nsec\n2\n2\nx\ntg\nc\nx\ntg\nx\n\n\n \n( c ) \nc\nx\narctg\n\n)\n(ln\n \n( d ) \n\n\nc\nx\ntg\n\n7\n2\n7\n \n( e ) \n\n\n\n\nc\nx\nsen\nx\ntg\n\n\n2\n2\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              8 / 18",
+    "alternativas": {},
+    "texto_bruto": "O valor da integral \n\n\n\n\n\n\n\n\n\ndx\nx\nx\ntg\n2\n3\n2\nsec\n2\n2\n, sendo c uma \nconstante, é: \n \n( a ) \n\n\n\n\nc\nx\ntg\nx\n\n\n2\n2\nsec\n2\n2\n \n( b ) \n\n\n\n\n)\n2\n(\n2\n2\nsec\n2\n2\nx\ntg\nc\nx\ntg\nx\n\n\n \n( c ) \nc\nx\narctg\n\n)\n(ln\n \n( d ) \n\n\nc\nx\ntg\n\n7\n2\n7\n \n( e ) \n\n\n\n\nc\nx\nsen\nx\ntg\n\n\n2\n2\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n              8 / 18"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Numa progressão geométrica crescente, o 3º \ntermo é igual à soma do triplo do 1º termo com o \ndobro do 2º termo. Sabendo que a soma desses \ntrês termos é igual a 26, determine o valor do 2º \ntermo. \n \n( a ) \n6 \n( b ) \n2 \n( c ) \n3 \n( d ) \n1 \n( e ) \n7\n26",
+    "alternativas": {},
+    "texto_bruto": "Numa progressão geométrica crescente, o 3º \ntermo é igual à soma do triplo do 1º termo com o \ndobro do 2º termo. Sabendo que a soma desses \ntrês termos é igual a 26, determine o valor do 2º \ntermo. \n \n( a ) \n6 \n( b ) \n2 \n( c ) \n3 \n( d ) \n1 \n( e ) \n7\n26"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Determine o comprimento do menor arco AB na \ncircunferência de centro O, representada na figura \na seguir, sabendo que o segmento OD mede 12cm, \nos ângulos CÔD = 30° e OÂB = 15° e que a área \ndo triângulo CDO é igual a 18 cm2. \n \n( a ) \ncm\n\n5\n \n( b ) \ncm\n12\n \n( c ) \ncm\n5\n \n( d ) \ncm\n\n12\n \n( e ) \ncm\n\n10\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA \nB \nD \nC \nO \n\n\n              9 / 18",
+    "alternativas": {},
+    "texto_bruto": "Determine o comprimento do menor arco AB na \ncircunferência de centro O, representada na figura \na seguir, sabendo que o segmento OD mede 12cm, \nos ângulos CÔD = 30° e OÂB = 15° e que a área \ndo triângulo CDO é igual a 18 cm2. \n \n( a ) \ncm\n\n5\n \n( b ) \ncm\n12\n \n( c ) \ncm\n5\n \n( d ) \ncm\n\n12\n \n( e ) \ncm\n\n10\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA \nB \nD \nC \nO \n\n\n              9 / 18"
+  }
+]

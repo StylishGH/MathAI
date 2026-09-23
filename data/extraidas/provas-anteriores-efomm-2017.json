@@ -1,0 +1,122 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Considere a equação \n0\n9\n6\n9\n2\n2\n3\n4\n=\n+\n−\n+\n−\na\nax\nax\nax\nx\n. Sabendo que a \né raiz dupla dessa equação e não é nulo, determine o \nvalor de a . \n \n( a ) \n1\n−\n=\na\n \n( b ) \n1\n=\na\n \n( c ) \n2\n=\na\n \n( d ) \n3\n=\na\n \n( e ) \n4\n=\na",
+    "alternativas": {},
+    "texto_bruto": "Considere a equação \n0\n9\n6\n9\n2\n2\n3\n4\n=\n+\n−\n+\n−\na\nax\nax\nax\nx\n. Sabendo que a \né raiz dupla dessa equação e não é nulo, determine o \nvalor de a . \n \n( a ) \n1\n−\n=\na\n \n( b ) \n1\n=\na\n \n( c ) \n2\n=\na\n \n( d ) \n3\n=\na\n \n( e ) \n4\n=\na"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Sejam as circunferências \n0\n16\n:\n2\n2\n1\n=\n−\n+ y\nx\nc\n e \n(\n)\n(\n)\n4\n2\n2\n:\n2\n2\n2\n=\n+\n+\n−\ny\nx\nc\n. Considere A e B os \npontos \nde \nintersecção \ndessas \ncircunferências. \nDetermine a distância entre A e B. \n \n( a ) \n7\n2\n \n( b ) \n14 \n( c ) \n14\n2\n \n( d ) \n7 \n( e ) \n2\n7",
+    "alternativas": {},
+    "texto_bruto": "Sejam as circunferências \n0\n16\n:\n2\n2\n1\n=\n−\n+ y\nx\nc\n e \n(\n)\n(\n)\n4\n2\n2\n:\n2\n2\n2\n=\n+\n+\n−\ny\nx\nc\n. Considere A e B os \npontos \nde \nintersecção \ndessas \ncircunferências. \nDetermine a distância entre A e B. \n \n( a ) \n7\n2\n \n( b ) \n14 \n( c ) \n14\n2\n \n( d ) \n7 \n( e ) \n2\n7"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Dado \n( )\na\nx\nx\nf\n+\n=\n, \n( )\n(\n)\n1\n2\n+\n+\n+\n=\na\na\na\nsenx\nx\ng\nf\n e \n8\n2\n4\n=\n\n\n\n\n\nπ\ng\n. Determine o valor de a . \n \n( a ) \n0\n=\na\n \n( b ) \n1\n=\na\n \n( c ) \n2\n=\na\n \n( d ) \n3\n=\na\n \n( e ) \n4\n=\na\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n2/21",
+    "alternativas": {},
+    "texto_bruto": "Dado \n( )\na\nx\nx\nf\n+\n=\n, \n( )\n(\n)\n1\n2\n+\n+\n+\n=\na\na\na\nsenx\nx\ng\nf\n e \n8\n2\n4\n=\n\n\n\n\n\nπ\ng\n. Determine o valor de a . \n \n( a ) \n0\n=\na\n \n( b ) \n1\n=\na\n \n( c ) \n2\n=\na\n \n( d ) \n3\n=\na\n \n( e ) \n4\n=\na\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n2/21"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Um cubo de lado 2a possui uma esfera circunscrita \nnele. Qual é a probabilidade de, ao ser sorteado um \nponto interno da esfera, esse ponto ser interno ao \ncubo? \n \n( a ) 6\nπ \n( b ) \nπ\n3\n3\n2\n \n( c ) \n6\n3\nπ\n \n( d ) \n3\n6\n2π \n( e ) 2\n1",
+    "alternativas": {},
+    "texto_bruto": "Um cubo de lado 2a possui uma esfera circunscrita \nnele. Qual é a probabilidade de, ao ser sorteado um \nponto interno da esfera, esse ponto ser interno ao \ncubo? \n \n( a ) 6\nπ \n( b ) \nπ\n3\n3\n2\n \n( c ) \n6\n3\nπ\n \n( d ) \n3\n6\n2π \n( e ) 2\n1"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Sobre uma equação linear de grau n é INCORRETO \nafirmar que \n \n( a ) terá n raízes complexas. \n( b ) se n for ímpar, sempre terá, ao menos, uma raiz \nreal. \n( c ) se um número complexo \n0\n,\n≠\n+\n=\nb\nbi\na\nz\n for \nraiz, então seu conjugado também o será. \n( d ) a equação não pode ter raízes repetidas. \n( e ) uma equação acima de grau 4 pode ter todas as \nraízes reais. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n3/21",
+    "alternativas": {},
+    "texto_bruto": "Sobre uma equação linear de grau n é INCORRETO \nafirmar que \n \n( a ) terá n raízes complexas. \n( b ) se n for ímpar, sempre terá, ao menos, uma raiz \nreal. \n( c ) se um número complexo \n0\n,\n≠\n+\n=\nb\nbi\na\nz\n for \nraiz, então seu conjugado também o será. \n( d ) a equação não pode ter raízes repetidas. \n( e ) uma equação acima de grau 4 pode ter todas as \nraízes reais. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n3/21"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Calcule \na \nintegral \nindefinida \n∫tgx .\n(\n)\n(\n)dx\nx\nsenx\n2\nsec\n.\n1+\n. \n \n( a ) \nc\nx +\n2\nsec2\n \n( b ) \nc\nx\nx\ntgx\n+\n+ 2\nsec\n.\n \n( c ) \nc\nx\nsenx\nx\n+\n−\n+\nsec\n2\ncos\n \n( d ) \nc\nx\nsen\nx\n+\n−\n3\n2\ncos\n2\n \n( e ) \nc\nx +\n2\ncos2",
+    "alternativas": {},
+    "texto_bruto": "Calcule \na \nintegral \nindefinida \n∫tgx .\n(\n)\n(\n)dx\nx\nsenx\n2\nsec\n.\n1+\n. \n \n( a ) \nc\nx +\n2\nsec2\n \n( b ) \nc\nx\nx\ntgx\n+\n+ 2\nsec\n.\n \n( c ) \nc\nx\nsenx\nx\n+\n−\n+\nsec\n2\ncos\n \n( d ) \nc\nx\nsen\nx\n+\n−\n3\n2\ncos\n2\n \n( e ) \nc\nx +\n2\ncos2"
+  },
+  {
+    "numero": 7,
+    "enunciado": "O volume da pirâmide delimitada pelos planos \ncoordenados e pelo plano \n20\n4\n2\n5\n:\n=\n+\n−\nz\ny\nx\nπ\n é: \n \n( a ) 20/3 u.v. \n( b ) 50/3 u.v. \n( c ) 100/3 u.v. \n( d ) 100 u. v. \n( e ) 200 u.v. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n4/21",
+    "alternativas": {},
+    "texto_bruto": "O volume da pirâmide delimitada pelos planos \ncoordenados e pelo plano \n20\n4\n2\n5\n:\n=\n+\n−\nz\ny\nx\nπ\n é: \n \n( a ) 20/3 u.v. \n( b ) 50/3 u.v. \n( c ) 100/3 u.v. \n( d ) 100 u. v. \n( e ) 200 u.v. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n4/21"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Seis alunos da EFOMM – três paranaenses, dois \ncariocas e um alagoano – são colocados em uma fila \naleatoriamente. Qual é a probabilidade, então, de que \nnenhum conterrâneo fique ao lado do outro? \n \n( a ) 31\n3 \n( b ) 36\n1 \n( c ) 24\n1 \n( d ) 12\n1 \n( e ) 6\n1",
+    "alternativas": {},
+    "texto_bruto": "Seis alunos da EFOMM – três paranaenses, dois \ncariocas e um alagoano – são colocados em uma fila \naleatoriamente. Qual é a probabilidade, então, de que \nnenhum conterrâneo fique ao lado do outro? \n \n( a ) 31\n3 \n( b ) 36\n1 \n( c ) 24\n1 \n( d ) 12\n1 \n( e ) 6\n1"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Quantos anagramas é possível formar com a palavra \nCARAVELAS, \nnão \nhavendo \nduas \nvogais \nconsecutivas e nem duas consoantes consecutivas? \n \n( a ) 24 \n( b ) 120 \n( c ) 480 \n( d ) 1920 \n( e ) 3840",
+    "alternativas": {},
+    "texto_bruto": "Quantos anagramas é possível formar com a palavra \nCARAVELAS, \nnão \nhavendo \nduas \nvogais \nconsecutivas e nem duas consoantes consecutivas? \n \n( a ) 24 \n( b ) 120 \n( c ) 480 \n( d ) 1920 \n( e ) 3840"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Para que a função   \n \n \n \n seja  \n \n \ncontínua, para todo valor de x, qual será o valor de \nk ? \n \n( a ) 2 \n( b ) 10 \n( c ) 20 \n( d ) 40 \n( e ) 50 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n( )\n\n\n\n=\nx\nf\n2\n,\n2\n,\n2\n10\n5\n2\n3\n≠\n=\n−\n−\nx\nx\nk\nx\nx\nx\n\n\n \n \n5/21",
+    "alternativas": {},
+    "texto_bruto": "Para que a função   \n \n \n \n seja  \n \n \ncontínua, para todo valor de x, qual será o valor de \nk ? \n \n( a ) 2 \n( b ) 10 \n( c ) 20 \n( d ) 40 \n( e ) 50 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n( )\n\n\n\n=\nx\nf\n2\n,\n2\n,\n2\n10\n5\n2\n3\n≠\n=\n−\n−\nx\nx\nk\nx\nx\nx\n\n\n \n \n5/21"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Seja ( )\nx\nx\ng\ncos\n4 −\n=\n e \n( )\nx\ne\nx\nx\nf\n2\n4\n'\n−\n=\n. Sabendo-\nse que  ( )\n( )\n0\n0\ng\nf\n=\n, determine ( )\nx\nf\n. \n \n( a ) \n( )\nx\nx\nf\n2\n3 −\n=\n \n( b ) \n( )\n2\n7\n2\n1\n2\n2\n2\n+\n−\n=\nx\ne\nx\nx\nf\n \n( c ) \n( )\n3\n2\n6\n2\n−\n−\n=\n−\nx\ne\nx\nf\nx\n \n( d ) \n( )\n2\n2\n2\n+\n−\n=\nx\ne\nx\nf\nx\n \n( e ) \n( )\n3\n2\n−\n+\n=\nsenx\ne\nx\nf\nx",
+    "alternativas": {},
+    "texto_bruto": "Seja ( )\nx\nx\ng\ncos\n4 −\n=\n e \n( )\nx\ne\nx\nx\nf\n2\n4\n'\n−\n=\n. Sabendo-\nse que  ( )\n( )\n0\n0\ng\nf\n=\n, determine ( )\nx\nf\n. \n \n( a ) \n( )\nx\nx\nf\n2\n3 −\n=\n \n( b ) \n( )\n2\n7\n2\n1\n2\n2\n2\n+\n−\n=\nx\ne\nx\nx\nf\n \n( c ) \n( )\n3\n2\n6\n2\n−\n−\n=\n−\nx\ne\nx\nf\nx\n \n( d ) \n( )\n2\n2\n2\n+\n−\n=\nx\ne\nx\nf\nx\n \n( e ) \n( )\n3\n2\n−\n+\n=\nsenx\ne\nx\nf\nx"
+  },
+  {
+    "numero": 12,
+    "enunciado": "A equação da reta tangente ao gráfico da função \n( )\nsenx\nx\nf\n5\n=\n no ponto \n0\n=\nx\n é: \n \n( a ) \n(\n)\n1\n5\nln\n+\n=\nx\ny\n \n( b ) \n(\n)\n1\n5\nln\n−\n−\n=\nx\ny\n \n( c ) \n1\n5 +\n= x\ny\n \n( d ) \n1\n+\n= x\ny\n \n( e ) \n1\n+\n−\n=\nx\ny\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n6/21",
+    "alternativas": {},
+    "texto_bruto": "A equação da reta tangente ao gráfico da função \n( )\nsenx\nx\nf\n5\n=\n no ponto \n0\n=\nx\n é: \n \n( a ) \n(\n)\n1\n5\nln\n+\n=\nx\ny\n \n( b ) \n(\n)\n1\n5\nln\n−\n−\n=\nx\ny\n \n( c ) \n1\n5 +\n= x\ny\n \n( d ) \n1\n+\n= x\ny\n \n( e ) \n1\n+\n−\n=\nx\ny\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n6/21"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Analise as afirmações que se seguem. \n \nI- Se x , y , z são números reais positivos, então  \n3\n.\n.\n3\nz\ny\nx\nz\ny\nx\n≥\n+\n+\n . \nII- Se z é um número complexo de módulo unitário \nque satisfaz a condição \n1\n2\n−\n≠\nn\nz\n, sendo n um \nnúmero inteiro positivo, então  \nn\nn\nz\nz\n2\n1+\n é um \nnúmero real. \n \nIII- Se \n3,4\nA\n representa a matriz dos coeficientes de \num sistema linear com quatro equações e três \nincógnitas, \nesse \nsistema \nserá \npossível \ne \ndeterminado sempre que o posto desta matriz A \nfor menor ou igual a 3. \n \nEntão, pode-se dizer que \n \n( a ) todas as afirmativas são verdadeiras. \n( b ) todas as afirmativas são falsas. \n( c ) somente as afirmativas I e II são verdadeiras. \n( d ) somente as afirmativas I e III são verdadeiras. \n( e ) somente as afirmativas II e III são verdadeiras.",
+    "alternativas": {},
+    "texto_bruto": "Analise as afirmações que se seguem. \n \nI- Se x , y , z são números reais positivos, então  \n3\n.\n.\n3\nz\ny\nx\nz\ny\nx\n≥\n+\n+\n . \nII- Se z é um número complexo de módulo unitário \nque satisfaz a condição \n1\n2\n−\n≠\nn\nz\n, sendo n um \nnúmero inteiro positivo, então  \nn\nn\nz\nz\n2\n1+\n é um \nnúmero real. \n \nIII- Se \n3,4\nA\n representa a matriz dos coeficientes de \num sistema linear com quatro equações e três \nincógnitas, \nesse \nsistema \nserá \npossível \ne \ndeterminado sempre que o posto desta matriz A \nfor menor ou igual a 3. \n \nEntão, pode-se dizer que \n \n( a ) todas as afirmativas são verdadeiras. \n( b ) todas as afirmativas são falsas. \n( c ) somente as afirmativas I e II são verdadeiras. \n( d ) somente as afirmativas I e III são verdadeiras. \n( e ) somente as afirmativas II e III são verdadeiras."
+  },
+  {
+    "numero": 14,
+    "enunciado": "Dado o sistema linear abaixo, analise as seguintes \nafirmativas: \n \n\n\n\n\n\n\n\n\n\n\n−\n−\n2\n4\n1\n16\n0\n6\n4\n3\nb\n.\n\n\n\n\n\n\n\n\n\n−\n=\n\n\n\n\n\n\n\n\n\n\n3\n3\na\nz\ny\nx\n \n \n \nI- Se \n12\n−\n≠\nb\n, o sistema linear terá uma única \nsolução. \nII- Se \n12\n−\n=\n= b\na\n, o sistema linear terá infinitas \nsoluções. \nIII- Se \n12\n−\n=\nb\n, o sistema será impossível. \n \n( a ) Todas as afirmativas são corretas. \n( b ) Todas as afirmativas são incorretas. \n( c ) Somente as afirmativas I e III são corretas. \n( d ) Somente as afirmativas I e II são corretas. \n( e ) Somente as afirmativas II e III são corretas. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n7/21",
+    "alternativas": {},
+    "texto_bruto": "Dado o sistema linear abaixo, analise as seguintes \nafirmativas: \n \n\n\n\n\n\n\n\n\n\n\n−\n−\n2\n4\n1\n16\n0\n6\n4\n3\nb\n.\n\n\n\n\n\n\n\n\n\n−\n=\n\n\n\n\n\n\n\n\n\n\n3\n3\na\nz\ny\nx\n \n \n \nI- Se \n12\n−\n≠\nb\n, o sistema linear terá uma única \nsolução. \nII- Se \n12\n−\n=\n= b\na\n, o sistema linear terá infinitas \nsoluções. \nIII- Se \n12\n−\n=\nb\n, o sistema será impossível. \n \n( a ) Todas as afirmativas são corretas. \n( b ) Todas as afirmativas são incorretas. \n( c ) Somente as afirmativas I e III são corretas. \n( d ) Somente as afirmativas I e II são corretas. \n( e ) Somente as afirmativas II e III são corretas. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n7/21"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Determine uma matriz invertível P que satisfaça a \nequação \n.\n1\n−\nP\n\n\n\n\n−\n=\n2\n0\n0\n5\nA\n, sendo \n\n\n\n\n−\n=\n3\n3\n2\n1\nA\n. \n \n \n( a ) \n\n\n\n\n\n\n\n\n\n\n−\n=\n9\n2\n3\n2\n9\n10\n3\n5\nP\n \n( b ) \n\n\n\n\n−\n=\n15\n6\n10\n2\nP\n \n( c ) \n\n\n\n\n−\n=\n3\n3\n10\n2\n10\n1\nP\n \n( d ) \n\n\n\n\n\n\n\n\n\n\n−\n−\n−\n=\n3\n5\n9\n10\n3\n2\n9\n2\nP\n \n( e ) \n\n\n\n\n\n\n\n\n\n\n−\n=\n2\n3\n5\n3\n1\n5\n1\nP",
+    "alternativas": {},
+    "texto_bruto": "Determine uma matriz invertível P que satisfaça a \nequação \n.\n1\n−\nP\n\n\n\n\n−\n=\n2\n0\n0\n5\nA\n, sendo \n\n\n\n\n−\n=\n3\n3\n2\n1\nA\n. \n \n \n( a ) \n\n\n\n\n\n\n\n\n\n\n−\n=\n9\n2\n3\n2\n9\n10\n3\n5\nP\n \n( b ) \n\n\n\n\n−\n=\n15\n6\n10\n2\nP\n \n( c ) \n\n\n\n\n−\n=\n3\n3\n10\n2\n10\n1\nP\n \n( d ) \n\n\n\n\n\n\n\n\n\n\n−\n−\n−\n=\n3\n5\n9\n10\n3\n2\n9\n2\nP\n \n( e ) \n\n\n\n\n\n\n\n\n\n\n−\n=\n2\n3\n5\n3\n1\n5\n1\nP"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Sobre a função ( )\n2\n1\nx\nx\nx\nf\n+\n=\n, analise as afirmativas: \n \nI- \n( )\nx\nf\n é contínua em todo \nR\nx ∈\n \nII- \n)\n(\nlim\n)\n(\nlim\nx\nf\nx\nf\nx\nx\n+∞\n→\n−∞\n→\n=\n \nIII- \n+∞\n=\n→\n)\n(\nlim\n0\nx\nf\nx\n \n \nEntão, pode-se dizer que \n \n( a ) todas as afirmativas são verdadeiras. \n( b ) todas as afirmativas são falsas. \n( c ) somente as afirmativas I e II são verdadeiras. \n( d ) somente as afirmativas I e III são verdadeiras. \n( e ) somente as afirmativas II e III são verdadeiras. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n8/21",
+    "alternativas": {},
+    "texto_bruto": "Sobre a função ( )\n2\n1\nx\nx\nx\nf\n+\n=\n, analise as afirmativas: \n \nI- \n( )\nx\nf\n é contínua em todo \nR\nx ∈\n \nII- \n)\n(\nlim\n)\n(\nlim\nx\nf\nx\nf\nx\nx\n+∞\n→\n−∞\n→\n=\n \nIII- \n+∞\n=\n→\n)\n(\nlim\n0\nx\nf\nx\n \n \nEntão, pode-se dizer que \n \n( a ) todas as afirmativas são verdadeiras. \n( b ) todas as afirmativas são falsas. \n( c ) somente as afirmativas I e II são verdadeiras. \n( d ) somente as afirmativas I e III são verdadeiras. \n( e ) somente as afirmativas II e III são verdadeiras. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n8/21"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Seja A o ponto de intersecção entre as retas \n\n\n\n−\n−\n=\n+\n=\n1\n2\n3\n:\n1\nz\ny\nz\nx\nr\n e \n\n\n\n+\n=\n+\n−\n=\n−\n=\nt\nz\nt\ny\nt\nx\nr\n9\n5\n2\n3\n2\n5\n1\n:\n2\n  e seja B o \nponto \nde \nintersecção \nentre \nas \nretas \n1\n3\n1\n4\n2\n:\n3\n+\n=\n−\n−\n=\n+\nz\ny\nx\nr\n  e  \n\n\n\n+\n=\n+\n=\n+\n=\nt\nz\nt\ny\nt\nx\nr\n2\n2\n3\n8\n2\n5\n15\n2\n:\n4\n.  \nDefina a equação do plano mediador entre os pontos \nA e B. \n \n( a ) \n0\n6\n2\n2\n3\n=\n−\n−\n−\nz\ny\nx\n \n( b ) \n0\n1\n4\n3\n5\n2\n3\n=\n−\n−\n+\nz\ny\nx\n \n( c ) \n1\n12\n37\n55\n=\n+\n−\nz\ny\nx\n \n( d ) \n0\n12\n3\n2\n=\n−\n+\n−\nz\ny\nx\n \n( e ) \n0\n64\n8\n12\n28\n=\n+\n−\n+\n−\nz\ny\nx\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n9/21",
+    "alternativas": {},
+    "texto_bruto": "Seja A o ponto de intersecção entre as retas \n\n\n\n−\n−\n=\n+\n=\n1\n2\n3\n:\n1\nz\ny\nz\nx\nr\n e \n\n\n\n+\n=\n+\n−\n=\n−\n=\nt\nz\nt\ny\nt\nx\nr\n9\n5\n2\n3\n2\n5\n1\n:\n2\n  e seja B o \nponto \nde \nintersecção \nentre \nas \nretas \n1\n3\n1\n4\n2\n:\n3\n+\n=\n−\n−\n=\n+\nz\ny\nx\nr\n  e  \n\n\n\n+\n=\n+\n=\n+\n=\nt\nz\nt\ny\nt\nx\nr\n2\n2\n3\n8\n2\n5\n15\n2\n:\n4\n.  \nDefina a equação do plano mediador entre os pontos \nA e B. \n \n( a ) \n0\n6\n2\n2\n3\n=\n−\n−\n−\nz\ny\nx\n \n( b ) \n0\n1\n4\n3\n5\n2\n3\n=\n−\n−\n+\nz\ny\nx\n \n( c ) \n1\n12\n37\n55\n=\n+\n−\nz\ny\nx\n \n( d ) \n0\n12\n3\n2\n=\n−\n+\n−\nz\ny\nx\n \n( e ) \n0\n64\n8\n12\n28\n=\n+\n−\n+\n−\nz\ny\nx\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n9/21"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Calcule o determinante da matriz A de ordem n : \n \n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n−\n=\n1\n2\n1\n1\n1\n1\n1\n1\n1\n9\n1\n1\n1\n1\n1\n1\n7\n1\n1\n1\n1\n1\n1\n5\n1\n1\n1\n1\n1\n1\n3\n1\n1\n1\n1\n1\n1\n1\nn\nA\nΚ\nΟ\nΜ\nΜ\nΜ\nΜ\nΜ\nΚ\nΚ\nΚ\nΚ\nΚ\n \n \n( a ) \n( ) ∏\n−\n=\n=\n1\n1\n2\ndet\nn\nn\nn\nA\n \n( b ) \n( ) ∏\n=\n−\n=\nn\nn\nn\nA\n1\n1\n2\ndet\n \n( c ) \n( ) ∏\n−\n=\n=\n1\n1\n2\ndet\nn\nn\nn\nA\n \n( d ) \n( ) ∏\n=\n−\n=\nn\nn\nn\nA\n1\n1\n2\ndet\n \n( e ) \n( )\n1\ndet\n=\nA\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n10/21",
+    "alternativas": {},
+    "texto_bruto": "Calcule o determinante da matriz A de ordem n : \n \n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n−\n=\n1\n2\n1\n1\n1\n1\n1\n1\n1\n9\n1\n1\n1\n1\n1\n1\n7\n1\n1\n1\n1\n1\n1\n5\n1\n1\n1\n1\n1\n1\n3\n1\n1\n1\n1\n1\n1\n1\nn\nA\nΚ\nΟ\nΜ\nΜ\nΜ\nΜ\nΜ\nΚ\nΚ\nΚ\nΚ\nΚ\n \n \n( a ) \n( ) ∏\n−\n=\n=\n1\n1\n2\ndet\nn\nn\nn\nA\n \n( b ) \n( ) ∏\n=\n−\n=\nn\nn\nn\nA\n1\n1\n2\ndet\n \n( c ) \n( ) ∏\n−\n=\n=\n1\n1\n2\ndet\nn\nn\nn\nA\n \n( d ) \n( ) ∏\n=\n−\n=\nn\nn\nn\nA\n1\n1\n2\ndet\n \n( e ) \n( )\n1\ndet\n=\nA\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n10/21"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Um \nparalelepípedo \nformado \npelos \nvetores \n(\n)\na\na\na\nu\n,\n,\n=\nρ\n, \n(\n)\na\na\na\nv\n3,\n2,\n2\n=\nρ\n e \n(\n)\na\na\na\nw\n,\n,\n2\n=\nρ\n com \nR\na ∈\n tem volume igual a 8. Determine o valor de \na . \n \n( a ) 1 \n( b ) 2 \n( c ) 2\n3 \n( d ) 3 \n( e ) 2\n5",
+    "alternativas": {},
+    "texto_bruto": "Um \nparalelepípedo \nformado \npelos \nvetores \n(\n)\na\na\na\nu\n,\n,\n=\nρ\n, \n(\n)\na\na\na\nv\n3,\n2,\n2\n=\nρ\n e \n(\n)\na\na\na\nw\n,\n,\n2\n=\nρ\n com \nR\na ∈\n tem volume igual a 8. Determine o valor de \na . \n \n( a ) 1 \n( b ) 2 \n( c ) 2\n3 \n( d ) 3 \n( e ) 2\n5"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Na Escola de Marinha Mercante, há alunos de ambos \nos sexos (130 mulheres e 370 homens), divididos \nentre os Cursos Básico, de Máquinas e de Náutica. \nSabe-se que do total de 130 alunos do Curso de \nMáquinas, 20 são mulheres. O Curso de Náutica tem \n270 alunos no total e o Curso Básico tem o mesmo \nnúmero de homens e mulheres. Quantas mulheres há \nno Curso de Náutica? \n \n( a ) 50 \n( b ) 55 \n( c ) 60 \n( d ) 65 \n( e ) 70 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n11/21",
+    "alternativas": {},
+    "texto_bruto": "Na Escola de Marinha Mercante, há alunos de ambos \nos sexos (130 mulheres e 370 homens), divididos \nentre os Cursos Básico, de Máquinas e de Náutica. \nSabe-se que do total de 130 alunos do Curso de \nMáquinas, 20 são mulheres. O Curso de Náutica tem \n270 alunos no total e o Curso Básico tem o mesmo \nnúmero de homens e mulheres. Quantas mulheres há \nno Curso de Náutica? \n \n( a ) 50 \n( b ) 55 \n( c ) 60 \n( d ) 65 \n( e ) 70 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n\n \n \n11/21"
+  }
+]

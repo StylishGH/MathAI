@@ -1,0 +1,122 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "1\nx\n(f",
+    "alternativas": {},
+    "texto_bruto": "1\nx\n(f"
+  },
+  {
+    "numero": 2,
+    "enunciado": "1\nx\n(f\n−\n−\n=\n+\n−\n. Sabendo-se que \nf(0) = 4, o valor de f(1007) é igual a \na) - 1 \nb) 4 \nc) \n4\n1\n−\n \nd) \n3\n5\n−\n \ne) \n5\n3\n \n \nResolução: \nQ\nZ\n:\nf\n⎯→\n⎯\n \nf(0) = 4 \n)\nx\n(f",
+    "alternativas": {},
+    "texto_bruto": "1\nx\n(f\n−\n−\n=\n+\n−\n. Sabendo-se que \nf(0) = 4, o valor de f(1007) é igual a \na) - 1 \nb) 4 \nc) \n4\n1\n−\n \nd) \n3\n5\n−\n \ne) \n5\n3\n \n \nResolução: \nQ\nZ\n:\nf\n⎯→\n⎯\n \nf(0) = 4 \n)\nx\n(f"
+  },
+  {
+    "numero": 3,
+    "enunciado": "1\nx\n(f",
+    "alternativas": {},
+    "texto_bruto": "1\nx\n(f"
+  },
+  {
+    "numero": 4,
+    "enunciado": "1\nx\n(f\n−\n−\n=\n+\n−\n \n \nIsolando f(x) na equação acima obtemos:",
+    "alternativas": {},
+    "texto_bruto": "1\nx\n(f\n−\n−\n=\n+\n−\n \n \nIsolando f(x) na equação acima obtemos:"
+  },
+  {
+    "numero": 5,
+    "enunciado": "1\nx\n(f",
+    "alternativas": {},
+    "texto_bruto": "1\nx\n(f"
+  },
+  {
+    "numero": 6,
+    "enunciado": "1\nx\n(f\n)\nx\n(f\n+\n−\n−\n−\n=\n   (I) \n \nSegue que: \n)1\nx\n(f",
+    "alternativas": {},
+    "texto_bruto": "1\nx\n(f\n)\nx\n(f\n+\n−\n−\n−\n=\n   (I) \n \nSegue que: \n)1\nx\n(f"
+  },
+  {
+    "numero": 7,
+    "enunciado": "1\nx\n(f\n−\n−\n=\n+\n    (II) \n)\nx\n(f",
+    "alternativas": {},
+    "texto_bruto": "1\nx\n(f\n−\n−\n=\n+\n    (II) \n)\nx\n(f"
+  },
+  {
+    "numero": 8,
+    "enunciado": "2\nx\n(f\n−\n=\n+\n     (III) \nf(x + 4) = f(x)        (IV) \n \nAssim f(1007) = f(3 + 251 · 4) = f(3) \n \n \n \nFazendo x = 1 em (III), obtemos: \n)1\n(f",
+    "alternativas": {},
+    "texto_bruto": "2\nx\n(f\n−\n=\n+\n     (III) \nf(x + 4) = f(x)        (IV) \n \nAssim f(1007) = f(3 + 251 · 4) = f(3) \n \n \n \nFazendo x = 1 em (III), obtemos: \n)1\n(f"
+  },
+  {
+    "numero": 9,
+    "enunciado": "3\n(f\n−\n=\n \n \nFazendo x = 1 em (I) e usando f(0) = 4. \nObtemos: \n5\n3\n1\n4\n1\n4",
+    "alternativas": {},
+    "texto_bruto": "3\n(f\n−\n=\n \n \nFazendo x = 1 em (I) e usando f(0) = 4. \nObtemos: \n5\n3\n1\n4\n1\n4"
+  },
+  {
+    "numero": 10,
+    "enunciado": "0\n(f",
+    "alternativas": {},
+    "texto_bruto": "0\n(f"
+  },
+  {
+    "numero": 11,
+    "enunciado": "0\n(f\n)1\n(f\n=\n+\n−\n=\n+\n−\n=\n \n3\n5\n5\n3",
+    "alternativas": {},
+    "texto_bruto": "0\n(f\n)1\n(f\n=\n+\n−\n=\n+\n−\n=\n \n3\n5\n5\n3"
+  },
+  {
+    "numero": 12,
+    "enunciado": "3\n(f,\nLogo\n−\n=\n−\n=\n \n \nALTERNATIVA D \n \n04. O conjunto solução da inequação \n1\nx\n1\nx\n1\n≥\n−\n+\né: \na) [0, + ∞] \nb) [0, 1) \nc) (1, + ∞) \nd) [0, 1] \ne) (-∞, 0] ∪ (1, + ∞) \n \nResolução: \n1\nx\n1\nx\n1\n≥\n−\n+\n \n0\n1\nx\n1\nx\n1\n≥\n−\n−\n+\n \n0\nx",
+    "alternativas": {},
+    "texto_bruto": "3\n(f,\nLogo\n−\n=\n−\n=\n \n \nALTERNATIVA D \n \n04. O conjunto solução da inequação \n1\nx\n1\nx\n1\n≥\n−\n+\né: \na) [0, + ∞] \nb) [0, 1) \nc) (1, + ∞) \nd) [0, 1] \ne) (-∞, 0] ∪ (1, + ∞) \n \nResolução: \n1\nx\n1\nx\n1\n≥\n−\n+\n \n0\n1\nx\n1\nx\n1\n≥\n−\n−\n+\n \n0\nx"
+  },
+  {
+    "numero": 13,
+    "enunciado": "x\n1\n(\nx\n1\n≥\n−\n−\n−\n+\n \n0\nx\n1\nx\n2\n≥\n−\n \n \n)1\n,0\n[\nS =\n \nALTERNATIVA B \n \n05. Se a sequência de inteiros positivos (2, x, y) é uma \nProgressão Geométrica e (x + 1, y, 11) uma Progressão \nAritmética, então, o valor de x + y é \na) 11 \nb) 12 \nc) 13 \nd) 14 \ne) 15 \n \n \n1\n\n\n \nResolução: \nComo (2, x, y) é uma P.G. temos: \nx\n2 = 2y   (I) \nComo (x + 1, y, 11) é uma P.A. temos: \n2y = x + 1 + 11 \n2y = x + 12 (II) \nSubstituindo (II) em (I), obtemos: \nx\n2 = x + 12  \nx\n2 – x – 12 = 0 \nx’ = -3 (não convém) \nx” = 4 \nSubstituindo x = 4 em (I), obtemos 2y = 4\n2 ⇒ y = 8 \nLogo x + y = 12 \n \nALTERNATIVA B \n \n06. Sejam A, B e C matrizes de ordem 3 x 3 inversíveis tais que \ndetA\n-1 = 3 e \n4\nI\n2",
+    "alternativas": {},
+    "texto_bruto": "x\n1\n(\nx\n1\n≥\n−\n−\n−\n+\n \n0\nx\n1\nx\n2\n≥\n−\n \n \n)1\n,0\n[\nS =\n \nALTERNATIVA B \n \n05. Se a sequência de inteiros positivos (2, x, y) é uma \nProgressão Geométrica e (x + 1, y, 11) uma Progressão \nAritmética, então, o valor de x + y é \na) 11 \nb) 12 \nc) 13 \nd) 14 \ne) 15 \n \n \n1\n\n\n \nResolução: \nComo (2, x, y) é uma P.G. temos: \nx\n2 = 2y   (I) \nComo (x + 1, y, 11) é uma P.A. temos: \n2y = x + 1 + 11 \n2y = x + 12 (II) \nSubstituindo (II) em (I), obtemos: \nx\n2 = x + 12  \nx\n2 – x – 12 = 0 \nx’ = -3 (não convém) \nx” = 4 \nSubstituindo x = 4 em (I), obtemos 2y = 4\n2 ⇒ y = 8 \nLogo x + y = 12 \n \nALTERNATIVA B \n \n06. Sejam A, B e C matrizes de ordem 3 x 3 inversíveis tais que \ndetA\n-1 = 3 e \n4\nI\n2"
+  },
+  {
+    "numero": 14,
+    "enunciado": "AB\n(\ndet\n1\n=\n⎟\n⎠\n⎞\n⎜\n⎝\n⎛\n+\n−\n. Sabendo-se que I é a matriz \nidentidade de ordem 3, tal que I = -3C\n-1(2B\n-1 + A)\nT, o determinante \nde C é igual a \na) - 8/3 \nb) - 32/3 \nc) - 9 \nd) - 54 \ne) - 288 \n \nResolução: \nNote que: \nT\n1\n1\nT\n1\nA\n2\nI\n2\n1\nA\nB\n)\nA\nB\n2\n(\n⎥\n⎦\n⎤\n⎢\n⎣\n⎡\n⋅⎟⎟\n⎠\n⎞\n⎜⎜\n⎝\n⎛\n+\n⋅\n=\n+\n−\n−\n−\n \nT\n1\n1\nT\n1\nA\n2\nI\n2\n1\nA\nB\ndet\n)\nA\nB\n2\n(\ndet\n⎥\n⎦\n⎤\n⎢\n⎣\n⎡\n⋅⎟⎟\n⎠\n⎞\n⎜⎜\n⎝\n⎛\n+\n⋅\n=\n+\n−\n−\n−\n \n)\nA\n2\ndet(\nI\n2\n1\nA\nB\ndet\n)\nA\nB\n2\n(\ndet\n1\n1\nT\n1\n⋅⎟⎟\n⎠\n⎞\n⎜⎜\n⎝\n⎛\n+\n⋅\n=\n+\n−\n−\n−\n \n3\n32\n3\n1\n2",
+    "alternativas": {},
+    "texto_bruto": "AB\n(\ndet\n1\n=\n⎟\n⎠\n⎞\n⎜\n⎝\n⎛\n+\n−\n. Sabendo-se que I é a matriz \nidentidade de ordem 3, tal que I = -3C\n-1(2B\n-1 + A)\nT, o determinante \nde C é igual a \na) - 8/3 \nb) - 32/3 \nc) - 9 \nd) - 54 \ne) - 288 \n \nResolução: \nNote que: \nT\n1\n1\nT\n1\nA\n2\nI\n2\n1\nA\nB\n)\nA\nB\n2\n(\n⎥\n⎦\n⎤\n⎢\n⎣\n⎡\n⋅⎟⎟\n⎠\n⎞\n⎜⎜\n⎝\n⎛\n+\n⋅\n=\n+\n−\n−\n−\n \nT\n1\n1\nT\n1\nA\n2\nI\n2\n1\nA\nB\ndet\n)\nA\nB\n2\n(\ndet\n⎥\n⎦\n⎤\n⎢\n⎣\n⎡\n⋅⎟⎟\n⎠\n⎞\n⎜⎜\n⎝\n⎛\n+\n⋅\n=\n+\n−\n−\n−\n \n)\nA\n2\ndet(\nI\n2\n1\nA\nB\ndet\n)\nA\nB\n2\n(\ndet\n1\n1\nT\n1\n⋅⎟⎟\n⎠\n⎞\n⎜⎜\n⎝\n⎛\n+\n⋅\n=\n+\n−\n−\n−\n \n3\n32\n3\n1\n2"
+  },
+  {
+    "numero": 15,
+    "enunciado": "A\nB\n2\n(\ndet\n3\nT\n1\n=\n⋅\n⋅\n=\n+\n−\n \nTomando o determinante em \nT\n1",
+    "alternativas": {},
+    "texto_bruto": "A\nB\n2\n(\ndet\n3\nT\n1\n=\n⋅\n⋅\n=\n+\n−\n \nTomando o determinante em \nT\n1"
+  },
+  {
+    "numero": 16,
+    "enunciado": "A\nB\n2\n(\nC\n3\nI\n+\n⋅\n−\n=\n−\n−\n \nObtemos \nI\ndet\n]\n)\nA\nB\n2\n(\nC\n3\n[\ndet\nT\n1\n1\n=\n+\n⋅\n−\n−\n−",
+    "alternativas": {},
+    "texto_bruto": "A\nB\n2\n(\nC\n3\nI\n+\n⋅\n−\n=\n−\n−\n \nObtemos \nI\ndet\n]\n)\nA\nB\n2\n(\nC\n3\n[\ndet\nT\n1\n1\n=\n+\n⋅\n−\n−\n−"
+  },
+  {
+    "numero": 17,
+    "enunciado": "A\nB\n2\ndet(\n)\nC\ndet(\n)\n3\n(\nT\n1\n1\n3\n=\n+\n⋅\n⋅\n−\n−\n−\n \n1\n3",
+    "alternativas": {},
+    "texto_bruto": "A\nB\n2\ndet(\n)\nC\ndet(\n)\n3\n(\nT\n1\n1\n3\n=\n+\n⋅\n⋅\n−\n−\n−\n \n1\n3"
+  },
+  {
+    "numero": 18,
+    "enunciado": "C\ndet(\n)\n27\n(\n1\n=\n⋅\n⋅\n−\n−\n \n288",
+    "alternativas": {},
+    "texto_bruto": "C\ndet(\n)\n27\n(\n1\n=\n⋅\n⋅\n−\n−\n \n288"
+  },
+  {
+    "numero": 19,
+    "enunciado": "C\ndet(\n1\n−\n=\n−\n \ndet (C) = -288 \n \nALTERNATIVA E \n \n07. Um carro percorre 240 km com o desempenho de 12 km por \nlitro de gasolina. Ao utilizar álcool como combustível, o \ndesempenho passa a ser de 8 km por litro de álcool. Sabendo que \no litro de álcool para que o gasto ao percorrer a mesma distância \nseja igual ao gasto que se tem ao utilizar gasolina como \ncombustível? \na) R$ 1,60 \nb) R$ 1,65 \nc) R$ 1,72 \nd) R$ 1,75 \ne) R$ 1,80 \n \nResolução: \n00\n,\n54\n$\nR\n70\n,2\n20\n70\n,2\n12\n240\n=\n⋅\n=\n⋅\n  \nGasto com Álcool: \nx\n30\nx\n8\n240\n=\n⋅\n \n30x = 54 \nx = 1,80 \n \nALTERNATIVA E \n \n08. Dada a equação x\n2 + y\n2 – 4x + 10y + 25 = 0, assinale a opção \nque apresenta a distância do centro da curva à origem do sistema \nde coordenadas. \na) 5 \nb) 6 \nc) 8 \nd) \n24 \ne) \n29 \n \nResolução: \nx\n2 + y\n2 – 4x + 10y + 25 = 0 \n2\n2\n4\nxc\n=\n−\n−\n \n5\n2\n10\nyc\n−\n=\n−\n \nc(2; -5) \n2\ny\n2\nx\n2\nco\nd\nΔ\n+\nΔ\n=\n \n2\n2\n2\nc\n)\n0\n5\n(\n)\n0\n2\n(\nd\no\n−\n−\n+\n−\n=\n \n25\n4\nd2\nco\n+\n=\n \n29\nd\no\nc\n=\n \n \n09. Analise a função a seguir. \n⎪⎩\n⎪⎨\n⎧\n=\n−\n≠\n−\n−\n=\n2\nx\n,5\np\n3\n2\nx\n,\n2\nx\n4\nx\n)\nx\n(f\n2\n \nPara que a função acima seja contínua no ponto x = 2, qual \ndeverá ser o valor de p? \na) 1/3 \nb) 1 \nc) 3 \nd) - 1 \ne) - 3 \n \nResolução: \nPara que a função f seja contínua em x = 2 devemos ter: \ni) f definida em 2. \nii) \n2\nx\n)\n2\n(f\n)\nx\n(f\nlim\n→\n=\n \n \nAssim:",
+    "alternativas": {},
+    "texto_bruto": "C\ndet(\n1\n−\n=\n−\n \ndet (C) = -288 \n \nALTERNATIVA E \n \n07. Um carro percorre 240 km com o desempenho de 12 km por \nlitro de gasolina. Ao utilizar álcool como combustível, o \ndesempenho passa a ser de 8 km por litro de álcool. Sabendo que \no litro de álcool para que o gasto ao percorrer a mesma distância \nseja igual ao gasto que se tem ao utilizar gasolina como \ncombustível? \na) R$ 1,60 \nb) R$ 1,65 \nc) R$ 1,72 \nd) R$ 1,75 \ne) R$ 1,80 \n \nResolução: \n00\n,\n54\n$\nR\n70\n,2\n20\n70\n,2\n12\n240\n=\n⋅\n=\n⋅\n  \nGasto com Álcool: \nx\n30\nx\n8\n240\n=\n⋅\n \n30x = 54 \nx = 1,80 \n \nALTERNATIVA E \n \n08. Dada a equação x\n2 + y\n2 – 4x + 10y + 25 = 0, assinale a opção \nque apresenta a distância do centro da curva à origem do sistema \nde coordenadas. \na) 5 \nb) 6 \nc) 8 \nd) \n24 \ne) \n29 \n \nResolução: \nx\n2 + y\n2 – 4x + 10y + 25 = 0 \n2\n2\n4\nxc\n=\n−\n−\n \n5\n2\n10\nyc\n−\n=\n−\n \nc(2; -5) \n2\ny\n2\nx\n2\nco\nd\nΔ\n+\nΔ\n=\n \n2\n2\n2\nc\n)\n0\n5\n(\n)\n0\n2\n(\nd\no\n−\n−\n+\n−\n=\n \n25\n4\nd2\nco\n+\n=\n \n29\nd\no\nc\n=\n \n \n09. Analise a função a seguir. \n⎪⎩\n⎪⎨\n⎧\n=\n−\n≠\n−\n−\n=\n2\nx\n,5\np\n3\n2\nx\n,\n2\nx\n4\nx\n)\nx\n(f\n2\n \nPara que a função acima seja contínua no ponto x = 2, qual \ndeverá ser o valor de p? \na) 1/3 \nb) 1 \nc) 3 \nd) - 1 \ne) - 3 \n \nResolução: \nPara que a função f seja contínua em x = 2 devemos ter: \ni) f definida em 2. \nii) \n2\nx\n)\n2\n(f\n)\nx\n(f\nlim\n→\n=\n \n \nAssim:"
+  },
+  {
+    "numero": 20,
+    "enunciado": "2\nx\n(\nlim\n2\nx\n4\nx\nlim\n)\nx\n(f\nlim\n2\nx\n2\n2\nx\n2\nx\n=\n+\n=\n−\n−\n=\n→\n→\n→\n \nf(2) = 3p -5 \n3p -5 = 4 \np = 3 \n \nALTERNATIVA C \n \n10. Sejam os números complexos z tais que \n1\nz\nz\n3\n1\n+\n=\n. O \nlugar geométricos das imagens desses números complexos é uma \na) parábola \nb) reta \nc) circunferência de raio 3/8 \nd) circunferência de raio 3/2 \ne) hipérbole \n \nResolução: \n⇒\n+\n=\n⇒\n+\n=\n⇒\n+\n=\n2\n2\n1\nz\n9\nz\n1\nz\n3\nz\n1\nz\nz\n3\n1\n \n⇒\n+\n+\n=\n⋅\n⇒\n+\n⋅\n+\n=\n⋅\n)1\nz\n)(\n1\nz\n(\n9\nz\nz\n)1\nz\n(\n)1\nz\n(\n9\nz\nz\n \n⇒\n⋅\n=\n+\n+\n+\nz\nz\n)1\nz\nz\nz\nz\n(\n9\n \n⇒\n=\n+\n+\n+\n0",
+    "alternativas": {},
+    "texto_bruto": "2\nx\n(\nlim\n2\nx\n4\nx\nlim\n)\nx\n(f\nlim\n2\nx\n2\n2\nx\n2\nx\n=\n+\n=\n−\n−\n=\n→\n→\n→\n \nf(2) = 3p -5 \n3p -5 = 4 \np = 3 \n \nALTERNATIVA C \n \n10. Sejam os números complexos z tais que \n1\nz\nz\n3\n1\n+\n=\n. O \nlugar geométricos das imagens desses números complexos é uma \na) parábola \nb) reta \nc) circunferência de raio 3/8 \nd) circunferência de raio 3/2 \ne) hipérbole \n \nResolução: \n⇒\n+\n=\n⇒\n+\n=\n⇒\n+\n=\n2\n2\n1\nz\n9\nz\n1\nz\n3\nz\n1\nz\nz\n3\n1\n \n⇒\n+\n+\n=\n⋅\n⇒\n+\n⋅\n+\n=\n⋅\n)1\nz\n)(\n1\nz\n(\n9\nz\nz\n)1\nz\n(\n)1\nz\n(\n9\nz\nz\n \n⇒\n⋅\n=\n+\n+\n+\nz\nz\n)1\nz\nz\nz\nz\n(\n9\n \n⇒\n=\n+\n+\n+\n0"
+  }
+]

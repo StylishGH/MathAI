@@ -1,0 +1,178 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Um marinheiro, desejando aquecer 1 litro de água, que, inicialmente, encontra-se na temperatura de 86°F, usa um aquecedor do tipo rabo quente cuja resistência vale 15 ohms. Sabendo que a tomada usada está sob tensão de 120V e que o tempo de aquecimento foi de 4 min, pode-se afirmar que a temperatura final atingida é, na escala Celsius, aproximadamente de. OBS.: Desprezam-se as perdas e considere c_agua = 1 cal/g°C, 1 cal = 4 J e d_agua = 1 g/cm3.",
+    "latex": "T_F = \\frac{9}{5}T_C + 32",
+    "alternativa_a": "86°",
+    "alternativa_b": "88°",
+    "alternativa_c": "90°",
+    "alternativa_d": "96°",
+    "alternativa_e": "99°",
+    "gabarito": "E"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Observe o circuito. No circuito acima pode-se afirmar que a corrente que atravessa o resistor de 10 ohms, em ampères, vale",
+    "latex": "R = 10\\Omega",
+    "alternativa_a": "3",
+    "alternativa_b": "6",
+    "alternativa_c": "8",
+    "alternativa_d": "10",
+    "alternativa_e": "12",
+    "gabarito": "B"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Um capacitor de acoplamento de áudio em um rádio VHF de bordo, de capacitância 1,5 \\mu F (microfarads), está submetido à voltagem eficaz de trabalho de 40V. A intensidade da corrente alternada resultante, para uma freqüência de 2,5 kHz nessa voltagem, será de, aproximadamente,",
+    "latex": "X_C = \\frac{1}{2 \\pi f C}",
+    "alternativa_a": "0,45 A",
+    "alternativa_b": "0,57 A",
+    "alternativa_c": "0,64 A",
+    "alternativa_d": "0,72 A",
+    "alternativa_e": "0,94 A",
+    "gabarito": "E"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Sejam duas cargas q, iguais, de -5 \\times 10^{-6} C, fixas no espaço, separadas por uma distância d = 4 cm, conforme indica a figura abaixo: Suponha que no ponto C seja colocada uma terceira carga de 3 \\times 10^{-5} C, trazida lentamente desde o infinito. O trabalho ou a variação da energia potencial elétrica da configuração (em joules), após posicionamento da terceira carga é de, aproximadamente, dado: k = 9 \\cdot 10^9 N \\cdot m^2 / C^2.",
+    "latex": "E_p = \\frac{k \\cdot q_1 \\cdot q_2}{d}",
+    "alternativa_a": "-55,47",
+    "alternativa_b": "-77,47",
+    "alternativa_c": "-95,47",
+    "alternativa_d": "-107,47",
+    "alternativa_e": "-128,47",
+    "gabarito": "D"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Um toróide, no circuito de uma das repetidoras de radar do passadiço tem uma seção reta quadrada de lado igual a 8 cm, raio interno de 18 cm, 400 espiras e é atravessado por uma corrente de intensidade igual a 0,8 A. O valor aproximado do fluxo magnético através da seção reta do toróide, em microwebers, é de aproximadamente dado: \\mu_0 = 4\\pi \\times 10^{-7}, em unidades do S.I.",
+    "latex": "\\Phi = B \\cdot A",
+    "alternativa_a": "2,056",
+    "alternativa_b": "3,074",
+    "alternativa_c": "5,022",
+    "alternativa_d": "6,034",
+    "alternativa_e": "8,012",
+    "gabarito": "C"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Seja uma partícula de massa 20 gramas, carregada com 18 microcoulombs, viajando a 500 km/h, deslocando-se horizontalmente da esquerda para a direita sobre a folha da prova. Suponha que, nessa região do espaço, exista um campo magnético uniforme de intensidade 120 T, perpendicular à folha de prova, apontando para dentro. O módulo da força resultante (em newtons) que sobre ela atua é, aproximadamente, de",
+    "latex": "F_m = q \\cdot v \\cdot B \\cdot \\sen(\\theta)",
+    "alternativa_a": "0,26",
+    "alternativa_b": "0,36",
+    "alternativa_c": "0,46",
+    "alternativa_d": "0,56",
+    "alternativa_e": "0,66",
+    "gabarito": "C"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Dimensione o disjuntor capaz de melhor proteger a instalação elétrica de um ramo do passadiço, ao qual estão ligados os dispositivos abaixo listados, supondo a tensão eficaz na rede 220 volts (valores das opções em ampères).",
+    "latex": "I = \\frac{P}{V}",
+    "alternativa_a": "10",
+    "alternativa_b": "15",
+    "alternativa_c": "20",
+    "alternativa_d": "25",
+    "alternativa_e": "30",
+    "gabarito": "D"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Qual das unidades abaixo NÃO pertence ao Sistema Internacional de Unidades (S.I.)?",
+    "latex": "",
+    "alternativa_a": "Quilograma.",
+    "alternativa_b": "Libra massa.",
+    "alternativa_c": "Segundo.",
+    "alternativa_d": "Mol.",
+    "alternativa_e": "Candela.",
+    "gabarito": "B"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Os motores de combustão interna são máquinas térmicas nas quais o sistema de refrigeração é muito importante pois, caso falhe, pode provocar a parada total do funcionamento dessas máquinas. Com relação a isso, pode-se afirmar que a refrigeração tem como principal objetivo",
+    "latex": "",
+    "alternativa_a": "manter a temperatura interna sob controle, evitando a dilatação exagerada dos componentes envolvidos.",
+    "alternativa_b": "diminuir bruscamente a temperatura interna para que os componentes não sofram desgaste.",
+    "alternativa_c": "diminuir a temperatura interna para produzir um melhor aproveitamento na queima do combustível.",
+    "alternativa_d": "manter o calor interno sob controle, evitando com isso o desgaste dos componentes envolvidos.",
+    "alternativa_e": "manter constantes o calor interno e a dilatação dos componentes envolvidos para evitar desgastes.",
+    "alternativa_gabarito": "A"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Um objeto de massa 2 kg é deslocado pelo trecho ABCD, conforme o desenho abaixo. O trabalho total da força peso, em joules, no trecho é",
+    "latex": "\\tau = P \\cdot \\Delta h",
+    "alternativa_a": "0",
+    "alternativa_b": "80",
+    "alternativa_c": "160",
+    "alternativa_d": "240",
+    "alternativa_e": "320",
+    "gabarito": "A"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Num determinado instrumento musical, há uma corda de 100g, a qual mede 80 cm de comprimento e está sob tensão de 800N. Colocando-se essa corda para vibrar, é correto afirmar que a sua frequência fundamental, em Hz, é igual a",
+    "latex": "f = \frac{v}{2L}",
+    "alternativa_a": "50",
+    "alternativa_b": "128",
+    "alternativa_c": "250",
+    "alternativa_d": "288",
+    "alternativa_e": "350",
+    "gabarito": "A"
+  },
+  {
+    "numero": 17,
+    "enunciado": "A figura acima mostra um escoteiro utilizando uma lente esférica em dois momentos distintos. Pode-se concluir que o tipo da lente e a imagem fornecida por ela na situação II, respectivamente, são",
+    "latex": "",
+    "alternativa_a": "convergente e real.",
+    "alternativa_b": "divergente e virtual.",
+    "alternativa_c": "côncava e real.",
+    "alternativa_d": "convexa e virtual.",
+    "alternativa_e": "convexa e real.",
+    "gabarito": "A"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Na figura acima, tem-se duas cordas e uma fonte que vibra na frequência de 15Hz. Pode-se afirmar que, neste caso, a velocidade na corda A e a frequência na corda B valem, respectivamente,",
+    "latex": "f = 15\\text{ Hz}",
+    "alternativa_a": "60 km/h e 15Hz.",
+    "alternativa_b": "90 km/h e 15Hz.",
+    "alternativa_c": "60 km/h e 20Hz.",
+    "alternativa_d": "166 km/h e 20Hz.",
+    "alternativa_e": "216 km/h e 15Hz.",
+    "gabarito": "A"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Uma pessoa caminha em direção a um espelho fixo com velocidade escalar constante, medida em relação ao solo, conforme mostra a figura abaixo. Analisando a situação descrita, pode-se afirmar que",
+    "latex": "",
+    "alternativa_a": "a imagem, de mesmo tamanho, afasta-se do espelho com velocidade de 1,5 m/s.",
+    "alternativa_b": "a imagem, de mesmo tamanho, aproxima-se do espelho com velocidade de 3,0 m/s.",
+    "alternativa_c": "a pessoa e a sua imagem aproximam-se com velocidade relativa de 3,0 m/s.",
+    "alternativa_d": "a pessoa e a sua imagem afastam-se com velocidade relativa de 3,0 m/s.",
+    "alternativa_e": "a imagem, aumentada devido à aproximação da pessoa, tem velocidade de 1,5 m/s.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Mantendo-se uma tradição das Olimpíadas, ocorreu, no mês de março de 2008, na Grécia, a cerimônia do acendimento da tocha olímpica, que percorreu diversas cidades de todos os continentes. Para acender a tocha, foi usado um espelho esférico, que captou os raios solares, dirigindo-os para um ponto onde ela se encontrava. De acordo com a informação, é correto dizer que a tocha estava",
+    "latex": "",
+    "alternativa_a": "no centro de curvatura do espelho convexo.",
+    "alternativa_b": "no foco do espelho convexo.",
+    "alternativa_c": "no centro de curvatura do espelho côncavo.",
+    "alternativa_d": "no foco do espelho côncavo.",
+    "alternativa_e": "entre o foco e o vértice do espelho côncavo.",
+    "gabarito": "D"
+  },
+  {
+    "numero": 21,
+    "enunciado": "What is the principal idea addressed in the text above?",
+    "latex": "",
+    "alternativa_a": "otherwise",
+    "alternativa_b": "notwithstanding",
+    "alternativa_c": "instead of",
+    "alternativa_d": "in spite of",
+    "alternativa_e": "since",
+    "gabarito": "A"
+  }
+]

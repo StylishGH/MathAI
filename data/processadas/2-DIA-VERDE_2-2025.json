@@ -1,0 +1,167 @@
+[
+  {
+    "numero": 6,
+    "enunciado": "Quais as relações entre a, b, c pertencentes aos reais positivos, com a, b, c diferentes de 1, a diferente de c e b diferente de 1/c para que a equação abaixo seja válida, sabendo que A, B, C e D são definidos no enunciado, com alfa e beta pertencentes aos reais não nulos?",
+    "latex": "\\log_a(bc)^\\beta \\cdot \\log_b\\left(\\frac{a}{c}\\right)^\\alpha \\cdot \\log_c b = \\alpha\\beta [A - B + C - D]",
+    "alternativa_a": "a + b = c",
+    "alternativa_b": "a - b = 0",
+    "alternativa_c": "a + b + c = 1",
+    "alternativa_d": "c - 2b = 0",
+    "alternativa_e": "2a + 3c = 1",
+    "gabarito": "B"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Observe as três progressões aritméticas com os primeiros termos 5, 8 e 10, construídas a partir da letra E da sigla da Escola de Formação de Oficiais da Marinha Mercante (EFOMM). Quando as letras da sigla se esgotam, a sequência retorna à primeira letra. Continuando esse padrão, determine a posição do número 2025 na sequência.",
+    "latex": "",
+    "alternativa_a": "Não disponível",
+    "alternativa_b": "Não disponível",
+    "alternativa_c": "Não disponível",
+    "alternativa_d": "Não disponível",
+    "alternativa_e": "Não disponível",
+    "gabarito": null
+  },
+  {
+    "numero": 8,
+    "enunciado": "Um casal pretende tomar uma quantia de R$ 200.000,00 com o banco, em cem prestações no Sistema de Amortização Constante, para compra de sua casa própria. Considerando uma taxa de juros composta de 2% ao mês, qual é o valor da 41ª prestação?",
+    "latex": "",
+    "alternativa_a": "R$ 6.000,00",
+    "alternativa_b": "R$ 5.100,00",
+    "alternativa_c": "R$ 4.400,00",
+    "alternativa_d": "R$ 3.900,00",
+    "alternativa_e": "R$ 3.600,00",
+    "gabarito": "B"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Quantas raízes reais e complexas possui o polinômio abaixo?",
+    "latex": "\\left(x + \\frac{3-\\sqrt{17}}{2}\\right) x^2 (x+1)(x+2) (x+3)^{2\\left(x + \\frac{3+\\sqrt{17}}{2}\\right)} - 5 = 0",
+    "alternativa_a": "Zero real e 8 complexas.",
+    "alternativa_b": "2 reais e 6 complexas.",
+    "alternativa_c": "4 reais e 4 complexas.",
+    "alternativa_d": "6 reais e 2 complexas.",
+    "alternativa_e": "8 reais e zero complexa.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Sobre funções, analise as afirmativas abaixo: I. A função tan(x) com x no intervalo [0, pi/2) é sobrejetora em R+ e a função sen(x), com x real, é injetora. II. As imagens das famílias de funções f(x) = a|x| + b, com a e b reais, não contêm números negativos. III. A função exponencial de base a, definida por f: R para R+, é denotada por f(x) = a^x, onde a é um número real positivo e diferente de 1. Suponha que as funções g(x) = b \\cdot a^x e G(x) = B \\cdot A^x, com as constantes b, B reais positivos, satisfaçam g(x1) = G(x1) e g(x2) = G(x2) para x1 diferente de x2. Nesse caso, temos que a = A e b = B. IV. Funções quadráticas e racionais são definidas em todo conjunto real. V. Se a função f é não injetora e não sobrejetora e a função g é não injetora, então a função composta g o f é não sobrejetora. Assinale a opção correta.",
+    "latex": "",
+    "alternativa_a": "Apenas as afirmativas II, III, IV e V são verdadeiras.",
+    "alternativa_b": "Apenas as afirmativas IV e V são verdadeiras.",
+    "alternativa_c": "Apenas a afirmativa III é verdadeira.",
+    "alternativa_d": "Apenas as afirmativas I, II e V são verdadeiras.",
+    "alternativa_e": "Apenas as afirmativas I, III, e V são verdadeiras.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 11,
+    "enunciado": "No antigo reino de Algebrália havia um lendário artesão chamado Eudóxio, famoso por suas impressionantes criações geométricas. O rei de Algebrália desafiou Eudóxio a criar uma ponte suspensa, seguindo a curva da função entre os pontos (1,1) e (4,8). Para calcular a quantidade de material necessário, Eudóxio precisa determinar o comprimento exato dessa curva. Ajude Eudóxio, calculando o comprimento de arco da função f(x) entre os pontos fornecidos.",
+    "latex": "f(x) = x^{3/2}",
+    "alternativa_a": "\\frac{1}{27}(8\\sqrt{10}-13\\sqrt{13})",
+    "alternativa_b": "\\frac{1}{9}(80\\sqrt{10}-13\\sqrt{13})",
+    "alternativa_c": "\\frac{1}{27}(80\\sqrt{10}-\\sqrt{13})",
+    "alternativa_d": "\\frac{1}{9}(80\\sqrt{10}-13\\sqrt{13})",
+    "alternativa_e": "\\frac{1}{27}(80\\sqrt{10}-13\\sqrt{13})",
+    "gabarito": "E"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Calcule o volume do sólido reto com altura em que sua base é definida, no primeiro quadrante, abaixo dos gráficos das funções g e h e acima do gráfico da função f.",
+    "latex": "h=12, \\quad f(x) = x^2-8x+17, \\quad g(x) = x^2-4x+9, \\quad h(x) = x^2-12x+41",
+    "alternativa_a": "360 u.v.",
+    "alternativa_b": "192 u.v.",
+    "alternativa_c": "144 u.v.",
+    "alternativa_d": "72 u.v.",
+    "alternativa_e": "64 u.v.",
+    "gabarito": "C"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Sejam alfa e lambda pertencentes aos reais, I a matriz identidade de ordem n e J a matriz com todas entradas iguais a 1, de ordem n. Qual o resultado do produto das matrizes B e x, tal que vale a igualdade A + B = alfa * I + J com as propriedades P1: A*x = lambda*x e P2: a soma de xi1 = 0?",
+    "latex": "A_{n\\times n} + B_{n\\times n} = \\alpha I_{n\\times n} + J_{n\\times n}",
+    "alternativa_a": "(\\alpha + 1 - \\lambda) x_{n\\times 1}",
+    "alternativa_b": "(\\alpha + \\lambda) x_{n\\times 1}",
+    "alternativa_c": "(\\alpha - \\lambda) x_{n\\times 1}",
+    "alternativa_d": "\\alpha x_{n\\times 1}",
+    "alternativa_e": "\\lambda x_{n\\times 1}",
+    "gabarito": "C"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Seja X uma variável aleatória que representa altura, em centímetros, de alunos de um curso de estatística. Em uma amostra de oito alunos, observaram-se as alturas 160; 162; 179; 169; 162; 162; 175; 167. Utilizando a amostra observada, qual a média, a variância, a mediana e a moda da variável aleatória X, respectivamente?",
+    "latex": "X = \\{160, 162, 179, 169, 162, 162, 175, 167\\}",
+    "alternativa_a": "162; 48; 167; 162",
+    "alternativa_b": "167; 56; 167; 160",
+    "alternativa_c": "162; 42; 164,5; 162",
+    "alternativa_d": "167; 56; 164; 162",
+    "alternativa_e": "167; 48; 164,5; 162",
+    "gabarito": "E"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Seja S a soma de todos t no intervalo [0, 2pi] que satisfazem a equação dada. Seja V_E = S^3 o volume da esfera E inscrita num cilindro C. Seja K o sólido formado por dois cones inscritos em C. O sólido AC, chamado de Anticlépsidra, é a região interna de C e externa de K. Qual é o valor da razão entre 4 vezes a área total do cilindro C e o volume da Anticlépsidra?",
+    "latex": "2\\sec^2(x)\\cot^2(t) - 2\\cot^2(t) = A \\cdot B",
+    "alternativa_a": "18",
+    "alternativa_b": "\\frac{18}{\\pi^2}",
+    "alternativa_c": "18\\pi",
+    "alternativa_d": "\\frac{9\\pi}{2}",
+    "alternativa_e": "9",
+    "gabarito": "A"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Um reservatório cônico está sendo cheio a uma vazão de 2 m3/s. O reservatório possui 9 metros de altura e sua base possui 6 metros de diâmetro. O quão rápido o nível da água está subindo quando a água estiver a 6 metros do topo?",
+    "latex": "\\frac{dh}{dt}",
+    "alternativa_a": "\\frac{3}{8\\pi} \\text{ m/s}",
+    "alternativa_b": "\\frac{1}{2\\pi} \\text{ m/s}",
+    "alternativa_c": "\\frac{4}{\\pi} \\text{ m/s}",
+    "alternativa_d": "\\frac{9}{8\\pi} \\text{ m/s}",
+    "alternativa_e": "\\frac{2}{\\pi} \\text{ m/s}",
+    "gabarito": "D"
+  },
+  {
+    "numero": 17,
+    "enunciado": "A empresa de tecnologia Alfa-Ômega vai lançar um novo produto em formato de paralelepípedo, com base quadrada. Com o objetivo de maximizar o Lucro, as seguintes informações são fornecidas:\n- O Preço Unitário, Pu, do novo produto é R$ 5.000,00.\n- O Custo de Produção (Cp) corresponde ao valor gasto para se produzir um paralelepípedo com volume de 1.024 cm³. O custo da base e da tampa é de R$ 4,00/cm² e o custo das laterais é de R$ 2,00/cm².\n- O Custo Variável Cv é estimado pela função Cv(q) = q^3 - \\frac{125}{2}q^2 + (Cp + 4714)q - \\frac{245623}{2}, onde q é o número de peças produzidas.\n- O Custo Total (Ct) é composto pelo Custo Variável (Cv) e um Custo Fixo (Cf) de R$ 15.000,00, conforme a fórmula: Ct(q) = Cv(q) + Cf.\n- A Receita é calculada por R(q) = q \\cdot Pu e o Lucro por L(q) = R(q) - Ct(q).\nConsiderando a maximização do Lucro, a partir da minimização de Cp, analise as afirmativas.\nI - Para que Cp seja mínimo, as dimensões do novo produto devem ser 4cm x 4cm x 64cm.\nII - Para maximizar o Lucro, considerando R e Ct, a produção deve ser de 5 unidades.\nIII - O Lucro máximo é de R$ 99.999,00.\nIV - O valor da Receita que maximiza o Lucro é de R$ 125.000,00.\nAssinale a opção correta.",
+    "latex": "C_v(q) = q^3 - \\frac{125}{2}q^2 + (C_p + 4714)q - \\frac{245623}{2}",
+    "alternativa_a": "Apenas as afirmativas I, II e IV são verdadeiras.",
+    "alternativa_b": "Apenas as afirmativas II e III são verdadeiras.",
+    "alternativa_c": "Apenas a afirmativa III é verdadeira.",
+    "alternativa_d": "Apenas as afirmativas II, III e IV são verdadeiras.",
+    "alternativa_e": "Apenas as afirmativas III e IV são verdadeiras.",
+    "gabarito": "D"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Sejam A1, A2, A3, A4 os quatro primeiros termos de uma progressão geométrica, respectivamente. Sejam a1, a2, a3, a4 os quatro primeiros termos de uma progressão aritmética, respectivamente, tais que:\nA1 = a4 - a3\na1 = A1 - 5\na2 = A1 + 1\na4 + 4(a3 - a2) = A2 + 1\nSejam An o n-ésimo termo da p.g. e an o n-ésimo termo da p.a.\nLogo, a expressão dada é igual a:",
+    "latex": "\\frac{A_{10} A_{999}^5 (a_{50} - 1)}{A_{1000}^5}",
+    "alternativa_a": "\\frac{A_3}{a_7}",
+    "alternativa_b": "a_{11}",
+    "alternativa_c": "\\frac{A_3}{a_5}",
+    "alternativa_d": "a_9",
+    "alternativa_e": "A_9",
+    "gabarito": "E"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Dadas as funções f e g definidas abaixo:\n- f : R \\to R, f(x) = x^2 + 5, com o gráfico de f restrito ao conjunto B \\times C tal que B = \\{x \\in R; |x| \\ge 3\\} e C = \\{y \\in R; |y| \\le 30\\};\n- g: R \\to R, g(x) = x^2, com o gráfico de g restrito ao conjunto B \\times D tal que B = \\{x \\in R; |x| \\ge 3\\} e D = \\{y \\in R; |y| \\le 25\\}.\nCalcule a área entre elas.",
+    "latex": "f(x) = x^2 + 5, \\quad g(x) = x^2",
+    "alternativa_a": "18 u.a.",
+    "alternativa_b": "20 u.a.",
+    "alternativa_c": "24 u.a.",
+    "alternativa_d": "28 u.a.",
+    "alternativa_e": "36 u.a.",
+    "gabarito": "E"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Considere a hipérbole 9y^2 - 16x^2 - 144 = 0 e tome o ponto A seu vértice no eixo y positivo e o ponto E seu vértice no eixo y negativo. Tome B e D, respectivamente, como os pontos com o maior e menor valor da coordenada y no lugar geométrico x^2 + y^2 - 10x + 9 = 0. Tome C e F, respectivamente, como os pontos com o maior e menor valor da coordenada x no lugar geométrico 64x^2 + 121y^2 - 320x - 1536 = 0. Qual a área do polígono convexo ABCDEF?",
+    "latex": "9y^2 - 16x^2 - 144 = 0",
+    "alternativa_a": "64 u.a.",
+    "alternativa_b": "\\frac{1}{3}(4\\sqrt{5} - \\sqrt{3}) \\text{ u.a.}",
+    "alternativa_c": "\\frac{75}{2}\\sqrt{5} \\text{ u.a.}",
+    "alternativa_d": "52 u.a.",
+    "alternativa_e": "\\frac{128}{3} \\text{ u.a.}",
+    "gabarito": "E"
+  }
+]

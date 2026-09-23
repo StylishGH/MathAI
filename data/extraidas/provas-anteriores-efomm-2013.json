@@ -1,0 +1,122 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Num quadrado de lado a, inscreve–se um círculo; \nnesse círculo se inscreve um novo quadrado e nele \num \nnovo \ncírculo. \nRepetindo \na \noperação \nindefinidamente, tem-se que a soma dos raios de \ntodos os círculos é: \n( a ) \n)1\n2\n(\n2\n2\n\na\n; \n( b ) \n)1\n2\n(\n2\n\na\n; \n( c ) \n)1\n2\n(\n2\n2\n\na\n; \n( d ) \n)1\n2\n(\n2\n\na\n; \n( e ) \n)1\n2\n(\n2\n\na\n.",
+    "alternativas": {},
+    "texto_bruto": "Num quadrado de lado a, inscreve–se um círculo; \nnesse círculo se inscreve um novo quadrado e nele \num \nnovo \ncírculo. \nRepetindo \na \noperação \nindefinidamente, tem-se que a soma dos raios de \ntodos os círculos é: \n( a ) \n)1\n2\n(\n2\n2\n\na\n; \n( b ) \n)1\n2\n(\n2\n\na\n; \n( c ) \n)1\n2\n(\n2\n2\n\na\n; \n( d ) \n)1\n2\n(\n2\n\na\n; \n( e ) \n)1\n2\n(\n2\n\na\n."
+  },
+  {
+    "numero": 2,
+    "enunciado": "Se os números reais x e y são soluções da equação \ni\niy\nx\ni\ni\n\n\n\n\n\n\n\n\n\n\n\n\n1\n1\n1\n1\n2\n, então 5x + 15y é igual a: \n \n( a ) \n0. \n( b ) \n– 1. \n( c ) \n 1. \n( d ) \n2 . \n( e ) \n2\n\n.",
+    "alternativas": {},
+    "texto_bruto": "Se os números reais x e y são soluções da equação \ni\niy\nx\ni\ni\n\n\n\n\n\n\n\n\n\n\n\n\n1\n1\n1\n1\n2\n, então 5x + 15y é igual a: \n \n( a ) \n0. \n( b ) \n– 1. \n( c ) \n 1. \n( d ) \n2 . \n( e ) \n2\n\n."
+  },
+  {
+    "numero": 3,
+    "enunciado": "Um ponto P=(x, y), no primeiro quadrante do plano \nxy, situa – se no gráfico de y = x2. Se θ é o ângulo de \ninclinação da reta que passa por P e pela origem, \nentão o valor da expressão 1 + y (onde y é a ordenada \nde P) é: \n( a ) \ncosθ. \n( b ) \ncos2θ. \n( c ) \nsec2θ. \n( d ) \ntg2θ. \n( e ) \nSenθ.",
+    "alternativas": {},
+    "texto_bruto": "Um ponto P=(x, y), no primeiro quadrante do plano \nxy, situa – se no gráfico de y = x2. Se θ é o ângulo de \ninclinação da reta que passa por P e pela origem, \nentão o valor da expressão 1 + y (onde y é a ordenada \nde P) é: \n( a ) \ncosθ. \n( b ) \ncos2θ. \n( c ) \nsec2θ. \n( d ) \ntg2θ. \n( e ) \nSenθ."
+  },
+  {
+    "numero": 4,
+    "enunciado": "O valor do \n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n2\n0\n1\n1\nlim\n é:  \n( a ) \n– 2. \n( b ) \n– 1. \n( c ) \n0. \n( d ) \n1. \n( e ) \n2.",
+    "alternativas": {},
+    "texto_bruto": "O valor do \n\n\n\n\n\n\n\n\n\n\nx\nx\nx\nx\n2\n0\n1\n1\nlim\n é:  \n( a ) \n– 2. \n( b ) \n– 1. \n( c ) \n0. \n( d ) \n1. \n( e ) \n2."
+  },
+  {
+    "numero": 5,
+    "enunciado": "P(x) é um polinômio de coeficientes reais e menor \ngrau com as propriedades abaixo: \n \n \nos números r1 = 1, r2 = i e r3= 1 – i são raízes \nda equação P(x) = 0; \n \nP(0) = – 4. \n \n \nEntão, P(– 1) é igual a: \n \n( a ) \n4. \n( b ) \n– 2. \n( c ) \n– 10. \n( d ) \n10. \n( e ) \n– 40.",
+    "alternativas": {},
+    "texto_bruto": "P(x) é um polinômio de coeficientes reais e menor \ngrau com as propriedades abaixo: \n \n \nos números r1 = 1, r2 = i e r3= 1 – i são raízes \nda equação P(x) = 0; \n \nP(0) = – 4. \n \n \nEntão, P(– 1) é igual a: \n \n( a ) \n4. \n( b ) \n– 2. \n( c ) \n– 10. \n( d ) \n10. \n( e ) \n– 40."
+  },
+  {
+    "numero": 6,
+    "enunciado": "O número de bactérias B, numa cultura, após t horas, \né B = B0 ekt, onde k é um a constante real. Sabendo-se \nque o número inicial de bactérias é 100 e que essa  \nquantidade duplica em \n2\n2\nln\n\nt\nhoras, então o número \nN de bactérias, após 2 horas, satisfaz: \n \n( a ) \n800 < N < 1600. \n( b ) \n1600 < N < 8100. \n( c ) \n8100 < N < 128000. \n( d ) \n128000 < N < 256000. \n( e ) \n256000 < N < 512000.",
+    "alternativas": {},
+    "texto_bruto": "O número de bactérias B, numa cultura, após t horas, \né B = B0 ekt, onde k é um a constante real. Sabendo-se \nque o número inicial de bactérias é 100 e que essa  \nquantidade duplica em \n2\n2\nln\n\nt\nhoras, então o número \nN de bactérias, após 2 horas, satisfaz: \n \n( a ) \n800 < N < 1600. \n( b ) \n1600 < N < 8100. \n( c ) \n8100 < N < 128000. \n( d ) \n128000 < N < 256000. \n( e ) \n256000 < N < 512000."
+  },
+  {
+    "numero": 7,
+    "enunciado": "Constrói-se um depósito, na forma de um sólido V, \ndentro de uma semiesfera de raio 4m. O depósito é \nformado por uma semiesfera de raio 1m sobreposta a \num cilindro circular, dispostos conforme a figura. \nEntão a área da superfície total de V, em m2, é igual a: \n \n \n \n \n( a ) \n(20 + 14\n2 ). \n( b ) \n(17 + 4 10 ). \n( c ) \n(8 + 4\n7 ). \n( d ) \n(21 + 7\n6 ). \n( e ) \n(15 + 6\n7 ).",
+    "alternativas": {},
+    "texto_bruto": "Constrói-se um depósito, na forma de um sólido V, \ndentro de uma semiesfera de raio 4m. O depósito é \nformado por uma semiesfera de raio 1m sobreposta a \num cilindro circular, dispostos conforme a figura. \nEntão a área da superfície total de V, em m2, é igual a: \n \n \n \n \n( a ) \n(20 + 14\n2 ). \n( b ) \n(17 + 4 10 ). \n( c ) \n(8 + 4\n7 ). \n( d ) \n(21 + 7\n6 ). \n( e ) \n(15 + 6\n7 )."
+  },
+  {
+    "numero": 8,
+    "enunciado": "Se \n3\n1\n \ncos\ncos\n  \ndet\n\n\ny\nseny\nsenx\nx\n, então o valor de \n)\n( \nsec\n)\n( \n \n )\n( \n 3\ny\nx\ny\nx\ntg\ny\nx\nsen\n\n\n\n\n\n, para \n\n\n\n\n\ny\nx\n2\n, é igual a: \n \n( a ) \n 0 \n( b ) \n3\n1 \n( c ) \n 2 \n( d ) \n 3 \n( e ) \n2\n1",
+    "alternativas": {},
+    "texto_bruto": "Se \n3\n1\n \ncos\ncos\n  \ndet\n\n\ny\nseny\nsenx\nx\n, então o valor de \n)\n( \nsec\n)\n( \n \n )\n( \n 3\ny\nx\ny\nx\ntg\ny\nx\nsen\n\n\n\n\n\n, para \n\n\n\n\n\ny\nx\n2\n, é igual a: \n \n( a ) \n 0 \n( b ) \n3\n1 \n( c ) \n 2 \n( d ) \n 3 \n( e ) \n2\n1"
+  },
+  {
+    "numero": 9,
+    "enunciado": "O gráfico da função contínua y = f(x), no plano xy, é \numa curva situada acima do eixo x para x > 0 e \npossui a seguinte propriedade: \n“A área da região entre a curva y = f(x) e o eixo x no \nintervalo \nb\nx\na\n\n\n(a > 0) é igual à área entre a \ncurva e o eixo x no intervalo \nkb\nx\nka\n\n\n (k > 0)”. \nSe a área da região entre a curva y = f(x) e o eixo x \npara x no intervalo \n3\n1\n\nx\né o número A então a \nárea entre a curva y = f(x) e o eixo x no intervalo \n243\n9\n\nx\n vale: \n \n( a ) \n2A \n( b ) \n3A \n( c ) \n4A \n( d ) \n5A \n( e ) \n6A",
+    "alternativas": {},
+    "texto_bruto": "O gráfico da função contínua y = f(x), no plano xy, é \numa curva situada acima do eixo x para x > 0 e \npossui a seguinte propriedade: \n“A área da região entre a curva y = f(x) e o eixo x no \nintervalo \nb\nx\na\n\n\n(a > 0) é igual à área entre a \ncurva e o eixo x no intervalo \nkb\nx\nka\n\n\n (k > 0)”. \nSe a área da região entre a curva y = f(x) e o eixo x \npara x no intervalo \n3\n1\n\nx\né o número A então a \nárea entre a curva y = f(x) e o eixo x no intervalo \n243\n9\n\nx\n vale: \n \n( a ) \n2A \n( b ) \n3A \n( c ) \n4A \n( d ) \n5A \n( e ) \n6A"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Durante o Treinamento Físico Militar na Marinha, o \nuniforme usado é tênis branco, short azul e camiseta \nbranca. Sabe-se que um determinado militar comprou \num par de tênis, dois shortes e três camisetas por \nR$100,00. E depois, dois pares de tênis, cinco shortes \ne oito camisetas por R$235,00. Quanto, então, \ncustaria para o militar um par de tênis, um short e \numa camiseta? \n \n( a ) \nR$50,00. \n( b ) \nR$55,00. \n( c ) \nR$60,00. \n( d ) \nR$65,00. \n( e ) \nR$70,00.",
+    "alternativas": {},
+    "texto_bruto": "Durante o Treinamento Físico Militar na Marinha, o \nuniforme usado é tênis branco, short azul e camiseta \nbranca. Sabe-se que um determinado militar comprou \num par de tênis, dois shortes e três camisetas por \nR$100,00. E depois, dois pares de tênis, cinco shortes \ne oito camisetas por R$235,00. Quanto, então, \ncustaria para o militar um par de tênis, um short e \numa camiseta? \n \n( a ) \nR$50,00. \n( b ) \nR$55,00. \n( c ) \nR$60,00. \n( d ) \nR$65,00. \n( e ) \nR$70,00."
+  },
+  {
+    "numero": 11,
+    "enunciado": "Se \n2\n3\nsec\n\n\nx\ntgx\n, o valor de \nx\nsenx\ncos\n\nvale: \n( a ) \n13\n7\n\n. \n( b ) \n 13\n5\n. \n( c ) \n \n13\n12\n. \n( d ) \n  \n13\n15\n. \n( e ) \n  \n13\n17\n.",
+    "alternativas": {},
+    "texto_bruto": "Se \n2\n3\nsec\n\n\nx\ntgx\n, o valor de \nx\nsenx\ncos\n\nvale: \n( a ) \n13\n7\n\n. \n( b ) \n 13\n5\n. \n( c ) \n \n13\n12\n. \n( d ) \n  \n13\n15\n. \n( e ) \n  \n13\n17\n."
+  },
+  {
+    "numero": 12,
+    "enunciado": "Dois observadores que estão em posições coincidentes \ncom os pontos A e B, afastados 3km entre si, medem \nsimultaneamente o ângulo de elevação de um balão, a \npartir do chão, como sendo 30º e 75º, respectivamente. \nSe o balão está diretamente acima de um ponto no \nsegmento de reta entre A e B, então a altura do balão, \na partir do chão, em km, é: \n \n( a ) \n3\n1 \n( b ) \n2\n5 \n( c ) \n5\n2 \n( d ) \n3\n2 \n( e ) \n2\n3",
+    "alternativas": {},
+    "texto_bruto": "Dois observadores que estão em posições coincidentes \ncom os pontos A e B, afastados 3km entre si, medem \nsimultaneamente o ângulo de elevação de um balão, a \npartir do chão, como sendo 30º e 75º, respectivamente. \nSe o balão está diretamente acima de um ponto no \nsegmento de reta entre A e B, então a altura do balão, \na partir do chão, em km, é: \n \n( a ) \n3\n1 \n( b ) \n2\n5 \n( c ) \n5\n2 \n( d ) \n3\n2 \n( e ) \n2\n3"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Um muro será construído para isolar a área de uma \nescola que está situada a 2km de distância da estação \ndo metrô. Esse muro será erguido ao longo de todos \nos pontos P, tais que a razão entre a distância de P à \nestação do metrô e a distância de P à escola é \nconstante e igual a \n2 . \nEm razão disso, dois postes, com uma câmera cada, \nserão fixados nos pontos do muro que estão sobre a \nreta que passa pela escola e é perpendicular à reta que \npassa pelo metrô e pela escola. Então, a distância \nentre os postes, em km, será: \n( a ) \n2 . \n( b ) \n2\n2\n. \n( c ) \n3\n2\n. \n( d ) \n4 . \n( e ) \n5\n2\n.",
+    "alternativas": {},
+    "texto_bruto": "Um muro será construído para isolar a área de uma \nescola que está situada a 2km de distância da estação \ndo metrô. Esse muro será erguido ao longo de todos \nos pontos P, tais que a razão entre a distância de P à \nestação do metrô e a distância de P à escola é \nconstante e igual a \n2 . \nEm razão disso, dois postes, com uma câmera cada, \nserão fixados nos pontos do muro que estão sobre a \nreta que passa pela escola e é perpendicular à reta que \npassa pelo metrô e pela escola. Então, a distância \nentre os postes, em km, será: \n( a ) \n2 . \n( b ) \n2\n2\n. \n( c ) \n3\n2\n. \n( d ) \n4 . \n( e ) \n5\n2\n."
+  },
+  {
+    "numero": 14,
+    "enunciado": "A empresa Alfa Tecidos dispõe de 5 teares que \nfuncionam 6 horas por dia, simultaneamente. Essa \nempresa fabrica 1800m de tecido, com 1,20m de \nlargura em 4 dias. Considerando que um dos teares \nparou \nde \nfuncionar, \nem \nquantos \ndias, \naproximadamente, a tecelagem fabricará 2000m do \nmesmo tecido, com largura de 0,80m, e com cada \numa de suas máquinas funcionando 8 horas por dia? \n \n( a ) \n2 dias. \n( b ) \n3 dias. \n( c ) \n4 dias. \n( d ) \n5 dias. \n( e ) \n6 dias.",
+    "alternativas": {},
+    "texto_bruto": "A empresa Alfa Tecidos dispõe de 5 teares que \nfuncionam 6 horas por dia, simultaneamente. Essa \nempresa fabrica 1800m de tecido, com 1,20m de \nlargura em 4 dias. Considerando que um dos teares \nparou \nde \nfuncionar, \nem \nquantos \ndias, \naproximadamente, a tecelagem fabricará 2000m do \nmesmo tecido, com largura de 0,80m, e com cada \numa de suas máquinas funcionando 8 horas por dia? \n \n( a ) \n2 dias. \n( b ) \n3 dias. \n( c ) \n4 dias. \n( d ) \n5 dias. \n( e ) \n6 dias."
+  },
+  {
+    "numero": 15,
+    "enunciado": "O código Morse, desenvolvido por Samuel Morse, \nem 1835, é um sistema de representação que utiliza  \nletras, números e sinais de pontuação através de um \nsinal \ncodificado \nintermitentemente \npor \npulsos \nelétricos, perturbações sonoras, sinais visuais ou \nsinais de rádio. Sabendo-se que um código \nsemelhante ao código Morse trabalha com duas letras \npré-estabelecidas, ponto e traço, e codifica com \npalavras de 1 a 4 letras, o número de palavras criadas \né: \n \n( a ) \n10. \n( b ) \n15. \n( c ) \n20. \n( d ) \n25. \n( e ) \n30.",
+    "alternativas": {},
+    "texto_bruto": "O código Morse, desenvolvido por Samuel Morse, \nem 1835, é um sistema de representação que utiliza  \nletras, números e sinais de pontuação através de um \nsinal \ncodificado \nintermitentemente \npor \npulsos \nelétricos, perturbações sonoras, sinais visuais ou \nsinais de rádio. Sabendo-se que um código \nsemelhante ao código Morse trabalha com duas letras \npré-estabelecidas, ponto e traço, e codifica com \npalavras de 1 a 4 letras, o número de palavras criadas \né: \n \n( a ) \n10. \n( b ) \n15. \n( c ) \n20. \n( d ) \n25. \n( e ) \n30."
+  },
+  {
+    "numero": 16,
+    "enunciado": "Um cone foi formado a partir de uma chapa de aço, \nno formato de um setor de 12cm de raio e ângulo \ncentral de 120º. Então, a altura do cone é: \n \n( a ) \n2\n2\n. \n( b ) \n2\n4\n. \n( c ) \n2\n6\n. \n( d ) \n2\n8\n. \n( e ) \n2\n12\n.",
+    "alternativas": {},
+    "texto_bruto": "Um cone foi formado a partir de uma chapa de aço, \nno formato de um setor de 12cm de raio e ângulo \ncentral de 120º. Então, a altura do cone é: \n \n( a ) \n2\n2\n. \n( b ) \n2\n4\n. \n( c ) \n2\n6\n. \n( d ) \n2\n8\n. \n( e ) \n2\n12\n."
+  },
+  {
+    "numero": 17,
+    "enunciado": "A matriz \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n2\n1\n0\n1\n1\n1\n1\n2\n)\n(\n3\n3x\nija\nA\n define em IR3 os \nvetores \nk\na\nj\na\ni\na\nv\ni\ni\ni\ni\n\n\n\n\n3\n2\n1\n\n\n\n, \n3\n1\n\ni\n.  \n \nSe u e v são dois vetores em IR3 satisfazendo: \n u é paralelo, tem mesmo sentido de \n2v e \n3\n\nu\n; \n v é paralelo, tem mesmo sentido de \n3v e \n2\n\nu\n. \nEntão, o produto vetorial uv é dado por: \n \n( a ) \n)\n)1\n2\n(\n(\n2\n2\n3\nk\nj\ni\n\n\n\n\n\n\n \n( b ) \n)\n)1\n2\n(\n(\n2\n3\nk\nj\ni\n\n\n\n\n\n\n \n( c ) \n)\n)1\n2\n(\n2\n(\n3\nk\nj\ni\n\n\n\n\n\n\n \n( d ) \n)\n)\n2\n1(\n2\n(\n2\n2\nk\nj\ni\n\n\n\n\n\n\n \n( e ) \n)\n)1\n2\n(\n(\n2\n3\nk\nj\ni\n\n\n\n\n\n\n",
+    "alternativas": {},
+    "texto_bruto": "A matriz \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n2\n1\n0\n1\n1\n1\n1\n2\n)\n(\n3\n3x\nija\nA\n define em IR3 os \nvetores \nk\na\nj\na\ni\na\nv\ni\ni\ni\ni\n\n\n\n\n3\n2\n1\n\n\n\n, \n3\n1\n\ni\n.  \n \nSe u e v são dois vetores em IR3 satisfazendo: \n u é paralelo, tem mesmo sentido de \n2v e \n3\n\nu\n; \n v é paralelo, tem mesmo sentido de \n3v e \n2\n\nu\n. \nEntão, o produto vetorial uv é dado por: \n \n( a ) \n)\n)1\n2\n(\n(\n2\n2\n3\nk\nj\ni\n\n\n\n\n\n\n \n( b ) \n)\n)1\n2\n(\n(\n2\n3\nk\nj\ni\n\n\n\n\n\n\n \n( c ) \n)\n)1\n2\n(\n2\n(\n3\nk\nj\ni\n\n\n\n\n\n\n \n( d ) \n)\n)\n2\n1(\n2\n(\n2\n2\nk\nj\ni\n\n\n\n\n\n\n \n( e ) \n)\n)1\n2\n(\n(\n2\n3\nk\nj\ni\n\n\n\n\n\n\n"
+  },
+  {
+    "numero": 18,
+    "enunciado": "O gráfico de f(x) = (x – 3)2.ex, xIR tem uma \nassíntota horizontal r. Se o gráfico de f intercepta r no \nponto P = \n)\n,\n(\nb\na\n , então \na\ne\nb\na\na\nsen\n4\n.\n2\n2\n\n\né igual a: \na) \n3\n\n. \nb) \n2\n\n. \nc) 3. \nd) 2 . \ne) 2\n1 .",
+    "alternativas": {},
+    "texto_bruto": "O gráfico de f(x) = (x – 3)2.ex, xIR tem uma \nassíntota horizontal r. Se o gráfico de f intercepta r no \nponto P = \n)\n,\n(\nb\na\n , então \na\ne\nb\na\na\nsen\n4\n.\n2\n2\n\n\né igual a: \na) \n3\n\n. \nb) \n2\n\n. \nc) 3. \nd) 2 . \ne) 2\n1 ."
+  },
+  {
+    "numero": 19,
+    "enunciado": "O valor da integral \ndx\nx\nsenx\n.\ncos\n.\n é: \n \n( a ) \n \nc\nx \ncos\n. \n( b ) \n \nc\nx \n\n2\ncos\n4\n1\n. \n( c ) \n \nc\nx \n\ncos\n2\n1\n. \n( d ) \n \nc\nx \n\ncos\n4\n1\n. \n( e ) \n  \nc\nx \n\n2\ncos\n2\n1\n.",
+    "alternativas": {},
+    "texto_bruto": "O valor da integral \ndx\nx\nsenx\n.\ncos\n.\n é: \n \n( a ) \n \nc\nx \ncos\n. \n( b ) \n \nc\nx \n\n2\ncos\n4\n1\n. \n( c ) \n \nc\nx \n\ncos\n2\n1\n. \n( d ) \n \nc\nx \n\ncos\n4\n1\n. \n( e ) \n  \nc\nx \n\n2\ncos\n2\n1\n."
+  },
+  {
+    "numero": 20,
+    "enunciado": "O litro da gasolina comum sofreu, há alguns dias, um \naumento de 7,7% e passou a custar 2,799 reais. Já o \nlitro do álcool sofreu um aumento de 15,8%, \npassando a custar 2,199 reais. Sabendo que o preço \ndo combustível é sempre cotado em milésimos de \nreal, pode-se afirmar, aproximadamente, que a \ndiferença de se abastecer um carro com 10 litros de \ngasolina e 5 litros de álcool, antes e depois do \naumento, é de: \n \n( a ) \nR$ 2,00 . \n( b ) \nR$ 2,50. \n( c ) \nR$ 3,00. \n( d ) \nR$ 3,50. \n( e ) \nR$ 4,00.",
+    "alternativas": {},
+    "texto_bruto": "O litro da gasolina comum sofreu, há alguns dias, um \naumento de 7,7% e passou a custar 2,799 reais. Já o \nlitro do álcool sofreu um aumento de 15,8%, \npassando a custar 2,199 reais. Sabendo que o preço \ndo combustível é sempre cotado em milésimos de \nreal, pode-se afirmar, aproximadamente, que a \ndiferença de se abastecer um carro com 10 litros de \ngasolina e 5 litros de álcool, antes e depois do \naumento, é de: \n \n( a ) \nR$ 2,00 . \n( b ) \nR$ 2,50. \n( c ) \nR$ 3,00. \n( d ) \nR$ 3,50. \n( e ) \nR$ 4,00."
+  }
+]

@@ -14,7 +14,7 @@ from google.genai import types
 
 load_dotenv()
 client = genai.Client()
-MODEL_ID = "gemini-1.5-flash"
+MODEL_ID = "gemini-3.5-flash-lite"
 DB_PATH = Path("C:/Users/Guilherme/Documents/MathAI/data/mathai.db")
 
 PROMPT_NOTION = """

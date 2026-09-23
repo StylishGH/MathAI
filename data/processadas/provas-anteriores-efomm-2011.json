@@ -1,0 +1,178 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Considere a função f tal que f(x) satisfaz a relação dada.",
+    "latex": "f(x)",
+    "alternativa_a": "a",
+    "alternativa_b": "b",
+    "alternativa_c": "c",
+    "alternativa_d": "d",
+    "alternativa_e": "e",
+    "gabarito": "A"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Sabendo-se que f(0) = 4, o valor de f(1007) é igual a",
+    "latex": "f(0) = 4",
+    "alternativa_a": "-1",
+    "alternativa_b": "4",
+    "alternativa_c": "-\\frac{1}{4}",
+    "alternativa_d": "-\\frac{5}{3}",
+    "alternativa_e": "\\frac{3}{5}",
+    "gabarito": "B"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Analise a função f(x) e suas propriedades algébricas.",
+    "latex": "f(x)",
+    "alternativa_a": "a",
+    "alternativa_b": "b",
+    "alternativa_c": "c",
+    "alternativa_d": "d",
+    "alternativa_e": "e",
+    "gabarito": "A"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Isolando f(x) na equação acima obtemos:",
+    "latex": "f(x)",
+    "alternativa_a": "a",
+    "alternativa_b": "b",
+    "alternativa_c": "c",
+    "alternativa_d": "d",
+    "alternativa_e": "e",
+    "gabarito": "A"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Determine o valor correspondente para a função f(x).",
+    "latex": "f(x)",
+    "alternativa_a": "a",
+    "alternativa_b": "b",
+    "alternativa_c": "c",
+    "alternativa_d": "d",
+    "alternativa_e": "e",
+    "gabarito": "A"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Segue que:",
+    "latex": "f(x) - f(x-1) = x - 1",
+    "alternativa_a": "a) 0",
+    "alternativa_b": "b) 1",
+    "alternativa_c": "c) 2",
+    "alternativa_d": "d) 3",
+    "alternativa_e": "e) 4",
+    "gabarito": "A"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Considerando a relação:",
+    "latex": "f(x) - f(x-1) = x + 1",
+    "alternativa_a": "a) 0",
+    "alternativa_b": "b) 1",
+    "alternativa_c": "c) 2",
+    "alternativa_d": "d) 3",
+    "alternativa_e": "e) 4",
+    "gabarito": "A"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Assim f(1007) = f(3 + 251 \\cdot 4) = f(3). Fazendo x = 1 em (III), obtemos:",
+    "latex": "f(x) - f(x-1) = x^2 + 2",
+    "alternativa_a": "a) 0",
+    "alternativa_b": "b) 1",
+    "alternativa_c": "c) 2",
+    "alternativa_d": "d) 3",
+    "alternativa_e": "e) 4",
+    "gabarito": "A"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Fazendo x = 1 em (I) e usando f(0) = 4, obtemos:",
+    "latex": "f(x) - 3 = 0",
+    "alternativa_a": "a) 0",
+    "alternativa_b": "b) 1",
+    "alternativa_c": "c) 2",
+    "alternativa_d": "d) 3",
+    "alternativa_e": "e) 4",
+    "gabarito": "A"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Valor obtido para a função:",
+    "latex": "f(0) = 4",
+    "alternativa_a": "a) 0",
+    "alternativa_b": "b) 1",
+    "alternativa_c": "c) 2",
+    "alternativa_d": "d) 3",
+    "alternativa_e": "e) 4",
+    "gabarito": "E"
+  },
+  {
+    "numero": 12,
+    "enunciado": "O conjunto solução da inequação \n\n é:",
+    "latex": "\\frac{1}{x} \\geq \\frac{1}{x+1}",
+    "alternativa_a": "[0, + \\infty]",
+    "alternativa_b": "[0, 1)",
+    "alternativa_c": "(1, + \\infty)",
+    "alternativa_d": "[0, 1]",
+    "alternativa_e": "(-^{\\infty}, 0] \\cup (1, + \\infty)",
+    "gabarito": "D"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Se a sequência de inteiros positivos (2, x, y) é uma Progressão Geométrica e (x + 1, y, 11) uma Progressão Aritmética, então, o valor de x + y é",
+    "latex": "(2, x, y), \\quad (x+1, y, 11)",
+    "alternativa_a": "11",
+    "alternativa_b": "12",
+    "alternativa_c": "13",
+    "alternativa_d": "14",
+    "alternativa_e": "15",
+    "gabarito": "B"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Sejam A, B e C matrizes de ordem 3 x 3 inversíveis tais que det(A^{-1}) = 3 e I é a matriz identidade de ordem 3, tal que I = -3C^{-1}(2B^{-1} + A)^T, o determinante de C é igual a",
+    "latex": "\\det(A^{-1}) = 3, \\quad I = -3C^{-1}(2B^{-1} + A)^T",
+    "alternativa_a": "- 8/3",
+    "alternativa_b": "- 32/3",
+    "alternativa_c": "- 9",
+    "alternativa_d": "- 54",
+    "alternativa_e": "- 288",
+    "gabarito": "B"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Um carro percorre 240 km com o desempenho de 12 km por litro de gasolina. Ao utilizar álcool como combustível, o desempenho passa a ser de 8 km por litro de álcool. Sabendo que o gasto ao percorrer a mesma distância deve ser igual ao gasto que se tem ao utilizar gasolina como combustível, qual deve ser o preço do litro de álcool?",
+    "latex": "\\frac{240}{12} \\cdot 2,70 = 54",
+    "alternativa_a": "R$ 1,60",
+    "alternativa_b": "R$ 1,65",
+    "alternativa_c": "R$ 1,72",
+    "alternativa_d": "R$ 1,75",
+    "alternativa_e": "R$ 1,80",
+    "gabarito": "E"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Dada a equação x^2 + y^2 - 4x + 10y + 25 = 0, assinale a opção que apresenta a distância do centro da curva à origem do sistema de coordenadas.",
+    "latex": "x^2 + y^2 - 4x + 10y + 25 = 0",
+    "alternativa_a": "5",
+    "alternativa_b": "6",
+    "alternativa_c": "8",
+    "alternativa_d": "\\sqrt{24}",
+    "alternativa_e": "\\sqrt{29}",
+    "gabarito": "E"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Analise a função a seguir. Para que a função acima seja contínua no ponto x = 2, qual deverá ser o valor de p?",
+    "latex": "f(x) = \\frac{x^2 - 4}{x - 2} \\text{ se } x \\neq 2 \\text{ e } p \\text{ se } x = 2",
+    "alternativa_a": "1/3",
+    "alternativa_b": "1",
+    "alternativa_c": "3",
+    "alternativa_d": "- 1",
+    "alternativa_e": "- 3",
+    "gabarito": "C"
+  }
+]

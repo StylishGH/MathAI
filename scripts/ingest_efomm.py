@@ -1,116 +1,152 @@
-import sys
-import io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-
 import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import json
-import sqlite3
-import argparse
+import glob
 import time
+import sqlite3
+import re
 from pathlib import Path
-from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
+
+from scripts.parser_efomm import extract_text_and_images, split_into_questions, parse_alternatives
 
 load_dotenv()
 client = genai.Client()
-# Usando o modelo gratuito que aguenta o tranco
-MODEL_ID = "gemini-1.5-flash"
+MODEL_ID = "gemini-3.5-flash-lite"
 
-DB_PATH = Path("C:/Users/Guilherme/Documents/MathAI/data/mathai.db")
+PROMPT_NORMALIZACAO = """
+Você é um especialista em estruturação de dados.
+Sua tarefa é reconstruir um lote de questões de matemática extraídas por OCR de um PDF. 
+Algumas palavras, acentos e FÓRMULAS MATEMÁTICAS podem estar corrompidas.
 
-PROMPT_EXTRA_EFOMM = """
-Você é um especialista em processamento de provas militares e formatação LaTeX.
-Sua tarefa é analisar este(s) arquivo(s) PDF contendo a prova da EFOMM e/ou gabaritos.
+Obrigatório:
+- Reconstrua QUALQUER matemática presente em LaTeX puro sem os símbolos de $ ou $$. 
+- O campo "enunciado" deve conter apenas o texto. 
+- O campo "latex" deve conter APENAS as equações principais do enunciado formatadas em LaTeX (ex: x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}).
+- Mantenha a pontuação e gramática perfeitas.
+- Retorne EXATAMENTE as opções formatadas em alternativa_a até alternativa_e.
+- O JSON deve ser um array onde cada elemento corresponde a uma questão do lote original.
 
-Extraia TODAS as questões de MATEMÁTICA.
-Regras:
-1. Ignore questões de Inglês, Física, Português, etc. Apenas Matemática.
-2. O texto deve ser formatado em Markdown. ATENÇÃO MÁXIMA AO LATEX: Todas as equações, frações, matrizes e símbolos matemáticos DEVEM obrigatoriamente estar envolvidos por $$ ... $$ (para blocos) ou $ ... $ (para linha).
-3. Se um gabarito foi fornecido, identifique a alternativa correta e inclua em "gabarito" (letra A, B, C, D ou E). Se não tiver o gabarito no PDF, deixe nulo.
-4. As "alternativas" devem ser um dicionário onde a chave é a letra (A, B, C, D, E) e o valor é o texto da alternativa.
-
-Responda ESTRITAMENTE em formato JSON com o seguinte schema:
+Retorne SOMENTE o JSON:
 [
   {
-    "enunciado": "Texto da questão em markdown...",
-    "alternativas": {"A": "...", "B": "...", "C": "...", "D": "...", "E": "..."},
-    "gabarito": "A",
-    "materia": "Matemática",
-    "topico": "Tópico mais provável (ex: Geometria Analítica, Matrizes, Cálculo...)",
-    "banca": "EFOMM",
-    "ano": 2024
+    "numero": 1,
+    "enunciado": "Texto arrumado...",
+    "latex": "fórmulas em latex extraídas do enunciado",
+    "alternativa_a": "texto a",
+    "alternativa_b": "texto b",
+    "alternativa_c": "texto c",
+    "alternativa_d": "texto d",
+    "alternativa_e": "texto e",
+    "gabarito": "A"
   }
 ]
-Se não encontrar questões de matemática, retorne um array vazio [].
 """
 
-def processar_pdfs(pdfs_paths):
-    print(f"\nFazendo upload de {len(pdfs_paths)} arquivo(s) para o Gemini...")
-    uploaded_files = []
-    for pdf_path in pdfs_paths:
-        print(f"   Upload: {os.path.basename(pdf_path)}...")
-        uploaded = client.files.upload(file=pdf_path)
-        uploaded_files.append(uploaded)
-        # Pausa para não estourar os limites gratuitos de upload
-        time.sleep(5)
-    
-    print("\nAnalisando e extraindo questoes (isso pode demorar um pouco)...")
+def normalizar_questoes(batch):
+    texto_batch = ""
+    for q in batch:
+        texto_batch += f"QUESTÃO {q['numero']}:\n{q['enunciado']}\n"
+        for k, v in q['alternativas'].items():
+            texto_batch += f"({k[-1].upper()}) {v}\n"
+        texto_batch += "\n---\n"
+        
     try:
         response = client.models.generate_content(
             model=MODEL_ID,
-            contents=[*uploaded_files, PROMPT_EXTRA_EFOMM],
+            contents=[PROMPT_NORMALIZACAO, texto_batch],
             config=types.GenerateContentConfig(
-                temperature=0.1,
                 response_mime_type="application/json"
             )
         )
-        questoes = json.loads(response.text)
-        print(f"Sucesso! {len(questoes)} questoes extraidas.")
-        return questoes
+        return json.loads(response.text.replace("\\\\", "\\\\\\\\"), strict=False)
     except Exception as e:
-        print(f"Erro durante a geracao: {e}")
+        print(f"Erro na API do Gemini: {e}")
         return []
-    finally:
-        for uf in uploaded_files:
-            client.files.delete(name=uf.name)
 
-def salvar_no_banco(questoes):
-    if not questoes:
+def processar_pdf_efomm(pdf_path, ano):
+    basename = os.path.basename(pdf_path)
+    img_dir = f"data/imagens/{basename.replace('.pdf', '')}"
+    ext_path = f"data/extraidas/{basename.replace('.pdf', '.json')}"
+    proc_path = f"data/processadas/{basename.replace('.pdf', '.json')}"
+    
+    if os.path.exists(proc_path):
+        print(f"Arquivo {basename} já processado. Pulando...")
         return
+        
+    print(f"\n[1] Extraindo {basename}...")
+    pages = extract_text_and_images(pdf_path, img_dir)
+    qs_brutas = split_into_questions(pages)
+    qs_parsed = parse_alternatives(qs_brutas)
     
-    conn = sqlite3.connect(DB_PATH)
+    with open(ext_path, "w", encoding="utf-8") as f:
+        json.dump(qs_parsed, f, ensure_ascii=False, indent=2)
+        
+    print(f"[2] Normalizando {len(qs_parsed)} questões com Gemini...")
+    questoes_finais = []
+    
+    batch_size = 5
+    for i in range(0, len(qs_parsed), batch_size):
+        batch = qs_parsed[i:i+batch_size]
+        print(f"    Batch {i+1} a {i+len(batch)}...")
+        
+        normalizadas = normalizar_questoes(batch)
+        if normalizadas:
+            questoes_finais.extend(normalizadas)
+        
+        time.sleep(5)
+        
+    with open(proc_path, "w", encoding="utf-8") as f:
+        json.dump(questoes_finais, f, ensure_ascii=False, indent=2)
+        
+    print(f"[3] Salvando no banco de dados...")
+    conn = sqlite3.connect("data/mathai.db")
     cursor = conn.cursor()
-    inseridas = 0
-    
-    for q in questoes:
-        alts_json = json.dumps(q.get("alternativas", {}), ensure_ascii=False)
-        gabarito = q.get("gabarito")
-        try:
-            cursor.execute("""
-                INSERT INTO questoes (banca, ano, materia, topico, enunciado, alternativas, gabarito)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-            """, (
-                q.get("banca", "EFOMM"),
-                q.get("ano", 2024),
-                q.get("materia", "Matemática"),
-                q.get("topico", "Geral"),
-                q.get("enunciado", ""),
-                alts_json,
-                gabarito
-            ))
-            inseridas += 1
-        except Exception as e:
-            pass
+    for q in questoes_finais:
+        enunciado_final = q.get("enunciado", "")
+        if "latex" in q and q["latex"]:
+            enunciado_final += "\n\n$$" + q["latex"] + "$$\n"
             
+        alts = []
+        if "alternativa_a" in q: alts.append(f"(A) {q['alternativa_a']}")
+        if "alternativa_b" in q: alts.append(f"(B) {q['alternativa_b']}")
+        if "alternativa_c" in q: alts.append(f"(C) {q['alternativa_c']}")
+        if "alternativa_d" in q: alts.append(f"(D) {q['alternativa_d']}")
+        if "alternativa_e" in q: alts.append(f"(E) {q['alternativa_e']}")
+        
+        if alts:
+            enunciado_final += "\n\n" + "\n".join(alts)
+            
+        cursor.execute("""
+            INSERT INTO questoes (banca, ano, materia, topico, enunciado, gabarito)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (
+            "EFOMM",
+            ano,
+            "Matemática",
+            "Matemática",
+            enunciado_final,
+            q.get("gabarito", "")
+        ))
     conn.commit()
     conn.close()
-    print(f"{inseridas} questoes salvas no banco!")
+    print("Concluído!")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("pdfs", nargs='+', help="PDFs")
-    args = parser.parse_args()
+    efomm_dir = r"C:\Users\Guilherme\Downloads\EFOMM"
+    pdfs = glob.glob(os.path.join(efomm_dir, "*.pdf"))
     
-    extraidas = processar_pdfs(args.pdfs)
-    salvar_no_banco(extraidas)
+    for pdf in pdfs:
+        if "GABARITO" in os.path.basename(pdf).upper():
+            continue
+            
+        ano = 2026
+        match = re.search(r'(20\d{2})', os.path.basename(pdf))
+        if match:
+            ano = int(match.group(1))
+            
+        processar_pdf_efomm(pdf, ano)

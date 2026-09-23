@@ -1,0 +1,167 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Analise as afirmativas abaixo. I - Seja K o conjunto dos quadriláteros planos, seus subconjuntos são: P = {x \\in K / x possui 4 lados paralelos}; L = {x \\in K / x possui 4 lados congruentes}; R = {x \\in K / x possui 4 ângulos retos}; e Q = {x \\in K / x possui 4 lados congruentes e 2 ângulos com medidas iguais}. Logo, L \\cap R = L \\cap Q. II - Seja o conjunto A = {1, 2, 3, 4}, nota-se que A possui somente 4 subconjuntos. III - Observando as seguintes relações entre conjuntos: {a, b, c, d} \\cup Z = {a, b, c, d, e}, {c, d} \\cup Z = {a, c, d, e} e {b, c, d} \\cap Z = {c}; pode-se concluir que Z = {a, c, e}. Em relação às afirmativas acima, assinale a opção correta.",
+    "latex": "L \\cap R = L \\cap Q",
+    "alternativa_a": "Apenas a afirmativa I é verdadeira.",
+    "alternativa_b": "Apenas as afirmativas I e II são verdadeiras.",
+    "alternativa_c": "Apenas as afirmativas I e III são verdadeiras.",
+    "alternativa_d": "Apenas a afirmativa III é verdadeira.",
+    "alternativa_e": "Apenas a afirmativa II é verdadeira.",
+    "gabarito": "A"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Considere a função real f, definida por f(x) = 2^x, e duas circunferências C1 e C2, centradas na origem. Sabe-se que um ponto P de abscissa x pertence a C1 e ao gráfico de f, e que C2 tangencia o gráfico de f. Nessas condições, a área da coroa circular definida por C1 e C2 é igual a",
+    "latex": "f(x) = 2^x",
+    "alternativa_a": "Não informada",
+    "alternativa_b": "Não informada",
+    "alternativa_c": "Não informada",
+    "alternativa_d": "Não informada",
+    "alternativa_e": "Não informada",
+    "gabarito": null
+  },
+  {
+    "numero": 3,
+    "enunciado": "Considere a equação de incógnita real x: 2 \\cos^2 x - 2 \\cos^4 x + 1 = \\cos 4x. Se x_0 \\in (0, \\pi) é uma de suas soluções e x_0 centímetros é a medida da diagonal de um cubo, então a área da superfície total desse cubo, em cm^2, é igual a",
+    "latex": "2 \\cos^2 x - 2 \\cos^4 x + 1 = \\cos 4x",
+    "alternativa_a": "\\frac{3\\pi}{8}",
+    "alternativa_b": "\\frac{1\\pi}{2}",
+    "alternativa_c": "6",
+    "alternativa_d": "\\frac{27\\pi}{8}",
+    "alternativa_e": "6\\pi^2",
+    "gabarito": "C"
+  },
+  {
+    "numero": 4,
+    "enunciado": "O valor numérico da expressão é igual a",
+    "latex": "",
+    "alternativa_a": "Não informada",
+    "alternativa_b": "Não informada",
+    "alternativa_c": "Não informada",
+    "alternativa_d": "Não informada",
+    "alternativa_e": "Não informada",
+    "gabarito": null
+  },
+  {
+    "numero": 5,
+    "enunciado": "João construiu um círculo de papel com centro O e raio 4cm (Figura 1). Traçou dois diâmetros AC e BD perpendiculares e, em seguida, dobrou o papel fazendo coincidir A, O e C, conforme sugere a Figura 2. A área da parte do círculo não encoberta pelas dobras, sombreada na Figura 2, é igual a",
+    "latex": "",
+    "alternativa_a": "Não informada",
+    "alternativa_b": "Não informada",
+    "alternativa_c": "Não informada",
+    "alternativa_d": "Não informada",
+    "alternativa_e": "Não informada",
+    "gabarito": null
+  },
+  {
+    "numero": 6,
+    "enunciado": "Questão incompleta extraída por OCR.",
+    "latex": "",
+    "alternativa_a": "Não disponível",
+    "alternativa_b": "Não disponível",
+    "alternativa_c": "Não disponível",
+    "alternativa_d": "Não disponível",
+    "alternativa_e": "Não disponível",
+    "gabarito": "A"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Seja f: R \\to R uma função estritamente decrescente, quaisquer x_1 e x_2 reais, com x_1 < x_2 tem-se f(x_1) > f(x_2). Nessas condições, analise as afirmativas abaixo.",
+    "latex": "f: \\mathbb{R} \\to \\mathbb{R}, \\quad x_1 < x_2 \\implies f(x_1) > f(x_2)",
+    "alternativa_a": "Apenas a afirmativa I é verdadeira.",
+    "alternativa_b": "Apenas as afirmativas I e III são verdadeiras.",
+    "alternativa_c": "Apenas as afirmativas II e III são verdadeiras.",
+    "alternativa_d": "As afirmativas I, II e III são verdadeiras.",
+    "alternativa_e": "Apenas a afirmativa II é verdadeira.",
+    "gabarito": "B"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Questão incompleta extraída por OCR referente a determinantes de matrizes.",
+    "latex": "A = \\begin{pmatrix} 1 & 2 & 1 \\\\ 0 & 0 & 2 \\\\ -2 & 4 & 0 \\end{pmatrix}, \\quad B = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}, \\quad X = A \\cdot B",
+    "alternativa_a": "Não disponível",
+    "alternativa_b": "Não disponível",
+    "alternativa_c": "Não disponível",
+    "alternativa_d": "Não disponível",
+    "alternativa_e": "Não disponível",
+    "gabarito": "A"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Considere o conjunto dos números complexos Z com a propriedade |Z + 169i| \\leq 65, admitindo que i é a unidade imaginária. O elemento desse conjunto que possui o maior argumento \\theta, 0 \\leq \\theta < 2\\pi, é igual a",
+    "latex": "|Z + 169i| \\leq 65, \\quad 0 \\leq \\theta < 2\\pi",
+    "alternativa_a": "60 - 144i",
+    "alternativa_b": "65 - 169i",
+    "alternativa_c": "-104i",
+    "alternativa_d": "-65 - 169i",
+    "alternativa_e": "65 - 156i",
+    "gabarito": "E"
+  },
+  {
+    "numero": 10,
+    "enunciado": "A equação \\sqrt{x \\sqrt{x}} = \\sqrt[3]{217 - 13 \\sqrt{x}} tem uma solução inteira positiva x_1. O número de divisores inteiros positivos de x_1 é",
+    "latex": "\\sqrt{x \\sqrt{x}} = \\sqrt[3]{217 - 13 \\sqrt{x}}",
+    "alternativa_a": "10",
+    "alternativa_b": "11",
+    "alternativa_c": "12",
+    "alternativa_d": "13",
+    "alternativa_e": "14",
+    "gabarito": "C"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Sabendo que log30 3 = a e log30 5 = b, que opção representa log10 2?",
+    "latex": "\\log_{30} 3 = a \\text{ e } \\log_{30} 5 = b, \\quad \\log_{10} 2",
+    "alternativa_a": "1 - a - b / 2 + a",
+    "alternativa_b": "1 - a - b / a - 1",
+    "alternativa_c": "1 - a - b / 1 + a",
+    "alternativa_d": "1 - a - b / 2 - a",
+    "alternativa_e": "1 - a - b / 1 - a",
+    "gabarito": "E"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Os pontos A(-4, 10/3), B(-4, 0), C(0, 0) e D(a, b) são vértices de um quadrilátero circunscrito a uma circunferência. A equação da reta AD é representada por",
+    "latex": "A\\left(-4, \\frac{10}{3}\\right), B(-4, 0), C(0, 0), D(a, b)",
+    "alternativa_a": "Não disponível",
+    "alternativa_b": "Não disponível",
+    "alternativa_c": "Não disponível",
+    "alternativa_d": "Não disponível",
+    "alternativa_e": "Não disponível",
+    "gabarito": null
+  },
+  {
+    "numero": 13,
+    "enunciado": "Sejam ABC e BCD dois triângulos retângulos contidos em planos perpendiculares, com hipotenusas AC = BD = 8m e cateto AB = 4m. O volume, em m³, do tetraedro ABCD definido pelos vértices desses triângulos é igual a",
+    "latex": "AC = BD = 8, \\quad AB = 4",
+    "alternativa_a": "16\\sqrt{3}",
+    "alternativa_b": "8\\sqrt{3}",
+    "alternativa_c": "16\\sqrt{3} / 3",
+    "alternativa_d": "32 / 3",
+    "alternativa_e": "32\\sqrt{3} / 3",
+    "gabarito": "E"
+  },
+  {
+    "numero": 14,
+    "enunciado": "As medidas dos lados AC, BC e AB de um triângulo ABC formam, nesta ordem, uma progressão aritmética crescente. Os ângulos internos A, B e C desse triângulo possuem a seguinte propriedade: \\sin^2 A + \\sin^2 B - \\sin^2 C - 2 \\cdot \\sin A \\cdot \\sin B \\cdot \\cos C = \\cos^2 C. Se o perímetro do triângulo ABC mede 33m, sua área, em m², é igual a",
+    "latex": "\\sin^2 A + \\sin^2 B - \\sin^2 C - 2 \\cdot \\sin A \\cdot \\sin B \\cdot \\cos C = \\cos^2 C",
+    "alternativa_a": "Não disponível",
+    "alternativa_b": "Não disponível",
+    "alternativa_c": "Não disponível",
+    "alternativa_d": "Não disponível",
+    "alternativa_e": "Não disponível",
+    "gabarito": null
+  },
+  {
+    "numero": 15,
+    "enunciado": "Um triângulo isósceles ABC, com lados AB = AC e base BC, possui a medida da altura relativa à base igual a medida da base acrescida de dois metros. Sabendo que o perímetro do triângulo é igual a 36 metros, pode-se afirmar que sua base mede",
+    "latex": "AB = AC",
+    "alternativa_a": "8 metros.",
+    "alternativa_b": "9 metros.",
+    "alternativa_c": "10 metros.",
+    "alternativa_d": "11 metros.",
+    "alternativa_e": "12 metros.",
+    "gabarito": "E"
+  }
+]

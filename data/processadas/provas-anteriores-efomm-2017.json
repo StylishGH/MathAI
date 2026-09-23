@@ -1,0 +1,167 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Considere a equação a seguir. Sabendo que a é raiz dupla dessa equação e não é nulo, determine o valor de a.",
+    "latex": "x^4 - 3x^3 + 2x^2 + 9ax - 9a = 0",
+    "alternativa_a": "a = -1",
+    "alternativa_b": "a = 1",
+    "alternativa_c": "a = 2",
+    "alternativa_d": "a = 3",
+    "alternativa_e": "a = 4",
+    "gabarito": "A"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Sejam as circunferências dadas a seguir. Considere A e B os pontos de intersecção dessas circunferências. Determine a distância entre A e B.",
+    "latex": "c_1: x^2 + y^2 - 16 = 0 \\\\quad \\\\text{e} \\\\quad c_2: (x - 2)^2 + (y - 2)^2 = 4",
+    "alternativa_a": "\\\\frac{\\\\sqrt{7}}{2}",
+    "alternativa_b": "\\\\sqrt{14}",
+    "alternativa_c": "\\\\frac{\\\\sqrt{14}}{2}",
+    "alternativa_d": "\\\\sqrt{7}",
+    "alternativa_e": "2\\\\sqrt{7}",
+    "gabarito": "C"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Dado f(x) = x + a, g(x) = f(f(x + \\\\sen x)) + a + 1 e g(\\\\frac{\\\\pi}{4}) = 28. Determine o valor de a.",
+    "latex": "f(x) = x + a, \\\\quad g(x) = f(f(x + \\\\sen x)) + a + 1, \\\\quad g\\\\left(\\\\frac{\\\\pi}{4}\\\\right) = 28",
+    "alternativa_a": "a = 0",
+    "alternativa_b": "a = 1",
+    "alternativa_c": "a = 2",
+    "alternativa_d": "a = 3",
+    "alternativa_e": "a = 4",
+    "gabarito": "C"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Um cubo de lado 2a possui uma esfera circunscrita nele. Qual é a probabilidade de, ao ser sorteado um ponto interno da esfera, esse ponto ser interno ao cubo?",
+    "latex": "P = \\\\frac{V_{cubo}}{V_{esfera}}",
+    "alternativa_a": "\\\\frac{\\\\sqrt{6}}{\\\\pi}",
+    "alternativa_b": "\\\\frac{3\\\\sqrt{3}}{2\\\\pi}",
+    "alternativa_c": "\\\\frac{3\\\\sqrt{6}}{\\\\pi}",
+    "alternativa_d": "\\\\frac{2\\\\sqrt{3}}{3\\\\pi}",
+    "alternativa_e": "\\\\frac{1}{2}",
+    "gabarito": "B"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Sobre uma equação polinomial de grau n, é INCORRETO afirmar que:",
+    "latex": "P(n) = a_n x^n + a_{n-1} x^{n-1} + \\\\dots + a_0 = 0",
+    "alternativa_a": "terá n raízes complexas.",
+    "alternativa_b": "se n for ímpar, sempre terá, ao menos, uma raiz real.",
+    "alternativa_c": "se um número complexo z = a + bi, com b \\\\neq 0, for raiz, então seu conjugado também o será.",
+    "alternativa_d": "a equação não pode ter raízes repetidas.",
+    "alternativa_e": "uma equação acima de grau 4 pode ter todas as raízes reais.",
+    "gabarito": "D"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Calcule a integral indefinida",
+    "latex": "\\\\int \\\\left( \\\\frac{\\\\text{tg}(x) \\\\cdot \\\\sec^2(x)}{1 + \\\\text{sen}^2(x)} \\\\right) dx",
+    "alternativa_a": "C + \\\\frac{1}{2}\\\\sec^2(x)",
+    "alternativa_b": "C + 2\\\\sec(x) + \\\\text{tg}(x)",
+    "alternativa_c": "C + \\\\sec(x) - \\\\ln(\\\\cos(x))",
+    "alternativa_d": "C - \\\\frac{3}{2}\\\\ln(\\\\cos(x))",
+    "alternativa_e": "C + \\\\frac{1}{2}\\\\cos^2(x)",
+    "gabarito": "C"
+  },
+  {
+    "numero": 7,
+    "enunciado": "O volume da pirâmide delimitada pelos planos coordenados e pelo plano é:",
+    "latex": "2x + 5y - 4z = 20",
+    "alternativa_a": "20/3 u.v.",
+    "alternativa_b": "50/3 u.v.",
+    "alternativa_c": "100/3 u.v.",
+    "alternativa_d": "100 u.v.",
+    "alternativa_e": "200 u.v.",
+    "gabarito": "B"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Seis alunos da EFOMM – três paranaenses, dois cariocas e um alagoano – são colocados em uma fila aleatoriamente. Qual é a probabilidade, então, de que nenhum conterrâneo fique ao lado do outro?",
+    "latex": "",
+    "alternativa_a": "3/31",
+    "alternativa_b": "1/36",
+    "alternativa_c": "1/24",
+    "alternativa_d": "1/12",
+    "alternativa_e": "1/6",
+    "gabarito": "E"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Quantos anagramas é possível formar com a palavra CARAVELAS, não havendo duas vogais consecutivas e nem duas consoantes consecutivas?",
+    "latex": "",
+    "alternativa_a": "24",
+    "alternativa_b": "120",
+    "alternativa_c": "480",
+    "alternativa_d": "1920",
+    "alternativa_e": "3840",
+    "gabarito": "D"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Para que a função seja contínua, para todo valor de x, qual será o valor de k?",
+    "latex": "f(x) = \\\\begin{cases} \\\\frac{x^3 - 8}{x - 2}, & \\\\text{se } x \\\\neq 2 \\\\\\\\ k, & \\\\text{se } x = 2 \\\\end{cases}",
+    "alternativa_a": "2",
+    "alternativa_b": "10",
+    "alternativa_c": "20",
+    "alternativa_d": "40",
+    "alternativa_e": "50",
+    "gabarito": "C"
+  },
+  {
+    "numero": 16,
+    "enunciado": "Sobre a função f(x) = x + 1/x^2, analise as afirmativas:\n\nI - f(x) é contínua em todo x em R\nII - lim_{x \\\\to +\\\\infty} f(x) = lim_{x \\\\to -\\\\infty} f(x)\nIII - lim_{x \\\\to 0} f(x) = +\\\\infty\n\nEntão, pode-se dizer que:",
+    "latex": "f(x) = x + \\\\frac{1}{x^2}",
+    "alternativa_a": "todas as afirmativas são verdadeiras.",
+    "alternativa_b": "todas as afirmativas são falsas.",
+    "alternativa_c": "somente as afirmativas I e II são verdadeiras.",
+    "alternativa_d": "somente as afirmativas I e III são verdadeiras.",
+    "alternativa_e": "somente as afirmativas II e III são verdadeiras.",
+    "gabarito": "E"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Seja A o ponto de intersecção entre as retas r1: (x-1)/2 = (y-3)/1 = z/-1 e r2: (x-1)/3 = (y+2)/2 = (z-5)/1, e seja B o ponto de intersecção entre as retas r3: (x-2)/4 = (y+1)/1 = (z-1)/3 e r4: x-1/5 = y-8/2 = z-3/2. Defina a equação do plano mediador entre os pontos A e B.",
+    "latex": "r_1: \\\\frac{x-1}{2} = \\\\frac{y-3}{1} = \\\\frac{z}{-1}, \\\\quad r_2: \\\\frac{x-1}{3} = \\\\frac{y+2}{2} = \\\\frac{z-5}{1}",
+    "alternativa_a": "3x - 2y - 2z - 6 = 0",
+    "alternativa_b": "3x - 5y + 2z - 14 = 0",
+    "alternativa_c": "5x - 37y + 12z = 1",
+    "alternativa_d": "2x - 3y + 12 = 0",
+    "alternativa_e": "28x - 12y + 8z - 64 = 0",
+    "gabarito": "A"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Calcule o determinante da matriz A de ordem n:",
+    "latex": "A = \\\\begin{pmatrix} 1 & 1 & 1 & \\\\cdots & 1 & 1 \\\\\\\\ 1 & 3 & 1 & \\\\cdots & 1 & 1 \\\\\\\\ 1 & 1 & 5 & \\\\cdots & 1 & 1 \\\\\\\\ \\\\vdots & \\\\vdots & \\\\vdots & \\\\ddots & \\\\vdots & \\\\vdots \\\\\\\\ 1 & 1 & 1 & \\\\cdots & 2n-1 & 1 \\\\\\\\ 1 & 1 & 1 & \\\\cdots & 1 & 2n+1 \\\\end{pmatrix}",
+    "alternativa_a": "\\\\det(A) = \\\\prod_{k=1}^{n-1} (2k)",
+    "alternativa_b": "\\\\det(A) = \\\\prod_{k=1}^{n} (2k-1)",
+    "alternativa_c": "\\\\det(A) = \\\\prod_{k=1}^{n-1} (2k-1)",
+    "alternativa_d": "\\\\det(A) = \\\\prod_{k=1}^{n} (2k)",
+    "alternativa_e": "\\\\det(A) = 1",
+    "gabarito": "D"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Um paralelepípedo formado pelos vetores u = (a, a, a), v = (2, a, 3a) e w = (2, a, a), com a em R, tem volume igual a 8. Determine o valor de a.",
+    "latex": "u = (a, a, a), \\\\quad v = (2, a, 3a), \\\\quad w = (2, a, a)",
+    "alternativa_a": "1",
+    "alternativa_b": "2",
+    "alternativa_c": "2\\\\sqrt{3}",
+    "alternativa_d": "3",
+    "alternativa_e": "2\\\\sqrt{5}",
+    "gabarito": "B"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Na Escola de Marinha Mercante, há alunos de ambos os sexos (130 mulheres e 370 homens), divididos entre os Cursos Básico, de Máquinas e de Náutica. Sabe-se que do total de 130 alunos do Curso de Máquinas, 20 são mulheres. O Curso de Náutica tem 270 alunos no total e o Curso Básico tem o mesmo número de homens e mulheres. Quantas mulheres há no Curso de Náutica?",
+    "latex": "Total = 500, \\\\text{Mulheres} = 130, \\\\text{Homens} = 370",
+    "alternativa_a": "50",
+    "alternativa_b": "55",
+    "alternativa_c": "60",
+    "alternativa_d": "65",
+    "alternativa_e": "70",
+    "gabarito": "C"
+  }
+]

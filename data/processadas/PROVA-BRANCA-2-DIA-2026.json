@@ -1,0 +1,223 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Durante uma aula de Matemática, o professor propôs um desafio aos alunos: construir uma matriz quadrada A de ordem 4 a partir de diferentes progressões numéricas, com o objetivo de compreender melhor os conceitos de determinante e invertibilidade de matrizes. Além disso, o professor ressaltou a importância de ferramentas matemáticas como o Teorema de Laplace, que permite o cálculo do determinante de matrizes de ordem superior a 2 por meio da expansão por cofatores. Essa técnica é especialmente útil quando outras abordagens (como transformações elementares) se tornam trabalhosas ou inviáveis. O teorema permite escolher uma linha ou coluna estratégica para facilitar os cálculos, tornando-o uma ferramenta poderosa no estudo da Álgebra Linear. Para o exercício, os alunos devem montar a matriz A, obedecendo às seguintes regras: • A 1ª linha da matriz deve ser uma progressão aritmética (PA) de razão 5, cujo primeiro termo é 2. • A 2ª linha deve ser formada por uma progressão geométrica (PG) de razão 3, cujo primeiro termo é 1. • A 3ª linha deve seguir uma progressão aritmética (PA) de razão 7, com termo inicial igual a 4. • A 4ª linha deve conter uma progressão geométrica (PG) de razão 2, iniciando com o termo 3. Com base nas informações acima, monte todos os elementos da matriz A, utilizando as propriedades das progressões indicadas. Usando o Teorema de Laplace, ou outro método de sua preferência, calcule o determinante com valor absoluto da matriz A.",
+    "latex": "A = \\begin{pmatrix} 2 & 7 & 12 & 17 \\\\ 1 & 3 & 9 & 27 \\\\ 4 & 11 & 18 & 25 \\\\ 3 & 6 & 12 & 24 \\end{pmatrix}",
+    "alternativa_a": "0",
+    "alternativa_b": "72",
+    "alternativa_c": "1176",
+    "alternativa_d": "3240",
+    "alternativa_e": "4176",
+    "gabarito": "C"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Durante uma aula de Navegação na EFOMM, o professor apresenta aos alunos um desafio matemático baseado em precisão de medições com instrumentos náuticos. Um aluno usa um divisor para medir um segmento de 9 milhas náuticas representado em uma carta náutica. Ele decide fazer um exercício de precisão: Divide esse segmento em 3 partes iguais e remove a parte central; Com os dois segmentos restantes, repete o mesmo processo, retirando novamente suas partes centrais; e Esse processo se repete indefinidamente com os novos segmentos restantes. Com base nesse processo, qual será a soma total das distâncias retiradas após infinitas repetições?",
+    "latex": "S = \\frac{a_1}{1 - q}",
+    "alternativa_a": "2 milhas náuticas.",
+    "alternativa_b": "3 milhas náuticas.",
+    "alternativa_c": "6 milhas náuticas.",
+    "alternativa_d": "8 milhas náuticas.",
+    "alternativa_e": "9 milhas náuticas.",
+    "gabarito": "B"
+  },
+  {
+    "numero": 3,
+    "enunciado": "A Escola de Formação de Oficiais da Marinha Mercante (EFOMM) decidiu modernizar sua frota de navios de instrução e colocou à venda o Navio Sirius, cujo valor à vista é de R$ 150.000.000,00. Uma empresa de transporte marítimo, a Rotas Navegáveis, tem a opção de dar uma entrada de R$ 65.000.000,00 e parcelar o restante em sete prestações dispostas em uma progressão geométrica. Ao fechar o negócio, a empresa foi informada de que a terceira parcela seria de R$ 9.600.000,00 e a quinta parcela seria de R$ 1.536.000,00. Quanto a empresa Rotas Navegáveis terá de desembolsar no total para adquirir o Navio Sirius?",
+    "latex": "a_n = a_1 \\cdot q^{n-1}",
+    "alternativa_a": "R$ 121.350.160,00",
+    "alternativa_b": "R$ 124.890.160,00",
+    "alternativa_c": "R$ 130.344.160,00",
+    "alternativa_d": "R$ 132.789.160,00",
+    "alternativa_e": "R$ 164.836.160,00",
+    "gabarito": "C"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Durante uma missão de patrulhamento marítimo, dois navios da Marinha do Brasil - o Navio Garnier Sampaio e o Navio Bocaina - estão navegando em rotas definidas no espaço tridimensional, considerando latitude, longitude e altitude (devido a sensores atmosféricos a bordo). A trajetória do Navio Garnier Sampaio está descrita por uma reta r, dada na forma vetorial: r: X = (1, 2, -1) + t(2, -1, 4), t \\in \\mathbb{R}. O Navio Bocaina, por outro lado, reportou sua posição atual como sendo o ponto: P = (5, 3, 2). Com base nas informações acima, responda: Qual é a distância entre o Navio Bocaina (ponto P) e a rota do Navio Garnier Sampaio (reta r)?",
+    "latex": "d(P, r) = \\frac{\\| \\vec{AP} \\times \\vec{v} \\|}{\\| \\vec{v} \\|}",
+    "alternativa_a": "\\frac{15\\sqrt{26}}{26}",
+    "alternativa_b": "\\frac{11\\sqrt{21}}{21}",
+    "alternativa_c": "\\frac{13\\sqrt{21}}{21}",
+    "alternativa_d": "\\frac{\\sqrt{3885}}{21}",
+    "alternativa_e": "5,5",
+    "gabarito": "D"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Em uma iniciativa da Marinha Mercante Brasileira para aprimorar a qualificação de seus tripulantes, uma pesquisa foi conduzida para investigar a quantidade de horas semanais que um grupo de funcionários dedicou a atividades de treinamento profissional em uma empresa de navegação parceira. Os dados registrados foram os seguintes: 5, 6, 7, 9, 10, 11, 12, 12, 14, 15. Com base nesses dados, o cálculo do desvio padrão e do desvio médio populacionais das horas de treinamento será de aproximadamente:",
+    "latex": "\\sigma = \\sqrt{\\frac{\\sum (x_i - \\mu)^2}{N}}",
+    "alternativa_a": "desvio padrão: 10; desvio médio: 2,6.",
+    "alternativa_b": "desvio padrão: 3,16; desvio médio: 2,6.",
+    "alternativa_c": "desvio padrão: 3,16; desvio médio: 10.",
+    "alternativa_d": "desvio padrão: 2,6; desvio médio: 3,16.",
+    "alternativa_e": "desvio padrão: 2,6; desvio médio: 10.",
+    "gabarito": "B"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Em uma missão de logística transatlântica, a equipe de engenharia do cargueiro Atlântis VI, da Marinha Mercante Brasileira, foi encarregada de simular o desempenho do navio em diferentes condições climáticas e de carga. O objetivo era prever o comportamento do sistema de propulsão do navio ao atravessar uma região turbulenta do oceano Atlântico, conhecida por seus redemoinhos e correntes contrárias. Durante os testes, os engenheiros perceberam que a força de propulsão líquida, ou seja, a força efetiva que impulsiona o navio para frente, descontadas as forças de resistência da água, variava com o tempo de forma não linear. Eles modelaram essa variação utilizando uma função matemática que relacionava o tempo x, a carga embarcada e a resistência hidrodinâmica do casco. Após vários ajustes, chegaram à seguinte expressão. Essa expressão representa a variação da força de propulsão líquida em função do tempo x, medida em unidades padronizadas ao longo da travessia. Sabendo que o termo independente de x, aquele que representa um valor constante da força, sem depender diretamente do tempo, é essencial para avaliar a estabilidade média do navio durante a travessia, os engenheiros solicitaram seu cálculo. Com base nesse modelo, qual é o valor do termo independente de x na expansão da expressão acima?",
+    "latex": "",
+    "alternativa_a": "156381",
+    "alternativa_b": "132300",
+    "alternativa_c": "-124416",
+    "alternativa_d": "-145152",
+    "alternativa_e": "-967680",
+    "gabarito": "C"
+  },
+  {
+    "numero": 7,
+    "enunciado": "Em um estudo recente do Centro de Instrução Almirante Graça Aranha (CIAGA) sobre os hábitos de leitura dos alunos do primeiro e segundo ano da EFOMM (Escola de Formação de Oficiais da Marinha Mercante), foram avaliados os tempos médios diários que eles dedicam à leitura em suas disciplinas. Os dados coletados em uma amostra desses alunos revelaram que a média dos tempos de leitura diária é de 36 minutos, enquanto a maior parte deles dedica exatamente 30 minutos diários à leitura, o que representa a moda dos dados. O CIAGA considera que o conhecimento da mediana é crucial para entender a distribuição dos tempos de leitura, pois ela indica o valor central que divide o grupo ao meio, auxiliando na otimização dos planos de estudo. Com base nessas informações, estime o valor aproximado da mediana desse conjunto de dados de tempos de leitura, utilizando a relação empírica entre média, moda e mediana.",
+    "latex": "",
+    "alternativa_a": "31 minutos.",
+    "alternativa_b": "32 minutos.",
+    "alternativa_c": "33 minutos.",
+    "alternativa_d": "34 minutos.",
+    "alternativa_e": "35 minutos.",
+    "gabarito": "D"
+  },
+  {
+    "numero": 8,
+    "enunciado": "Um balde em forma de tronco de cone, com altura de 1 m, raio do fundo de 0,3 m e raio do topo de 0,6 m, está sendo preenchido com água a uma taxa constante de 5 m3/min. A água mantém a forma do tronco de cone enquanto enche o balde. A que taxa, aproximadamente, a altura da água está aumentando no instante em que ela atinge 0,5 m de altura?",
+    "latex": "\\frac{dV}{dt} = 5 \\text{ m}^3/\\text{min}",
+    "alternativa_a": "\\frac{50}{7\\pi} \\text{ m/min}",
+    "alternativa_b": "\\frac{27,5}{\\pi} \\text{ m/min}",
+    "alternativa_c": "\\frac{25}{\\pi} \\text{ m/min}",
+    "alternativa_d": "\\frac{12,5}{\\pi} \\text{ m/min}",
+    "alternativa_e": "\\frac{10}{\\pi} \\text{ m/min}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 9,
+    "enunciado": "Considere que você está participando de um desafio de lógica proposto pela EFOMM (Escola de Formação de Oficiais da Marinha Mercante), uma instituição de ensino superior militar do Brasil, responsável pela formação de Oficiais da Marinha Mercante. Para testar suas habilidades de raciocínio lógico e numérico, foi criada a sequência S(n), definida pelas seguintes etapas: Liste todos os números PARES de 2 até n. Elimine todos os múltiplos de 6 (exceto o 6), depois os múltiplos de 8 (exceto o 8), e os múltiplos de 10 (exceto o 10). Atribua a cada número sobrevivente, na ordem crescente, uma letra da sigla EFOMM, repetindo-a ciclicamente. Por exemplo: S(1) = 2 \\rightarrow E, S(2) = 4 \\rightarrow F, S(3) = 6 \\rightarrow O, S(4) = 8 \\rightarrow M, S(5) = 10 \\rightarrow M, S(6) = 14 \\rightarrow E. Qual é a letra, destacada nas opções abaixo, que está associada ao número 2026 dentro da sequência de sobreviventes?",
+    "latex": "S(n)",
+    "alternativa_a": "[F]OMM",
+    "alternativa_b": "E[F]OMM",
+    "alternativa_c": "EFO[M]M",
+    "alternativa_d": "EFOM[M]",
+    "alternativa_e": "EFOMM[]",
+    "gabarito": "C"
+  },
+  {
+    "numero": 10,
+    "enunciado": "Um terreno triangular equilátero possui, em seu interior, uma árvore plantada. As distâncias perpendiculares dessa árvore até cada um dos três lados do terreno medem 3m, 4m e 5m. Qual a área do terreno em metros quadrados?",
+    "latex": "",
+    "alternativa_a": "48\\sqrt{3} \\text{ m}^2",
+    "alternativa_b": "36\\sqrt{3} \\text{ m}^2",
+    "alternativa_c": "24\\sqrt{3} \\text{ m}^2",
+    "alternativa_d": "24\\sqrt{2} \\text{ m}^2",
+    "alternativa_e": "12\\sqrt{2} \\text{ m}^2",
+    "gabarito": "A"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Um navio está localizado no ponto de um mapa cartesiano, com coordenadas em quilômetros. Nesse mapa, as rotas marítimas estão representadas pela curva definida pela equação, considerando todos os pontos reais que satisfazem essa equação. Qual é a distância mínima, em quilômetros, entre o navio e essa rota marítima?",
+    "latex": "(2, \\frac{1}{2}) \\text{ e } y^2 - y + 4x - 8 = 0",
+    "alternativa_a": "0 km",
+    "alternativa_b": "1 km",
+    "alternativa_c": "1.5 km",
+    "alternativa_d": "2 km",
+    "alternativa_e": "2.5 km",
+    "gabarito": "D"
+  },
+  {
+    "numero": 12,
+    "enunciado": "Um engenheiro projetou um componente metálico na forma de um sólido de revolução gerado pela rotação, em torno do eixo x, da região delimitada pela curva, pela reta horizontal e pelas retas verticais. Com base nessa construção, determine o volume do sólido gerado.",
+    "latex": "y = \\sec(x), \\; y = 4, \\; x = -\\frac{\\pi}{12}, \\; x = \\frac{\\pi}{3}",
+    "alternativa_a": "V = \\frac{4\\pi^2}{3} + 2\\pi",
+    "alternativa_b": "V = \\frac{4\\pi^2}{3} - 2\\pi",
+    "alternativa_c": "V = \\frac{3\\pi^2}{4} - 2\\pi",
+    "alternativa_d": "V = \\frac{2\\pi^2}{3} + 2\\pi",
+    "alternativa_e": "V = \\frac{2\\pi^2}{3} - 2\\pi",
+    "alternativa_f": "",
+    "gabarito": "B"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Imagine que você está imerso em um desafio de lógica inspirado pela grandeza do maior campeão do Brasil: o Palmeiras. Com seus impressionantes 12 títulos brasileiros, o clube paulista é uma força incontestável na história do nosso futebol e também um dos melhores times da América do Sul. De fato, entre 2015 e 2025, ninguém triunfou mais nesse período do que essa Nova Academia, empilhando títulos com uma consistência notável. Sua tarefa é descobrir quantos anagramas diferentes podem ser formados a partir das letras da palavra PALMEIRAS, mas com uma condição especial e rigorosa: nenhuma consoante pode aparecer consecutivamente. Qual das alternativas abaixo representa o número correto de anagramas que atendem a essa condição?",
+    "latex": "",
+    "alternativa_a": "720",
+    "alternativa_b": "960",
+    "alternativa_c": "1440",
+    "alternativa_d": "2880",
+    "alternativa_e": "5760",
+    "gabarito": "D"
+  },
+  {
+    "numero": 14,
+    "enunciado": "Uma empresa de telecomunicações pretende instalar um cabo entre uma estação E, localizada na margem oeste de um rio reto que possui 2 km de largura, e um ponto de destino D, situado na margem leste, 8 km rio abaixo em relação ao ponto da margem diretamente oposta a E. A instalação do cabo pode ser feita de duas maneiras: sob a água, atravessando o rio em linha reta até um ponto F, que pode ser escolhido livremente na margem leste, e, a partir desse ponto, por terra até o destino D, seguindo pela margem do rio. Sabe-se que o custo de instalação do cabo subaquático é 60% superior ao custo por quilômetro em terra firme. A empresa deseja escolher o ponto F de forma a minimizar o custo total da instalação. Nessas condições, a que distância aproximadamente, medida ao longo da margem leste, o ponto F deve ser posicionado em relação ao ponto de destino D, para que o custo total seja o menor possível? (Suponha as margens do rio retilíneas e paralelas).",
+    "latex": "",
+    "alternativa_a": "6,4 km",
+    "alternativa_b": "5,2 km",
+    "alternativa_c": "4,8 km",
+    "alternativa_d": "2,8 km",
+    "alternativa_e": "1,6 km",
+    "gabarito": "E"
+  },
+  {
+    "numero": 15,
+    "enunciado": "Sejam v e t números complexos, em que e seu argumento é, enquanto t tem coordenadas no Plano de Argan-Gauss. Sabe-se que o número complexo z satisfaz a equação. Com base nessas informações, calcule e assinale a alternativa correta.",
+    "latex": "|v| = 2, \\; \\theta = 75^\\circ, \\; t = (-4, 0), \\; z - v = t, \\; z^5",
+    "alternativa_a": "8(\\sqrt{6} + \\sqrt{2}) + 8i(-\\sqrt{6} + \\sqrt{2})",
+    "alternativa_b": "8(-\\sqrt{6} + \\sqrt{2}) + 8i(-\\sqrt{6} - \\sqrt{2})",
+    "alternativa_c": "8(-\\sqrt{6} + \\sqrt{2}) + 8i(\\sqrt{6} + \\sqrt{2})",
+    "alternativa_d": "8(\\sqrt{6} - \\sqrt{2}) + 8i(-\\sqrt{6} - \\sqrt{2})",
+    "alternativa_e": "8(-\\sqrt{6} - \\sqrt{2}) + 8i(\\sqrt{6} - \\sqrt{2})",
+    "gabarito": "C"
+  },
+  {
+    "numero": 16,
+    "enunciado": "No processo de construção de embarcações, os estaleiros frequentemente projetam reservatórios com diferentes geometrias, buscando otimizar o espaço interno da embarcação e garantir estabilidade e eficiência. Em um determinado projeto, foi especificado um reservatório no formato de prisma triangular reto, que será instalado no porão de uma embarcação de médio porte. As dimensões desse reservatório foram definidas a partir de cálculos técnicos, sendo que a altura do prisma é igual a x1/x2, e o triângulo que forma sua base possui base igual a x3/x4 e altura x5/x6. Sabendo-se que x1, x2, x3, x4, x5 e x6 são números reais positivos, tais que 2^{x_1} = 4, 3^{x_2} = 5, 4^{x_3} = 6, 5^{x_4} = 7, 6^{x_5} = 8 e 7^{x_6} = 9, calcule o volume desse reservatório, em metros cúbicos.",
+    "latex": "V = \\frac{1}{2} \\cdot \\left(\\frac{x_3}{x_4}\\right) \\cdot \\left(\\frac{x_5}{x_6}\\right) \\cdot \\left(\\frac{x_1}{x_2}\\right)",
+    "alternativa_a": "2 m3",
+    "alternativa_b": "3 m3",
+    "alternativa_c": "4 m3",
+    "alternativa_d": "8 m3",
+    "alternativa_e": "9 m3",
+    "gabarito": "A"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Uma escola com 120 alunos realizou uma pesquisa que informou sobre a prática de três esportes: Futebol, Basquete e Vôlei. Verificou-se que 65 alunos praticam Futebol, 50 praticam Basquete, 40 praticam Vôlei, 20 praticam Futebol e Basquete, 25 praticam Futebol e Vôlei, 15 praticam Basquete e Vôlei, 10 praticam os três esportes e 15 alunos não praticam nenhum esporte. Seja A a probabilidade de um aluno escolhido ao acaso praticar exatamente um dos esportes e B a probabilidade de um aluno escolhido ao acaso praticar pelo menos dois esportes, o resultado da expressão (A / 2) + 3B é aproximadamente:",
+    "latex": "A = \\frac{n(\\text{exatamente um})}{120}, \\quad B = \\frac{n(\\text{pelo menos dois})}{120}",
+    "alternativa_a": "1,05",
+    "alternativa_b": "1,10",
+    "alternativa_c": "1,15",
+    "alternativa_d": "1,20",
+    "alternativa_e": "1,25",
+    "gabarito": "C"
+  },
+  {
+    "numero": 18,
+    "enunciado": "A soma dos quadrados das funções circulares seno, cosseno e tangente do arco 2\\pi / 5, sabendo-se que o lado do pentágono regular estrelado, inscrito em um círculo de raio unitário, é \\frac{1}{2}\\sqrt{10+2\\sqrt{5}}, vale:",
+    "latex": "\\sin^2\\left(\\frac{2\\pi}{5}\\right) + \\cos^2\\left(\\frac{2\\pi}{5}\\right) + \\tan^2\\left(\\frac{2\\pi}{5}\\right)",
+    "alternativa_a": "Não especificado",
+    "alternativa_b": "Não especificado",
+    "alternativa_c": "Não especificado",
+    "alternativa_d": "Não especificado",
+    "alternativa_e": "Não especificado",
+    "gabarito": "A"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Considerando que os vértices opostos de um paralelogramo são A = (0, b) e B = (4, -1), e que um outro vértice é C = (6, a), o valor de (a + b), sabendo-se que a reta que contém a diagonal que passa pelos pontos C e D tem equação y = 2, é:",
+    "latex": "A = (0, b), \\quad B = (4, -1), \\quad C = (6, a), \\quad y = 2",
+    "alternativa_a": "2",
+    "alternativa_b": "3",
+    "alternativa_c": "4",
+    "alternativa_d": "5",
+    "alternativa_e": "6",
+    "gabarito": "D"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Uma escola está organizando um Conselho Escolar com os seguintes critérios: 3 professores, 2 estudantes e 1 responsável. Para tal, estão disponíveis: 6 professores (P1 a P6), 5 estudantes (E1 a E5) e 3 responsáveis (R1 a R3). Entretanto, existem duas restrições: Se o professor P1 for escolhido, o estudante E1 não pode ser selecionado; O responsável R3 só pode participar se o professor P6 também for escolhido. A quantidade de formas diferentes como esse conselho pode ser formado, respeitando as condições acima, é:",
+    "latex": "C_{6,3} \\times C_{5,2} \\times C_{3,1}",
+    "alternativa_a": "0,79",
+    "alternativa_b": "0,84",
+    "alternativa_c": "0,93",
+    "alternativa_d": "1,15",
+    "alternativa_e": "1,26",
+    "gabarito": "B"
+  }
+]

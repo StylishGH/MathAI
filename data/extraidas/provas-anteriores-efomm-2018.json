@@ -1,0 +1,122 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "Um programa de auditório tem um jogo chamado \n“Porta Premiada”, que funciona da seguinte maneira:\n10- há três portas: uma tem prêmios e duas estão \nvazias;\n2o- o apresentador pede ao convidado que escolha \numa das portas;\n3o- após a escolha, o apresentador abre uma das duas \nportas não escolhidas. Como ele sabe qual é a \npremiada, abre uma vazia;\n4o- depois de aberta uma das portas, ele pergunta ao \nconvidado se deseja trocar de porta;\n5o- finalmente, abre a porta do convidado para \nverificar se ganhou ou perdeu.\nAnalisando o jogo de forma puramente probabilística, \nverifique qua(l)(is) das estratégias abaixo tem a maior \nprobabilidade de vencer o jogo.\nI- Após escolher a porta, não trocá-la até o final do \njogo.\n11- Todas as probabilidades são iguais; não há \nestratégia melhor que a outra, ou seja, tanto faz trocar \nou não a porta.\nIll- A melhor estratégia é sempre trocar a porta.\nSobre as estratégias I, II e III apresentadas, é correto \nafirmar que\n( a ) \nsomente a alternativa I está correta.\n( b ) \nsomente a alternativa II está correta.\n( c ) \nsomente a alternativa III está correta.\n( d ) \nnenhuma alternativa está correta.\n( e ) \ntodas \nas \nalternativas \napresentam \ncircunstâncias \ncom \na \nmesma \nprobabilidade de vencer.",
+    "alternativas": {},
+    "texto_bruto": "Um programa de auditório tem um jogo chamado \n“Porta Premiada”, que funciona da seguinte maneira:\n10- há três portas: uma tem prêmios e duas estão \nvazias;\n2o- o apresentador pede ao convidado que escolha \numa das portas;\n3o- após a escolha, o apresentador abre uma das duas \nportas não escolhidas. Como ele sabe qual é a \npremiada, abre uma vazia;\n4o- depois de aberta uma das portas, ele pergunta ao \nconvidado se deseja trocar de porta;\n5o- finalmente, abre a porta do convidado para \nverificar se ganhou ou perdeu.\nAnalisando o jogo de forma puramente probabilística, \nverifique qua(l)(is) das estratégias abaixo tem a maior \nprobabilidade de vencer o jogo.\nI- Após escolher a porta, não trocá-la até o final do \njogo.\n11- Todas as probabilidades são iguais; não há \nestratégia melhor que a outra, ou seja, tanto faz trocar \nou não a porta.\nIll- A melhor estratégia é sempre trocar a porta.\nSobre as estratégias I, II e III apresentadas, é correto \nafirmar que\n( a ) \nsomente a alternativa I está correta.\n( b ) \nsomente a alternativa II está correta.\n( c ) \nsomente a alternativa III está correta.\n( d ) \nnenhuma alternativa está correta.\n( e ) \ntodas \nas \nalternativas \napresentam \ncircunstâncias \ncom \na \nmesma \nprobabilidade de vencer."
+  },
+  {
+    "numero": 2,
+    "enunciado": "Um decorador contemporâneo vai usar quatro \n“objetos” perfilados lado a lado como decoração de \num ambiente. Ele dispõe de 4 copos transparentes \nazuis, 4 copos transparentes vermelhos, duas bolas \namarelas e 3 bolas verdes. Cada “objeto” da \ndecoração pode ser um copo vazio ou com uma bola \ndentro. Considerando que a cor altera a opção do \n“objeto”, quantas maneiras distintas há de perfilar \nesses quatro “objetos”, levando-se em conta que a \nposição em que ele se encontra altera a decoração?\n(a ) \n1296\n(b ) \n1248\n( c ) \n1152\n(d ) \n1136\n( e ) \n1008\n1\nPS - EFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "Um decorador contemporâneo vai usar quatro \n“objetos” perfilados lado a lado como decoração de \num ambiente. Ele dispõe de 4 copos transparentes \nazuis, 4 copos transparentes vermelhos, duas bolas \namarelas e 3 bolas verdes. Cada “objeto” da \ndecoração pode ser um copo vazio ou com uma bola \ndentro. Considerando que a cor altera a opção do \n“objeto”, quantas maneiras distintas há de perfilar \nesses quatro “objetos”, levando-se em conta que a \nposição em que ele se encontra altera a decoração?\n(a ) \n1296\n(b ) \n1248\n( c ) \n1152\n(d ) \n1136\n( e ) \n1008\n1\nPS - EFOMM/2018"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Um garoto dispõe de um único exemplar de cada \npoliedro de Platão existente. Para brincar, ele \nnumerou cada vértice, face e aresta de cada poliedro \nsem repetir nenhum número. Em seguida, anotou \nesses números no próprio poliedro. Se ele sortear um \ndos números usados, aleatoriamente, qual será a \nprobabilidade de o número sorteado representar um \nvértice?\n(a )\n(b )\n( c )\n(d )\n(e )\n5\n9\nJ5_\n14\nl_\n3\n19\nJ_\n10",
+    "alternativas": {},
+    "texto_bruto": "Um garoto dispõe de um único exemplar de cada \npoliedro de Platão existente. Para brincar, ele \nnumerou cada vértice, face e aresta de cada poliedro \nsem repetir nenhum número. Em seguida, anotou \nesses números no próprio poliedro. Se ele sortear um \ndos números usados, aleatoriamente, qual será a \nprobabilidade de o número sorteado representar um \nvértice?\n(a )\n(b )\n( c )\n(d )\n(e )\n5\n9\nJ5_\n14\nl_\n3\n19\nJ_\n10"
+  },
+  {
+    "numero": 4,
+    "enunciado": "Um atleta de tiro ao prato tem probabilidade de 0,9 de \nacertar o prato a cada novo lançamento. Analisando \nesse jogador antes do início da competição, após \nquantos lançamentos de pratos, a probabilidade de ele \nnão ter acertado todos os tiros se tomará maior que a \nprobabilidade de acertar todos?\n( a ) \n9\n(b ) \n8\n(c ) \n7\n(d ) \n6\n(e ) \n5\nV\n2\nPS - EFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "Um atleta de tiro ao prato tem probabilidade de 0,9 de \nacertar o prato a cada novo lançamento. Analisando \nesse jogador antes do início da competição, após \nquantos lançamentos de pratos, a probabilidade de ele \nnão ter acertado todos os tiros se tomará maior que a \nprobabilidade de acertar todos?\n( a ) \n9\n(b ) \n8\n(c ) \n7\n(d ) \n6\n(e ) \n5\nV\n2\nPS - EFOMM/2018"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Qual é a área de uma circunferência inscrita em um \ntriângulo equilátero, sabendo-se que esse triângulo \nestá inscrito em uma circunferência de comprimento \nigual a 10 n cm?\n(a )\n(b )\n(c )\n(d )\n(e )\n75/r\n4\n25/r \n4 \n5 K \n2\n25/r \n16 \n5 n \n4",
+    "alternativas": {},
+    "texto_bruto": "Qual é a área de uma circunferência inscrita em um \ntriângulo equilátero, sabendo-se que esse triângulo \nestá inscrito em uma circunferência de comprimento \nigual a 10 n cm?\n(a )\n(b )\n(c )\n(d )\n(e )\n75/r\n4\n25/r \n4 \n5 K \n2\n25/r \n16 \n5 n \n4"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Seja \nC = {a \ncom\n<7, > a2 > a3 > ... > an, o conjunto das n raízes da \nequação:\ní\ní\n( r ' \" 4 )+ (\n^\n= \" 4(* + 1)+ 4*-\nDetermine o valor de a\" + a2\" +a3\" + ... + ann.\n(a )\n-5\n(b )\n7\n(c )\n25\n(d )\n36\n(e )\n37\n3\nPS - EFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "Seja \nC = {a \ncom\n<7, > a2 > a3 > ... > an, o conjunto das n raízes da \nequação:\ní\ní\n( r ' \" 4 )+ (\n^\n= \" 4(* + 1)+ 4*-\nDetermine o valor de a\" + a2\" +a3\" + ... + ann.\n(a )\n-5\n(b )\n7\n(c )\n25\n(d )\n36\n(e )\n37\n3\nPS - EFOMM/2018"
+  },
+  {
+    "numero": 7,
+    "enunciado": "A área de uma figura plana é dada pelo cálculo da \nintegral A = í [g(x) - h(x)]dx , onde g(x) é a\nfunção que limita a figura superiormente, h{x) limita\na figura inferiormente e os valores a,b e R \nrepresentam o início e o fim da figura em relação ao \neixo x do plano cartesiano. Com isso, determine a \nárea hachurada abaixo, definida superiormente por \numa parábola e inferiormente por uma reta.\n(a )\n(b )\n(c )\n(d )\n42,7\n4913\n162\n27\n21\n(e )\n46/r\n7",
+    "alternativas": {},
+    "texto_bruto": "A área de uma figura plana é dada pelo cálculo da \nintegral A = í [g(x) - h(x)]dx , onde g(x) é a\nfunção que limita a figura superiormente, h{x) limita\na figura inferiormente e os valores a,b e R \nrepresentam o início e o fim da figura em relação ao \neixo x do plano cartesiano. Com isso, determine a \nárea hachurada abaixo, definida superiormente por \numa parábola e inferiormente por uma reta.\n(a )\n(b )\n(c )\n(d )\n42,7\n4913\n162\n27\n21\n(e )\n46/r\n7"
+  },
+  {
+    "numero": 8,
+    "enunciado": "No “Baile dos FERAS”, os organizadores notaram \nque a razão entre o número de homens e o número de\n7\nmulheres presentes, no início do evento, era de — .\n10\nDurante o show, nenhum homem ou nenhuma mulher \nsaiu ou entrou. Ao final do show, os organizadores \nobservaram no local o aumento de 255 homens e a \nredução de 150 mulheres, de modo que a razão entre \no número de homens e o número de mulheres\n9\npresentes depois disso passou a ser — . Qual é o\nnúmero total de pessoas que estiveram presentes em \nalgum momento no show?\n( a ) \n3954.\n(b ) \n3570.\n(c ) \n3315.\n(d ) \n1950.\n(e ) \n1365.\n4\nPS - EFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "No “Baile dos FERAS”, os organizadores notaram \nque a razão entre o número de homens e o número de\n7\nmulheres presentes, no início do evento, era de — .\n10\nDurante o show, nenhum homem ou nenhuma mulher \nsaiu ou entrou. Ao final do show, os organizadores \nobservaram no local o aumento de 255 homens e a \nredução de 150 mulheres, de modo que a razão entre \no número de homens e o número de mulheres\n9\npresentes depois disso passou a ser — . Qual é o\nnúmero total de pessoas que estiveram presentes em \nalgum momento no show?\n( a ) \n3954.\n(b ) \n3570.\n(c ) \n3315.\n(d ) \n1950.\n(e ) \n1365.\n4\nPS - EFOMM/2018"
+  },
+  {
+    "numero": 9,
+    "enunciado": "A projeção ortogonal de A sobre a reta BC, \nsabendo-se que A = (3,7), B = (1,1) e C — (9,6), \nterá as coordenadas da projeção\n(a ) \nx = 468/85; y = 321/89.\n(b ) \nx = 478/87; y = 319/87.\n( c ) \nx = 487/84; y = 321/87.\n(d ) \nx = 457/89; y = 319/89.\n( e ) \nx = 472/89; y = 295/89.",
+    "alternativas": {},
+    "texto_bruto": "A projeção ortogonal de A sobre a reta BC, \nsabendo-se que A = (3,7), B = (1,1) e C — (9,6), \nterá as coordenadas da projeção\n(a ) \nx = 468/85; y = 321/89.\n(b ) \nx = 478/87; y = 319/87.\n( c ) \nx = 487/84; y = 321/87.\n(d ) \nx = 457/89; y = 319/89.\n( e ) \nx = 472/89; y = 295/89."
+  },
+  {
+    "numero": 10,
+    "enunciado": "Para descrever um código que permite transformar \numa palavra P de três letras em um vetor w e 933, \ninicialmente, \nescolhe-se \numa \nmatriz \n3x3. \nPor \nexemplo, a nossa “matriz código” será:\n2\n2\n0\n3\n3\n1\n1\n0\n1\nA partir da correspondência:\nA\n1 /B\n— 2 /C - > 3 / D — 4 / E\n5 /\nF — 6 /G\n— 7 /H - • 8 /1 ->\n9 / J -\n10/\nL -*\n11 /M — 12/N -*■ 1 3 /0 -^\n14 / P —^ 15/\n16 /R\n17 / S —*• 18 / T —* 1 9 /U -*\n20/\nv —* 21 /x-\n22! Z~* 23\na palavra P é transformada em vetor v do 933. Em \nseguida, o código da palavra P é obtido pela \noperação w = A v . Por exemplo, a palavra MAR \ncorresponde ao vetor \n(12,1,17) = v , a qual é \ncodificada com w = Av = (26,56,19).\nUsando \no \nprocesso \nacima \npara \ndecodificar \nw = (64,107,29), teremos\n(a ) x= 18, y = 14, z= 11 /SOL\n(b ) x= 12,y = 5,z = 11 / MEL\n(c ) x= 12, y = l,z = 20/MAU\n(d ) x= l l , y = 20,z= 1/LUA\n( e ) x = 20, y = 21, z = 1 / UVA",
+    "alternativas": {},
+    "texto_bruto": "Para descrever um código que permite transformar \numa palavra P de três letras em um vetor w e 933, \ninicialmente, \nescolhe-se \numa \nmatriz \n3x3. \nPor \nexemplo, a nossa “matriz código” será:\n2\n2\n0\n3\n3\n1\n1\n0\n1\nA partir da correspondência:\nA\n1 /B\n— 2 /C - > 3 / D — 4 / E\n5 /\nF — 6 /G\n— 7 /H - • 8 /1 ->\n9 / J -\n10/\nL -*\n11 /M — 12/N -*■ 1 3 /0 -^\n14 / P —^ 15/\n16 /R\n17 / S —*• 18 / T —* 1 9 /U -*\n20/\nv —* 21 /x-\n22! Z~* 23\na palavra P é transformada em vetor v do 933. Em \nseguida, o código da palavra P é obtido pela \noperação w = A v . Por exemplo, a palavra MAR \ncorresponde ao vetor \n(12,1,17) = v , a qual é \ncodificada com w = Av = (26,56,19).\nUsando \no \nprocesso \nacima \npara \ndecodificar \nw = (64,107,29), teremos\n(a ) x= 18, y = 14, z= 11 /SOL\n(b ) x= 12,y = 5,z = 11 / MEL\n(c ) x= 12, y = l,z = 20/MAU\n(d ) x= l l , y = 20,z= 1/LUA\n( e ) x = 20, y = 21, z = 1 / UVA"
+  },
+  {
+    "numero": 11,
+    "enunciado": "Resolvendo l + z + z2 + \ncom n = 4k + 1 e\nk e. Z (n °s inteiros), obtemos\n(a ) \nz \\\n(b ) i + r .\n( c ) \n1.\n( d ) l + i2.\n( e ) \n1 + i .\n5\nPS - EFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "Resolvendo l + z + z2 + \ncom n = 4k + 1 e\nk e. Z (n °s inteiros), obtemos\n(a ) \nz \\\n(b ) i + r .\n( c ) \n1.\n( d ) l + i2.\n( e ) \n1 + i .\n5\nPS - EFOMM/2018"
+  },
+  {
+    "numero": 12,
+    "enunciado": "|z -2| = |z + 4|\nResolvendo o sistema \\ \n' \n, \n,\nz - 3 | + |z + 3| = 10\ncomplexo, encontramos como solução\n, , \n, , sVó . \n, 8VÕ .\n(a ) \n- 1 h------z; — 1--------- z\n5 \n5\n,. , \n. \n8^6 . \n, \n8^6 .\n5 \n5\n( \\ \n1 , 6V8 . \n, 6a/8 .\n(c ) \n-lH ------z; - 1 --------- z\n5 \n5\n, , , \n, 6 7 8 . \n, \nóVê.\n( d ) \n+1 H------ z, + 1 --------- z\n5 \n5\n, , \n, , \n8V6 . \n, \n8V6 .\n5 \n5\n, para z",
+    "alternativas": {},
+    "texto_bruto": "|z -2| = |z + 4|\nResolvendo o sistema \\ \n' \n, \n,\nz - 3 | + |z + 3| = 10\ncomplexo, encontramos como solução\n, , \n, , sVó . \n, 8VÕ .\n(a ) \n- 1 h------z; — 1--------- z\n5 \n5\n,. , \n. \n8^6 . \n, \n8^6 .\n5 \n5\n( \\ \n1 , 6V8 . \n, 6a/8 .\n(c ) \n-lH ------z; - 1 --------- z\n5 \n5\n, , , \n, 6 7 8 . \n, \nóVê.\n( d ) \n+1 H------ z, + 1 --------- z\n5 \n5\n, , \n, , \n8V6 . \n, \n8V6 .\n5 \n5\n, para z"
+  },
+  {
+    "numero": 13,
+    "enunciado": "Um aluno do Io ano da EFOMM fez compras em 5 \nlojas. Em cada loja, gastou metade do que possuía e \npagou, após cada compra, R$2,00 de estacionamento. \nSe, após toda essa atividade, ainda ficou com \nR$20,00, a quantia que ele possuía inicialmente era \nde\n(a ) R$814,00.\n(b ) R$ 804,00.\n( c ) R$ 764,00.\n(d ) R$714,00.\n(e ) R$ 704,00.",
+    "alternativas": {},
+    "texto_bruto": "Um aluno do Io ano da EFOMM fez compras em 5 \nlojas. Em cada loja, gastou metade do que possuía e \npagou, após cada compra, R$2,00 de estacionamento. \nSe, após toda essa atividade, ainda ficou com \nR$20,00, a quantia que ele possuía inicialmente era \nde\n(a ) R$814,00.\n(b ) R$ 804,00.\n( c ) R$ 764,00.\n(d ) R$714,00.\n(e ) R$ 704,00."
+  },
+  {
+    "numero": 14,
+    "enunciado": "Uma aluna do 3o ano da EFOMM, responsável pelas \nvendas \ndos \nprodutos \nda \nSAMM \n(Sociedade \nAcadêmica da Marinha Mercante), percebeu que, com \na venda de uma caneca a R$9,00, em média 300 \npessoas compravam, quando colocadas as canecas à \nvenda em um grande evento. Para cada redução de \nR$1,00 no preço da caneca, a venda aumentava em \n100 unidades. Assim, o preço da caneca, para que a \nreceita seja máxima, será de\nR$ 8,00.\nR$ 7,00.\nR$ 6,00.\nR$ 5,00.\nR$ 4,00.\n(a )\n(b )\n(c )\n(d )\n(e )\n6\nPS\nEFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "Uma aluna do 3o ano da EFOMM, responsável pelas \nvendas \ndos \nprodutos \nda \nSAMM \n(Sociedade \nAcadêmica da Marinha Mercante), percebeu que, com \na venda de uma caneca a R$9,00, em média 300 \npessoas compravam, quando colocadas as canecas à \nvenda em um grande evento. Para cada redução de \nR$1,00 no preço da caneca, a venda aumentava em \n100 unidades. Assim, o preço da caneca, para que a \nreceita seja máxima, será de\nR$ 8,00.\nR$ 7,00.\nR$ 6,00.\nR$ 5,00.\nR$ 4,00.\n(a )\n(b )\n(c )\n(d )\n(e )\n6\nPS\nEFOMM/2018"
+  },
+  {
+    "numero": 15,
+    "enunciado": "A forma de uma montanha pode ser descrita pela \nequação y = - x + 17x - 66 (6 < x < 11). Considere \num atirador munido de um rifle de alta precisão, \nlocalizado no ponto (2,0). A partir de que ponto, na \nmontanha, um indefeso coelho estará 100% seguro?\n( a ) (8,9).\n(b ) (8,6).\n( c ) (7,9).\n(d ) (7,5).\n(e ) (7,4).",
+    "alternativas": {},
+    "texto_bruto": "A forma de uma montanha pode ser descrita pela \nequação y = - x + 17x - 66 (6 < x < 11). Considere \num atirador munido de um rifle de alta precisão, \nlocalizado no ponto (2,0). A partir de que ponto, na \nmontanha, um indefeso coelho estará 100% seguro?\n( a ) (8,9).\n(b ) (8,6).\n( c ) (7,9).\n(d ) (7,5).\n(e ) (7,4)."
+  },
+  {
+    "numero": 16,
+    "enunciado": "A equação da reta tangente ao gráfico f(x ) = — no\nx\nponto\nserá\n( a ) 25y + x - 10 = 0.\n(b ) l Oy-x + 7 = 0.\n( c ) 7y + 2x - 2 = 0.\n( d ) lOy + x - 10 = 0.\n( e ) 5y + x - 10 = 0.",
+    "alternativas": {},
+    "texto_bruto": "A equação da reta tangente ao gráfico f(x ) = — no\nx\nponto\nserá\n( a ) 25y + x - 10 = 0.\n(b ) l Oy-x + 7 = 0.\n( c ) 7y + 2x - 2 = 0.\n( d ) lOy + x - 10 = 0.\n( e ) 5y + x - 10 = 0."
+  },
+  {
+    "numero": 17,
+    "enunciado": "Seja / : IR —> IR uma função tal que f(l) = 2 e \ne IR . Então, o valor de\n/\nr n\nu\nsera\n(a ) 5\n(b ) 4\n(c ) 3\n(d ) 2\n(e ) 1",
+    "alternativas": {},
+    "texto_bruto": "Seja / : IR —> IR uma função tal que f(l) = 2 e \ne IR . Então, o valor de\n/\nr n\nu\nsera\n(a ) 5\n(b ) 4\n(c ) 3\n(d ) 2\n(e ) 1"
+  },
+  {
+    "numero": 18,
+    "enunciado": "Em uma festa, sabe-se que cada pessoa tem três \namigos, mas que não há três pessoas que sejam \namigas duas a duas. Qual é, então, a menor \nquantidade possível de pessoas na festa?\n(a ) 9.\n(b ) 8.\n( c ) 7.\n(d ) 6.\n( e ) 4.\n7\nPS - EFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "Em uma festa, sabe-se que cada pessoa tem três \namigos, mas que não há três pessoas que sejam \namigas duas a duas. Qual é, então, a menor \nquantidade possível de pessoas na festa?\n(a ) 9.\n(b ) 8.\n( c ) 7.\n(d ) 6.\n( e ) 4.\n7\nPS - EFOMM/2018"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Os valores de A, sabendo-se que a função abaixo é \ncontínua para todos os valores de x, será\n( a )\n, \n1\n2\n(b )\n1 ou - 2\n(c )\n2 ou 4\n(d )\n9 \n3 \nz ou — \n4\n(e )\ni \n4\n— 1 ou —\n3",
+    "alternativas": {},
+    "texto_bruto": "Os valores de A, sabendo-se que a função abaixo é \ncontínua para todos os valores de x, será\n( a )\n, \n1\n2\n(b )\n1 ou - 2\n(c )\n2 ou 4\n(d )\n9 \n3 \nz ou — \n4\n(e )\ni \n4\n— 1 ou —\n3"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Num triângulo ABC, as bissetrizes dos ângulos \nexternos do vértice B e C formam um ângulo de \nmedida 50°. Calcule o ângulo interno do vértice A.\n(a ) 110°\n(b ) 90°\n(c ) 80°\n(d ) 50°\n(e ) 20°\nPS\nEFOMM/2018",
+    "alternativas": {},
+    "texto_bruto": "Num triângulo ABC, as bissetrizes dos ângulos \nexternos do vértice B e C formam um ângulo de \nmedida 50°. Calcule o ângulo interno do vértice A.\n(a ) 110°\n(b ) 90°\n(c ) 80°\n(d ) 50°\n(e ) 20°\nPS\nEFOMM/2018"
+  }
+]

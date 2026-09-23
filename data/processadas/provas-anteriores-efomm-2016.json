@@ -1,0 +1,168 @@
+[
+  {
+    "numero": 1,
+    "enunciado": "A solução do sistema pode ser representada pelas raízes do polinômio:",
+    "latex": "\\begin{cases} \\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z} + \\frac{1}{w} = 1 \\\\ xy + xz + xw + yz + yw + zw = 6 \\\\ xyz + xyw + xzw + yzw = 4 \\\\ xyzw = 7 \\end{cases}",
+    "alternativa_a": "x^3 + 6x^2 + 4x + 7",
+    "alternativa_b": "x^3 - 6x^2 + 4x - 7",
+    "alternativa_c": "x^4 - 2x^3 + 8x^2 - 12x + 2",
+    "alternativa_d": "x^4 - 4x^3 + 6x^2 + 4x + 7",
+    "alternativa_e": "x^4 + 7x^3 + 4x^2 + 6x",
+    "gabarito": "A"
+  },
+  {
+    "numero": 2,
+    "enunciado": "Determine a imagem da função f, definida por f(x) = \\frac{x^2 - x - 2}{x^2 - 2}, para todo x pertencente a R, conjunto dos números reais.",
+    "latex": "f(x) = \\frac{x^2 - x - 2}{x^2 - 2}",
+    "alternativa_a": "Im(f) = R",
+    "alternativa_b": "Im(f) = \\{y \\in R / y \\ge 0\\}",
+    "alternativa_c": "Im(f) = \\{y \\in R / 0 \\le y \\le 4\\}",
+    "alternativa_d": "Im(f) = \\{y \\in R / y \\le 4\\}",
+    "alternativa_e": "Im(f) = \\{y \\in R / y > 0\\}",
+    "gabarito": "D"
+  },
+  {
+    "numero": 3,
+    "enunciado": "Um dado cúbico, não viciado, com faces numeradas de 1 a 6, é lançado três vezes. Em cada lançamento, anota-se o número obtido na face superior do dado, formando-se uma sequência (a, b, c). Qual é a probabilidade de que b seja sucessor de a e que c seja sucessor de b OU que a, b e c sejam primos?",
+    "latex": "\\text{espaço amostral} = 6^3 = 216",
+    "alternativa_a": "\\frac{4}{216}",
+    "alternativa_b": "\\frac{27}{216}",
+    "alternativa_c": "\\frac{108}{216}",
+    "alternativa_d": "\\frac{31}{216}",
+    "alternativa_e": "\\frac{10}{216}",
+    "gabarito": "D"
+  },
+  {
+    "numero": 4,
+    "enunciado": "O valor do limite é:",
+    "latex": "\\lim_{t \\to 0} \\frac{2^t - 1}{t}",
+    "alternativa_a": "1",
+    "alternativa_b": "\\frac{1}{4}",
+    "alternativa_c": "\\frac{1}{3}",
+    "alternativa_d": "\\frac{1}{2}",
+    "alternativa_e": "2",
+    "gabarito": "A"
+  },
+  {
+    "numero": 5,
+    "enunciado": "Seja uma esfera de raio R e um cubo de aresta A, ambos com a mesma área de superfície. A razão entre o volume do cubo e o volume da esfera é igual a",
+    "latex": "\\frac{V_{cubo}}{V_{esfera}}",
+    "alternativa_a": "\\frac{1}{\\pi}",
+    "alternativa_b": "\\frac{\\pi}{12}",
+    "alternativa_c": "\\frac{2\\pi}{3}",
+    "alternativa_d": "\\frac{\\pi}{3}",
+    "alternativa_e": "\\frac{\\pi}{6}",
+    "gabarito": "E"
+  },
+  {
+    "numero": 6,
+    "enunciado": "Determine o perímetro do triângulo ABD, em cm, representado na figura abaixo:",
+    "latex": "",
+    "alternativa_a": "5 + \\sqrt{3}",
+    "alternativa_b": "(1 + \\sqrt{3})(2 + \\sqrt{5})",
+    "alternativa_c": "4\\sqrt{5} + 20",
+    "alternativa_d": "45",
+    "alternativa_e": "50",
+    "gabarito": ""
+  },
+  {
+    "numero": 7,
+    "enunciado": "Um garrafão contém 3 litros de vinho. Retira-se um litro de vinho do garrafão e acrescenta-se um litro de água, obtendo-se uma mistura homogênea. Retira-se, a seguir, um litro da mistura e acrescenta-se um litro de água, e assim por diante. A quantidade de vinho, em litros, que resta no garrafão, após 5 dessas operações, é aproximadamente igual a:",
+    "latex": "",
+    "alternativa_a": "0,396",
+    "alternativa_b": "0,521",
+    "alternativa_c": "0,676",
+    "alternativa_d": "0,693",
+    "alternativa_e": "0,724",
+    "gabarito": ""
+  },
+  {
+    "numero": 8,
+    "enunciado": "Sabendo que 2\\sqrt{5} é uma raiz do polinômio P(x) = x^3 - 3x^2 - 10x + c, a soma das outras raízes é igual a:",
+    "latex": "P(x) = x^3 - 3x^2 - 10x + c",
+    "alternativa_a": "-2",
+    "alternativa_b": "0",
+    "alternativa_c": "10",
+    "alternativa_d": "1",
+    "alternativa_e": "-1",
+    "gabarito": ""
+  },
+  {
+    "numero": 9,
+    "enunciado": "O número complexo z = \\cos(\\theta) + i \\cdot \\sen(\\theta), sendo i a unidade imaginária e 0 \\le \\theta \\le 2\\pi, que satisfaz a inequação |z + i| \\le \\frac{2}{3} e que possui o menor argumento \\theta, é",
+    "latex": "z = \\cos(\\theta) + i \\cdot \\sen(\\theta), \\quad |z + i| \\le \\frac{2}{3}",
+    "alternativa_a": "z = -\\frac{2\\sqrt{5}}{3} - \\frac{1}{3}i",
+    "alternativa_b": "z = -\\frac{2\\sqrt{5}}{3} + \\frac{1}{3}i",
+    "alternativa_c": "z = -\\frac{\\sqrt{5}}{3} - \\frac{2}{3}i",
+    "alternativa_d": "z = -\\frac{\\sqrt{5}}{3} + \\frac{2}{3}i",
+    "alternativa_e": "z = -\\frac{\\sqrt{5}}{5} + i",
+    "gabarito": ""
+  },
+  {
+    "numero": 10,
+    "enunciado": "Quanto à posição relativa, podemos classificar as circunferências (x - 2)^2 + (y - 3)^2 = 9 e x^2 + y^2 - 8x - 15 = 0 como",
+    "latex": "(x - 2)^2 + (y - 3)^2 = 9, \\quad x^2 + y^2 - 8x - 15 = 0",
+    "alternativa_a": "secantes.",
+    "alternativa_b": "tangentes internas.",
+    "alternativa_c": "tangentes externas.",
+    "alternativa_d": "externas.",
+    "alternativa_e": "internas.",
+    "gabarito": ""
+  },
+  {
+    "numero": 16,
+    "enunciado": "De acordo com conceitos administrativos, o lucro de uma empresa é dado pela expressão matemática L = R - C, onde L é o lucro, C o custo da produção e R a receita do produto. Uma indústria produziu x peças e verificou que o custo de produção era dado pela função e a receita representada por R(x) = 2000x - x². Com base nessas informações, determine o número de peças a serem produzidas para que o lucro seja máximo.",
+    "latex": "L = R - C, C(x) = x^2 - 500x + 100, R(x) = 2000x - x^2",
+    "alternativa_a": "625",
+    "alternativa_b": "781150",
+    "alternativa_c": "1000",
+    "alternativa_d": "250",
+    "alternativa_e": "375",
+    "gabarito": "A"
+  },
+  {
+    "numero": 17,
+    "enunciado": "Dados os pontos A(-5, 2), B(1, 1) e C(-1, -1), o valor da altura do triângulo ABC em relação à base AC é igual a:",
+    "latex": "A(-5, 2), B(1, 1), C(-1, -1)",
+    "alternativa_a": "\\frac{37}{\\sqrt{37}}",
+    "alternativa_b": "5",
+    "alternativa_c": "8",
+    "alternativa_d": "\\frac{14}{\\sqrt{37}}",
+    "alternativa_e": "7",
+    "gabarito": "D"
+  },
+  {
+    "numero": 18,
+    "enunciado": "O valor da integral, sendo c uma constante, é:",
+    "latex": "\\int x^2 \\cdot \\sec^2(x^3) \\cdot \\operatorname{tg}(x^3) \\, dx",
+    "alternativa_a": "\\frac{1}{2} \\sec^2(x^2) + c",
+    "alternativa_b": "\\frac{1}{2} \\operatorname{tg}^2(x^3) + c",
+    "alternativa_c": "\\ln(\\operatorname{arctg}(x)) + c",
+    "alternativa_d": "\\frac{1}{7} \\operatorname{tg}(x^7) + c",
+    "alternativa_e": "\\operatorname{sen}^2(x) + \\operatorname{tg}^2(x) + c",
+    "alternativa_tag": "B",
+    "gabarito": "B"
+  },
+  {
+    "numero": 19,
+    "enunciado": "Numa progressão geométrica crescente, o 3º termo é igual à soma do triplo do 1º termo com o dobro do 2º termo. Sabendo que a soma desses três termos é igual a 26, determine o valor do 2º termo.",
+    "latex": "a_3 = 3a_1 + 2a_2, a_1 + a_2 + a_3 = 26",
+    "alternativa_a": "6",
+    "alternativa_b": "2",
+    "alternativa_c": "3",
+    "alternativa_d": "1",
+    "alternativa_e": "\\frac{26}{7}",
+    "gabarito": "A"
+  },
+  {
+    "numero": 20,
+    "enunciado": "Determine o comprimento do menor arco AB na circunferência de centro O, representada na figura a seguir, sabendo que o segmento OD mede 12cm, os ângulos CÔD = 30° e OÂB = 15° e que a área do triângulo CDO é igual a 18 cm².",
+    "latex": "OD = 12\\text{ cm}, \\text{CÔD} = 30^\\circ, \\text{OÂB} = 15^\\circ, \\text{Área}_{CDO} = 18\\text{ cm}^2",
+    "alternativa_a": "5\\pi\\text{ cm}",
+    "alternativa_b": "12\\text{ cm}",
+    "alternativa_c": "5\\text{ cm}",
+    "alternativa_d": "12\\pi\\text{ cm}",
+    "alternativa_e": "10\\pi\\text{ cm}",
+    "gabarito": "E"
+  }
+]
