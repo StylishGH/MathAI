@@ -58,10 +58,10 @@ def selecionar_modelos_candidatos(questao: dict) -> tuple[list[str], str]:
             "gemini-3.6-flash",
             "gemini-3.7-flash",
             "gemini-3.8-flash",
-            "models/gemini-3.1-pro-preview",
-            "models/gemini-pro-latest",
-            "gemini-2.0-flash",
-            "gemini-1.5-pro",
+            
+            
+            
+            
         ], "🧠 Modo Pro / Raciocínio Profundo"
     else:
         # Modo Flash: prioriza velocidade e resposta ágil
@@ -69,8 +69,8 @@ def selecionar_modelos_candidatos(questao: dict) -> tuple[list[str], str]:
             "gemini-3.6-flash",
             "gemini-3.7-flash",
             "gemini-3.8-flash",
-            "gemini-2.0-flash",
-            "gemini-1.5-flash",
+            
+            
         ], "⚡ Modo Flash / Alta Velocidade"
 
 
