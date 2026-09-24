@@ -6,7 +6,6 @@ import os
 import glob
 import time
 import json
-import sqlite3
 from pathlib import Path
 from dotenv import load_dotenv
 from google import genai
@@ -15,24 +14,23 @@ from google.genai import types
 load_dotenv()
 client = genai.Client()
 MODEL_ID = "gemini-3.5-flash-lite"
-DB_PATH = Path("C:/Users/Guilherme/Documents/MathAI/data/mathai.db")
 
 PROMPT_NOTION = """
-Você é um professor de matemática especialista no material do CEDERJ.
-Aqui está o conteúdo de uma ou mais páginas do meu Notion.
+Você é um professor de matemática e geometria especialista no material do CEDERJ.
 A sua tarefa é encontrar exercícios/questões e extraí-los.
-ATENÇÃO: Extraia APENAS as questões puramente de MATEMÁTICA (Cálculo, Álgebra Linear, Geometria, Matemática Discreta, etc). Ignore textos teóricos ou pessoais.
+ATENÇÃO: O usuário quer testar especificamente disciplinas como Construções Geométricas, Lógica e Teoria dos Conjuntos, Cálculo e Álgebra Linear.
+Portanto, EXTRAIA QUALQUER EXERCÍCIO que encontrar, mesmo que seja discursivo, passo a passo (ex: trace uma reta, use o compasso) ou demonstrações lógicas.
 
 Regras:
-1. ATENÇÃO MÁXIMA AO LATEX: Todas as equações, frações, matrizes e símbolos matemáticos DEVEM obrigatoriamente estar envolvidos por $$ ... $$ (para blocos) ou $ ... $ (para linha). Converta qualquer notação estranha para LaTeX.
-2. Tente deduzir a matéria (ex: Cálculo 3, Álgebra Linear) pelo contexto.
+1. ATENÇÃO MÁXIMA AO LATEX: Todas as equações e símbolos matemáticos DEVEM obrigatoriamente estar envolvidos por $$ ... $$ (para blocos) ou $ ... $ (para linha). Converta qualquer notação estranha para LaTeX. Se usar chaves no latex, escape-as.
+2. Deduza a matéria exata pelo nome do arquivo ou contexto (ex: "Construções Geométricas", "Lógica e Teoria dos Conjuntos", "Cálculo 2").
 3. Responda ESTRITAMENTE num array JSON com este formato:
 [
   {
     "enunciado": "Texto da questão...",
     "alternativas": {"A": "...", "B": "..."}, // Se houver, se for discursiva deixe vazio
     "gabarito": "Letra correta OU resolução passo a passo/resposta final",
-    "materia": "Cálculo 1",
+    "materia": "Construções Geométricas",
     "topico": "Geral",
     "banca": "CEDERJ",
     "ano": 2024
@@ -60,7 +58,9 @@ def salvar_no_banco(questoes):
         if isinstance(alts, dict) and alts:
             alt_lines = []
             for k, v in alts.items():
-                letra = k[-1].upper()  # Pega "A" de "alternativa_a" ou "A"
+                letra = k[-1].upper()
+                if letra in ['1','2','3','4','5']: # Trata casos de (1), (2)
+                    letra = chr(ord('A') + int(letra) - 1)
                 alt_lines.append(f"({letra}) {v}")
             if alt_lines:
                 enunciado += "\n\n" + "\n".join(alt_lines)
@@ -84,7 +84,7 @@ def salvar_no_banco(questoes):
             print(f"Erro ao inserir questao: {e}")
             
     con.commit()
-    print(f"{inseridas} questoes do Notion salvas diretamente no banco de dados!")
+    print(f"{inseridas} questoes alvo salvas diretamente no Turso!")
 
 
 def processar_arquivos(md_files):
@@ -95,8 +95,8 @@ def processar_arquivos(md_files):
             with open(f, 'r', encoding='utf-8') as file:
                 texto = file.read()
                 if len(texto) < 50: continue
-                current_chunk += f"\n\n--- ARQUIVO: {os.path.basename(f)} ---\n\n" + texto
-                if len(current_chunk) > 20000:
+                current_chunk += f"\n\n--- ARQUIVO: {f} ---\n\n" + texto
+                if len(current_chunk) > 15000:  # Reduzi o chunk pra IA ler com mais calma
                     chunks.append(current_chunk)
                     current_chunk = ""
         except Exception:
@@ -104,11 +104,11 @@ def processar_arquivos(md_files):
     if current_chunk:
         chunks.append(current_chunk)
 
-    print(f"Total de blocos de texto gerados: {len(chunks)}")
+    print(f"Total de blocos gerados para os alvos: {len(chunks)}")
     total_extraidas = 0
 
     for idx, chunk in enumerate(chunks):
-        print(f"Enviando bloco {idx+1}/{len(chunks)} para o Gemini...")
+        print(f"Enviando bloco {idx+1}/{len(chunks)}...")
         try:
             response = client.models.generate_content(
                 model=MODEL_ID,
@@ -118,7 +118,6 @@ def processar_arquivos(md_files):
                     response_mime_type="application/json"
                 )
             )
-            # Prevenir erro de parsing por slashes escapadas
             text_json = response.text.replace('\\\\', '\\\\\\\\')
             questoes = json.loads(text_json, strict=False)
             print(f"{len(questoes)} questoes extraidas deste bloco.")
@@ -128,12 +127,38 @@ def processar_arquivos(md_files):
             print(f"Erro no bloco {idx+1}: {e}")
         
         if idx < len(chunks) - 1:
-            print("Pausa de 5s para respeitar limites do Free Tier...")
             time.sleep(5)
 
-    print(f"\nIngestao Notion concluida! Total salvas: {total_extraidas}")
+    print(f"\nIngestão Alvo concluida! Total salvas: {total_extraidas}")
 
 if __name__ == "__main__":
     notion_dir = r"D:\Downloads\Notion"
-    md_files = glob.glob(os.path.join(notion_dir, "**", "*.md"), recursive=True)
-    processar_arquivos(md_files)
+    all_files = glob.glob(os.path.join(notion_dir, "**", "*.md"), recursive=True)
+    
+    # Filtra apenas os arquivos que pertencem as pastas ou conteudos alvos
+    alvos = [
+        'lgebra linear i', 'lgebra linear 1',
+        'c\u00e1lculo i', 'c\u00e1lculo 1', 'c\u00e1lculo ii', 'c\u00e1lculo 2', 'c\u00e1lculo iii', 'c\u00e1lculo 3',
+        'geometria plana',
+        'geometria espacial',
+        'constru\u00e7\u00f5es geom\u00e9tricas',
+        'l\u00f3gica e teoria dos conjuntos',
+        'geometria anal\u00edtica'
+    ]
+    
+    import unicodedata
+    def normalize(text):
+        return unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('utf-8').lower()
+    
+    alvos_norm = [normalize(a) for a in alvos]
+    
+    filtered_files = []
+    for f in all_files:
+        f_norm = normalize(f)
+        for a in alvos_norm:
+            if a in f_norm:
+                filtered_files.append(f)
+                break
+                
+    print(f"Encontrados {len(filtered_files)} arquivos correspondentes aos alvos solicitados.")
+    processar_arquivos(filtered_files)
