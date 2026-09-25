@@ -24,7 +24,13 @@ DIRETRIZES FUNDAMENTAIS:
    - SEMPRE envolva expressões matemáticas em destaque com blocos $$ ... $$ e termos inline com $ ... $.
    - Para matrizes e sistemas (\\begin{cases}, \\begin{pmatrix}, \\begin{aligned}), use quebras de linha com barras duplas (\\\\\\\\ dentro de strings JSON) para que o LaTeX quebre as linhas corretamente.
    - Nunca deixe expressões LaTeX soltas sem os delimitadores $$...$$ ou $...$.
-4. RESPOSTA EM JSON ESTRUTURADO: Você DEVE retornar EXCLUSIVAMENTE um objeto JSON válido no seguinte formato:
+4. MÉTODO ALTERNATIVO E ATALHOS DE PROVA (CRUCIAL):
+   - Em provas de vestibulares e concursos militares (ESA, Espcex, ITA, IME), velocidade e elegância de resolução são vitais.
+   - Sempre analise se o problema admite um método alternativo mais rápido, elegante ou clássico de concurso.
+   - Exemplo clássico: se o estudante tentou determinar os coeficientes de uma função quadrática montando e escalonando um sistema linear 3x3 ($4a+2b+c=0, \\dots$), aponte de forma clara e didática como seria muito mais rápido utilizar a forma fatorada da parábola $y = a(x - x_1)(x - x_2)$, ou a forma canônica pelo vértice $y = a(x - x_v)^2 + y_v$, ou propriedades de simetria do gráfico.
+   - Outros exemplos: Relações de Girard, produtos notáveis, semelhança de triângulos antes de trigonometria pesada, propriedades dos determinantes, vetores vs analítica, etc.
+   - Apresente esse método alternativo detalhadamente no campo "metodo_alternativo" com notação LaTeX ($...$ e $$...$$). Se a questão for tão direta que só tenha um único caminho possível, explique um macete ou conferência rápida de gabarito.
+5. RESPOSTA EM JSON ESTRUTURADO: Você DEVE retornar EXCLUSIVAMENTE um objeto JSON válido no seguinte formato:
 
 {
   "transcricao_latex": "Passos e equações lidas no rascunho devidamente delimitadas por $$...$$ ou $...$",
@@ -35,6 +41,7 @@ DIRETRIZES FUNDAMENTAIS:
   "estrategia_identificada": "Nome da técnica principal usada (ex: Teorema de Tales, Sistema Linear, Mudança de Base, etc.)",
   "status_resolucao": "correto | erro_conta_sinal | erro_algebraico | erro_conceitual | erro_interpretacao | incompleto",
   "diagnostico": "Explicação detalhada do raciocínio do aluno e análise qualitativa",
+  "metodo_alternativo": "Apresentação didática e detalhada de uma resolução alternativa mais rápida, elegante ou atalho clássico de concurso (com notação LaTeX $...$ e $$...$$)",
   "linha_do_erro": "Descrição de onde ocorreu a falha (ou null se estiver correto)",
   "dica_proximo_passo": "Uma provocação reflexiva para o aluno continuar ou verificar sua resposta"
 }
@@ -165,6 +172,7 @@ DADOS FORNECIDOS PELO ESTUDANTE:
                     "⚙️ **Avaliador Cognitivo em Ajuste Temporário**: O motor de avaliação cognitiva está temporariamente passando por ajustes. "
                     "Suas respostas e gabaritos continuam sendo registrados normalmente."
                 ),
+                "metodo_alternativo": None,
                 "linha_do_erro": None,
                 "dica_proximo_passo": "Você pode continuar resolvendo questões! O gabarito oficial continuará sendo exibido.",
                 "modelo_utilizado": "Modo Autônomo"
@@ -179,6 +187,7 @@ DADOS FORNECIDOS PELO ESTUDANTE:
                 "estrategia_identificada": "Alta Demanda",
                 "status_resolucao": "incompleto",
                 "diagnostico": "⏳ **Alta Demanda no Motor de IA**: O sistema está atendendo muitas resoluções simultâneas. Aguarde 30 a 60 segundos e tente novamente.",
+                "metodo_alternativo": None,
                 "linha_do_erro": None,
                 "dica_proximo_passo": "Aguarde alguns instantes e clique em Reanalisar com IA.",
                 "modelo_utilizado": "Nenhum (Cota 429)"
@@ -190,6 +199,7 @@ DADOS FORNECIDOS PELO ESTUDANTE:
                 "estrategia_identificada": "Instabilidade Temporária",
                 "status_resolucao": "incompleto",
                 "diagnostico": "⚙️ **Servidores em Alta Demanda (503)**: O motor de IA está temporariamente sobrecarregado. Tente novamente em alguns segundos.",
+                "metodo_alternativo": None,
                 "linha_do_erro": None,
                 "dica_proximo_passo": "Tente clicar em Reanalisar com IA em alguns segundos.",
                 "modelo_utilizado": "Nenhum (503)"
@@ -201,6 +211,7 @@ DADOS FORNECIDOS PELO ESTUDANTE:
                 "estrategia_identificada": "Indisponível no momento",
                 "status_resolucao": "incompleto",
                 "diagnostico": "Ocorreu uma instabilidade na consulta ao motor cognitivo. Tente novamente em instantes.",
+                "metodo_alternativo": None,
                 "linha_do_erro": None,
                 "dica_proximo_passo": "Tente clicar em Reanalisar com IA em instantes.",
                 "modelo_utilizado": "Nenhum (Erro)"
@@ -226,6 +237,8 @@ DADOS FORNECIDOS PELO ESTUDANTE:
         resultado = json.loads(texto_json)
         if "transcricao_latex" in resultado and resultado["transcricao_latex"]:
             resultado["transcricao_latex"] = formatar_transcricao_latex(resultado["transcricao_latex"])
+        if "metodo_alternativo" in resultado and resultado["metodo_alternativo"]:
+            resultado["metodo_alternativo"] = formatar_transcricao_latex(resultado["metodo_alternativo"])
         resultado["modelo_utilizado"] = modelo_final_usado
         return resultado
     except Exception:
@@ -236,6 +249,7 @@ DADOS FORNECIDOS PELO ESTUDANTE:
             "estrategia_identificada": "Geral",
             "status_resolucao": "incompleto",
             "diagnostico": texto_bruto or "Resposta recebida.",
+            "metodo_alternativo": None,
             "linha_do_erro": None,
             "dica_proximo_passo": "Tente formalizar o raciocínio em etapas numéricas.",
             "modelo_utilizado": modelo_final_usado
@@ -318,6 +332,7 @@ def _gerar_diagnostico_simulado(questao: dict, justificativa_texto: str | None) 
         "estrategia_identificada": "Análise Conceitual e Algébrica",
         "status_resolucao": "correto",
         "diagnostico": f"Sua justificativa ('{just_segura}') demonstra compreensão do conceito de {topico}. O raciocínio e o desenvolvimento matemático foram processados com sucesso pelo MathAI.",
+        "metodo_alternativo": f"⚡ **Atalho / Método Alternativo para {topico}:** Em questões de concurso deste assunto, verifique sempre se é possível utilizar simetrias, relações de Girard ou formas fatoradas (ex: forma fatorada da parábola $y = a(x - x_1)(x - x_2)$) para poupar tempo e evitar cálculos extensos.",
         "linha_do_erro": None,
         "dica_proximo_passo": "Excelente! Continue treinando para consolidar a velocidade e a precisão das contas."
     }

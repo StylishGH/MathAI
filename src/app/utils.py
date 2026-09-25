@@ -86,6 +86,41 @@ def e_questao_discursiva(questao: dict) -> bool:
     return True  # Sem alternativas e gabarito não é letra → discursiva
 
 
+latex_commands_after_n = {
+    'u', 'eq', 'e', 'abla', 'otin', 'atural', 'earrow', 'warrow',
+    'ocorr', 'oindent', 'obreak', 'ormalsize', 'ull', 'ewline',
+    'eg', 'i', 'ot', 'exists', 'sim', 'cong', 'parallel', 'mid',
+    'rightarrow', 'leftarrow', 'subseteq', 'supseteq', 'equiv'
+}
+
+
+def normalizar_quebras_json(texto: str) -> str:
+    """
+    Substitui sequências literais de barra-n ('\\n') por quebras de linha reais ('\n'),
+    protegendo comandos LaTeX legítimos que começam com '\\n' (como \\nu, \\neq, \\nabla, \\notin, etc.).
+    """
+    if not texto:
+        return ""
+    # Normaliza carriage returns
+    texto = texto.replace('\r\n', '\n').replace('\r', '\n')
+    texto = texto.replace(r'\r\n', '\n').replace(r'\r', '')
+
+    # Remove ponto órfão inicial comum em transcrições (ex: ".\n\nA partir disso...")
+    texto = re.sub(r'^\s*\.\s*(?:\\n|\n)+', '', texto)
+
+    # Converte \\n literais em quebras reais, preservando comandos LaTeX que começam com \n
+    padrao = re.compile(r'\\n([a-zA-Z]*)')
+
+    def repl(m):
+        letras = m.group(1)
+        for cmd_suffix in sorted(latex_commands_after_n, key=len, reverse=True):
+            if letras == cmd_suffix or (letras.startswith(cmd_suffix) and not letras[len(cmd_suffix):].isalpha()):
+                return m.group(0)
+        return '\n' + letras
+
+    return padrao.sub(repl, texto)
+
+
 def fix_latex_row_breaks(latex_str: str) -> str:
     r"""
     Substitui quebras de linha com barra simples (\ ) por barra dupla (\\ )
@@ -136,34 +171,44 @@ def is_math_line(text: str) -> bool:
 
 def formatar_transcricao_latex(transcricao: str) -> str:
     """
-    Formata o texto de transcrição OCR para renderização impecável no Streamlit st.markdown.
+    Formata o texto de transcrição OCR ou diagnósticos para renderização impecável no Streamlit st.markdown.
+    - Normaliza quebras de linha literais vindas de JSON (\\n).
     - Corrige quebras de linha em ambientes matriciais/sistemas (ex: \\begin{cases}).
-    - Garante que blocos matemáticos estejam devidamente delimitados por $$...$$ para ativação do KaTeX.
+    - Isola ambientes LaTeX de bloco em display math ($$...$$).
+    - Garante que linhas puramente matemáticas sejam delimitadas por $$...$$.
     - Preserva texto explicativo ou comentários em linguagem natural sem quebrar a tipografia.
     """
     if not transcricao or not isinstance(transcricao, str):
         return ""
 
-    texto = fix_latex_row_breaks(transcricao.strip())
+    # 1. Normaliza quebras literais de escape JSON (\n)
+    texto = normalizar_quebras_json(transcricao.strip())
 
-    # Se já estiver completamente envolvido por $$ ou $$, ou se já tiver delimitadores
-    if texto.startswith("$$") and texto.endswith("$$"):
+    # 2. Corrige quebras de linha com barra simples em matrizes/sistemas
+    texto = fix_latex_row_breaks(texto)
+
+    # 3. Se todo o texto já for delimitado por $$, retorna direto
+    if texto.startswith("$$") and texto.endswith("$$") and texto.count("$$") == 2:
         return texto
 
-    # Protege ambientes como \begin{cases}...\end{cases} substituindo por placeholders temporários
-    env_regex = r'(\\begin\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}[\s\S]*?\\end\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\})'
-    placeholders = {}
+    # 4. Isola ambientes LaTeX (\begin{cases}...\end{cases}) garantindo que fiquem dentro de $$...$$
+    env_pattern = re.compile(r'\\begin\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}[\s\S]*?\\end\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}')
+    tokens = re.split(r'(\$\$[\s\S]*?\$\$)', texto)
+    partes = []
+    for tok in tokens:
+        if tok.startswith('$$') and tok.endswith('$$'):
+            partes.append(tok)
+        else:
+            def wrap_env(m):
+                return f"\n\n$$\n{m.group(0)}\n$$\n\n"
+            tok_wrapped = env_pattern.sub(wrap_env, tok)
+            partes.append(tok_wrapped)
+    texto = "".join(partes)
 
-    def store_env(m):
-        key = f"__MATH_ENV_{len(placeholders)}__"
-        placeholders[key] = m.group(0)
-        return key
-
-    texto_masked = re.sub(env_regex, store_env, texto)
-
-    # Processa linha a linha
-    linhas = texto_masked.splitlines()
+    # 5. Processa linha por linha
+    linhas = texto.splitlines()
     novas_linhas = []
+    dentro_de_bloco_math = False
 
     for l in linhas:
         l_trim = l.strip()
@@ -171,33 +216,31 @@ def formatar_transcricao_latex(transcricao: str) -> str:
             novas_linhas.append("")
             continue
 
-        # Se já tem $ ou $$ ou sintaxe markdown
-        if l_trim.startswith("$$") or l_trim.startswith("$") or l_trim.startswith("#") or l_trim.startswith("- ") or l_trim.startswith("* "):
-            novas_linhas.append(l)
-            continue
-
-        # Se a linha contém um placeholder de ambiente
-        contains_placeholder = any(k in l_trim for k in placeholders)
-        if contains_placeholder:
-            for k, val in placeholders.items():
-                l_trim = l_trim.replace(k, val)
-            if not has_natural_language(l_trim):
-                novas_linhas.append(f"$${l_trim}$$")
+        if l_trim.startswith("$$"):
+            if l_trim.endswith("$$") and len(l_trim) > 2:
+                novas_linhas.append(l_trim)
             else:
+                dentro_de_bloco_math = not dentro_de_bloco_math
                 novas_linhas.append(l_trim)
             continue
 
-        # Se for uma linha puramente matemática
+        if dentro_de_bloco_math:
+            novas_linhas.append(l)
+            continue
+
+        # Se já tem $ inline ou formatação markdown (título, bullet, etc.)
+        if l_trim.startswith("$") or l_trim.startswith("#") or l_trim.startswith("- ") or l_trim.startswith("* "):
+            novas_linhas.append(l)
+            continue
+
+        # Se for uma linha puramente matemática sem delimitador, envolve em $$...$$
         if is_math_line(l_trim):
             novas_linhas.append(f"$${l_trim}$$")
         else:
             novas_linhas.append(l)
 
-    # Restaura qualquer placeholder que ainda reste
     resultado = "\n".join(novas_linhas)
-    for k, val in placeholders.items():
-        resultado = resultado.replace(k, val)
-
+    # Remove excesso de quebras vazias consecutivas
     resultado = re.sub(r'\n{3,}', '\n\n', resultado)
     return resultado.strip()
 

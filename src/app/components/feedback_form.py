@@ -614,7 +614,27 @@ def _renderizar_card_ia(diag: dict):
         if linha_erro:
             st.warning(f"⚠️ **Ponto de Atenção:** {linha_erro}")
 
-        # 6. Dica Socrática de Próximo Passo
+        # 6. Método Alternativo / Atalho de Prova
+        metodo_alt = diag.get("metodo_alternativo")
+        if metodo_alt and str(metodo_alt).strip() and str(metodo_alt).lower() not in ("null", "none"):
+            is_dark = (st.session_state.get("tema", "dark") == "dark")
+            cor_titulo_alt = "#fbbf24" if is_dark else "#b45309"
+            bg_banner_alt = "rgba(245, 158, 11, 0.08)" if is_dark else "rgba(245, 158, 11, 0.12)"
+            st.markdown(
+                f"""
+                <div style="background: {bg_banner_alt}; border-left: 3px solid #f59e0b; border-radius: 8px; padding: 10px 14px; margin: 10px 0 6px 0;">
+                    <div style="font-weight: 700; color: {cor_titulo_alt}; font-size: 0.92rem; display: flex; align-items: center; gap: 6px;">
+                        <span>⚡</span> <span>Método Alternativo / Atalho de Prova:</span>
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+            metodo_alt_formatado = formatar_transcricao_latex(str(metodo_alt))
+            with st.container(border=True):
+                st.markdown(metodo_alt_formatado)
+
+        # 7. Dica Socrática de Próximo Passo
         dica = diag.get("dica_proximo_passo")
         if dica:
             st.info(f"💡 **Provocação para Evolução:** {dica}")
