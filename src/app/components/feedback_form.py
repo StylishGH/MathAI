@@ -240,7 +240,9 @@ def render_resolution_form(questao: dict, on_success_callback=None):
         if tem_conteudo:
             col_ai_btn, _ = st.columns([2, 3])
             with col_ai_btn:
-                if st.button("🧠 Analisar Rascunho com IA", use_container_width=True, key=f"btn_ai_analisar_{q_id}"):
+                ja_analisado = f"analise_ia_{q_id}" in st.session_state
+                label_btn_ai = "🔄 Reanalisar com IA" if ja_analisado else "🧠 Analisar Rascunho com IA"
+                if st.button(label_btn_ai, use_container_width=True, key=f"btn_ai_analisar_{q_id}"):
                     with st.spinner("Avaliador Cognitivo analisando seu raciocínio..."):
                         from src.ai.evaluator import analisar_resolucao
                         img_bytes = st.session_state.get(f"imagem_resolucao_{q_id}", None)
@@ -253,6 +255,7 @@ def render_resolution_form(questao: dict, on_success_callback=None):
                             justificativa_texto=txt_just
                         )
                         st.session_state[f"analise_ia_{q_id}"] = diag
+                        st.rerun()
 
         # Exibição do Card Diagnóstico da IA se já tiver sido gerado
         if f"analise_ia_{q_id}" in st.session_state:
@@ -615,4 +618,20 @@ def _renderizar_card_ia(diag: dict):
         dica = diag.get("dica_proximo_passo")
         if dica:
             st.info(f"💡 **Provocação para Evolução:** {dica}")
+
+        # Se for erro 402, exibe botão direto para configurar a chave no Perfil
+        if "402" in str(diag.get("modelo_utilizado", "")) or "402" in str(diag.get("diagnostico", "")):
+            c_perf1, c_perf2 = st.columns([1, 1])
+            with c_perf1:
+                if st.button("🔑 Configurar Chave Grátis no Meu Perfil", use_container_width=True, key=f"btn_ir_perfil_402_{id(diag)}"):
+                    st.session_state.nav_page = "👤 Meu Perfil"
+                    st.rerun()
+            with c_perf2:
+                st.markdown(
+                    '<a href="https://aistudio.google.com/apikey" target="_blank" style="text-decoration:none;">'
+                    '<div style="text-align:center; padding:9px 12px; background:rgba(124,58,237,0.15); border:1px solid #7c3aed; border-radius:8px; font-weight:600; color:#a78bfa; font-size:0.85rem;">'
+                    '🌐 Gerar Chave Free no AI Studio ↗'
+                    '</div></a>',
+                    unsafe_allow_html=True
+                )
 

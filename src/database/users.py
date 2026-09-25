@@ -51,7 +51,8 @@ def _garantir_tabelas_e_migracao():
         ("escolaridade", "TEXT"),
         ("faculdade", "TEXT"),
         ("curso", "TEXT"),
-        ("concursos_foco", "TEXT")
+        ("concursos_foco", "TEXT"),
+        ("gemini_api_key", "TEXT")
     ]
     for col, tipo in novas_colunas:
         try:
@@ -462,7 +463,7 @@ def fazer_login(email: str, senha: str) -> dict:
     try:
         cur.execute("""
             SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado,
-                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado
+                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado, gemini_api_key
             FROM usuarios WHERE email = ? AND senha_hash = ?
         """, (email.strip().lower(), _hash_senha(senha)))
         row = cur.fetchone()
@@ -501,7 +502,7 @@ def buscar_usuario_por_email(email: str) -> dict | None:
     try:
         cur.execute("""
             SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado,
-                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado
+                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado, gemini_api_key
             FROM usuarios WHERE email = ? AND verificado = 1
         """, (email.strip().lower(),))
         row = cur.fetchone()
@@ -525,7 +526,7 @@ def buscar_usuario_por_id(usuario_id: int) -> dict | None:
     try:
         cur.execute("""
             SELECT id, nome, email, cpf, idade, celular, cep, logradouro, numero, bairro, cidade, estado,
-                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado
+                   escolaridade, faculdade, curso, motivos, concursos_foco, verificado, gemini_api_key
             FROM usuarios WHERE id = ?
         """, (usuario_id,))
         row = cur.fetchone()
@@ -597,6 +598,23 @@ def atualizar_perfil_usuario(
             json.dumps(concursos_foco or [], ensure_ascii=False),
             usuario_id
         ))
+        con.commit()
+        return {"ok": True}
+    except Exception as e:
+        return {"ok": False, "erro": str(e)}
+    finally:
+        con.close()
+
+
+def salvar_chave_gemini_usuario(usuario_id: int, chave_api: str | None) -> dict:
+    """Atualiza a chave de API pessoal do Gemini do usuário no banco de dados."""
+    con = pegar_conexao()
+    cur = con.cursor()
+    try:
+        cur.execute(
+            "UPDATE usuarios SET gemini_api_key = ? WHERE id = ?",
+            (chave_api.strip() if chave_api and chave_api.strip() else None, usuario_id)
+        )
         con.commit()
         return {"ok": True}
     except Exception as e:

@@ -8,10 +8,12 @@ import streamlit as st
 from src.database.users import (
     buscar_usuario_por_id,
     atualizar_perfil_usuario,
+    salvar_chave_gemini_usuario,
     buscar_endereco_por_cep,
     formatar_cpf,
     validar_cpf
 )
+from src.ai.client import obter_info_chave, testar_chave_api
 
 ESCOLARIDADE_OPCOES = [
     "Ensino Fundamental (em andamento / concluído)",
@@ -455,39 +457,94 @@ def show():
     # ── CONFIGURAÇÃO DE IA (GOOGLE GEMINI) ───────────────────────────────────
     st.markdown("---")
     st.markdown("#### 🤖 Conexão com Inteligência Artificial (Google Gemini)")
-    with st.expander("🔑 Chave de API Pessoal (Opcional / Substituição)", expanded=False):
+
+    info_chave = obter_info_chave()
+    chave_no_banco = (usuario.get("gemini_api_key") or "").strip()
+    chave_na_sessao = st.session_state.get("gemini_api_key", "").strip()
+    chave_padrao_campo = chave_na_sessao or chave_no_banco
+
+    if info_chave["presente"]:
+        badge_cor = "#10b981" if is_dark else "#059669"
+        bg_badge = "rgba(16, 185, 129, 0.12)"
+        borda_badge = "rgba(16, 185, 129, 0.3)"
+        icone_status = "🟢"
+        texto_status = f"IA Conectada • Chave: <code>{info_chave['mascarada']}</code> ({info_chave['origem']})"
+    else:
+        badge_cor = "#f59e0b" if is_dark else "#d97706"
+        bg_badge = "rgba(245, 158, 11, 0.12)"
+        borda_badge = "rgba(245, 158, 11, 0.3)"
+        icone_status = "⚪"
+        texto_status = "Nenhuma chave ativa detectada (Modo Autônomo Simulado)"
+
+    st.markdown(f"""
+    <div style="background:{bg_badge}; border:1px solid {borda_badge}; border-radius:10px; padding:10px 14px; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.1rem;">{icone_status}</span>
+        <div style="color:{badge_cor}; font-size:0.88rem; font-weight:600;">{texto_status}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    with st.expander("🔑 Gerenciar Minha Chave de API Pessoal", expanded=(not info_chave["presente"])):
         st.markdown("""
-        O MathAI utiliza a API do **Google Gemini** para leitura de rascunhos, transcrições LaTeX e diagnósticos pedagógicos.
-        Caso os créditos da chave padrão da plataforma estejam esgotados (Erro 402) ou você queira utilizar sua própria cota gratuita do Google AI Studio (15 requisições/minuto gratuitas), configure sua chave pessoal abaixo:
+        O MathAI utiliza a API do **Google Gemini** para transcrição de rascunhos em LaTeX e avaliação pedagógica passo a passo.
+        Para garantir seu acesso ininterrupto no **Free Tier (15 requisições/minuto gratuitas)**, configure sua chave pessoal:
         """)
 
-        chave_atual_sessao = st.session_state.get("gemini_api_key", "")
         nova_chave_api = st.text_input(
-            "Sua Chave de API do Google Gemini (GEMINI_API_KEY):",
-            value=chave_atual_sessao,
+            "Sua Chave de API (GEMINI_API_KEY):",
+            value=chave_padrao_campo,
             type="password",
-            placeholder="AIzaSy...",
-            help="Obtenha uma chave gratuita em https://aistudio.google.com/apikey"
+            placeholder="AQ.Ab8... ou AIzaSy...",
+            help="Sua chave fica salva de forma segura na sua conta do MathAI."
         )
-        col_k1, col_k2 = st.columns([1, 1])
+
+        col_k1, col_k2, col_k3 = st.columns([1.2, 1.2, 1.2])
+
         with col_k1:
-            if st.button("💾 Salvar Chave na Sessão", use_container_width=True, key="btn_salvar_chave_gemini"):
-                if nova_chave_api.strip():
-                    st.session_state.gemini_api_key = nova_chave_api.strip()
-                    st.success("Chave de API pessoal salva com sucesso!")
-                    st.rerun()
+            if st.button("💾 Salvar no Perfil", use_container_width=True, type="primary", key="btn_salvar_chave_gemini"):
+                chave_limpa = nova_chave_api.strip()
+                if chave_limpa:
+                    res = salvar_chave_gemini_usuario(user_id, chave_limpa)
+                    if res.get("ok"):
+                        st.session_state.gemini_api_key = chave_limpa
+                        if "usuario_logado" in st.session_state and isinstance(st.session_state.usuario_logado, dict):
+                            st.session_state.usuario_logado["gemini_api_key"] = chave_limpa
+                        st.success("Chave salva com sucesso no seu perfil!")
+                        st.rerun()
+                    else:
+                        st.error(f"Erro ao salvar: {res.get('erro')}")
                 else:
+                    salvar_chave_gemini_usuario(user_id, None)
                     st.session_state.pop("gemini_api_key", None)
-                    st.info("Chave pessoal removida. A plataforma usará a chave padrão do sistema.")
+                    if "usuario_logado" in st.session_state and isinstance(st.session_state.usuario_logado, dict):
+                        st.session_state.usuario_logado["gemini_api_key"] = None
+                    st.info("Chave pessoal removida. A plataforma usará as configurações padrão.")
                     st.rerun()
+
         with col_k2:
-            st.markdown(
-                '<a href="https://aistudio.google.com/apikey" target="_blank" style="text-decoration:none;">'
-                '<div style="text-align:center; padding:9px 12px; background:rgba(124,58,237,0.15); border:1px solid #7c3aed; border-radius:8px; font-weight:600; color:#a78bfa; font-size:0.85rem;">'
-                '🌐 Obter Chave Grátis no Google AI Studio ↗'
-                '</div></a>',
-                unsafe_allow_html=True
-            )
+            if st.button("🧪 Testar Conexão", use_container_width=True, key="btn_testar_chave_gemini"):
+                with st.spinner("Testando chave com o modelo gemini-flash-lite-latest..."):
+                    resultado_teste = testar_chave_api(nova_chave_api.strip() if nova_chave_api.strip() else None)
+                    if resultado_teste.get("ok"):
+                        st.success(f"✅ Conexão estabelecida com sucesso! ({resultado_teste.get('tempo_ms')}ms)")
+                    else:
+                        st.error(resultado_teste.get("erro", "Falha no teste."))
+
+        with col_k3:
+            if st.button("🗑️ Limpar Chave", use_container_width=True, key="btn_limpar_chave_gemini"):
+                salvar_chave_gemini_usuario(user_id, None)
+                st.session_state.pop("gemini_api_key", None)
+                if "usuario_logado" in st.session_state and isinstance(st.session_state.usuario_logado, dict):
+                    st.session_state.usuario_logado["gemini_api_key"] = None
+                st.toast("Chave removida.", icon="🗑️")
+                st.rerun()
+
+        st.markdown(
+            '<div style="margin-top:12px; font-size:0.84rem; color:#888;">'
+            '💡 <b>Dica contra Erro 402:</b> O Google retorna <i>Erro 402</i> se a chave pertencer a um projeto com faturamento ativado e saldo zerado. '
+            'Para usar de graça, acesse <a href="https://aistudio.google.com/apikey" target="_blank" style="color:#a78bfa;">aistudio.google.com/apikey</a>, '
+            'clique em <b>Create API key</b> e selecione <b>Create API key in new project</b> (sem vincular cartão de crédito).</div>',
+            unsafe_allow_html=True
+        )
 
     # ── BOTÃO DE SALVAR ───────────────────────────────────────────────────────
     st.markdown("---")
