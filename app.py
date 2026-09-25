@@ -414,6 +414,11 @@ btn_sec_bg = "rgba(19, 17, 28, 0.85)" if is_dark else "#ffffff"
 btn_sec_color = "#cbd5e1" if is_dark else "#0f172a"
 btn_sec_border = "rgba(124, 58, 237, 0.35)" if is_dark else "#cbd5e1"
 
+select_dropdown_bg = "#1e293b" if is_dark else "#ffffff"
+select_dropdown_color = "#f8fafc" if is_dark else "#0f172a"
+select_dropdown_hover_bg = "#334155" if is_dark else "#f1f5f9"
+select_dropdown_hover_color = "#fbbf24" if is_dark else "#7c3aed"
+
 st.markdown(f"""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -499,8 +504,21 @@ st.markdown(f"""
     }}
 
     /* Estilos estritamente aplicados ao Cabeçalho do App */
+    .st-key-mathai_header {{
+        width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }}
+    .st-key-mathai_header::-webkit-scrollbar {{
+        display: none !important;
+    }}
+
     .st-key-mathai_header div[data-testid="stHorizontalBlock"] {{
         align-items: center !important;
+        gap: 6px !important;
+        flex-wrap: nowrap !important;
     }}
 
     .st-key-mathai_header div[data-testid="stElementContainer"] {{
@@ -527,7 +545,8 @@ st.markdown(f"""
         max-height: 42px !important;
         margin: 0 !important;
         border-radius: 12px !important;
-        padding: 0 14px !important;
+        padding: 0 8px !important;
+        font-size: 0.88rem !important;
     }}
 
     .st-key-mathai_header div[data-testid="stButton"] button p {{
@@ -537,7 +556,8 @@ st.markdown(f"""
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        overflow: visible !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
         white-space: nowrap !important;
     }}
 
@@ -545,11 +565,11 @@ st.markdown(f"""
         border: 2px solid {gold_border} !important;
         box-shadow: 0 0 16px rgba(245, 158, 11, 0.35) !important;
         font-weight: 700 !important;
-        font-size: 0.95rem !important;
+        font-size: 0.90rem !important;
     }}
 
     .st-key-mathai_header div[data-testid="stButton"] button[kind="secondary"] {{
-        font-size: 0.92rem !important;
+        font-size: 0.88rem !important;
     }}
 
     .st-key-mathai_header div[data-testid="stButton"] button[kind="secondary"]:hover {{
@@ -562,22 +582,113 @@ st.markdown(f"""
     .st-key-nav_btn_perfil_topbar button {{
         border-radius: 12px !important;
         font-weight: 700 !important;
-        font-size: 0.82rem !important;
+        font-size: 0.84rem !important;
         border: 1.5px solid {gold_border} !important;
         padding: 0 8px !important;
     }}
 
-        /* Correção do texto escuro invisível no Multiselect e Selectbox */
+    .st-key-btn_toggle_tema button,
+    .st-key-btn_sair_app button {{
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.15rem !important;
+        min-width: 38px !important;
+    }}
+
+    .st-key-btn_toggle_tema button p,
+    .st-key-btn_sair_app button p {{
+        font-size: 1.15rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+    }}
+
+    /* Responsividade para Tablets e Telas Médias (<= 1150px) */
+    @media (max-width: 1150px) {{
+        .block-container {{
+            padding-left: 0.8rem !important;
+            padding-right: 0.8rem !important;
+            padding-top: 1.8rem !important;
+            max-width: 100% !important;
+        }}
+
+        .st-key-mathai_header div[data-testid="stHorizontalBlock"] {{
+            gap: 4px !important;
+        }}
+
+        .st-key-mathai_header div[data-testid="stButton"] button {{
+            padding: 0 5px !important;
+            font-size: 0.80rem !important;
+            height: 38px !important;
+            min-height: 38px !important;
+            max-height: 38px !important;
+        }}
+
+        .st-key-mathai_header div[data-testid="stButton"] button[kind="primary"],
+        .st-key-mathai_header div[data-testid="stButton"] button[kind="secondary"],
+        .st-key-nav_btn_perfil_topbar button {{
+            font-size: 0.80rem !important;
+        }}
+
+        .st-key-btn_toggle_tema button,
+        .st-key-btn_sair_app button {{
+            height: 38px !important;
+            min-height: 38px !important;
+            max-height: 38px !important;
+            font-size: 1rem !important;
+        }}
+        .st-key-btn_toggle_tema button p,
+        .st-key-btn_sair_app button p {{
+            font-size: 1rem !important;
+        }}
+
+        .mathai-logo-subtitle {{
+            display: none !important;
+        }}
+
+        .mathai-logo-box {{
+            height: 38px !important;
+        }}
+    }}
+
+    /* Responsividade para Telas Pequenas / Mobile (<= 768px) */
+    @media (max-width: 768px) {{
+        .st-key-mathai_header div[data-testid="stButton"] button {{
+            padding: 0 3px !important;
+            font-size: 0.74rem !important;
+        }}
+
+        .st-key-mathai_header div[data-testid="stButton"] button[kind="primary"],
+        .st-key-mathai_header div[data-testid="stButton"] button[kind="secondary"],
+        .st-key-nav_btn_perfil_topbar button {{
+            font-size: 0.74rem !important;
+        }}
+
+        .mathai-logo-badge {{
+            display: none !important;
+        }}
+    }}
+
+    /* Mobile Compacto com rolagem horizontal suave sem quebrar layout */
+    @media (max-width: 600px) {{
+        .st-key-mathai_header div[data-testid="stHorizontalBlock"] {{
+            min-width: 560px !important;
+        }}
+    }}
+
+    /* Correção de coloração nos modos Dark e Light no Multiselect e Selectbox */
     div[data-baseweb="select"] ul, 
     ul[role="listbox"],
     li[role="option"] {{
-        background-color: #1e293b !important;
-        color: #f8fafc !important;
+        background-color: {select_dropdown_bg} !important;
+        color: {select_dropdown_color} !important;
     }}
     li[role="option"]:hover,
     li[role="option"][aria-selected="true"] {{
-        background-color: #334155 !important;
-        color: #f59e0b !important;
+        background-color: {select_dropdown_hover_bg} !important;
+        color: {select_dropdown_hover_color} !important;
     }}
 </style>
 <script>
@@ -667,14 +778,15 @@ if "nav_page" not in st.session_state or st.session_state.nav_page not in PAGES:
     st.session_state.nav_page = "🎯 Resolver / Simulado"
 
 with st.container(key="mathai_header"):
-    col_logo, col_res, col_dash, col_banco, col_sobre, col_tema, col_space, col_user, col_sair = st.columns(
-        [1.75, 0.95, 0.9, 1.2, 0.95, 0.45, 1.3, 1.9, 0.45],
-        vertical_alignment="center"
+    col_logo, col_res, col_dash, col_banco, col_sobre, col_tema, col_user, col_sair = st.columns(
+        [1.35, 1.0, 0.9, 0.9, 0.8, 0.45, 1.15, 0.45],
+        vertical_alignment="center",
+        gap="small"
     )
 
     with col_logo:
         st.markdown(f"""
-        <div style="display: flex; align-items: center; gap: 8px; height: 42px; margin: 0; padding: 0;">
+        <div class="mathai-logo-box" style="display: flex; align-items: center; gap: 8px; height: 42px; margin: 0; padding: 0;">
             <div style="width: 36px; height: 36px; min-width: 36px;
                         background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
                         border: 2px solid {gold_border}; border-radius: 10px;
@@ -683,14 +795,14 @@ with st.container(key="mathai_header"):
                 📐
             </div>
             <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1;">
-                <div style="font-size: 1.18rem; font-weight: 800; color: {text_main}; letter-spacing: -0.02em; display: flex; align-items: center; gap: 5px;">
+                <div style="font-size: 1.15rem; font-weight: 800; color: {text_main}; letter-spacing: -0.02em; display: flex; align-items: center; gap: 5px;">
                     <span>MathAI</span>
-                    <span style="font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 999px;
+                    <span class="mathai-logo-badge" style="font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 999px;
                                  background: rgba(245, 158, 11, 0.15); color: {gold_accent}; border: 1px solid rgba(245, 158, 11, 0.4);">
                         V1.0
                     </span>
                 </div>
-                <div style="font-size: 0.68rem; color: {text_muted}; margin-top: 2px; white-space: nowrap;">
+                <div class="mathai-logo-subtitle" style="font-size: 0.68rem; color: {text_muted}; margin-top: 2px; white-space: nowrap;">
                     A IA que mapeia seu raciocínio
                 </div>
             </div>
@@ -701,6 +813,7 @@ with st.container(key="mathai_header"):
         is_resolver = (st.session_state.nav_page == "🎯 Resolver / Simulado")
         if st.button(
             "🎯 Resolver",
+            help="Resolver Questões e Simulados Cronometrados",
             use_container_width=True,
             type="primary" if is_resolver else "secondary",
             key="nav_btn_resolver"
@@ -712,6 +825,7 @@ with st.container(key="mathai_header"):
         is_dash = (st.session_state.nav_page == "📊 Perfil Cognitivo")
         if st.button(
             "📊 Perfil",
+            help="Perfil Cognitivo, Diagnóstico e Estatísticas de Desempenho",
             use_container_width=True,
             type="primary" if is_dash else "secondary",
             key="nav_btn_dashboard"
@@ -722,7 +836,8 @@ with st.container(key="mathai_header"):
     with col_banco:
         is_banco = (st.session_state.nav_page == "📚 Banco & Listas")
         if st.button(
-            "📚 Banco & Listas",
+            "📚 Banco",
+            help="Banco de Questões e Listas de Exercícios",
             use_container_width=True,
             type="primary" if is_banco else "secondary",
             key="nav_btn_banco"
@@ -733,7 +848,8 @@ with st.container(key="mathai_header"):
     with col_sobre:
         is_sobre = (st.session_state.nav_page == "💡 Sobre Nós")
         if st.button(
-            "💡 Sobre Nós",
+            "💡 Sobre",
+            help="Sobre o MathAI e Metodologia",
             use_container_width=True,
             type="primary" if is_sobre else "secondary",
             key="nav_btn_sobre"
@@ -743,22 +859,17 @@ with st.container(key="mathai_header"):
 
     with col_tema:
         icone_tema = "☀️" if is_dark else "🌙"
-        help_tema = "Modo Claro" if is_dark else "Modo Escuro"
+        help_tema = "Mudar para Modo Claro" if is_dark else "Mudar para Modo Escuro"
         if st.button(icone_tema, help=help_tema, use_container_width=True, key="btn_toggle_tema"):
             novo_tema = "light" if is_dark else "dark"
             st.session_state.tema = novo_tema
             st.query_params["theme"] = novo_tema
             st.rerun()
 
-    with col_space:
-        st.write("")
-
     with col_user:
         is_perfil = (st.session_state.nav_page == "👤 Meu Perfil")
-        sub_badge = badge_subtitulo.split('•')[-1].strip()
-        if len(sub_badge) > 16:
-            sub_badge = sub_badge[:14] + ".."
-        btn_label = f"👤 {nome_exibir} • {sub_badge}"
+        primeiro_nome = nome_exibir if len(nome_exibir) <= 12 else (nome_exibir[:10] + "..")
+        btn_label = f"👤 {primeiro_nome}"
         if st.button(
             btn_label,
             help=f"Meu Perfil: {nome_completo}\n{badge_subtitulo}\nClique para ver e alterar seus dados",
