@@ -452,8 +452,44 @@ def show():
                 if outro_v:
                     concursos_foco_selecionados.append(outro_v)
 
-    # ── BOTÃO DE SALVAR ───────────────────────────────────────────────────────
+    # ── CONFIGURAÇÃO DE IA (GOOGLE GEMINI) ───────────────────────────────────
     st.markdown("---")
+    st.markdown("#### 🤖 Conexão com Inteligência Artificial (Google Gemini)")
+    with st.expander("🔑 Chave de API Pessoal (Opcional / Substituição)", expanded=False):
+        st.markdown("""
+        O MathAI utiliza a API do **Google Gemini** para leitura de rascunhos, transcrições LaTeX e diagnósticos pedagógicos.
+        Caso os créditos da chave padrão da plataforma estejam esgotados (Erro 402) ou você queira utilizar sua própria cota gratuita do Google AI Studio (15 requisições/minuto gratuitas), configure sua chave pessoal abaixo:
+        """)
+
+        chave_atual_sessao = st.session_state.get("gemini_api_key", "")
+        nova_chave_api = st.text_input(
+            "Sua Chave de API do Google Gemini (GEMINI_API_KEY):",
+            value=chave_atual_sessao,
+            type="password",
+            placeholder="AIzaSy...",
+            help="Obtenha uma chave gratuita em https://aistudio.google.com/apikey"
+        )
+        col_k1, col_k2 = st.columns([1, 1])
+        with col_k1:
+            if st.button("💾 Salvar Chave na Sessão", use_container_width=True, key="btn_salvar_chave_gemini"):
+                if nova_chave_api.strip():
+                    st.session_state.gemini_api_key = nova_chave_api.strip()
+                    st.success("Chave de API pessoal salva com sucesso!")
+                    st.rerun()
+                else:
+                    st.session_state.pop("gemini_api_key", None)
+                    st.info("Chave pessoal removida. A plataforma usará a chave padrão do sistema.")
+                    st.rerun()
+        with col_k2:
+            st.markdown(
+                '<a href="https://aistudio.google.com/apikey" target="_blank" style="text-decoration:none;">'
+                '<div style="text-align:center; padding:9px 12px; background:rgba(124,58,237,0.15); border:1px solid #7c3aed; border-radius:8px; font-weight:600; color:#a78bfa; font-size:0.85rem;">'
+                '🌐 Obter Chave Grátis no Google AI Studio ↗'
+                '</div></a>',
+                unsafe_allow_html=True
+            )
+
+    # ── BOTÃO DE SALVAR ───────────────────────────────────────────────────────
     st.markdown("---")
     st.markdown("#### 🔒 Privacidade e Consentimento de Dados")
     st.markdown("<div style='font-size: 0.9em; color: #64748b; margin-bottom: 10px;'>Visando o futuro da plataforma, o MathAI separa estritamente o que são <b>dados observados</b> (suas resoluções, respostas e tempo) de <b>dados derivados</b> (diagnóstico da IA e estimativa de dificuldade). Precisamos do seu consentimento para armazenar e utilizar seus dados observados (de forma anônima) no treinamento das futuras IAs do projeto.</div>", unsafe_allow_html=True)
