@@ -101,9 +101,9 @@ def normalizar_quebras_json(texto: str) -> str:
     """
     if not texto:
         return ""
-    # Normaliza carriage returns
+    # Normaliza carriage returns - NUNCA remover r'\r' solto para não quebrar \right!
     texto = texto.replace('\r\n', '\n').replace('\r', '\n')
-    texto = texto.replace(r'\r\n', '\n').replace(r'\r', '')
+    texto = texto.replace(r'\r\n', '\n')
 
     # Remove ponto órfão inicial comum em transcrições (ex: ".\n\nA partir disso...")
     texto = re.sub(r'^\s*\.\s*(?:\\n|\n)+', '', texto)
@@ -143,8 +143,10 @@ def fix_latex_row_breaks(latex_str: str) -> str:
 
 def has_natural_language(text: str) -> bool:
     """Detecta se há palavras em linguagem natural (português/inglês) no texto."""
-    cleaned = re.sub(r'\\[a-zA-Z]+(\{[^}]*\})?', ' ', text)
-    cleaned = re.sub(r'\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}', ' ', cleaned)
+    # Remove comandos LaTeX e quaisquer argumentos em chaves ou colchetes subsequentes
+    cleaned = re.sub(r'\\[a-zA-Z]+(?:\{[^}]*\}|\[[^\]]*\])*', ' ', text)
+    # Remove especificadores de coluna de matrizes/tabelas como {ccc|c}, {lcr}
+    cleaned = re.sub(r'\{[clrpmb|0-9\s]+\}', ' ', cleaned)
     cleaned = re.sub(r'[{}\[\]()_^\d\s+\-*=<>|/\\,.;:&!~]', ' ', cleaned)
 
     words = [w for w in cleaned.split() if len(w) > 2]
@@ -164,7 +166,11 @@ def is_math_line(text: str) -> bool:
         return False
     if has_natural_language(t):
         return False
-    if any(k in t for k in [r'\begin{', r'\end{', r'\pmatrix', r'\cases', r'\matrix', r'\aligned', r'\implies', r'\frac', r'\sqrt', '^', '_', '=', '<', '>']):
+    if any(k in t for k in [
+        r'\begin{', r'\end{', r'\pmatrix', r'\cases', r'\matrix', r'\aligned', r'\array',
+        r'\implies', r'\iff', r'\sim', r'\left', r'\right', r'\frac', r'\sqrt',
+        '^', '_', '=', '<', '>', r'\times', r'\cdot'
+    ]):
         return True
     return False
 
@@ -173,9 +179,10 @@ def formatar_transcricao_latex(transcricao: str) -> str:
     """
     Formata o texto de transcrição OCR ou diagnósticos para renderização impecável no Streamlit st.markdown.
     - Normaliza quebras de linha literais vindas de JSON (\\n).
+    - Preserva comandos como \\right e \\left intactos.
     - Corrige quebras de linha em ambientes matriciais/sistemas (ex: \\begin{cases}).
-    - Isola ambientes LaTeX de bloco em display math ($$...$$).
-    - Garante que linhas puramente matemáticas sejam delimitadas por $$...$$.
+    - Separa texto explicativo de blocos matemáticos sem quebrar expressões matriciais contínuas.
+    - Envolve linhas e blocos puramente matemáticos em $$...$$.
     - Preserva texto explicativo ou comentários em linguagem natural sem quebrar a tipografia.
     """
     if not transcricao or not isinstance(transcricao, str):
@@ -191,19 +198,28 @@ def formatar_transcricao_latex(transcricao: str) -> str:
     if texto.startswith("$$") and texto.endswith("$$") and texto.count("$$") == 2:
         return texto
 
-    # 4. Isola ambientes LaTeX (\begin{cases}...\end{cases}) garantindo que fiquem dentro de $$...$$
-    env_pattern = re.compile(r'\\begin\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}[\s\S]*?\\end\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}')
-    tokens = re.split(r'(\$\$[\s\S]*?\$\$)', texto)
-    partes = []
-    for tok in tokens:
-        if tok.startswith('$$') and tok.endswith('$$'):
-            partes.append(tok)
-        else:
-            def wrap_env(m):
-                return f"\n\n$$\n{m.group(0)}\n$$\n\n"
-            tok_wrapped = env_pattern.sub(wrap_env, tok)
-            partes.append(tok_wrapped)
-    texto = "".join(partes)
+    # 4. Separa texto em linguagem natural antes de blocos matemáticos
+    env_start = r'([^\n$]+?)\s*(\\left\s*[([{|.]|\s*\\begin\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\})'
+
+    def repl_start(m):
+        prefix = m.group(1)
+        if has_natural_language(prefix):
+            return f"{prefix.rstrip()}\n\n{m.group(2)}"
+        return m.group(0)
+
+    texto = re.sub(env_start, repl_start, texto)
+
+    # Separa texto em linguagem natural após blocos matemáticos
+    env_end = r'(\\end\{(?:cases|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|aligned|align\*?|array)\}(?:\s*\\right\s*[)\]}|.])?)\s*([^\n$]+)'
+
+    def repl_end(m):
+        env = m.group(1)
+        suffix = m.group(2)
+        if has_natural_language(suffix):
+            return f"{env}\n\n{suffix.lstrip()}"
+        return m.group(0)
+
+    texto = re.sub(env_end, repl_end, texto)
 
     # 5. Processa linha por linha
     linhas = texto.splitlines()
