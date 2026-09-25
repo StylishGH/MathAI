@@ -54,22 +54,20 @@ def selecionar_modelos_candidatos(questao: dict) -> tuple[list[str], str]:
     banca = str(questao.get("banca", "")).upper()
 
     if dif is None or dif >= 3 or banca in ("IME", "ITA", "ESPCEX"):
-        # Modo Pro: começa pelo modelo com raciocínio profundo
+        # Modo Pro: modelos de alta capacidade com raciocínio e síntese detalhada
         return [
-            "gemini-2.5-flash",
-            "gemini-2.5-flash-lite",
-            "gemini-flash-latest",
-            "gemini-3.8-flash",
             "gemini-3.5-flash-lite",
+            "gemini-flash-lite-latest",
+            "gemini-3-flash-preview",
+            "gemini-3.6-flash",
         ], "🧠 Modo Pro / Raciocínio Profundo"
     else:
-        # Modo Flash: prioriza velocidade e resposta ágil e estável
+        # Modo Flash: velocidade máxima e estabilidade no plano gratuito
         return [
-            "gemini-2.5-flash-lite",
-            "gemini-2.5-flash",
             "gemini-flash-lite-latest",
             "gemini-3.5-flash-lite",
-            "gemini-3.8-flash",
+            "gemini-3-flash-preview",
+            "gemini-3.6-flash",
         ], "⚡ Modo Flash / Alta Velocidade"
 
 
