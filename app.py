@@ -605,6 +605,41 @@ st.markdown(f"""
         line-height: 1 !important;
     }}
 
+    /* Navegador de Questões e Numeração Superior */
+    .st-key-question_navigator {{
+        width: 100% !important;
+        margin: 4px 0 10px 0 !important;
+    }}
+
+    .st-key-question_navigator div[data-testid="stHorizontalBlock"] {{
+        gap: 6px !important;
+        align-items: center !important;
+    }}
+
+    .st-key-question_navigator div[data-testid="stButton"] button {{
+        height: 38px !important;
+        min-height: 38px !important;
+        max-height: 38px !important;
+        padding: 0 !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        font-size: 0.90rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }}
+
+    .st-key-question_navigator div[data-testid="stButton"] button p {{
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 0.90rem !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+    }}
+
     /* Responsividade para Tablets e Telas Médias (<= 1150px) */
     @media (max-width: 1150px) {{
         .block-container {{

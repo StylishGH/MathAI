@@ -192,36 +192,53 @@ def show():
         q_atual = questoes[q_idx]
         q_id = q_atual["id"]
 
-        MAX_JUMPER = 20
-        # Janela deslizante centrada na questão atual
-        metade = MAX_JUMPER // 2
-        inicio = max(0, min(q_idx - metade, total_q - MAX_JUMPER))
+        MAX_JUMPER = 10
+        bloco = q_idx // MAX_JUMPER
+        inicio = bloco * MAX_JUMPER
         fim = min(total_q, inicio + MAX_JUMPER)
         questoes_visiveis = list(enumerate(questoes))[inicio:fim]
 
-        # Indicador de paginação se houver mais questões que o limite
+        # Indicador de paginação e controles de bloco se houver mais questões que o limite
         if total_q > MAX_JUMPER:
+            col_info, col_bprev, col_bnext = st.columns([3, 1, 1], vertical_alignment="center")
+            with col_info:
+                st.markdown(
+                    f"<div style='font-size:0.82rem; color:{text_muted};'>"
+                    f"Mostrando questões <b>{inicio+1}</b>–<b>{fim}</b> de <b>{total_q}</b> "
+                    f"(atual: <b>#{q_idx+1}</b>)</div>",
+                    unsafe_allow_html=True
+                )
+            with col_bprev:
+                if st.button("◀ Bloco", key="jmp_blk_prev_sim", use_container_width=True, disabled=(inicio == 0), help="10 questões anteriores"):
+                    st.session_state.questao_idx = max(0, inicio - MAX_JUMPER)
+                    st.rerun()
+            with col_bnext:
+                if st.button("Bloco ▶", key="jmp_blk_next_sim", use_container_width=True, disabled=(fim >= total_q), help="Próximas 10 questões"):
+                    st.session_state.questao_idx = min(total_q - 1, inicio + MAX_JUMPER)
+                    st.rerun()
+        else:
             st.markdown(
-                f"<div style='font-size:0.78rem; color:{text_muted}; margin-bottom:4px;'>"
-                f"Mostrando questões <b>{inicio+1}</b>–<b>{fim}</b> de <b>{total_q}</b> "
-                f"(questão atual: <b>#{q_idx+1}</b>)</div>",
+                f"<div style='font-size:0.82rem; color:{text_muted}; margin-bottom:4px;'>"
+                f"Mostrando todas as <b>{total_q}</b> questões (atual: <b>#{q_idx+1}</b>)</div>",
                 unsafe_allow_html=True
             )
 
-        cols_jumper = st.columns(len(questoes_visiveis))
-        for col_idx, (i, q) in enumerate(questoes_visiveis):
-            qid = q["id"]
-            is_cur = (i == q_idx)
-            is_rev = (qid in marcadas)
-            is_ans = (qid in respostas)
+        with st.container(key="question_navigator"):
+            qtd_cols = MAX_JUMPER if total_q > MAX_JUMPER else len(questoes_visiveis)
+            cols_jumper = st.columns(qtd_cols, gap="small")
+            for col_idx, (i, q) in enumerate(questoes_visiveis):
+                qid = q["id"]
+                is_cur = (i == q_idx)
+                is_rev = (qid in marcadas)
+                is_ans = (qid in respostas)
 
-            rotulo = f"🚩{i+1}" if is_rev else (f"✓{i+1}" if is_ans else f"{i+1}")
+                rotulo = f"🚩 {i+1}" if is_rev else (f"✓ {i+1}" if is_ans else f"{i+1}")
 
-            with cols_jumper[col_idx]:
-                if st.button(rotulo, key=f"jmp_{i}", use_container_width=True,
-                             type="primary" if is_cur else "secondary"):
-                    st.session_state.questao_idx = i
-                    st.rerun()
+                with cols_jumper[col_idx]:
+                    if st.button(rotulo, key=f"jmp_{i}", use_container_width=True,
+                                 type="primary" if is_cur else "secondary"):
+                        st.session_state.questao_idx = i
+                        st.rerun()
 
         st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
 
@@ -325,28 +342,46 @@ def show():
                 st.session_state.nav_page = "📚 Banco & Listas"
                 st.rerun()
 
-        # Grade de Questões da Lista
-        MAX_JUMPER = 20
-        metade = MAX_JUMPER // 2
-        inicio = max(0, min(q_idx - metade, total_q - MAX_JUMPER))
+        MAX_JUMPER = 10
+        bloco = q_idx // MAX_JUMPER
+        inicio = bloco * MAX_JUMPER
         fim = min(total_q, inicio + MAX_JUMPER)
         questoes_visiveis = list(enumerate(questoes))[inicio:fim]
 
+        # Indicador de paginação e controles de bloco se houver mais questões que o limite
         if total_q > MAX_JUMPER:
+            col_info, col_bprev, col_bnext = st.columns([3, 1, 1], vertical_alignment="center")
+            with col_info:
+                st.markdown(
+                    f"<div style='font-size:0.82rem; color:{text_muted};'>"
+                    f"Mostrando questões <b>{inicio+1}</b>–<b>{fim}</b> de <b>{total_q}</b> "
+                    f"(atual: <b>#{q_idx+1}</b>)</div>",
+                    unsafe_allow_html=True
+                )
+            with col_bprev:
+                if st.button("◀ Bloco", key="jmp_blk_prev_lista", use_container_width=True, disabled=(inicio == 0), help="10 questões anteriores"):
+                    st.session_state.questao_idx = max(0, inicio - MAX_JUMPER)
+                    st.rerun()
+            with col_bnext:
+                if st.button("Bloco ▶", key="jmp_blk_next_lista", use_container_width=True, disabled=(fim >= total_q), help="Próximas 10 questões"):
+                    st.session_state.questao_idx = min(total_q - 1, inicio + MAX_JUMPER)
+                    st.rerun()
+        else:
             st.markdown(
-                f"<div style='font-size:0.78rem; color:{text_muted}; margin-bottom:4px;'>"
-                f"Mostrando navegação <b>{inicio+1}</b>—<b>{fim}</b> de <b>{total_q}</b> "
-                f"</div>",
+                f"<div style='font-size:0.82rem; color:{text_muted}; margin-bottom:4px;'>"
+                f"Mostrando todas as <b>{total_q}</b> questões (atual: <b>#{q_idx+1}</b>)</div>",
                 unsafe_allow_html=True
             )
 
-        cols_jumper = st.columns(len(questoes_visiveis))
-        for col_idx, (i, q) in enumerate(questoes_visiveis):
-            with cols_jumper[col_idx]:
-                tipo_btn = "primary" if (i == q_idx) else "secondary"
-                if st.button(f"#{i+1}", key=f"jmp_lista_{i}", use_container_width=True, type=tipo_btn):
-                    st.session_state.questao_idx = i
-                    st.rerun()
+        with st.container(key="question_navigator"):
+            qtd_cols = MAX_JUMPER if total_q > MAX_JUMPER else len(questoes_visiveis)
+            cols_jumper = st.columns(qtd_cols, gap="small")
+            for col_idx, (i, q) in enumerate(questoes_visiveis):
+                with cols_jumper[col_idx]:
+                    tipo_btn = "primary" if (i == q_idx) else "secondary"
+                    if st.button(f"{i+1}", key=f"jmp_lista_{i}", use_container_width=True, type=tipo_btn):
+                        st.session_state.questao_idx = i
+                        st.rerun()
 
         st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
 
