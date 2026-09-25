@@ -5,6 +5,7 @@ transcreve expressões matemáticas em LaTeX e gera diagnósticos pedagógicos s
 """
 
 import json
+import time
 import base64
 from google.genai import types
 from src.ai.client import criar_cliente_gemini, tem_chave_configurada
@@ -43,34 +44,30 @@ DIRETRIZES FUNDAMENTAIS:
 def selecionar_modelos_candidatos(questao: dict) -> tuple[list[str], str]:
     """
     Roteamento inteligente de modelos conforme a dificuldade da questão:
-    - Dificuldade nula (is None), alta (>= 3) ou bancas de elite (IME, ITA):
-      Prioriza Pro (gemini-3.1-pro-preview / gemini-pro-latest) com fallback para gemini-3.7-flash.
+    - Dificuldade nula (is None), alta (>= 3) ou bancas de elite (IME, ITA, ESPCEX):
+      Prioriza gemini-3.6-flash com fallback imediato para gemini-3.5-flash-lite e gemini-3.1-flash-lite.
     - Dificuldade básica (1 ou 2):
-      Prioriza gemini-3.7-flash / gemini-3.8-flash para máxima velocidade.
+      Prioriza gemini-3.5-flash-lite para máxima velocidade, economia e estabilidade.
     Retorna (lista_de_modelos_em_ordem_de_prioridade, rotulo_amigavel).
     """
     dif = questao.get("dificuldade")
     banca = str(questao.get("banca", "")).upper()
 
     if dif is None or dif >= 3 or banca in ("IME", "ITA", "ESPCEX"):
-        # Modo Pro: começa pelo modelo com raciocínio profundo ativo
+        # Modo Pro: começa pelo modelo com raciocínio profundo
         return [
             "gemini-3.6-flash",
-            "gemini-3.7-flash",
+            "gemini-3.5-flash-lite",
+            "gemini-3.1-flash-lite",
             "gemini-3.8-flash",
-            
-            
-            
-            
         ], "🧠 Modo Pro / Raciocínio Profundo"
     else:
-        # Modo Flash: prioriza velocidade e resposta ágil
+        # Modo Flash: prioriza velocidade e resposta ágil e estável
         return [
+            "gemini-3.5-flash-lite",
             "gemini-3.6-flash",
-            "gemini-3.7-flash",
+            "gemini-3.1-flash-lite",
             "gemini-3.8-flash",
-            
-            
         ], "⚡ Modo Flash / Alta Velocidade"
 
 
@@ -132,18 +129,25 @@ DADOS FORNECIDOS PELO ESTUDANTE:
 
     # Tenta cada modelo da cascata até um responder com sucesso
     for mod in modelos_candidatos:
-        try:
-            resposta = client.models.generate_content(
-                model=mod,
-                contents=conteudos,
-                config=config
-            )
-            nome_amigavel = "🧠 MathAI Pro" if "pro" in mod else "⚡ MathAI Rápido"
-            modelo_final_usado = f"{nome_amigavel} ({rotulo_modo})"
+        for tentativa in range(2):
+            try:
+                resposta = client.models.generate_content(
+                    model=mod,
+                    contents=conteudos,
+                    config=config
+                )
+                nome_amigavel = "🧠 MathAI Pro" if ("pro" in mod or "3.6" in mod) else "⚡ MathAI Rápido"
+                modelo_final_usado = f"{nome_amigavel} ({rotulo_modo})"
+                break
+            except Exception as e:
+                ultimo_erro = e
+                # Se for 503 (alta demanda) ou 429 (rate limit), aguarda 1s antes de retentar ou trocar
+                if "503" in str(e) or "429" in str(e):
+                    time.sleep(1)
+                    continue
+                break
+        if resposta:
             break
-        except Exception as e:
-            ultimo_erro = e
-            continue
 
     if not resposta:
         return {
@@ -167,6 +171,12 @@ DADOS FORNECIDOS PELO ESTUDANTE:
             if linhas and linhas[-1].startswith("```"):
                 linhas = linhas[:-1]
             texto_json = "\n".join(linhas).strip()
+
+        # Extrai o objeto JSON delimitado por chaves mais externas
+        idx_ini = texto_json.find("{")
+        idx_fim = texto_json.rfind("}")
+        if idx_ini != -1 and idx_fim != -1 and idx_fim > idx_ini:
+            texto_json = texto_json[idx_ini : idx_fim + 1]
 
         resultado = json.loads(texto_json)
         if "transcricao_latex" in resultado and resultado["transcricao_latex"]:
