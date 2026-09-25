@@ -26,8 +26,11 @@ def sync_to_turso():
     con_local = sqlite3.connect("data/mathai.db")
     cur_local = con_local.cursor()
     
-    # Extrai todas as questões do local
-    cur_local.execute("SELECT banca, ano, materia, topico, enunciado, gabarito, subtopico FROM questoes")
+    # Extrai todas as questões do local com todas as colunas
+    cur_local.execute("""
+        SELECT banca, ano, materia, topico, subtopico, dificuldade, enunciado, figura_path, gabarito, estrategias_esperadas, tipo, mathnet_id 
+        FROM questoes
+    """)
     questoes_locais = cur_local.fetchall()
     print(f"Encontradas {len(questoes_locais)} questões no SQLite local.")
     
@@ -37,13 +40,13 @@ def sync_to_turso():
     
     print("Sincronizando questoes para o Turso...")
     for q in questoes_locais:
-        banca, ano, materia, topico, enunciado, gabarito, subtopico = q
+        banca, ano, materia, topico, subtopico, dificuldade, enunciado, figura_path, gabarito, estrategias_esperadas, tipo, mathnet_id = q
         
         # Como o Turso HTTP usa uma API diferente, é mais seguro rodar o INSERT direto aqui
         con_turso.execute("""
-            INSERT INTO questoes (banca, ano, materia, topico, enunciado, gabarito, subtopico)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (banca, ano, materia, topico, enunciado, gabarito, subtopico))
+            INSERT INTO questoes (banca, ano, materia, topico, subtopico, dificuldade, enunciado, figura_path, gabarito, estrategias_esperadas, tipo, mathnet_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (banca, ano, materia, topico, subtopico, dificuldade, enunciado, figura_path, gabarito, estrategias_esperadas, tipo, mathnet_id))
         
     cur = con_turso.execute("SELECT banca, COUNT(*) FROM questoes GROUP BY banca")
     print("Novo estado do Turso:", cur.fetchall())

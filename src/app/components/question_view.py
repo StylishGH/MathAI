@@ -8,6 +8,41 @@ import streamlit as st
 from src.app.utils import extrair_enunciado_e_alternativas, corrigir_latex
 
 
+def _localizar_arquivo_figura(fp: str) -> Path | None:
+    """Busca o arquivo de figura de forma resiliente tanto local quanto no Streamlit Cloud."""
+    if not fp:
+        return None
+    raw = str(fp).strip().replace("\\", "/")
+    nome_arquivo = Path(raw).name
+
+    p_abs = Path(raw)
+    if p_abs.is_absolute() and p_abs.exists():
+        return p_abs
+
+    rel_limpo = raw.lstrip("/")
+
+    candidatos_base = [
+        Path.cwd(),
+        Path(__file__).resolve().parent.parent.parent.parent,
+        Path(__file__).resolve().parent.parent.parent,
+        Path(__file__).resolve().parent.parent,
+    ]
+
+    for base in candidatos_base:
+        cand = base / rel_limpo
+        if cand.exists():
+            return cand
+        cand_upload = base / "data" / "uploads" / nome_arquivo
+        if cand_upload.exists():
+            return cand_upload
+        if rel_limpo.startswith("data/"):
+            cand_sem_data = base / rel_limpo[5:]
+            if cand_sem_data.exists():
+                return cand_sem_data
+
+    return None
+
+
 def render_question(questao: dict, mostrar_alternativas: bool = False):
     """
     Renderiza o cabeçalho, enunciado com texto justificado e LaTeX,
@@ -96,12 +131,25 @@ def render_question(questao: dict, mostrar_alternativas: bool = False):
         else:
             lista_figuras = [str(figura_raw).strip()]
 
-    for fp in lista_figuras:
-        p = Path(fp)
-        if not p.is_absolute():
-            p = Path(__file__).resolve().parent.parent.parent.parent / fp
+    # Fallback inteligente por metadados da questão caso o campo figura_path no banco esteja nulo
+    if not lista_figuras:
+        banca = str(questao.get("banca", "")).strip().upper()
+        ano = str(questao.get("ano", "")).strip()
+        enunc = str(questao.get("enunciado", "")).lower()
+        if banca == "ESA" and ano == "2026":
+            if "log_2" in enunc or "região sombreada" in enunc or "regiao sombreada" in enunc:
+                lista_figuras = ["data/uploads/esa_2026_q02.svg"]
+            elif "5 questões" in enunc or "5 questoes" in enunc or "moda" in enunc:
+                lista_figuras = ["data/uploads/esa_2026_q06.svg"]
+            elif "pelotão de obras" in enunc or "pelotao de obras" in enunc:
+                lista_figuras = ["data/uploads/esa_2026_q09.svg"]
+            elif "paralelepípedo" in enunc or "paralelepipedo" in enunc or "abcdefgh" in enunc:
+                lista_figuras = ["data/uploads/esa_2026_q10.svg"]
 
-        if p.exists():
+    for fp in lista_figuras:
+        p = _localizar_arquivo_figura(fp)
+
+        if p and p.exists():
             st.markdown("<br>", unsafe_allow_html=True)
             if p.suffix.lower() == ".svg":
                 b64_svg = base64.b64encode(p.read_bytes()).decode("utf-8")
