@@ -619,19 +619,3 @@ def _renderizar_card_ia(diag: dict):
         if dica:
             st.info(f"💡 **Provocação para Evolução:** {dica}")
 
-        # Se for erro 402, exibe botão direto para configurar a chave no Perfil
-        if "402" in str(diag.get("modelo_utilizado", "")) or "402" in str(diag.get("diagnostico", "")):
-            c_perf1, c_perf2 = st.columns([1, 1])
-            with c_perf1:
-                if st.button("🔑 Configurar Chave Grátis no Meu Perfil", use_container_width=True, key=f"btn_ir_perfil_402_{id(diag)}"):
-                    st.session_state.nav_page = "👤 Meu Perfil"
-                    st.rerun()
-            with c_perf2:
-                st.markdown(
-                    '<a href="https://aistudio.google.com/apikey" target="_blank" style="text-decoration:none;">'
-                    '<div style="text-align:center; padding:9px 12px; background:rgba(124,58,237,0.15); border:1px solid #7c3aed; border-radius:8px; font-weight:600; color:#a78bfa; font-size:0.85rem;">'
-                    '🌐 Gerar Chave Free no AI Studio ↗'
-                    '</div></a>',
-                    unsafe_allow_html=True
-                )
-

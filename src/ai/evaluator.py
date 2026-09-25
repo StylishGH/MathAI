@@ -151,60 +151,58 @@ DADOS FORNECIDOS PELO ESTUDANTE:
 
     if not resposta:
         erro_str = str(ultimo_erro)
-        # Detecção específica de esgotamento de saldo/créditos pré-pagos no Google AI Studio (Erro 402)
-        if "402" in erro_str or "prepayment credits are depleted" in erro_str.lower():
+        # Detecção de instabilidade ou cota do servidor
+        if "402" in erro_str or "prepayment" in erro_str.lower():
             return {
-                "transcricao_latex": r"\text{Aviso: Créditos da API Gemini esgotados no Google AI Studio (Erro 402)}",
+                "transcricao_latex": r"\text{Aviso: Avaliador Cognitivo em manutenção temporária.}",
                 "passos": [
-                    "1. Os créditos pré-pagos da chave Gemini associada foram consumidos.",
-                    "2. A plataforma ativou a análise autônoma para você continuar seu treino sem travar.",
-                    "3. Para reativar a IA, adicione créditos em ai.studio ou insira uma chave grátis no seu Perfil."
+                    "1. O motor de avaliação cognitiva está passando por uma manutenção momentânea.",
+                    "2. A plataforma ativou a contingência autônoma para você continuar seu treino sem travar."
                 ],
                 "estrategia_identificada": "Análise Autônoma de Contingência",
                 "status_resolucao": "correto" if (justificativa_texto and len(justificativa_texto) > 10) else "incompleto",
                 "diagnostico": (
-                    "⚠️ **Créditos do Google AI Studio esgotados (Erro 402)**: O saldo de créditos pré-pagos da chave de API atual chegou a zero "
-                    "(*Your prepayment credits are depleted*). Para voltar a usar a IA do Gemini, recarregue créditos em "
-                    "[ai.studio/projects](https://ai.studio/projects) ou gere uma chave em um projeto gratuito (Free Tier com 15 RPM grátis) e informe em **Meu Perfil**."
+                    "⚙️ **Avaliador Cognitivo em Ajuste Temporário**: O motor de avaliação cognitiva está temporariamente passando por ajustes. "
+                    "Suas respostas e gabaritos continuam sendo registrados normalmente."
                 ),
                 "linha_do_erro": None,
-                "dica_proximo_passo": "Você pode continuar resolvendo questões! Suas respostas e gabaritos continuam sendo registrados normalmente.",
-                "modelo_utilizado": "Modo Autônomo (Cota 402)"
+                "dica_proximo_passo": "Você pode continuar resolvendo questões! O gabarito oficial continuará sendo exibido.",
+                "modelo_utilizado": "Modo Autônomo"
             }
         elif "429" in erro_str or "RESOURCE_EXHAUSTED" in erro_str:
             return {
-                "transcricao_latex": r"\text{Aviso: Limite de requisições por minuto atingido (Erro 429)}",
+                "transcricao_latex": r"\text{Aviso: Alta demanda momentânea no motor de IA.}",
                 "passos": [
-                    "1. A cota temporária de requisições por minuto da chave foi alcançada.",
-                    "2. Aguarde cerca de 30 a 60 segundos antes de enviar uma nova consulta à IA."
+                    "1. Muitas resoluções estão sendo avaliadas simultaneamente.",
+                    "2. Aguarde cerca de 30 segundos antes de enviar uma nova consulta à IA."
                 ],
-                "estrategia_identificada": "Limite Temporário",
+                "estrategia_identificada": "Alta Demanda",
                 "status_resolucao": "incompleto",
-                "diagnostico": "⏳ **Cota temporária atingida (Erro 429)**: Muitas requisições simultâneas foram enviadas. Aguarde 30 a 60 segundos e tente novamente.",
+                "diagnostico": "⏳ **Alta Demanda no Motor de IA**: O sistema está atendendo muitas resoluções simultâneas. Aguarde 30 a 60 segundos e tente novamente.",
                 "linha_do_erro": None,
-                "dica_proximo_passo": "Aguarde alguns instantes e clique em Avaliar novamente.",
+                "dica_proximo_passo": "Aguarde alguns instantes e clique em Reanalisar com IA.",
                 "modelo_utilizado": "Nenhum (Cota 429)"
             }
         elif "503" in erro_str or "UNAVAILABLE" in erro_str:
             return {
-                "transcricao_latex": r"\text{Aviso: Servidores do Gemini em alta demanda temporária (Erro 503)}",
-                "passos": ["1. Os servidores da nuvem do Google estão com pico de tráfego."],
+                "transcricao_latex": r"\text{Aviso: Servidores de IA em alta demanda temporária.}",
+                "passos": ["1. Os servidores do motor cognitivo estão com pico de tráfego."],
                 "estrategia_identificada": "Instabilidade Temporária",
                 "status_resolucao": "incompleto",
-                "diagnostico": "⚙️ **Servidores em alta demanda (Erro 503)**: O modelo do Google está temporariamente sobrecarregado. Tente novamente em alguns segundos.",
+                "diagnostico": "⚙️ **Servidores em Alta Demanda (503)**: O motor de IA está temporariamente sobrecarregado. Tente novamente em alguns segundos.",
                 "linha_do_erro": None,
-                "dica_proximo_passo": "Tente clicar em Avaliar novamente em alguns segundos.",
+                "dica_proximo_passo": "Tente clicar em Reanalisar com IA em alguns segundos.",
                 "modelo_utilizado": "Nenhum (503)"
             }
         else:
             return {
                 "transcricao_latex": "Não foi possível conectar ao motor cognitivo.",
-                "passos": ["Erro de conexão na requisição"],
+                "passos": ["Erro de conexão na requisição."],
                 "estrategia_identificada": "Indisponível no momento",
                 "status_resolucao": "incompleto",
-                "diagnostico": f"Ocorreu uma instabilidade na consulta: {erro_str}",
+                "diagnostico": "Ocorreu uma instabilidade na consulta ao motor cognitivo. Tente novamente em instantes.",
                 "linha_do_erro": None,
-                "dica_proximo_passo": "Verifique sua chave de API ou tente novamente em instantes.",
+                "dica_proximo_passo": "Tente clicar em Reanalisar com IA em instantes.",
                 "modelo_utilizado": "Nenhum (Erro)"
             }
 

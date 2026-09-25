@@ -307,6 +307,21 @@ def init_db():
     con.commit()
     con.close()
 
+
+def obter_configuracao_sistema(chave: str, default: str | None = None) -> str | None:
+    """Busca uma configuração global central da plataforma no banco de dados."""
+    try:
+        con = pegar_conexao()
+        cur = con.cursor()
+        cur.execute("SELECT valor FROM configuracoes_sistema WHERE chave = ?", (chave,))
+        row = cur.fetchone()
+        if row:
+            d = dict(row)
+            return d.get("valor") or default
+        return default
+    except Exception:
+        return default
+
 def _classificar_tipo(enunciado: str, gabarito: str) -> str:
     """Classifica automaticamente a questão como 'objetiva' ou 'discursiva'."""
     import re
