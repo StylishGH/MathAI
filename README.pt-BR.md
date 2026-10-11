@@ -3,6 +3,7 @@
   <p><strong>Aprendizagem adaptativa construída em torno dos dados.</strong></p>
   <p>Uma plataforma de aprendizagem matemática que explora a interseção entre Engenharia de Dados, Ciência de Dados e IA aplicada.</p>
   <p><strong>🇧🇷 Português (Brasil)</strong> &nbsp;|&nbsp; <a href="./README.md">🇺🇸 English</a></p>
+  <p><a href="https://lemmas-ochre.vercel.app/dashboard"><strong>🚀 Acesse o Lemmas ao vivo</strong></a></p>
   <p>
     <img src="https://img.shields.io/badge/Next.js-16-000000?logo=next.js" alt="Next.js 16" />
     <img src="https://img.shields.io/badge/FastAPI-API%20REST-009688?logo=fastapi" alt="FastAPI" />
