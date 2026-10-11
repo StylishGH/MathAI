@@ -3,6 +3,7 @@
   <p><strong>Adaptive learning, built around data.</strong></p>
   <p>An adaptive mathematics learning platform exploring Data Engineering, Data Science, and Applied AI.</p>
   <p><a href="./README.pt-BR.md">🇧🇷 Português (Brasil)</a> &nbsp;|&nbsp; <strong>🇺🇸 English</strong></p>
+  <p><a href="https://lemmas-ochre.vercel.app/dashboard"><strong>🚀 Try Lemmas live</strong></a></p>
   <p>
     <img src="https://img.shields.io/badge/Next.js-16-000000?logo=next.js" alt="Next.js 16" />
     <img src="https://img.shields.io/badge/FastAPI-REST%20API-009688?logo=fastapi" alt="FastAPI" />
